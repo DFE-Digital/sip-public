@@ -1,0 +1,36 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Academic performance – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-quarter">
+        {% include "includes/secondary-profile/x-gov-sub-nav.html" %}
+    </div>
+
+    <div class="govuk-grid-column-three-quarters">
+
+        <span class="govuk-caption-xl">Dinnington Academy</span>
+        <h1 class="govuk-heading-xl">
+            Academic performance
+        </h1>
+
+        <p class="govuk-body">
+            School performance data can help you understand how well a school is doing.
+            You should look at this alongside other information before deciding if a school
+            is right for your child.
+        </p>
+
+    </div>
+</div>
+{% endblock %}

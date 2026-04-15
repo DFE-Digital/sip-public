@@ -1,0 +1,40 @@
+{{ xGovukSubNavigation({
+  items: [
+    {
+      text: "About the school",
+      href: "/secondary-profile/about"
+    },
+    {
+      text: "Admissions",
+      href: "#"
+    },
+    {
+      text: "Academic performance",
+      href: "/secondary-profile/academic-performance",
+      current: true,
+      parent: true,
+      children: [
+        {
+          text: "Attainment",
+          href: "/secondary-profile/attainment"
+        },
+        {
+          text: "Progress",
+          href: "/secondary-profile/progress"
+        },
+        {
+          text: "English and maths results",
+          href: "#"
+        },
+        {
+        text: "Subjects",
+        href: "/secondary-profile/subjects"
+        }
+      ]
+    },
+    {
+      text: "Admissions",
+      href: "#"
+    }
+  ]
+}) }}

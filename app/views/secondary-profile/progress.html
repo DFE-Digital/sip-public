@@ -1,0 +1,72 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Academic performance – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-quarter">
+        {% include "includes/secondary-profile/x-gov-sub-nav.html" %}
+    </div>
+
+    <div class="govuk-grid-column-three-quarters">
+
+        <span class="govuk-caption-xl">Dinnington Academy</span>
+        <h1 class="govuk-heading-xl">
+            Progress
+        </h1>
+
+         <p class="govuk-body">
+        See how much progress pupils make between primary and secondary school. Progess 8 compares the results pupils get at the end of primary school with their GCSE results,
+        using their best 8 subjects.
+      </p>
+
+      <p class="govuk-body">
+        Learn more about
+        <a href="/path/of/page">Progress 8</a>.
+      </p>
+
+      <h2 class="govuk-heading-l">
+        Progress 8 score
+      </h2>
+
+      {{ govukSelect({
+        id: "academic-year-progress",
+        name: "academic-year-progress",
+        label: {
+          text: "Select an academic year"
+        },
+        items: [
+          {
+            value: "2023",
+            text: "2023 to 2024",
+            selected: true
+          },
+          {
+            value: "2022",
+            text: "2022 to 2023"
+          }
+        ]
+      }) }}
+
+
+        <p class="govuk-body">
+            There are no Progress 8 scores for the 2024 to 2025 or 2025 to 2026 academic years.
+            This is because there is no KS2 assessment data available to calculate progress.
+            This was affected by COVID-19 disruption.
+        </p>
+
+      </div>
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,150 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Academic performance – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-quarter">
+    {% include "includes/secondary-profile/x-gov-sub-nav.html" %}
+  </div>
+
+  <div class="govuk-grid-column-three-quarters">
+
+    <span class="govuk-caption-xl">Dinnington Academy</span>
+    <h1 class="govuk-heading-xl">
+      About the school
+    </h1>
+
+    {{ govukSummaryList({
+      classes: "govuk-summary-list--no-actions",
+      rows: [
+        {
+          key: { text: "Name" },
+          value: {
+            html: "<p class='govuk-body'>Dinnington Academy</p>"
+          }
+        },
+        {
+          key: { text: "Open date" },
+          value: {
+            html: "<p class='govuk-body'>1 April 2024</p>"
+          }
+        },
+        {
+          key: { text: "Academy Trust" },
+          value: { text: "New collaborative learning trust" }
+        },
+        {
+          key: { text: "Address" },
+          value: {
+            html: "72 Guild Street<br>London<br>SE23 6FH"
+          }
+        },
+        {
+          key: { text: "Phone" },
+          value: {
+            html: "01909550066"
+          }
+        },
+        {
+          key: { text: "Website" },
+          value: {
+            html: "<p class='govuk-body'><a href='#' class='govuk-link'>www.dinningtonhigh.co.uk</a></p>"
+          }
+        },
+        {
+          key: { text: "Local council" },
+          value: {
+            html: "<p class='govuk-body'><a href='#' class='govuk-link'>Rotherham Metropolitan Borough Council</a></p>"
+          }
+        }
+      ]
+    }) }}
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-9">
+      Features
+    </h2>
+
+    {{ govukSummaryList({
+      classes: "govuk-summary-list--no-actions",
+      rows: [
+        {
+          key: { text: "Value and ethos" },
+          value: {
+            html: "<p class='govuk-body'>View the value and ethos policy on the school website</p>"
+          }
+        },
+        {
+          key: { text: "Ofsted report" },
+          value: {
+            html: "<p class='govuk-body'>View the latest Ofsted report</p>"
+          }
+        },
+        {
+          key: { text: "Type of school" },
+          value: { text: "Academy converter" }
+        },
+        {
+          key: { text: "Headteacher" },
+          value: {
+            html: "Mrs Kerry Wade"
+          }
+        },
+        {
+          key: { text: "Age range" },
+          value: {
+            html: "11 to 18"
+          }
+        },
+        {
+          key: { text: "Number of pupils" },
+          value: {
+            html: "1,009"
+          }
+        },
+        {
+          key: { text: "Pupil sex" },
+          value: {
+            html: "Mixed"
+          }
+        },
+        {
+          key: { text: "Religious character" },
+          value: {
+            html: "Does not apply"
+          }
+        },
+        {
+          key: { text: "Sixth form" },
+          value: {
+            html: "Yes"
+          }
+        },
+        {
+          key: { text: "SEN unit" },
+          value: {
+            html: "Not recorded"
+          }
+        },
+        {
+          key: { text: "Resourced provision" },
+          value: {
+            html: "Not recorded"
+          }
+        }
+      ]
+    }) }}
+
+  </div>
+</div>
+{% endblock %}

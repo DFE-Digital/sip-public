@@ -1,0 +1,49 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form method="post" action="/workplace">
+
+      {{ xGovukAutocomplete({
+        id: "workplace",
+        name: "workplace",
+        allowEmpty: false,
+        label: {
+          classes: "govuk-label--l",
+          isPageHeading: true,
+          text: "Find a school"
+        },
+        hint: {
+          text: "Search for a school by name or postcode"
+        },
+        items: [
+          { text: "Dinnington Academy", value: "Dinnington Academy" },
+          { text: "Oak primary school", value: "Oak primary school" },
+          { text: "School 3", value: "School 3" }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

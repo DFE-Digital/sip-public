@@ -1,0 +1,237 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Academic performance – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-quarter">
+    {% include "includes/secondary-profile/x-gov-sub-nav.html" %}
+  </div>
+
+  <div class="govuk-grid-column-three-quarters">
+
+    <span class="govuk-caption-xl">Dinnington Academy</span>
+    <h1 class="govuk-heading-xl">
+      Subjects
+    </h1>
+
+    <p class="govuk-body">
+      Pupils studied for the following qualifications and subjects in the 2024 to 2025 academic year.
+    </p>
+
+    <h2 class="govuk-heading-l">GCSEs</h2>
+
+    <p class="govuk-body">
+      A GCSE is an academic qualification awarded for exams in England. Pupils usually take GCSEs at the age of 15 or 16.
+    </p>
+
+    {{ govukTable({
+      caption: "Core subjects",
+      captionClasses: "govuk-table__caption--m",
+      firstCellIsHeader: true,
+      head: [
+        {
+          text: "Subject"
+        },
+        {
+          text: "Percentage of pupils entered for exams"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "English language"
+          },
+          {
+            text: "95%"
+          }
+        ],
+        [
+          {
+            text: "English literature"
+          },
+          {
+            text: "92%"
+          }
+        ],
+        [
+          {
+            text: "Mathematics"
+          },
+          {
+            text: "90%"
+          }
+        ],
+        [
+          {
+            text: "Science: double award"
+          },
+          {
+            text: "78%"
+          }
+        ],
+        [
+          {
+            text: "Biology"
+          },
+          {
+            text: "55%"
+          }
+        ],
+        [
+          {
+            text: "Chemistry"
+          },
+          {
+            text: "46%"
+          }
+        ],
+        [
+          {
+            text: "Physics"
+          },
+          {
+            text: "30%"
+          }
+        ]
+      ]
+    }) }}
+
+    {{ govukTable({
+      caption: "Additional subjects",
+      captionClasses: "govuk-table__caption--m",
+      firstCellIsHeader: true,
+      head: [
+        {
+          text: "Subject"
+        },
+        {
+          text: "Percentage of pupils entered for exams"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "Art and design"
+          },
+          {
+            text: "20%"
+          }
+        ],
+        [
+          {
+            text: "Creative design"
+          },
+          {
+            text: "10%"
+          }
+        ],
+        [
+          {
+            text: "Drama and theatre studies"
+          },
+          {
+            text: "12%"
+          }
+        ],
+        [
+          {
+            text: "French"
+          },
+          {
+            text: "37%"
+          }
+        ],
+        [
+          {
+            text: "Geography"
+          },
+          {
+            text: "15%"
+          }
+        ],
+        [
+          {
+            text: "History"
+          },
+          {
+            text: "9%"
+          }
+        ],
+        [
+          {
+            text: "Music"
+          },
+          {
+            text: "9%"
+          }
+        ],
+        [
+          {
+            text: "Physical education/sports"
+          },
+          {
+            text: "32%"
+          }
+        ]
+      ]
+    }) }}
+
+    <h2 class="govuk-heading-l">Technical awards</h2>
+
+    <p class="govuk-body">
+      Technical Awards, such as BTECs, are work-related qualifications in areas like travel and tourism or animal care.
+    </p>
+
+    {{ govukTable({
+      caption: "Subjects",
+      captionClasses: "govuk-table__caption--m",
+      firstCellIsHeader: true,
+      head: [
+        {
+          text: "Subject"
+        },
+        {
+          text: "Percentage of pupils entered for exams"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "Animal care"
+          },
+          {
+            text: "15%"
+          }
+        ],
+        [
+          {
+            text: "Computer studies"
+          },
+          {
+            text: "8%"
+          }
+        ],
+        [
+          {
+            text: "Construction"
+          },
+          {
+            text: "5%"
+          }
+        ]
+      ]
+    }) }}
+  </div>
+</div>
+{% endblock %}

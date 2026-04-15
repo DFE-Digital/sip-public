@@ -1,0 +1,173 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Academic performance – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-quarter">
+      {% include "includes/side-nav.html" %}
+    </div>
+
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-xl">
+        Academic performance
+      </h1>
+
+      <p class="govuk-body">
+        School performance data can help you understand how well a school is doing.
+        You should look at this alongside other information before deciding if a school
+        is right for your child.
+      </p>
+
+      <h2 class="govuk-heading-l">
+        Attainment
+      </h2>
+
+      <p class="govuk-body">
+        See how well pupils do in their GCSEs. Attainment 8 is based on their average results across their best 8 subjects.
+      </p>
+
+      <p class="govuk-body">
+        Learn more about
+        <a href="/path/of/page">Attainment 8</a>.
+      </p>
+
+      <h3 class="govuk-heading-m">
+        Attainment 8 score
+      </h3>
+
+      {{ govukSelect({
+        id: "academic-year-attainment",
+        name: "academic-year-attainment",
+        label: {
+          text: "Select an academic year"
+        },
+        items: [
+          {
+            value: "2023",
+            text: "2023 to 2024",
+            selected: true
+          },
+          {
+            value: "2022",
+            text: "2022 to 2023"
+          }
+        ]
+      }) }}
+
+      {{ govukTable({
+        caption: "Attainment 8 score",
+        captionClasses: "govuk-visually-hidden",
+        firstCellIsHeader: true,
+        head: [
+          {
+            text: "Comparison"
+          },
+          {
+            text: "Average Attainment 8 score"
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "Dinnington Academy"
+            },
+            {
+              text: "45"
+            }
+          ],
+          [
+            {
+              text: "Local authority average"
+            },
+            {
+              text: "50"
+            }
+          ],
+          [
+            {
+              text: "National average"
+            },
+            {
+              text: "40"
+            }
+          ]
+        ]
+      }) }}
+
+      <h4 class="govuk-heading-s">
+        What this means
+      </h4>
+
+      <p class="govuk-body">
+        An Attainment 8 score of 45 means the average pupil achieved GCSE grades
+        of around 4 to 5 across their subjects. This is a standard to strong pass.
+      </p>
+
+      <p class="govuk-body">
+        This score is 5 points lower than the local authority average.
+        This means pupils at this school perform below other schools locally.
+      </p>
+
+      <p class="govuk-body">
+        The score is 5 points higher than the national average.
+        This means pupils perform better than the national average.
+      </p>
+
+      <h2 class="govuk-heading-l">
+        Progress
+      </h2>
+
+      <p class="govuk-body">
+        See how much progress pupils make between primary and secondary school. Progess 8 compares the results pupils get at the end of primary school with their GCSE results,
+        using their best 8 subjects.
+      </p>
+
+      <p class="govuk-body">
+        Learn more about
+        <a href="/path/of/page">Progress 8</a>.
+      </p>
+
+      <h3 class="govuk-heading-m">
+        Progress 8 score
+      </h3>
+
+      {{ govukSelect({
+        id: "academic-year-progress",
+        name: "academic-year-progress",
+        label: {
+          text: "Select an academic year"
+        },
+        items: [
+          {
+            value: "2023",
+            text: "2023 to 2024",
+            selected: true
+          },
+          {
+            value: "2022",
+            text: "2022 to 2023"
+          }
+        ]
+      }) }}
+
+      <div class="govuk-inset-text">
+        There are no Progress 8 scores for the 2024 to 2025 or 2025 to 2026 academic years.
+        This is because there is no KS2 assessment data available to calculate progress.
+        This was affected by COVID-19 disruption.
+      </div>
+
+    </div>
+  </div>
+{% endblock %}
