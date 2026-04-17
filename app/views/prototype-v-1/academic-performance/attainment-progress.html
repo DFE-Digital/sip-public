@@ -1,0 +1,235 @@
+{% extends "layouts/main.html" %} {% block pageTitle %} Academic performance:
+Attainment and progress {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    {% include "includes/side-nav.html" %}
+  </div>
+
+  <div class="govuk-grid-column-three-quarters">
+    <span class="govuk-caption-xl">Oak Nest Secondary School</span>
+    <h1 class="govuk-heading-xl">Academic performance</h1>
+    <p class="govuk-body">
+      Looking at school performance data is one way to see how well a school is
+      doing. You should look at a range of information about a school before
+      deciding if it’s the right fit for your child.
+    </p>
+
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a
+            class="moj-sub-navigation__link"
+            aria-current="page"
+            href="attainment-progress"
+            >Attainment and progress</a
+          >
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="english-maths-results"
+            >English and maths results</a
+          >
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="subjects-entered"
+            >Subjects entered</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <h2 class="govuk-heading-l">Pupil attainment and progress</h2>
+    <div class="sp-filter">
+      <label class="govuk-label" for="sort">
+        Choose the academic year you want to see results for
+      </label>
+      <select class="govuk-select" id="sort" name="sort">
+        <option value="current" selected>2024 to 2025</option>
+        <option value="last">2023 to 2024</option>
+        <option value="last-last">2022 to 2023</option>
+      </select>
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Show results
+      </button>
+    </div>
+    <p class="govuk-body">
+      Information in this section is for the 2024 to 2025 academic year.
+    </p>
+    <h3 class="govuk-heading-m">Attainment 8</h3>
+    <p class="govuk-body">
+      Attainment 8 measures a pupil’s average achievement across their best
+      performing 8 subjects. The maximum score a pupil can have is 90.
+      Individual pupil scores are not made public. These scores are used to work
+      out the overall Attainment 8 score for the school.
+    </p>
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Find out more about Attainment 8
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body">
+          The 8 subjects that are used in Attainment 8 are split into 3 groups:
+        </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>English and maths, which are both double-weighted</li>
+          <li>
+            EBacc subjects, these are a group of GCSE subjects that help
+            students gain a broad set of knowledge and skills. These subjects
+            include sciences, geography, history, and languages
+          </li>
+          <li>
+            open group which includes any other approved GCSEs or vocational
+            qualifications
+          </li>
+        </ul>
+        <p class="govuk-body">
+          Each GCSE grade is given a point score (for example grade 9 = 9
+          points, grade 8 = 8 points, and so on). The scores from the best 8
+          subjects (with English and Maths counting twice) are added together to
+          give the Attainment 8 score.
+        </p>
+      </div>
+    </details>
+    <div class="sp-card">
+      <div class="sp-card__icon material-symbols-outlined">assignment</div>
+      <div class="sp-card__content">
+        <p class="govuk-body">The attainment 8 score for this school is 45</p>
+        <p class="govuk-body">
+          In England out of the 6.7% of pupils that were absent, 22.3% were
+          persistently absent. This is a greater absent rate and persistent
+          absent rate than Oak Nest Secondary School.
+        </p>
+      </div>
+    </div>
+    <div class="sp-card">
+      <div class="sp-card__content">
+        <p class="govuk-body">
+          The score of 45 is 5 points lower than the local authority average of
+          50, so pupils are performing below local peers.
+        </p>
+        <p class="govuk-body">
+          It’s 5 points higher than the national average of 40, meaning pupils
+          are performing above the national average
+        </p>
+      </div>
+      <div class="sp-card__icon material-symbols-outlined">
+        bar_chart_4_bars
+      </div>
+    </div>
+
+    <h3 class="govuk-heading-m">Progress 8</h3>
+    <p class="govuk-body">
+      Progress 8 is a performance measure used to show how much progress pupils
+      make from the end of primary school (KS2) to the end of secondary school
+      (KS4) across their best performing 8 subjects.
+    </p>
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Find out more about Progress 8
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body">
+          Progress 8 shows how much progress a pupil made compared to other
+          pupils with similar starting points at the end of primary school.
+        </p>
+        <p class="govuk-body">
+          The score shows progress compared to the national average:
+        </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            a score of 0 means students made average progress compared to others
+            with similar starting points
+          </li>
+          <li>
+            a positive score of more than 0 means pupils made more progress than
+            average
+          </li>
+          <li>
+            a negative score of less than 0 means students made less progress
+            than average
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <div class="sp-card">
+      <div class="sp-card__icon material-symbols-outlined">data_info_alert</div>
+      <div class="sp-card__content">
+        <p class="govuk-body">
+          There are no Progress 8 scores for the academic years 2024 to 2025 and
+          2025 to 2026, as there is no KS2 assessment data available to
+          calculate the baseline. This is due to COVID-19 disruption.
+        </p>
+      </div>
+    </div>
+    <nav
+      class="govuk-pagination govuk-pagination--block"
+      aria-label="Pagination"
+    >
+      <div class="govuk-pagination__prev">
+        <a
+          class="govuk-link govuk-pagination__link"
+          href="/attendance"
+          rel="prev"
+        >
+          <svg
+            class="govuk-pagination__icon govuk-pagination__icon--prev"
+            xmlns="http://www.w3.org/2000/svg"
+            height="13"
+            width="15"
+            aria-hidden="true"
+            focusable="false"
+            viewBox="0 0 15 13"
+          >
+            <path
+              d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"
+            ></path>
+          </svg>
+          <span class="govuk-pagination__link-title">
+            Previous<span class="govuk-visually-hidden"> page</span>
+          </span>
+          <span class="govuk-visually-hidden">:</span>
+          <span class="govuk-pagination__link-label">Attendance</span>
+        </a>
+      </div>
+      <div class="govuk-pagination__next">
+        <a
+          class="govuk-link govuk-pagination__link"
+          href="english-maths-results"
+          rel="next"
+        >
+          <svg
+            class="govuk-pagination__icon govuk-pagination__icon--next"
+            xmlns="http://www.w3.org/2000/svg"
+            height="13"
+            width="15"
+            aria-hidden="true"
+            focusable="false"
+            viewBox="0 0 15 13"
+          >
+            <path
+              d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"
+            ></path>
+          </svg>
+          <span class="govuk-pagination__link-title">
+            Next<span class="govuk-visually-hidden"> page</span>
+          </span>
+          <span class="govuk-visually-hidden">:</span>
+          <span class="govuk-pagination__link-label"
+            >Academic performance: English and maths results</span
+          >
+        </a>
+      </div>
+    </nav>
+  </div>
+</div>
+
+{% endblock %}

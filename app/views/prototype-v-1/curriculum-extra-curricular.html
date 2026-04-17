@@ -1,0 +1,176 @@
+{% extends "layouts/main.html" %} {% block pageTitle %} Curriculum and
+extra-curricular activities {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    {% include "includes/side-nav.html" %}
+  </div>
+
+  <div class="govuk-grid-column-three-quarters">
+    <span class="govuk-caption-xl">Oak Nest Secondary School</span>
+    <h1 class="govuk-heading-xl">Curriculum and extra-curricular activities</h1>
+    <h2 class="govuk-heading-l">Curriculum</h2>
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h3 class="govuk-summary-card__title">Current curriculum</h3>
+      </div>
+      <div class="govuk-summary-card__content">
+        <p class="govuk-body">
+          Subjects taught at each school will vary. Most secondary schools will
+          teach the core subjects of English, maths and science, along with the
+          foundation subjects of the national curriculum. Schools can also
+          include other subjects or topics of their choice as part of the school
+          curriculum.
+        </p>
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Key stage 3 (KS3 curriculum)<br />
+              Years 7 to 9
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <a href="#" class="govuk-link govuk-link--no-visited-state"
+                >View the KS3 curriculum on the school website</a
+              >
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Key stage 4 (KS4 curriculum)<br />
+              Years 10 and 11
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-link govuk-link--no-visited-state"
+                  >View the KS4 curriculum on the school website</a
+                >
+              </td>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <hr
+      class="govuk-section-break govuk-section-break--l govuk-section-break--visible"
+    />
+
+    <h2 class="govuk-heading-l">Extra-curricular activities</h2>
+    <p class="govuk-body">
+      Schools can offer a range of extra-curricular activities, for example:
+    </p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        community or diversity clubs - some schools may offer activities such as
+        an LGBT+ club or a well-being club
+      </li>
+      <li>creative arts</li>
+      <li>
+        clubs relating to an academic subject that do not include homework or
+        revision sessions
+      </li>
+      <li>performing arts</li>
+      <li>sports and physical activities</li>
+      <li>volunteering</li>
+      <li>
+        uniform groups - some schools may offer Combined Cadet Force, Guides or
+        Scouts
+      </li>
+      <li>
+        personal and social development - some schools may offer activities such
+        as Duke of Edinburgh Award
+      </li>
+    </ul>
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h3 class="govuk-summary-card__title">
+          Current extra-curricular activities offered
+        </h3>
+      </div>
+      <div class="govuk-summary-card__content">
+        <p class="govuk-body">
+          Most schools offer a range of activities that are linked to, or work
+          in addition to, the curriculum.
+        </p>
+        <p class="govuk-body">
+          The range of activities can vary due to staff availability, time of
+          year and funding availability.
+        </p>
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Extra-curricular activities</dt>
+            <dd class="govuk-summary-list__value">
+              <a href="#" class="govuk-link govuk-link--no-visited-state"
+                >Visit the school website for current extra-curricular
+                activities</a
+              >
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <nav
+      class="govuk-pagination govuk-pagination--block"
+      aria-label="Pagination"
+    >
+      <div class="govuk-pagination__prev">
+        <a
+          class="govuk-link govuk-pagination__link"
+          href="admissions"
+          rel="prev"
+        >
+          <svg
+            class="govuk-pagination__icon govuk-pagination__icon--prev"
+            xmlns="http://www.w3.org/2000/svg"
+            height="13"
+            width="15"
+            aria-hidden="true"
+            focusable="false"
+            viewBox="0 0 15 13"
+          >
+            <path
+              d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"
+            ></path>
+          </svg>
+          <span class="govuk-pagination__link-title">
+            Previous<span class="govuk-visually-hidden"> page</span>
+          </span>
+          <span class="govuk-visually-hidden">:</span>
+          <span class="govuk-pagination__link-label">Admissions</span>
+        </a>
+      </div>
+      <div class="govuk-pagination__next">
+        <a
+          class="govuk-link govuk-pagination__link"
+          href="attendance"
+          rel="next"
+        >
+          <svg
+            class="govuk-pagination__icon govuk-pagination__icon--next"
+            xmlns="http://www.w3.org/2000/svg"
+            height="13"
+            width="15"
+            aria-hidden="true"
+            focusable="false"
+            viewBox="0 0 15 13"
+          >
+            <path
+              d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"
+            ></path>
+          </svg>
+          <span class="govuk-pagination__link-title">
+            Next<span class="govuk-visually-hidden"> page</span>
+          </span>
+          <span class="govuk-visually-hidden">:</span>
+          <span class="govuk-pagination__link-label">Attendance</span>
+        </a>
+      </div>
+    </nav>
+  </div>
+</div>
+
+{% endblock %}

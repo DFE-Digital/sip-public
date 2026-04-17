@@ -1,6 +1,141 @@
 //
 // For guidance on how to add CSS and SCSS see:
 // https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
-// 
+//
 
-// Add extra styles here
+// styling for callout cards and cards with icons, e.g attendance and progress 8
+.sp-card {
+  box-sizing: border-box;
+  background-color: #f4f8fb;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.sp-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+// makes sure card content is centred vertically
+.sp-card__content p,
+.sp-card__content table {
+  margin: 0;
+}
+
+// icon styling
+.sp-card__icon.material-symbols-outlined {
+  color: govuk-colour("dark-blue");
+  font-size: 4rem;
+}
+
+// data point styling
+.sp-callout__value {
+  color: govuk-colour("dark-blue");
+}
+
+// styling for cards that contain graphs/charts
+.sp-card-graph {
+  box-sizing: border-box;
+  border: solid 1px $govuk-border-colour;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 20px;
+}
+
+//bar chart container
+.chart {
+  height: 250px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+//cluster bar chart container
+.cluster-chart {
+  height: 450px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+// styling for select and button filters, e.g. on progress 8 and grade 5 and above
+.sp-filter {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.sp-filter > * {
+  margin: 0;
+}
+
+.sp-filter button {
+  width: max-content;
+}
+
+// mobile styling
+@media (max-width: 40.0525em) {
+  // MoJ side nav to stack instead of wrap
+  .moj-side-navigation__list {
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .moj-side-navigation__item a {
+    width: 100%;
+  }
+
+  // MoJ side nav to use the designed styling instead of the default
+  .moj-side-navigation__item a,
+  .moj-side-navigation__item a:link,
+  .moj-side-navigation__item a:visited {
+    padding: 10px;
+    border-left: 4px solid transparent;
+    background-color: inherit;
+    border-bottom: none;
+  }
+
+  .moj-side-navigation__item--active a:link,
+  .moj-side-navigation__item--active a:visited {
+    border-color: govuk-colour("blue");
+    font-weight: bold;
+    background-color: govuk-colour("light-grey");
+  }
+
+  .moj-side-navigation__item--active a:focus,
+  .moj-side-navigation__item a:focus {
+    border-color: $govuk-input-border-colour;
+    background-color: $govuk-focus-colour;
+  }
+
+  //icon styling
+  .sp-card__icon.material-symbols-outlined {
+    font-size: 3rem;
+  }
+
+  // styling for select and button filters, e.g. on progress 8 and grade 5 and above
+  .sp-filter {
+    display: inherit;
+  }
+  .sp-filter > * {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .sp-filter button {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}

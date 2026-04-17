@@ -1,0 +1,212 @@
+{% extends "layouts/main.html" %} {% block pageTitle %} Academic performance:
+English and maths results {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    {% include "includes/side-nav.html" %}
+  </div>
+
+  <div class="govuk-grid-column-three-quarters">
+    <span class="govuk-caption-xl">Oak Nest Secondary School</span>
+    <h1 class="govuk-heading-xl">Academic performance</h1>
+    <p class="govuk-body">
+      Looking at school performance data is one way to see how well a school is
+      doing. You should look at a range of information about a school before
+      deciding if it’s the right fit for your child.
+    </p>
+
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="attainment-progress"
+            >Attainment and progress</a
+          >
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a
+            class="moj-sub-navigation__link"
+            aria-current="page"
+            href="english-maths-results"
+            >English and maths results</a
+          >
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="subjects-entered"
+            >Subjects entered</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <h2 class="govuk-heading-l">
+      English and maths results for the previous academic year
+    </h2>
+
+    <p class="govuk-body">
+      Information in this section is for the 2024 to 2025 academic year.
+    </p>
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          GCSE grade 9 to 1 scale explained
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body">
+          GCSEs in England have been graded on a 9 to 1 scale since 2017. This
+          replaced the previous A* to G scale. 
+        </p>
+        <p class="govuk-body">
+          The number scale is not directly equivalent to the old letter one. But
+          the old and current grading scales are comparable at the following
+          points: 
+        </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            the bottom of a grade 7 is comparable to the bottom of the old grade
+            A
+          </li>
+          <li>
+            the bottom of grade 4 is comparable to the bottom of the old grade
+            C 
+          </li>
+          <li>
+            the bottom of grade 1 is comparable to the bottom of the old grade G
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <div class="sp-filter">
+      <label class="govuk-label" for="sort">
+        Choose the grade you want to see results for
+      </label>
+      <select class="govuk-select" id="sort" name="sort">
+        <option value="g5" selected>Grade 5 and above</option>
+        <option value="g4">Grade 4 and above</option>
+      </select>
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Show results
+      </button>
+    </div>
+    <div class="sp-card-graph">
+      <h3 class="govuk-heading-m">
+        Grade 5 and above in English and maths GCSEs
+      </h3>
+      <p body="govuk-body">
+        Grade 5 is comparable to the top of the old grade C.
+      </p>
+
+      <div id="english-maths" class="chart"></div>
+      <button
+        type="submit"
+        class="govuk-button govuk-button--secondary"
+        data-module="govuk-button"
+      >
+        Show as a table
+      </button>
+      <button
+        type="submit"
+        class="govuk-button govuk-button--secondary"
+        data-module="govuk-button"
+      >
+        Show data over time
+      </button>
+    </div>
+
+    <div class="sp-card-graph">
+      <h3 class="govuk-heading-m">
+        Results by pupil types for Grade 5 and above in English and maths GCSEs
+      </h3>
+      <p body="govuk-body">
+        Grade 5 is comparable to the top of the old grade C.
+      </p>
+
+      <div id="english-maths-pupil-type" class="cluster-chart"></div>
+      <button
+        type="submit"
+        class="govuk-button govuk-button--secondary"
+        data-module="govuk-button"
+      >
+        Show as a table
+      </button>
+    </div>
+    <nav
+      class="govuk-pagination govuk-pagination--block"
+      aria-label="Pagination"
+    >
+      <div class="govuk-pagination__prev">
+        <a
+          class="govuk-link govuk-pagination__link"
+          href="attainment-progress"
+          rel="prev"
+        >
+          <svg
+            class="govuk-pagination__icon govuk-pagination__icon--prev"
+            xmlns="http://www.w3.org/2000/svg"
+            height="13"
+            width="15"
+            aria-hidden="true"
+            focusable="false"
+            viewBox="0 0 15 13"
+          >
+            <path
+              d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"
+            ></path>
+          </svg>
+          <span class="govuk-pagination__link-title">
+            Previous<span class="govuk-visually-hidden"> page</span>
+          </span>
+          <span class="govuk-visually-hidden">:</span>
+          <span class="govuk-pagination__link-label"
+            >Academic performance: Attainment and progress</span
+          >
+        </a>
+      </div>
+      <div class="govuk-pagination__next">
+        <a
+          class="govuk-link govuk-pagination__link"
+          href="subjects-entered"
+          rel="next"
+        >
+          <svg
+            class="govuk-pagination__icon govuk-pagination__icon--next"
+            xmlns="http://www.w3.org/2000/svg"
+            height="13"
+            width="15"
+            aria-hidden="true"
+            focusable="false"
+            viewBox="0 0 15 13"
+          >
+            <path
+              d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"
+            ></path>
+          </svg>
+          <span class="govuk-pagination__link-title">
+            Next<span class="govuk-visually-hidden"> page</span>
+          </span>
+          <span class="govuk-visually-hidden">:</span>
+          <span class="govuk-pagination__link-label"
+            >Academic performance: Subjects entered</span
+          >
+        </a>
+      </div>
+    </nav>
+  </div>
+</div>
+
+{% endblock %} {% block pageScripts %}
+
+<!-- Load your local chart code (file in app/assets/javascripts) -->
+<script src="/public/javascripts/google-charts.js"></script>
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+<!-- Initialise the chart -->
+<script>
+  google.charts.load("current", { packages: ["corechart"] });
+  google.charts.setOnLoadCallback(window.drawGoogleChart);
+</script>
+
+{% endblock %}

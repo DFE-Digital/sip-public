@@ -1,0 +1,184 @@
+{% extends "layouts/main.html" %} {% block pageTitle %} Attendance {% endblock
+%}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    {% include "includes/side-nav.html" %}
+  </div>
+
+  <div class="govuk-grid-column-three-quarters">
+    <span class="govuk-caption-xl">Oak Nest Secondary School</span>
+    <h1 class="govuk-heading-xl">Attendance</h1>
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Attendance policy</h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <p class="govuk-body">
+          All schools must publish an attendance policy. This should outline
+          expectations, procedures, and responsibilities for ensuring pupils
+          attend school regularly and on time.
+        </p>
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Attendance policy</dt>
+            <dd class="govuk-summary-list__value">
+              <a href="#" class="govuk-link govuk-link--no-visited-state"
+                >View the attendance policy on the school website</a
+              >
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <h2 class="govuk-heading-l">Attendance in the previous academic year</h2>
+    <p class="govuk-body">
+      Attendance data Information in this section is for the 2024 to 2025
+      academic year.
+    </p>
+    <p class="govuk-body">
+      Good attendance helps support pupils’ learning, wellbeing and wider
+      development.
+    </p>
+    <p class="govuk-body">
+      You can only allow your child to miss school if they’re too ill to go in
+      or you have advance permission from the school, for example due to a
+      child’s medical needs.
+    </p>
+
+    <div class="sp-card">
+      <div class="sp-card__content">
+        <p
+          class="sp-callout__value govuk-!-font-size-36 govuk-!-font-weight-bold"
+        >
+          93.7%
+        </p>
+        <p class="sp-callout__key govuk-body">
+          Oak Nest’s attendance in the 2024 to 2025 academic year
+        </p>
+      </div>
+      <div class="sp-card__content">
+        <table class="govuk-table">
+          <caption
+            class="govuk-table__caption govuk-table__caption--m govuk-visually-hidden"
+          >
+            Areas and their attendance
+          </caption>
+          <thead class="govuk-table__head govuk-visually-hidden">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Area</th>
+              <th scope="col" class="govuk-table__header">Attendance</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Sheffield average</th>
+              <td class="govuk-table__cell">93.3%</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">England average</th>
+              <td class="govuk-table__cell">93.3%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <hr
+      class="govuk-section-break govuk-section-break--l govuk-section-break--visible"
+    />
+    <h2 class="govuk-heading-l">Absence in the previous academic year</h2>
+    <div class="sp-card">
+      <div class="sp-card__icon material-symbols-outlined">calendar_month</div>
+      <div class="sp-card__content">
+        <p class="govuk-body">
+          Out of the 2.7% of pupils that were absent, 21.1% were persistently
+          absent.
+        </p>
+      </div>
+    </div>
+    <div class="sp-card">
+      <div class="sp-card__content">
+        <p class="govuk-body">
+          In Sheffield out of the 4.9% of pupils that were absent, 19.0% were
+          persistently absent. This is a greater absence rate than Oak Nest
+          Secondary School but a smaller persistent absent rate.
+        </p>
+        <p class="govuk-body">
+          In England out of the 6.7% of pupils that were absent, 22.3% were
+          persistently absent. This is a greater absent rate and persistent
+          absent rate than Oak Nest Secondary School.
+        </p>
+      </div>
+      <div class="sp-card__icon material-symbols-outlined">
+        bar_chart_4_bars
+      </div>
+    </div>
+
+    <nav
+      class="govuk-pagination govuk-pagination--block"
+      aria-label="Pagination"
+    >
+      <div class="govuk-pagination__prev">
+        <a
+          class="govuk-link govuk-pagination__link"
+          href="curriculum-extra-curricular"
+          rel="prev"
+        >
+          <svg
+            class="govuk-pagination__icon govuk-pagination__icon--prev"
+            xmlns="http://www.w3.org/2000/svg"
+            height="13"
+            width="15"
+            aria-hidden="true"
+            focusable="false"
+            viewBox="0 0 15 13"
+          >
+            <path
+              d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"
+            ></path>
+          </svg>
+          <span class="govuk-pagination__link-title">
+            Previous<span class="govuk-visually-hidden"> page</span>
+          </span>
+          <span class="govuk-visually-hidden">:</span>
+          <span class="govuk-pagination__link-label"
+            >Curriculum and extra-curricular activities</span
+          >
+        </a>
+      </div>
+      <div class="govuk-pagination__next">
+        <a
+          class="govuk-link govuk-pagination__link"
+          href="academic-performance/attainment-progress"
+          rel="next"
+        >
+          <svg
+            class="govuk-pagination__icon govuk-pagination__icon--next"
+            xmlns="http://www.w3.org/2000/svg"
+            height="13"
+            width="15"
+            aria-hidden="true"
+            focusable="false"
+            viewBox="0 0 15 13"
+          >
+            <path
+              d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"
+            ></path>
+          </svg>
+          <span class="govuk-pagination__link-title">
+            Next<span class="govuk-visually-hidden"> page</span>
+          </span>
+          <span class="govuk-visually-hidden">:</span>
+          <span class="govuk-pagination__link-label"
+            >Academic performance: Attainment and progress</span
+          >
+        </a>
+      </div>
+    </nav>
+  </div>
+</div>
+
+{% endblock %}

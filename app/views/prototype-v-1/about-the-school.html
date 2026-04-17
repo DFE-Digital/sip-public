@@ -1,0 +1,290 @@
+{% extends "layouts/main.html" %} {% block pageTitle %} About the school {%
+endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    {% include "includes/side-nav.html" %}
+  </div>
+
+  <div class="govuk-grid-column-three-quarters">
+    <span class="govuk-caption-xl">Oak Nest Secondary School</span>
+    <h1 class="govuk-heading-xl">About the school</h1>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Name</dt>
+        <dd class="govuk-summary-list__value">Oak Nest Secondary School</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Academy Trust</dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">Woodland Trust Partnership</p>
+          <div class="govuk-hint">(updated in 2024)</div>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Website</dt>
+        <dd class="govuk-summary-list__value">
+          <a href="#" class="govuk-link govuk-link--no-visited-state"
+            >https://www.oaknest-secondary.sch.uk</a
+          >
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Telephone</dt>
+        <dd class="govuk-summary-list__value">07700 900457</dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-l">Location</h2>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Address</dt>
+        <dd class="govuk-summary-list__value">
+          Sapling Street, Sheffield, South Yorkshire, S1 2AB
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Local authority</dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">Sheffield</p>
+
+          <a href="#" class="govuk-link govuk-link--no-visited-state"
+            >View Sheffield City Council's website</a
+          >
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Your distance from this school</dt>
+        <dd class="govuk-summary-list__value">1.2 miles</dd>
+      </div>
+    </dl>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          View this information on a map
+        </span>
+      </summary>
+      <div class="govuk-details__text">Map :)</div>
+    </details>
+
+    <h2 class="govuk-heading-l">School features</h2>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Value and ethos</dt>
+        <dd class="govuk-summary-list__value">
+          <a href="#" class="govuk-link govuk-link--no-visited-state"
+            >View the value and ethos policy on the school website</a
+          >
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Ofsted report</dt>
+        <dd class="govuk-summary-list__value">
+          <a href="#" class="govuk-link govuk-link--no-visited-state"
+            >View the latest Ofsted report</a
+          >
+          <div class="govuk-hint">Inspected on 22 May 2023</div>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Type of school</dt>
+        <dd class="govuk-summary-list__value">Academy</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Headteacher</dt>
+        <dd class="govuk-summary-list__value">Mr Rupert Farthing</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Age range</dt>
+        <dd class="govuk-summary-list__value">11 to 18</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Number of pupils</dt>
+        <dd class="govuk-summary-list__value">1,230</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Pupil sex</dt>
+        <dd class="govuk-summary-list__value">Mixed</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Religious character</dt>
+        <dd class="govuk-summary-list__value">Church of England</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Sixth form</dt>
+        <dd class="govuk-summary-list__value">Yes</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">SEN unit</dt>
+        <dd class="govuk-summary-list__value">No</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Resourced provision</dt>
+        <dd class="govuk-summary-list__value">Yes</dd>
+      </div>
+    </dl>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          What is a SEN unit or a resourced provision?
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body">
+          SEN (special educational needs) units and resourced provisions are
+          specialist provisions in mainstream schools formally recognised by the
+          local authority.
+        </p>
+        <p class="govuk-body">
+          In SEN units pupils are taught within separate classes for at least
+          half of their time.
+        </p>
+        <p class="govuk-body">
+          In resourced provisions pupils are taught within mainstream classes
+          for at least half of their time, but have access to a base and
+          specialist facilities around the school.
+        </p>
+        <p class="govuk-body">
+          They are both for pupils with SEN, who typically have education,
+          health, and care (EHC) plans.
+        </p>
+      </div>
+    </details>
+
+    <h2 class="govuk-heading-l">School policies</h2>
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">
+          Documents published by the school
+        </h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <p class="govuk-body">
+          All schools in England must publish statutory policies and documents
+          that explain how the school is run and how staff and pupils should
+          behave. Statutory policies and documents must be published on the
+          school’s website. Schools can also create their own guidelines.
+        </p>
+        <p class="govuk-body">
+          <a href="#" class="govuk-link govuk-link--no-visited-state"
+            >View the value and ethos policy on the school website</a
+          >
+        </p>
+        <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--m">
+            Policies and descriptions
+          </caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Policy</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                Accessibility plan
+              </th>
+              <td class="govuk-table__cell">
+                Includes how to increase curriculum participation, improve the
+                physical environment, and make information more accessible for
+                pupils with disabilities.
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Behaviour policy</th>
+              <td class="govuk-table__cell">
+                Includes school rules, what behaviour is expected of pupils and
+                what the school does to prevent bullying.
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                Charging and remissions policy
+              </th>
+              <td class="govuk-table__cell">
+                Schools may charge for certain activities such as school trips
+                or music tuition. This policy covers what the school charges for
+                and when these charges can be reduced or waived.
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Complaints policy</th>
+              <td class="govuk-table__cell">
+                A complaints policy shows how parents or carers can raise
+                concerns with a school and how to make a complaint.
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                Safeguarding policy
+              </th>
+              <td class="govuk-table__cell">
+                Outlines how the school protects pupils from harm, ensuring
+                their safety and well-being.
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                School uniform policy
+              </th>
+              <td class="govuk-table__cell">
+                Outlines to parents and carers what pupils are expected to wear
+                and what the exceptions are.
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                Special educational needs and disabilities (SEND) information
+                report
+              </th>
+              <td class="govuk-table__cell">
+                Schools must publish a report on their approach to SEND,
+                including how the school supports pupils with SEND.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <nav
+      class="govuk-pagination govuk-pagination--block"
+      aria-label="Pagination"
+    >
+      <div class="govuk-pagination__next">
+        <a
+          class="govuk-link govuk-pagination__link"
+          href="admissions"
+          rel="next"
+        >
+          <svg
+            class="govuk-pagination__icon govuk-pagination__icon--next"
+            xmlns="http://www.w3.org/2000/svg"
+            height="13"
+            width="15"
+            aria-hidden="true"
+            focusable="false"
+            viewBox="0 0 15 13"
+          >
+            <path
+              d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"
+            ></path>
+          </svg>
+          <span class="govuk-pagination__link-title">
+            Next<span class="govuk-visually-hidden"> page</span>
+          </span>
+          <span class="govuk-visually-hidden">:</span>
+          <span class="govuk-pagination__link-label">Admissions</span>
+        </a>
+      </div>
+    </nav>
+  </div>
+</div>
+
+{% endblock %}

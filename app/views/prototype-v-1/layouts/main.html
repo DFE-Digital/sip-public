@@ -1,0 +1,32 @@
+{#
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+{% block stylesheets %}
+  {{ super() }}
+
+{% endblock %}
+{% block header %}
+
+    {{ govukHeader() }}
+    {{ govukServiceNavigation({
+        serviceName: serviceName
+    })}}
+
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined"
+  rel="stylesheet"
+  type="text/css"
+/>
+
+{% endblock %}
+
+
+{% block scripts %}
+  {{ super() }}
+  {# Provide a nested block that your pages can override #}
+  {% block pageScripts %}{% endblock %}
+{% endblock %}

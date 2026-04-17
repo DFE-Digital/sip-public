@@ -1,0 +1,261 @@
+{% extends "layouts/main.html" %} {% block pageTitle %} Academic performance:
+Subjects entered {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    {% include "includes/side-nav.html" %}
+  </div>
+
+  <div class="govuk-grid-column-three-quarters">
+    <span class="govuk-caption-xl">Oak Nest Secondary School</span>
+    <h1 class="govuk-heading-xl">Academic performance</h1>
+    <p class="govuk-body">
+      Looking at school performance data is one way to see how well a school is
+      doing. You should look at a range of information about a school before
+      deciding if it’s the right fit for your child.
+    </p>
+
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="attainment-progress"
+            >Attainment and progress</a
+          >
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="english-maths-results"
+            >English and maths results</a
+          >
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a
+            class="moj-sub-navigation__link"
+            aria-current="page"
+            href="subjects-entered"
+            >Subjects entered</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <h2 class="govuk-heading-l">
+      Subjects entered for the previous academic year
+    </h2>
+
+    <p class="govuk-body">
+      Information in this section is for the 2024 to 2025 academic year.
+    </p>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          What do the qualifications mean?
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body">
+          A GCSE is an academic qualification awarded for exams in England.
+          Pupils usually take GCSEs at the age of 15 or 16.
+        </p>
+        <p class="govuk-body">
+          Technical Awards, such as BTECs, are work-related qualifications in
+          areas like travel and tourism or animal care.
+        </p>
+      </div>
+    </details>
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">
+        Core subjects entered
+      </caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Subject</th>
+          <th scope="col" class="govuk-table__header">Qualification</th>
+          <th scope="col" class="govuk-table__header">
+            Percentage of pupils entered
+          </th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">English language</th>
+          <td class="govuk-table__cell">GCSE</td>
+          <td class="govuk-table__cell">95%</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">English literature</th>
+          <td class="govuk-table__cell">GCSE</td>
+          <td class="govuk-table__cell">90%</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Mathematics</th>
+          <td class="govuk-table__cell">GCSE</td>
+          <td class="govuk-table__cell">97%</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Science: Double Award</th>
+          <td class="govuk-table__cell">GCSE</td>
+          <td class="govuk-table__cell">55%</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Biology</th>
+          <td class="govuk-table__cell">GCSE</td>
+          <td class="govuk-table__cell">76%</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Chemistry</th>
+          <td class="govuk-table__cell">GCSE</td>
+          <td class="govuk-table__cell">40%</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Physics</th>
+          <td class="govuk-table__cell">GCSE</td>
+          <td class="govuk-table__cell">34%</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">
+        Additional subjects entered
+      </caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Subject</th>
+          <th scope="col" class="govuk-table__header">Qualification</th>
+          <th scope="col" class="govuk-table__header">
+            Percentage of pupils entered
+          </th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Animal care</th>
+          <td class="govuk-table__cell">Technical award</td>
+          <td class="govuk-table__cell">15%</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Art and design</th>
+          <td class="govuk-table__cell">GCSE</td>
+          <td class="govuk-table__cell">67%</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Computer studies</th>
+          <td class="govuk-table__cell">Technical award</td>
+          <td class="govuk-table__cell">80%</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Construction</th>
+          <td class="govuk-table__cell">Technical award</td>
+          <td class="govuk-table__cell">45%</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Creative design</th>
+          <td class="govuk-table__cell">GCSE</td>
+          <td class="govuk-table__cell">14%</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            Drama and theatre studies
+          </th>
+          <td class="govuk-table__cell">GCSE</td>
+          <td class="govuk-table__cell">38%</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">French</th>
+          <td class="govuk-table__cell">GCSE</td>
+          <td class="govuk-table__cell">65%</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Geography</th>
+          <td class="govuk-table__cell">GCSE</td>
+          <td class="govuk-table__cell">20%</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">History</th>
+          <td class="govuk-table__cell">GCSE</td>
+          <td class="govuk-table__cell">18%</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Music</th>
+          <td class="govuk-table__cell">GCSE</td>
+          <td class="govuk-table__cell">55%</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            Physical education / sports
+          </th>
+          <td class="govuk-table__cell">GCSE</td>
+          <td class="govuk-table__cell">44%</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Religious studies</th>
+          <td class="govuk-table__cell">GCSE</td>
+          <td class="govuk-table__cell">20%</td>
+        </tr>
+      </tbody>
+    </table>
+    <nav
+      class="govuk-pagination govuk-pagination--block"
+      aria-label="Pagination"
+    >
+      <div class="govuk-pagination__prev">
+        <a
+          class="govuk-link govuk-pagination__link"
+          href="english-maths-results"
+          rel="prev"
+        >
+          <svg
+            class="govuk-pagination__icon govuk-pagination__icon--prev"
+            xmlns="http://www.w3.org/2000/svg"
+            height="13"
+            width="15"
+            aria-hidden="true"
+            focusable="false"
+            viewBox="0 0 15 13"
+          >
+            <path
+              d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"
+            ></path>
+          </svg>
+          <span class="govuk-pagination__link-title">
+            Previous<span class="govuk-visually-hidden"> page</span>
+          </span>
+          <span class="govuk-visually-hidden">:</span>
+          <span class="govuk-pagination__link-label"
+            >Academic performance: English and maths results</span
+          >
+        </a>
+      </div>
+      <div class="govuk-pagination__next">
+        <a
+          class="govuk-link govuk-pagination__link"
+          href="/destinations"
+          rel="next"
+        >
+          <svg
+            class="govuk-pagination__icon govuk-pagination__icon--next"
+            xmlns="http://www.w3.org/2000/svg"
+            height="13"
+            width="15"
+            aria-hidden="true"
+            focusable="false"
+            viewBox="0 0 15 13"
+          >
+            <path
+              d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"
+            ></path>
+          </svg>
+          <span class="govuk-pagination__link-title">
+            Next<span class="govuk-visually-hidden"> page</span>
+          </span>
+          <span class="govuk-visually-hidden">:</span>
+          <span class="govuk-pagination__link-label">Destinations</span>
+        </a>
+      </div>
+    </nav>
+  </div>
+</div>
+
+{% endblock %}
