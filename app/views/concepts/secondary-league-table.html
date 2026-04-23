@@ -1,0 +1,308 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Secondary schools and colleges – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l">
+      Compare secondary schools and colleges in England
+    </h1>
+
+    <p class="govuk-body govuk-!-margin-bottom-6">
+      Compare schools by performance measures such as overall performance, English and Maths GCSEs, or Attainment 8, and refine by pupil characteristic such as sex.
+    </p>
+
+    <h2 class="govuk-heading-m">
+      Choose how to compare schools
+    </h2>
+
+    {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+    {{ govukSelect({
+      id: "performance-measure",
+      name: "performanceMeasure",
+      label: {
+        text: "Performance measure"
+      },
+      items: [
+        { value: "overall", text: "Overall performance" },
+        { value: "english-maths", text: "English and maths GCSEs", selected: true },
+        { value: "qualification", text: "At least one qualification" },
+        { value: "destinations", text: "Pupil destinations after Key Stage 4" }
+      ]
+    }) }}
+
+    <h2 class="govuk-heading-m">
+      Narrow down by pupil characteristic
+    </h2>
+
+    {{ govukSelect({
+      id: "pupil-characteristic",
+      name: "pupilCharacteristic",
+      label: {
+        text: "Pupil characteristic"
+      },
+      items: [
+        { value: "all", text: "All pupils" },
+        { value: "girls", text: "Girls" },
+        { value: "boys", text: "Boys", selected: true },
+        { value: "disadvantaged", text: "Disadvantaged" },
+        { value: "eal", text: "English as a foreign language" }
+      ]
+    }) }}
+
+
+    {# ------------------------------------------
+       Imports
+    ------------------------------------------ #}
+    {% from "moj/components/filter/macro.njk" import mojFilter %}
+    {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+    {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+    {# ------------------------------------------
+       Filter options
+    ------------------------------------------ #}
+    {% set filterOptionsHtml %}
+
+      {{ govukDetails({
+        summaryText: "Type of school",
+        classes: "govuk-!-margin-bottom-4",
+        html: govukCheckboxes({
+          idPrefix: "type",
+          name: "type",
+          classes: "govuk-checkboxes--small",
+          fieldset: {
+            legend: {
+              text: "Type of school",
+              classes: "govuk-visually-hidden"
+            }
+          },
+          items: [
+            { value: "academy", text: "Academy" },
+            { value: "maintained", text: "Maintained school" },
+            { value: "independent", text: "Independent school" },
+            { value: "special", text: "Special school" },
+            { value: "college", text: "College" }
+          ]
+        })
+      }) }}
+
+      {{ govukDetails({
+        summaryText: "Pupil characteristics",
+        classes: "govuk-!-margin-bottom-4",
+        html: govukCheckboxes({
+          idPrefix: "pupil",
+          name: "pupil",
+          classes: "govuk-checkboxes--small",
+          fieldset: {
+            legend: {
+              text: "Pupil characteristics",
+              classes: "govuk-visually-hidden"
+            }
+          },
+          items: [
+            { value: "boys", text: "Boys" },
+            { value: "girls", text: "Girls" },
+            { value: "disadvantaged", text: "Disadvantaged pupils" },
+            { value: "eal", text: "English as an additional language" },
+            { value: "non-mobile", text: "Non-mobile pupils" }
+          ]
+        })
+      }) }}
+
+      {{ govukDetails({
+        summaryText: "Religious character",
+        classes: "govuk-!-margin-bottom-4",
+        html: govukCheckboxes({
+          idPrefix: "religion",
+          name: "religion",
+          classes: "govuk-checkboxes--small",
+          fieldset: {
+            legend: {
+              text: "Religious character",
+              classes: "govuk-visually-hidden"
+            }
+          },
+          items: [
+            { value: "anglican", text: "Anglican" },
+            { value: "catholic", text: "Catholic" },
+            { value: "christian", text: "Christian" },
+            { value: "coe", text: "Church of England" },
+            { value: "hindu", text: "Hindu" },
+            { value: "islam", text: "Islam" },
+            { value: "jewish", text: "Jewish" },
+            { value: "none", text: "No religious character" },
+            { value: "other", text: "Other" }
+          ]
+        })
+      }) }}
+
+      {{ govukDetails({
+        summaryText: "Data available",
+        classes: "govuk-!-margin-bottom-4",
+        html: govukCheckboxes({
+          idPrefix: "data",
+          name: "data",
+          classes: "govuk-checkboxes--small",
+          fieldset: {
+            legend: {
+              text: "Data available",
+              classes: "govuk-visually-hidden"
+            }
+          },
+          items: [
+            {
+              value: "has-data",
+              text: "Exclude schools or colleges with no data"
+            }
+          ]
+        })
+      }) }}
+
+      {{ govukDetails({
+        summaryText: "Single sex or mixed school",
+        classes: "govuk-!-margin-bottom-4",
+        html: govukCheckboxes({
+          idPrefix: "gender-type",
+          name: "genderType",
+          classes: "govuk-checkboxes--small",
+          fieldset: {
+            legend: {
+              text: "Single sex or mixed school",
+              classes: "govuk-visually-hidden"
+            }
+          },
+          items: [
+            { value: "boys", text: "Boys" },
+            { value: "girls", text: "Girls" },
+            { value: "mixed", text: "Mixed" }
+          ]
+        })
+      }) }}
+
+
+    {% endset %}
+
+    {# ------------------------------------------
+       MOJ Filter wrapper
+    ------------------------------------------ #}
+    {{ mojFilter({
+      heading: {
+        text: "Filter the results"
+      },
+      submit: false,
+      selectedFilters: {
+        heading: {
+          text: "Selected filters"
+        },
+        clearLink: {
+          text: "Clear filters"
+        },
+        categories: [
+          {
+            heading: { text: "Type of school" },
+            items: [
+              { href: "#", text: "Academy" }
+            ]
+          }
+        ]
+      },
+      optionsHtml: filterOptionsHtml
+    }) }}
+
+    {# ------------------------------------------
+       Table
+    ------------------------------------------ #}
+    {% from "govuk/components/table/macro.njk" import govukTable %}
+
+    <div class="govuk-!-margin-top-6">
+      {{ govukTable({
+        attributes: {
+          "data-module": "moj-sortable-table"
+        },
+        caption: "Comparing schools by overall performance for all pupils",
+      captionClasses: "govuk-heading-m govuk-!-margin-bottom-4",
+        head: [
+          { text: "School name", attributes: { "aria-sort": "ascending" } },
+          { text: "Type of school", attributes: { "aria-sort": "none" } },
+          { text: "Number of pupils at end of key stage 4", format: "numeric", attributes: { "aria-sort": "none" } },
+          { text: "Attainment 8 score", format: "numeric", attributes: { "aria-sort": "none" } },
+          { text: "Grade 5 or above in English & maths GCSEs", format: "numeric", attributes: { "aria-sort": "none" } }
+        ],
+        rows: [
+          [
+            { text: "Springfield High School" },
+            { text: "Academy" },
+            { text: "180", format: "numeric", attributes: { "data-sort-value": "180" } },
+            { text: "52.3", format: "numeric", attributes: { "data-sort-value": "52.3" } },
+            { text: "48%", format: "numeric", attributes: { "data-sort-value": "48" } }
+          ],
+          [
+            { text: "Riverside College" },
+            { text: "College" },
+            { text: "220", format: "numeric", attributes: { "data-sort-value": "220" } },
+            { text: "58.7", format: "numeric", attributes: { "data-sort-value": "58.7" } },
+            { text: "55%", format: "numeric", attributes: { "data-sort-value": "55" } }
+          ],
+          [
+            { text: "Springfield High School" },
+            { text: "Academy" },
+            { text: "180", format: "numeric", attributes: { "data-sort-value": "180" } },
+            { text: "52.3", format: "numeric", attributes: { "data-sort-value": "52.3" } },
+            { text: "48%", format: "numeric", attributes: { "data-sort-value": "48" } }
+          ],
+          [
+            { text: "Riverside College" },
+            { text: "College" },
+            { text: "220", format: "numeric", attributes: { "data-sort-value": "220" } },
+            { text: "58.7", format: "numeric", attributes: { "data-sort-value": "58.7" } },
+            { text: "55%", format: "numeric", attributes: { "data-sort-value": "55" } }
+          ],
+          [
+            { text: "Springfield High School" },
+            { text: "Academy" },
+            { text: "180", format: "numeric", attributes: { "data-sort-value": "180" } },
+            { text: "52.3", format: "numeric", attributes: { "data-sort-value": "52.3" } },
+            { text: "48%", format: "numeric", attributes: { "data-sort-value": "48" } }
+          ],
+          [
+            { text: "Riverside College" },
+            { text: "College" },
+            { text: "220", format: "numeric", attributes: { "data-sort-value": "220" } },
+            { text: "58.7", format: "numeric", attributes: { "data-sort-value": "58.7" } },
+            { text: "55%", format: "numeric", attributes: { "data-sort-value": "55" } }
+          ],
+                [
+            { text: "Springfield High School" },
+            { text: "Academy" },
+            { text: "180", format: "numeric", attributes: { "data-sort-value": "180" } },
+            { text: "52.3", format: "numeric", attributes: { "data-sort-value": "52.3" } },
+            { text: "48%", format: "numeric", attributes: { "data-sort-value": "48" } }
+          ],
+          [
+            { text: "Riverside College" },
+            { text: "College" },
+            { text: "220", format: "numeric", attributes: { "data-sort-value": "220" } },
+            { text: "58.7", format: "numeric", attributes: { "data-sort-value": "58.7" } },
+            { text: "55%", format: "numeric", attributes: { "data-sort-value": "55" } }
+          ]
+        ]
+      }) }}
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
