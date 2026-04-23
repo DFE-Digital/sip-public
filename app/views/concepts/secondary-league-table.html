@@ -63,168 +63,188 @@
       ]
     }) }}
 
+    <div class="moj-filter" data-module="moj-filter">
+      <div class="moj-filter__header">
+        <div class="moj-filter__header-title">
+          <h2 class="govuk-heading-m">Filter the results</h2>
+        </div>
+        <div class="moj-filter__header-action"></div>
+      </div>
 
-    {# ------------------------------------------
-       Imports
-    ------------------------------------------ #}
-    {% from "moj/components/filter/macro.njk" import mojFilter %}
-    {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-    {% from "govuk/components/details/macro.njk" import govukDetails %}
+      <div class="moj-filter__content">
+        <div class="moj-filter__selected">
+          <div class="moj-filter__selected-heading">
+            <div class="moj-filter__heading-title">
+              <h2 class="govuk-heading-m">Selected filters</h2>
+            </div>
+            <div class="moj-filter__heading-action">
+              <p><a class="govuk-link govuk-link--no-visited-state" href="">Clear filters</a></p>
+            </div>
+          </div>
 
-    {# ------------------------------------------
-       Filter options
-    ------------------------------------------ #}
-    {% set filterOptionsHtml %}
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Type of school</h3>
+          <ul class="moj-filter-tags">
+            <li>
+              <a class="moj-filter__tag" href="#">
+                <span class="govuk-visually-hidden">Remove this filter</span>
+                Academy
+              </a>
+            </li>
+          </ul>
+        </div>
 
-      {{ govukDetails({
-        summaryText: "Type of school",
-        classes: "govuk-!-margin-bottom-4",
-        html: govukCheckboxes({
-          idPrefix: "type",
-          name: "type",
-          classes: "govuk-checkboxes--small",
-          fieldset: {
-            legend: {
-              text: "Type of school",
-              classes: "govuk-visually-hidden"
-            }
-          },
-          items: [
-            { value: "academy", text: "Academy" },
-            { value: "maintained", text: "Maintained school" },
-            { value: "independent", text: "Independent school" },
-            { value: "special", text: "Special school" },
-            { value: "college", text: "College" }
-          ]
-        })
-      }) }}
+        <div class="moj-filter__options">
+          <h2 class="govuk-heading-m">Filter by</h2>
 
-      {{ govukDetails({
-        summaryText: "Pupil characteristics",
-        classes: "govuk-!-margin-bottom-4",
-        html: govukCheckboxes({
-          idPrefix: "pupil",
-          name: "pupil",
-          classes: "govuk-checkboxes--small",
-          fieldset: {
-            legend: {
-              text: "Pupil characteristics",
-              classes: "govuk-visually-hidden"
-            }
-          },
-          items: [
-            { value: "boys", text: "Boys" },
-            { value: "girls", text: "Girls" },
-            { value: "disadvantaged", text: "Disadvantaged pupils" },
-            { value: "eal", text: "English as an additional language" },
-            { value: "non-mobile", text: "Non-mobile pupils" }
-          ]
-        })
-      }) }}
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">Type of school</span>
+            </summary>
+            <div class="govuk-details__text">
+              <div class="govuk-checkboxes govuk-checkboxes--small">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="type-academy" type="checkbox">
+                  <label class="govuk-label govuk-checkboxes__label" for="type-academy">Academy</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="type-maintained" type="checkbox">
+                  <label class="govuk-label govuk-checkboxes__label" for="type-maintained">Maintained school</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="type-independent" type="checkbox">
+                  <label class="govuk-label govuk-checkboxes__label" for="type-independent">Independent school</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="type-special" type="checkbox">
+                  <label class="govuk-label govuk-checkboxes__label" for="type-special">Special school</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="type-college" type="checkbox">
+                  <label class="govuk-label govuk-checkboxes__label" for="type-college">College</label>
+                </div>
+              </div>
+            </div>
+          </details>
 
-      {{ govukDetails({
-        summaryText: "Religious character",
-        classes: "govuk-!-margin-bottom-4",
-        html: govukCheckboxes({
-          idPrefix: "religion",
-          name: "religion",
-          classes: "govuk-checkboxes--small",
-          fieldset: {
-            legend: {
-              text: "Religious character",
-              classes: "govuk-visually-hidden"
-            }
-          },
-          items: [
-            { value: "anglican", text: "Anglican" },
-            { value: "catholic", text: "Catholic" },
-            { value: "christian", text: "Christian" },
-            { value: "coe", text: "Church of England" },
-            { value: "hindu", text: "Hindu" },
-            { value: "islam", text: "Islam" },
-            { value: "jewish", text: "Jewish" },
-            { value: "none", text: "No religious character" },
-            { value: "other", text: "Other" }
-          ]
-        })
-      }) }}
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">Pupil characteristics</span>
+            </summary>
+            <div class="govuk-details__text">
+              <div class="govuk-checkboxes govuk-checkboxes--small">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="pupil-boys" type="checkbox">
+                  <label class="govuk-label govuk-checkboxes__label" for="pupil-boys">Boys</label>
+                </div>
+                <div class="govuk-checkboxes__item ">
+                  <input class="govuk-checkboxes__input" id="pupil-girls" type="checkbox">
+                  <label class="govuk-label govuk-checkboxes__label" for="pupil-girls">Girls</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="pupil-disadvantaged" type="checkbox">
+                  <label class="govuk-label govuk-checkboxes__label" for="pupil-disadvantaged">Disadvantaged pupils</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="pupil-eal" type="checkbox">
+                  <label class="govuk-label govuk-checkboxes__label" for="pupil-eal">English as an additional language</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="pupil-eal" type="checkbox">
+                  <label class="govuk-label govuk-checkboxes__label" for="pupil-eal">Non-mobile pupils</label>
+                </div>
+              </div>
+            </div>
+          </details>
 
-      {{ govukDetails({
-        summaryText: "Data available",
-        classes: "govuk-!-margin-bottom-4",
-        html: govukCheckboxes({
-          idPrefix: "data",
-          name: "data",
-          classes: "govuk-checkboxes--small",
-          fieldset: {
-            legend: {
-              text: "Data available",
-              classes: "govuk-visually-hidden"
-            }
-          },
-          items: [
-            {
-              value: "has-data",
-              text: "Exclude schools or colleges with no data"
-            }
-          ]
-        })
-      }) }}
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">Religious character</span>
+            </summary>
+            <div class="govuk-details__text">
+              <div class="govuk-checkboxes govuk-checkboxes--small">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="religion-anglican" type="checkbox">
+                  <label class="govuk-label govuk-checkboxes__label" for="religion-anglican">Anglican</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="religion-catholic" type="checkbox">
+                  <label class="govuk-label govuk-checkboxes__label" for="religion-catholic">Catholic</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="religion-anglican" type="checkbox">
+                  <label class="govuk-label govuk-checkboxes__label" for="religion-anglican">Christian</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="religion-catholic" type="checkbox">
+                  <label class="govuk-label govuk-checkboxes__label" for="religion-catholic">Church of England</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="religion-anglican" type="checkbox">
+                  <label class="govuk-label govuk-checkboxes__label" for="religion-anglican">Hindu</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="religion-catholic" type="checkbox">
+                  <label class="govuk-label govuk-checkboxes__label" for="religion-catholic">Islam</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="religion-catholic" type="checkbox">
+                  <label class="govuk-label govuk-checkboxes__label" for="religion-catholic">Jewish</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="religion-none" type="checkbox">
+                  <label class="govuk-label govuk-checkboxes__label" for="religion-none">No religious character</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="religion-none" type="checkbox">
+                  <label class="govuk-label govuk-checkboxes__label" for="religion-none">Other</label>
+                </div>
+              </div>
+            </div>
+          </details>
 
-      {{ govukDetails({
-        summaryText: "Single sex or mixed school",
-        classes: "govuk-!-margin-bottom-4",
-        html: govukCheckboxes({
-          idPrefix: "gender-type",
-          name: "genderType",
-          classes: "govuk-checkboxes--small",
-          fieldset: {
-            legend: {
-              text: "Single sex or mixed school",
-              classes: "govuk-visually-hidden"
-            }
-          },
-          items: [
-            { value: "boys", text: "Boys" },
-            { value: "girls", text: "Girls" },
-            { value: "mixed", text: "Mixed" }
-          ]
-        })
-      }) }}
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">Data available</span>
+            </summary>
+            <div class="govuk-details__text">
+              <div class="govuk-checkboxes govuk-checkboxes--small">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="religion-none" type="checkbox">
+                  <label class="govuk-label govuk-checkboxes__label" for="religion-none">Exclude schools or colleges with no data</label>
+                </div>
+              </div>
+            </div>
+          </details>
 
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">Single sex or mixed school</span>
+            </summary>
+            <div class="govuk-details__text">
+              <div class="govuk-checkboxes govuk-checkboxes--small">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="religion-anglican" type="checkbox">
+                  <label class="govuk-label govuk-checkboxes__label" for="religion-anglican">Boys</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="religion-catholic" type="checkbox">
+                  <label class="govuk-label govuk-checkboxes__label" for="religion-catholic">Girls</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="religion-none" type="checkbox">
+                  <label class="govuk-label govuk-checkboxes__label" for="religion-none">Mixed</label>
+                </div>
+              </div>
+            </div>
+          </details>
 
-    {% endset %}
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Apply filters
+          </button>
+        </div>
+      </div>
+    </div>
 
-    {# ------------------------------------------
-       MOJ Filter wrapper
-    ------------------------------------------ #}
-    {{ mojFilter({
-      heading: {
-        text: "Filter the results"
-      },
-      submit: false,
-      selectedFilters: {
-        heading: {
-          text: "Selected filters"
-        },
-        clearLink: {
-          text: "Clear filters"
-        },
-        categories: [
-          {
-            heading: { text: "Type of school" },
-            items: [
-              { href: "#", text: "Academy" }
-            ]
-          }
-        ]
-      },
-      optionsHtml: filterOptionsHtml
-    }) }}
-
-    {# ------------------------------------------
-       Table
-    ------------------------------------------ #}
     {% from "govuk/components/table/macro.njk" import govukTable %}
 
     <div class="govuk-!-margin-top-6">
@@ -233,7 +253,7 @@
           "data-module": "moj-sortable-table"
         },
         caption: "Comparing schools by overall performance for all pupils",
-      captionClasses: "govuk-heading-m govuk-!-margin-bottom-4",
+        captionClasses: "govuk-heading-m govuk-!-margin-bottom-4",
         head: [
           { text: "School name", attributes: { "aria-sort": "ascending" } },
           { text: "Type of school", attributes: { "aria-sort": "none" } },
@@ -243,48 +263,6 @@
         ],
         rows: [
           [
-            { text: "Springfield High School" },
-            { text: "Academy" },
-            { text: "180", format: "numeric", attributes: { "data-sort-value": "180" } },
-            { text: "52.3", format: "numeric", attributes: { "data-sort-value": "52.3" } },
-            { text: "48%", format: "numeric", attributes: { "data-sort-value": "48" } }
-          ],
-          [
-            { text: "Riverside College" },
-            { text: "College" },
-            { text: "220", format: "numeric", attributes: { "data-sort-value": "220" } },
-            { text: "58.7", format: "numeric", attributes: { "data-sort-value": "58.7" } },
-            { text: "55%", format: "numeric", attributes: { "data-sort-value": "55" } }
-          ],
-          [
-            { text: "Springfield High School" },
-            { text: "Academy" },
-            { text: "180", format: "numeric", attributes: { "data-sort-value": "180" } },
-            { text: "52.3", format: "numeric", attributes: { "data-sort-value": "52.3" } },
-            { text: "48%", format: "numeric", attributes: { "data-sort-value": "48" } }
-          ],
-          [
-            { text: "Riverside College" },
-            { text: "College" },
-            { text: "220", format: "numeric", attributes: { "data-sort-value": "220" } },
-            { text: "58.7", format: "numeric", attributes: { "data-sort-value": "58.7" } },
-            { text: "55%", format: "numeric", attributes: { "data-sort-value": "55" } }
-          ],
-          [
-            { text: "Springfield High School" },
-            { text: "Academy" },
-            { text: "180", format: "numeric", attributes: { "data-sort-value": "180" } },
-            { text: "52.3", format: "numeric", attributes: { "data-sort-value": "52.3" } },
-            { text: "48%", format: "numeric", attributes: { "data-sort-value": "48" } }
-          ],
-          [
-            { text: "Riverside College" },
-            { text: "College" },
-            { text: "220", format: "numeric", attributes: { "data-sort-value": "220" } },
-            { text: "58.7", format: "numeric", attributes: { "data-sort-value": "58.7" } },
-            { text: "55%", format: "numeric", attributes: { "data-sort-value": "55" } }
-          ],
-                [
             { text: "Springfield High School" },
             { text: "Academy" },
             { text: "180", format: "numeric", attributes: { "data-sort-value": "180" } },
