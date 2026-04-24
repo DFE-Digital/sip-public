@@ -3,41 +3,41 @@
 // https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
 //
 
-/* Ensure header content is above the background */
-.moj-filter__header > * {
-  position: relative;
-  z-index: 1;
-}
+/* =====================================================
+   Compare schools – filter-only styling
+   Applies ONLY inside .compare-schools-filter
+   ===================================================== */
 
 /* Remove leftover GOV.UK indentation for details */
-.govuk-details__summary {
+.compare-schools-filter .govuk-details__summary {
   padding-left: 0;
 }
 
 /* Optional fine-tuning to align with checkboxes */
-.govuk-details {
+.compare-schools-filter .govuk-details {
   margin-left: -0.5px;
 }
 
 /* Remove default GOV.UK arrow (closed) */
-.govuk-details__summary::before {
+.compare-schools-filter .govuk-details__summary::before {
   display: none;
 }
 
 /* Remove default GOV.UK arrow (open) */
+.compare-schools-filter
 .govuk-details[open] > .govuk-details__summary::before {
   display: none;
 }
 
 /* Position summary text for custom arrow */
-.govuk-details__summary-text {
+.compare-schools-filter .govuk-details__summary-text {
   position: relative;
   display: inline-block;
   padding-left: 18px;
 }
 
 /* Custom outlined chevron (closed) */
-.govuk-details__summary-text::after {
+.compare-schools-filter .govuk-details__summary-text::after {
   content: "";
   position: absolute;
   left: 0;
@@ -50,13 +50,15 @@
 }
 
 /* Rotate chevron when open */
+.compare-schools-filter
 .govuk-details[open]
 > .govuk-details__summary
 .govuk-details__summary-text::after {
   transform: translateY(-40%) rotate(-135deg);
 }
 
-.govuk-details__text {
+/* Details content spacing */
+.compare-schools-filter .govuk-details__text {
   border-left: none;
   padding-left: 0;
   margin-left: 0;

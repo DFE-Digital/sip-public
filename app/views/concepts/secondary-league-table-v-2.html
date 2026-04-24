@@ -28,43 +28,44 @@
       <a href="#" class="govuk-link">Learn about the different performance measures</a>.
     </p>
 
-    <h2 class="govuk-heading-m">
-      Choose how to compare schools
-    </h2>
+    <div class="govuk-grid-row govuk-!-margin-top-8">
 
-    {% from "govuk/components/select/macro.njk" import govukSelect %}
+  <div class="govuk-grid-column-one-half">
 
-{{ govukSelect({
-  id: "performance-measure",
-  name: "performanceMeasure",
-  label: {
-    text: "Performance measure"
-  },
-  items: [
-    { value: "overall", text: "Overall performance" },
-    { value: "english-maths", text: "English and maths GCSEs", selected: true },
-    { value: "qualification", text: "At least one qualification" },
-    { value: "destinations", text: "Pupil destinations after Key Stage 4" },
-    { value: "science-entries", text: "Entering for biology, chemistry & physics" },
-    { value: "attainment-8", text: "Attainment 8" },
-    { value: "attainment-8-subject", text: "Attainment 8 by subject group" },
-    { value: "mfl-entries", text: "Entering for more than 1 foreign language" },
-    { value: "exam-entries-all", text: "Exam entries all qualifications" },
-    { value: "exam-entries-gcse", text: "Exam entries GCSEs" },
-    { value: "progress-8", text: "Progress 8 scores for 2023 and 2024" }
-  ]
-}) }}
+    {{ govukSelect({
+      id: "performance-measure",
+      name: "performanceMeasure",
+      classes: "govuk-!-margin-top-0",
+      label: {
+        text: "Performance measure",
+        classes: "govuk-label--m"
+      },
+      items: [
+        { value: "overall", text: "Overall performance" },
+        { value: "english-maths", text: "English and maths GCSEs", selected: true },
+        { value: "qualification", text: "At least one qualification" },
+        { value: "destinations", text: "Pupil destinations after Key Stage 4" },
+        { value: "science-entries", text: "Entering for biology, chemistry &amp; physics" },
+        { value: "attainment-8", text: "Attainment 8" },
+        { value: "attainment-8-subject", text: "Attainment 8 by subject group" },
+        { value: "mfl-entries", text: "Entering for more than 1 foreign language" },
+        { value: "exam-entries-all", text: "Exam entries all qualifications" },
+        { value: "exam-entries-gcse", text: "Exam entries GCSEs" },
+        { value: "progress-8", text: "Progress 8 scores for 2023 and 2024" }
+      ]
+    }) }}
 
+  </div>
 
-    <h2 class="govuk-heading-m">
-      Explore by pupil characteristic
-    </h2>
+  <div class="govuk-grid-column-one-half">
 
     {{ govukSelect({
       id: "pupil-characteristic",
       name: "pupilCharacteristic",
+      classes: "govuk-!-margin-top-0",
       label: {
-        text: "Pupil characteristic"
+        text: "Pupil characteristic",
+        classes: "govuk-label--m"
       },
       items: [
         { value: "all", text: "All pupils" },
@@ -76,173 +77,245 @@
       ]
     }) }}
 
+  </div>
+
+</div>
+
 
     <details class="govuk-details">
       <summary class="govuk-details__summary">
-      <span class="govuk-details__summary-text govuk-!-font-size-40 govuk-!-font-weight-bold">
+    <span class="govuk-details__summary-text">
       Filter the results
     </span>
       </summary>
       <div class="govuk-details__text">
         <div class="moj-filter" data-module="moj-filter">
-          <div class="moj-filter__header">
-            <div class="moj-filter__header-title">
-              <h2 class="govuk-heading-m">Filters</h2>
-            </div>
-            <div class="moj-filter__header-action"></div>
-          </div>
 
-          <div class="moj-filter__content">
-            <div class="moj-filter__selected">
-              <div class="moj-filter__selected-heading">
-                <div class="moj-filter__heading-title">
-                  <h2 class="govuk-heading-m">Selected filters</h2>
-                </div>
-                <div class="moj-filter__heading-action">
-                  <p><a class="govuk-link govuk-link--no-visited-state" href="">Clear filters</a></p>
-                </div>
-              </div>
+  <div class="moj-filter__header">
+    <div class="moj-filter__header-title">
+      <h2 class="govuk-heading-m">Filter</h2>
+    </div>
+    <div class="moj-filter__header-action"></div>
+  </div>
 
-              <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Type of school</h3>
-              <ul class="moj-filter-tags">
-                <li>
-                  <a class="moj-filter__tag" href="#">
-                    <span class="govuk-visually-hidden">Remove this filter</span>
-                    Academy
-                  </a>
-                </li>
-              </ul>
-            </div>
+  <div class="moj-filter__content">
 
-            <div class="moj-filter__options">
-              <h2 class="govuk-heading-m">Filter by</h2>
-
-              <details class="govuk-details">
-                <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text">Type of school</span>
-                </summary>
-                <div class="govuk-details__text">
-                  <div class="govuk-checkboxes govuk-checkboxes--small">
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="type-academy" type="checkbox">
-                      <label class="govuk-label govuk-checkboxes__label" for="type-academy">Academy</label>
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="type-maintained" type="checkbox">
-                      <label class="govuk-label govuk-checkboxes__label" for="type-maintained">Maintained school</label>
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="type-independent" type="checkbox">
-                      <label class="govuk-label govuk-checkboxes__label" for="type-independent">Independent school</label>
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="type-special" type="checkbox">
-                      <label class="govuk-label govuk-checkboxes__label" for="type-special">Special school</label>
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="type-college" type="checkbox">
-                      <label class="govuk-label govuk-checkboxes__label" for="type-college">College</label>
-                    </div>
-                  </div>
-                </div>
-              </details>
-
-              <details class="govuk-details">
-                <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text">Religious character</span>
-                </summary>
-                <div class="govuk-details__text">
-                  <div class="govuk-checkboxes govuk-checkboxes--small">
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="religion-anglican" type="checkbox">
-                      <label class="govuk-label govuk-checkboxes__label" for="religion-anglican">Anglican</label>
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="religion-catholic" type="checkbox">
-                      <label class="govuk-label govuk-checkboxes__label" for="religion-catholic">Catholic</label>
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="religion-anglican" type="checkbox">
-                      <label class="govuk-label govuk-checkboxes__label" for="religion-anglican">Christian</label>
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="religion-catholic" type="checkbox">
-                      <label class="govuk-label govuk-checkboxes__label" for="religion-catholic">Church of England</label>
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="religion-anglican" type="checkbox">
-                      <label class="govuk-label govuk-checkboxes__label" for="religion-anglican">Hindu</label>
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="religion-catholic" type="checkbox">
-                      <label class="govuk-label govuk-checkboxes__label" for="religion-catholic">Islam</label>
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="religion-catholic" type="checkbox">
-                      <label class="govuk-label govuk-checkboxes__label" for="religion-catholic">Jewish</label>
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="religion-none" type="checkbox">
-                      <label class="govuk-label govuk-checkboxes__label" for="religion-none">No religious character</label>
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="religion-none" type="checkbox">
-                      <label class="govuk-label govuk-checkboxes__label" for="religion-none">Other</label>
-                    </div>
-                  </div>
-                </div>
-              </details>
-
-              <details class="govuk-details">
-                <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text">Data available</span>
-                </summary>
-                <div class="govuk-details__text">
-                  <div class="govuk-checkboxes govuk-checkboxes--small">
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="religion-none" type="checkbox">
-                      <label class="govuk-label govuk-checkboxes__label" for="religion-none">Exclude schools or colleges with no data</label>
-                    </div>
-                  </div>
-                </div>
-              </details>
-
-              <details class="govuk-details">
-                <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text">Single sex or mixed school</span>
-                </summary>
-                <div class="govuk-details__text">
-                  <div class="govuk-checkboxes govuk-checkboxes--small">
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="religion-anglican" type="checkbox">
-                      <label class="govuk-label govuk-checkboxes__label" for="religion-anglican">Boys</label>
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="religion-catholic" type="checkbox">
-                      <label class="govuk-label govuk-checkboxes__label" for="religion-catholic">Girls</label>
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="religion-none" type="checkbox">
-                      <label class="govuk-label govuk-checkboxes__label" for="religion-none">Mixed</label>
-                    </div>
-                  </div>
-                </div>
-              </details>
-
-              <button type="submit" class="govuk-button" data-module="govuk-button">
-                Apply filters
-              </button>
-            </div>
-          </div>
+    <!-- Selected filters -->
+    <div class="moj-filter__selected">
+      <div class="moj-filter__selected-heading">
+        <div class="moj-filter__heading-title">
+          <h2 class="govuk-heading-m">Selected filters</h2>
         </div>
+        <div class="moj-filter__heading-action">
+          <p>
+            <a class="govuk-link govuk-link--no-visited-state" href="#">
+              Clear filters
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Type of school</h3>
+      <ul class="moj-filter-tags">
+        <li>
+          <a class="moj-filter__tag" href="#">
+            <span class="govuk-visually-hidden">Remove this filter</span>
+            Academy
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="moj-filter__options">
+
+      <h2 class="govuk-heading-m">Filter by</h2>
+
+      <!-- Type of school -->
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govukuk-fieldset__legend--m">
+            Type of school
+          </legend>
+
+          <div class="govuk-checkboxes govuk-checkboxes--small">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="type-academy" type="checkbox">
+              <label class="govuk-label govuk-checkboxes__label" for="type-academy">
+                Academy
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="type-maintained" type="checkbox">
+              <label class="govuk-label govuk-checkboxes__label" for="type-maintained">
+                Maintained school
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="type-independent" type="checkbox">
+              <label class="govuk-label govuk-checkboxes__label" for="type-independent">
+                Independent school
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="type-special" type="checkbox">
+              <label class="govuk-label govuk-checkboxes__label" for="type-special">
+                Special school
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="type-college" type="checkbox">
+              <label class="govuk-label govuk-checkboxes__label" for="type-college">
+                College
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <!-- Religious character -->
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Religious character
+          </legend>
+
+          <div class="govuk-checkboxes govuk-checkboxes--small">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="religion-anglican" type="checkbox">
+              <label class="govuk-label govuk-checkboxes__label" for="religion-anglican">
+                Anglican
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="religion-catholic" type="checkbox">
+              <label class="govuk-label govuk-checkboxes__label" for="religion-catholic">
+                Catholic
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="religion-christian" type="checkbox">
+              <label class="govuk-label govuk-checkboxes__label" for="religion-christian">
+                Christian
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="religion-coe" type="checkbox">
+              <label class="govuk-label govuk-checkboxes__label" for="religion-coe">
+                Church of England
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="religion-hindu" type="checkbox">
+              <label class="govuk-label govuk-checkboxes__label" for="religion-hindu">
+                Hindu
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="religion-islam" type="checkbox">
+              <label class="govuk-label govuk-checkboxes__label" for="religion-islam">
+                Islam
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="religion-jewish" type="checkbox">
+              <label class="govuk-label govuk-checkboxes__label" for="religion-jewish">
+                Jewish
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="religion-none" type="checkbox">
+              <label class="govuk-label govuk-checkboxes__label" for="religion-none">
+                No religious character
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="religion-other" type="checkbox">
+              <label class="govuk-label govuk-checkboxes__label" for="religion-other">
+                Other
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <!-- Data available -->
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Data available
+          </legend>
+
+          <div class="govuk-checkboxes govuk-checkboxes--small">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="exclude-no-data" type="checkbox">
+              <label class="govuk-label govuk-checkboxes__label" for="exclude-no-data">
+                Exclude schools or colleges with no data
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <!-- Single sex or mixed school -->
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Single sex or mixed school
+          </legend>
+
+          <div class="govuk-checkboxes govuk-checkboxes--small">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="school-boys" type="checkbox">
+              <label class="govuk-label govuk-checkboxes__label" for="school-boys">
+                Boys
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="school-girls" type="checkbox">
+              <label class="govuk-label govuk-checkboxes__label" for="school-girls">
+                Girls
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="school-mixed" type="checkbox">
+              <label class="govuk-label govuk-checkboxes__label" for="school-mixed">
+                Mixed
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button type="submit" class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
+        Apply filters
+      </button>
+
+    </div>
+
+
+  </div>
+</div>
       </div>
     </details>
 
 
-
     {% from "govuk/components/table/macro.njk" import govukTable %}
 
-    <div class="govuk-!-margin-top-6">
+    <div class="govuk-!-margin-top-8">
       {{ govukTable({
         attributes: {
           "data-module": "moj-sortable-table"
