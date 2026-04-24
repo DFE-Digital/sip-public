@@ -3,6 +3,89 @@
 // https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
 //
 
+
+
+/* Ensure header content is above the background */
+.moj-filter__header > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Remove leftover GOV.UK indentation for details */
+.govuk-details__summary {
+  padding-left: 0;
+}
+
+/* Optional fine-tuning to align with checkboxes */
+.govuk-details {
+  margin-left: -0.5px;
+}
+
+/* Remove default GOV.UK arrow (closed) */
+.govuk-details__summary::before {
+  display: none;
+}
+
+/* Remove default GOV.UK arrow (open) */
+.govuk-details[open] > .govuk-details__summary::before {
+  display: none;
+}
+
+/* Position summary text for custom arrow */
+.govuk-details__summary-text {
+  position: relative;
+  display: inline-block;
+  padding-left: 18px;
+}
+
+/* Custom outlined chevron (closed) */
+.govuk-details__summary-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  border-right: 2px solid #0b0c0c;
+  border-bottom: 2px solid #0b0c0c;
+  transform: translateY(-60%) rotate(45deg);
+}
+
+/* Rotate chevron when open */
+.govuk-details[open]
+> .govuk-details__summary
+.govuk-details__summary-text::after {
+  transform: translateY(-40%) rotate(-135deg);
+}
+
+.govuk-details__text {
+  border-left: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+
+.moj-filter__tag {
+  position: relative;
+  padding-right: 24px; /* space for the cross */
+}
+
+.moj-filter__tag::after {
+  content: "×";
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-60%);
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.moj-filter__tag {
+  border-radius: 4px;
+}
+
 // styling for callout cards and cards with icons, e.g attendance and progress 8
 .sp-card {
   box-sizing: border-box;
