@@ -3,6 +3,26 @@
 // https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
 //
 
+/* Default: mobile first */
+.school-results--desktop {
+  display: none;
+}
+
+.school-results--mobile {
+  display: block;
+}
+
+/* Tablet and up */
+@media (min-width: 40.0625em) { // 641px
+  .school-results--desktop {
+    display: block;
+  }
+
+  .school-results--mobile {
+    display: none;
+  }
+}
+
 /* =====================================================
    Compare schools – filter-only styling
    Applies ONLY inside .compare-schools-filter
