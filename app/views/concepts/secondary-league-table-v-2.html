@@ -16,9 +16,21 @@ href: "javascript:window.history.back()"
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-        <h1 class="govuk-heading-l">
-            Compare secondary schools and colleges in England
-        </h1>
+        <div class="school-results school-results--desktop">
+
+            <h1 class="govuk-heading-l">
+                Compare secondary schools and colleges in England
+            </h1>
+
+        </div>
+
+        <div class="school-results school-results--mobile">
+
+            <h1 class="govuk-heading-xl">
+                Compare secondary schools and colleges in England
+            </h1>
+
+        </div>
 
         <p class="govuk-body">
             Compare schools by performance measures such as overall performance, English and Maths GCSEs, or Attainment
@@ -43,7 +55,7 @@ href: "javascript:window.history.back()"
                 },
                 items: [
                   { value: "overall", text: "Overall performance" },
-                  { value: "english-maths", text: "English and maths GCSEs", selected: true },
+                  { value: "english-maths", text: "English and maths GCSEs" },
                   { value: "qualification", text: "At least one qualification" },
                   { value: "destinations", text: "Pupil destinations after Key Stage 4" },
                   { value: "science-entries", text: "Entering for biology, chemistry and physics" },
@@ -71,7 +83,7 @@ href: "javascript:window.history.back()"
                 items: [
                   { value: "all", text: "All pupils" },
                   { value: "girls", text: "Girls" },
-                  { value: "boys", text: "Boys", selected: true },
+                  { value: "boys", text: "Boys" },
                   { value: "disadvantaged", text: "Disadvantaged pupils" },
                   { value: "eal", text: "English as a foreign language" },
                   { value: "non-mobile", text: "Non-mobile pupils" }
@@ -543,9 +555,31 @@ href: "javascript:window.history.back()"
 
         <div class="school-results school-results--mobile">
 
-            <h2 class="govuk-heading-m">Comparing schools by overall performance for all pupils</h2>
+            <h2 class="govuk-heading-l govuk-!-margin-top-8">Comparing schools by overall performance for all pupils</h2>
 
-            <h3 class="govuk-heading-s govuk-!-margin-top-8">Springfield High School</h3>
+            {{ govukSelect({
+                id: "performance-measure",
+                name: "performanceMeasure",
+                classes: "govuk-!-margin-top-0",
+                label: {
+                  text: "Sort by",
+                  classes: "govuk-label--m"
+                },
+                items: [
+                  { value: "school-a", text: "School name - A-Z" },
+                  { value: "school-z", text: "School name - Z-A" },
+                  { value: "type-a", text: "Type of school - A-Z" },
+                  { value: "type-z", text: "Type of school - Z-A" },
+                  { value: "pupil-no-high", text: "Number of pupils at the end of key stage 4 - high to low" },
+                  { value: "pupil-no-low", text: "Number of pupils at the end of key stage 4 - low to high" },
+                  { value: "attainment-high", text: "Attainment 8 score - high to low" },
+                  { value: "attainment-low", text: "Attainment 8 score - low to high" },
+                  { value: "GCSEs-high", text: "Grade 5 or above in English and maths GCSEs - high to low" },
+                  { value: "GCSEs-low", text: "Grade 5 or above in English and maths GCSEs - low to high" }
+                ]
+              }) }}
+
+            <h3 class="govuk-heading-m govuk-!-margin-top-9">Springfield High School</h3>
 
             <dl class="govuk-summary-list">
               <div class="govuk-summary-list__row">
@@ -566,7 +600,7 @@ href: "javascript:window.history.back()"
               </div>
             </dl>
 
-            <h3 class="govuk-heading-s govuk-!-margin-top-8">Riverside College</h3>
+            <h3 class="govuk-heading-m govuk-!-margin-top-9">Riverside College</h3>
 
             <dl class="govuk-summary-list">
               <div class="govuk-summary-list__row">
@@ -587,7 +621,7 @@ href: "javascript:window.history.back()"
               </div>
             </dl>
 
-            <h3 class="govuk-heading-s govuk-!-margin-top-8">Oakwood Secondary School</h3>
+            <h3 class="govuk-heading-m govuk-!-margin-top-9">Oakwood Secondary School</h3>
 
             <dl class="govuk-summary-list">
               <div class="govuk-summary-list__row">
@@ -608,7 +642,7 @@ href: "javascript:window.history.back()"
               </div>
             </dl>
 
-            <h3 class="govuk-heading-s govuk-!-margin-top-8">Greenfield Academy</h3>
+            <h3 class="govuk-heading-m govuk-!-margin-top-9">Greenfield Academy</h3>
 
             <dl class="govuk-summary-list">
               <div class="govuk-summary-list__row">
@@ -629,7 +663,7 @@ href: "javascript:window.history.back()"
               </div>
             </dl>
 
-            <h3 class="govuk-heading-s govuk-!-margin-top-8">Westview High School</h3>
+            <h3 class="govuk-heading-m govuk-!-margin-top-9">Westview High School</h3>
 
             <dl class="govuk-summary-list">
               <div class="govuk-summary-list__row">
@@ -650,7 +684,7 @@ href: "javascript:window.history.back()"
               </div>
             </dl>
 
-            <h3 class="govuk-heading-s govuk-!-margin-top-8">Hillcrest School</h3>
+            <h3 class="govuk-heading-m govuk-!-margin-top-9">Hillcrest School</h3>
 
             <dl class="govuk-summary-list">
               <div class="govuk-summary-list__row">
@@ -671,7 +705,7 @@ href: "javascript:window.history.back()"
               </div>
             </dl>
 
-            <h3 class="govuk-heading-s govuk-!-margin-top-8">Brookside Academy</h3>
+            <h3 class="govuk-heading-m govuk-!-margin-top-9">Brookside Academy</h3>
 
             <dl class="govuk-summary-list">
               <div class="govuk-summary-list__row">
@@ -692,7 +726,7 @@ href: "javascript:window.history.back()"
               </div>
             </dl>
 
-            <h3 class="govuk-heading-s govuk-!-margin-top-8">Lakeside College</h3>
+            <h3 class="govuk-heading-m govuk-!-margin-top-9">Lakeside College</h3>
 
             <dl class="govuk-summary-list">
               <div class="govuk-summary-list__row">
@@ -713,7 +747,7 @@ href: "javascript:window.history.back()"
               </div>
             </dl>
 
-            <h3 class="govuk-heading-s govuk-!-margin-top-8">Kingsway School</h3>
+            <h3 class="govuk-heading-m govuk-!-margin-top-9">Kingsway School</h3>
 
             <dl class="govuk-summary-list">
               <div class="govuk-summary-list__row">
@@ -734,7 +768,7 @@ href: "javascript:window.history.back()"
               </div>
             </dl>
 
-            <h3 class="govuk-heading-s govuk-!-margin-top-8">Parkview Academy</h3>
+            <h3 class="govuk-heading-m govuk-!-margin-top-9">Parkview Academy</h3>
 
             <dl class="govuk-summary-list">
               <div class="govuk-summary-list__row">
