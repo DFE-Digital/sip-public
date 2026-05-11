@@ -1,0 +1,68 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Secondary schools and colleges – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <h1 class="govuk-heading-l">
+            Compare secondary schools and colleges in England
+        </h1>
+
+        <p class="govuk-body">Compare secondary schools and colleges by performance measures such as overall performance and English and Maths GCSEs.</p>
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-7">
+            Overall performance
+        </h2>
+
+        <p class="govuk-body">Covers measures such as <a href="#" class="govuk-link">Attainment 8</a> score and percentage of pupils achieving grade 5 or above in English and Maths GCSEs.</p>
+
+        <p class="govuk-body"><a href="/concepts/secondary-league-table-v-3" class="govuk-link">Compare schools by overall performance</a></p>
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-7">
+            English and Maths GCSEs
+        </h2>
+
+        <p class="govuk-body">Shows the percentage of pupils achieving Grade 5 or above, or Grade 4 or above, in English and Maths GCSEs.</p>
+
+        <p class="govuk-body"><a href="#" class="govuk-link">Compare schools by English and Maths GCSEs</a></p>
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-7">
+            Entering for biology, chemistry and physics
+        </h2>
+
+        <p class="govuk-body">Shows the percentage of pupils entering for biology, chemistry and physics at the end of key stage 4.</p>
+
+        <p class="govuk-body"><a href="#" class="govuk-link">Compare schools by percentage entering for biology, chemistry and physics</a></p>
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-7">
+            At least one qualification
+        </h2>
+
+        <p class="govuk-body">Shows the percentage of pupils achieving at least one qualification by the end of key stage 4.</p>
+
+        <p class="govuk-body"><a href="#" class="govuk-link">Compare schools by percentage achieving at least one qualification</a></p>
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-7">
+            Pupil destinations after key stage 4
+        </h2>
+
+        <p class="govuk-body">Compares schools by factors such as the percentage of pupils staying in education, employment or apprenticeships.</p>
+
+        <p class="govuk-body"><a href="#" class="govuk-link">Compare schools by pupil destinations after key stage 4</a></p>
+
+    </div>
+</div>
+
+{% endblock %}
