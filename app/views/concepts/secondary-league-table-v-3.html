@@ -289,186 +289,212 @@ href: "javascript:window.history.back()"
             <div class="govuk-!-margin-top-8">
 
               {{ govukTable({
-                attributes: {
-                  "data-module": "moj-sortable-table"
-                },
-                caption: "Comparing schools by overall performance for all pupils",
-                captionClasses: "govuk-heading-m govuk-!-margin-bottom-4",
-                head: [
-                  {
-                    text: "School name",
-                    attributes: { "aria-sort": "ascending" }
+                  attributes: {
+                    "data-module": "moj-sortable-table"
                   },
-                  {
-                    text: "Type of school",
-                    attributes: { "aria-sort": "none" }
-                  },
-                  {
-                    text: "Number of pupils at end of key stage 4",
-                    format: "numeric",
-                    attributes: { "aria-sort": "none" }
-                  },
-                  {
-                    text: "Attainment 8 score",
-                    format: "numeric",
-                    attributes: { "aria-sort": "none" }
-                  },
-                  {
-                    text: "Percentage of pupils achieving Grade 5 or above in English and maths GCSEs",
-                    format: "numeric",
-                    attributes: { "aria-sort": "none" }
-                  }
-                ],
-                rows: [
-                  [
-                    { text: "Springfield High School" },
-                    { text: "Academy" },
-                    { text: "180", format: "numeric", attributes: { "data-sort-value": "180" } },
-                    { text: "52.3", format: "numeric", attributes: { "data-sort-value": "52.3" } },
-                    { text: "48%", format: "numeric", attributes: { "data-sort-value": "48" } }
+                  caption: "Comparing schools by overall performance for all pupils",
+                  captionClasses: "govuk-heading-m govuk-!-margin-bottom-4",
+                  head: [
+                    {
+                      text: "School name",
+                      attributes: { "aria-sort": "ascending" }
+                    },
+                    {
+                      text: "Type of school",
+                      attributes: { "aria-sort": "none" }
+                    },
+                    {
+                      text: "Number of pupils at end of key stage 4",
+                      format: "numeric",
+                      attributes: { "aria-sort": "none" }
+                    },
+                    {
+                      text: "Attainment 8 score",
+                      format: "numeric",
+                      attributes: { "aria-sort": "none" }
+                    },
+                    {
+                      text: "Pupils achieving Grade 5 or above in English and maths GCSEs",
+                      format: "numeric",
+                      attributes: { "aria-sort": "none" }
+                    },
+                    {
+                      text: "Staying in education or entering employment or apprenticeships",
+                      format: "numeric",
+                      attributes: { "aria-sort": "none" }
+                    }
                   ],
-                  [
-                    { text: "Riverside College" },
-                    { text: "College" },
-                    { text: "220", format: "numeric", attributes: { "data-sort-value": "220" } },
-                    { text: "58.7", format: "numeric", attributes: { "data-sort-value": "58.7" } },
-                    { text: "55%", format: "numeric", attributes: { "data-sort-value": "55" } }
-                  ],
-                  [
-                    { text: "Oakwood Secondary School" },
-                    { text: "Maintained school" },
-                    { text: "165", format: "numeric", attributes: { "data-sort-value": "165" } },
-                    { text: "50.1", format: "numeric", attributes: { "data-sort-value": "50.1" } },
-                    { text: "46%", format: "numeric", attributes: { "data-sort-value": "46" } }
-                  ],
-                  [
-                    { text: "Greenfield Academy" },
-                    { text: "Academy" },
-                    { text: "198", format: "numeric", attributes: { "data-sort-value": "198" } },
-                    { text: "56.9", format: "numeric", attributes: { "data-sort-value": "56.9" } },
-                    { text: "53%", format: "numeric", attributes: { "data-sort-value": "53" } }
-                  ],
-                  [
-                    { text: "Westview High School" },
-                    { text: "Academy" },
-                    { text: "210", format: "numeric", attributes: { "data-sort-value": "210" } },
-                    { text: "54.4", format: "numeric", attributes: { "data-sort-value": "54.4" } },
-                    { text: "50%", format: "numeric", attributes: { "data-sort-value": "50" } }
-                  ],
-                  [
-                    { text: "Hillcrest School" },
-                    { text: "Maintained school" },
-                    { text: "142", format: "numeric", attributes: { "data-sort-value": "142" } },
-                    { text: "47.8", format: "numeric", attributes: { "data-sort-value": "47.8" } },
-                    { text: "41%", format: "numeric", attributes: { "data-sort-value": "41" } }
-                  ],
-                  [
-                    { text: "Brookside Academy" },
-                    { text: "Academy" },
-                    { text: "190", format: "numeric", attributes: { "data-sort-value": "190" } },
-                    { text: "59.2", format: "numeric", attributes: { "data-sort-value": "59.2" } },
-                    { text: "57%", format: "numeric", attributes: { "data-sort-value": "57" } }
-                  ],
-                  [
-                    { text: "Lakeside College" },
-                    { text: "College" },
-                    { text: "235", format: "numeric", attributes: { "data-sort-value": "235" } },
-                    { text: "55.6", format: "numeric", attributes: { "data-sort-value": "55.6" } },
-                    { text: "52%", format: "numeric", attributes: { "data-sort-value": "52" } }
-                  ],
-                  [
-                    { text: "Kingsway School" },
-                    { text: "Maintained school" },
-                    { text: "175", format: "numeric", attributes: { "data-sort-value": "175" } },
-                    { text: "51.9", format: "numeric", attributes: { "data-sort-value": "51.9" } },
-                    { text: "49%", format: "numeric", attributes: { "data-sort-value": "49" } }
-                  ],
-                  [
-                    { text: "Parkview Academy" },
-                    { text: "Academy" },
-                    { text: "202", format: "numeric", attributes: { "data-sort-value": "202" } },
-                    { text: "60.3", format: "numeric", attributes: { "data-sort-value": "60.3" } },
-                    { text: "58%", format: "numeric", attributes: { "data-sort-value": "58" } }
-                  ],
-                  [
-                    { text: "Meadowbrook High" },
-                    { text: "Maintained school" },
-                    { text: "160", format: "numeric", attributes: { "data-sort-value": "160" } },
-                    { text: "49.5", format: "numeric", attributes: { "data-sort-value": "49.5" } },
-                    { text: "44%", format: "numeric", attributes: { "data-sort-value": "44" } }
-                  ],
-                  [
-                    { text: "Cedar Ridge School" },
-                    { text: "Academy" },
-                    { text: "188", format: "numeric", attributes: { "data-sort-value": "188" } },
-                    { text: "53.7", format: "numeric", attributes: { "data-sort-value": "53.7" } },
-                    { text: "51%", format: "numeric", attributes: { "data-sort-value": "51" } }
-                  ],
-                  [
-                    { text: "Northgate College" },
-                    { text: "College" },
-                    { text: "245", format: "numeric", attributes: { "data-sort-value": "245" } },
-                    { text: "57.4", format: "numeric", attributes: { "data-sort-value": "57.4" } },
-                    { text: "54%", format: "numeric", attributes: { "data-sort-value": "54" } }
-                  ],
-                  [
-                    { text: "Ashfield School" },
-                    { text: "Maintained school" },
-                    { text: "150", format: "numeric", attributes: { "data-sort-value": "150" } },
-                    { text: "48.9", format: "numeric", attributes: { "data-sort-value": "48.9" } },
-                    { text: "43%", format: "numeric", attributes: { "data-sort-value": "43" } }
-                  ],
-                  [
-                    { text: "Redwood Academy" },
-                    { text: "Academy" },
-                    { text: "215", format: "numeric", attributes: { "data-sort-value": "215" } },
-                    { text: "61.1", format: "numeric", attributes: { "data-sort-value": "61.1" } },
-                    { text: "60%", format: "numeric", attributes: { "data-sort-value": "60" } }
-                  ],
-                  [
-                    { text: "Harbour View School" },
-                    { text: "Maintained school" },
-                    { text: "168", format: "numeric", attributes: { "data-sort-value": "168" } },
-                    { text: "52.0", format: "numeric", attributes: { "data-sort-value": "52.0" } },
-                    { text: "47%", format: "numeric", attributes: { "data-sort-value": "47" } }
-                  ],
-                  [
-                    { text: "Stonemill Academy" },
-                    { text: "Academy" },
-                    { text: "194", format: "numeric", attributes: { "data-sort-value": "194" } },
-                    { text: "55.8", format: "numeric", attributes: { "data-sort-value": "55.8" } },
-                    { text: "52%", format: "numeric", attributes: { "data-sort-value": "52" } }
-                  ],
-                  [
-                    { text: "Elmwood High School" },
-                    { text: "Maintained school" },
-                    { text: "158", format: "numeric", attributes: { "data-sort-value": "158" } },
-                    { text: "50.6", format: "numeric", attributes: { "data-sort-value": "50.6" } },
-                    { text: "45%", format: "numeric", attributes: { "data-sort-value": "45" } }
-                  ],
-                  [
-                    { text: "Southgate College" },
-                    { text: "College" },
-                    { text: "230", format: "numeric", attributes: { "data-sort-value": "230" } },
-                    { text: "56.2", format: "numeric", attributes: { "data-sort-value": "56.2" } },
-                    { text: "53%", format: "numeric", attributes: { "data-sort-value": "53" } }
-                  ],
-                  [
-                    { text: "Willow Park School" },
-                    { text: "Academy" },
-                    { text: "182", format: "numeric", attributes: { "data-sort-value": "182" } },
-                    { text: "54.9", format: "numeric", attributes: { "data-sort-value": "54.9" } },
-                    { text: "51%", format: "numeric", attributes: { "data-sort-value": "51" } }
-                  ],
-                  [
-                    { text: "Highmoor School" },
-                    { text: "Maintained school" },
-                    { text: "145", format: "numeric", attributes: { "data-sort-value": "145" } },
-                    { text: "46.7", format: "numeric", attributes: { "data-sort-value": "46.7" } },
-                    { text: "40%", format: "numeric", attributes: { "data-sort-value": "40" } }
+                  rows: [
+                    [
+                      { text: "Springfield High School" },
+                      { text: "Academy" },
+                      { text: "180", format: "numeric", attributes: { "data-sort-value": "180" } },
+                      { text: "52.3", format: "numeric", attributes: { "data-sort-value": "52.3" } },
+                      { text: "48%", format: "numeric", attributes: { "data-sort-value": "48" } },
+                      { text: "43%", format: "numeric", attributes: { "data-sort-value": "43" } }
+                    ],
+                    [
+                      { text: "Riverside College" },
+                      { text: "College" },
+                      { text: "220", format: "numeric", attributes: { "data-sort-value": "220" } },
+                      { text: "58.7", format: "numeric", attributes: { "data-sort-value": "58.7" } },
+                      { text: "55%", format: "numeric", attributes: { "data-sort-value": "55" } },
+                      { text: "62%", format: "numeric", attributes: { "data-sort-value": "62" } }
+                    ],
+                    [
+                      { text: "Oakwood Secondary School" },
+                      { text: "Maintained school" },
+                      { text: "165", format: "numeric", attributes: { "data-sort-value": "165" } },
+                      { text: "50.1", format: "numeric", attributes: { "data-sort-value": "50.1" } },
+                      { text: "46%", format: "numeric", attributes: { "data-sort-value": "46" } },
+                      { text: "51%", format: "numeric", attributes: { "data-sort-value": "51" } }
+                    ],
+                    [
+                      { text: "Greenfield Academy" },
+                      { text: "Academy" },
+                      { text: "198", format: "numeric", attributes: { "data-sort-value": "198" } },
+                      { text: "56.9", format: "numeric", attributes: { "data-sort-value": "56.9" } },
+                      { text: "53%", format: "numeric", attributes: { "data-sort-value": "53" } },
+                      { text: "59%", format: "numeric", attributes: { "data-sort-value": "59" } }
+                    ],
+                    [
+                      { text: "Westview High School" },
+                      { text: "Academy" },
+                      { text: "210", format: "numeric", attributes: { "data-sort-value": "210" } },
+                      { text: "54.4", format: "numeric", attributes: { "data-sort-value": "54.4" } },
+                      { text: "50%", format: "numeric", attributes: { "data-sort-value": "50" } },
+                      { text: "56%", format: "numeric", attributes: { "data-sort-value": "56" } }
+                    ],
+                    [
+                      { text: "Hillcrest School" },
+                      { text: "Maintained school" },
+                      { text: "142", format: "numeric", attributes: { "data-sort-value": "142" } },
+                      { text: "47.8", format: "numeric", attributes: { "data-sort-value": "47.8" } },
+                      { text: "41%", format: "numeric", attributes: { "data-sort-value": "41" } },
+                      { text: "46%", format: "numeric", attributes: { "data-sort-value": "46" } }
+                    ],
+                    [
+                      { text: "Brookside Academy" },
+                      { text: "Academy" },
+                      { text: "190", format: "numeric", attributes: { "data-sort-value": "190" } },
+                      { text: "59.2", format: "numeric", attributes: { "data-sort-value": "59.2" } },
+                      { text: "57%", format: "numeric", attributes: { "data-sort-value": "57" } },
+                      { text: "64%", format: "numeric", attributes: { "data-sort-value": "64" } }
+                    ],
+                    [
+                      { text: "Lakeside College" },
+                      { text: "College" },
+                      { text: "235", format: "numeric", attributes: { "data-sort-value": "235" } },
+                      { text: "55.6", format: "numeric", attributes: { "data-sort-value": "55.6" } },
+                      { text: "52%", format: "numeric", attributes: { "data-sort-value": "52" } },
+                      { text: "60%", format: "numeric", attributes: { "data-sort-value": "60" } }
+                    ],
+                    [
+                      { text: "Kingsway School" },
+                      { text: "Maintained school" },
+                      { text: "175", format: "numeric", attributes: { "data-sort-value": "175" } },
+                      { text: "51.9", format: "numeric", attributes: { "data-sort-value": "51.9" } },
+                      { text: "49%", format: "numeric", attributes: { "data-sort-value": "49" } },
+                      { text: "54%", format: "numeric", attributes: { "data-sort-value": "54" } }
+                    ],
+                    [
+                      { text: "Parkview Academy" },
+                      { text: "Academy" },
+                      { text: "202", format: "numeric", attributes: { "data-sort-value": "202" } },
+                      { text: "60.3", format: "numeric", attributes: { "data-sort-value": "60.3" } },
+                      { text: "58%", format: "numeric", attributes: { "data-sort-value": "58" } },
+                      { text: "66%", format: "numeric", attributes: { "data-sort-value": "66" } }
+                    ],
+                    [
+                      { text: "Meadowbrook High" },
+                      { text: "Maintained school" },
+                      { text: "160", format: "numeric", attributes: { "data-sort-value": "160" } },
+                      { text: "49.5", format: "numeric", attributes: { "data-sort-value": "49.5" } },
+                      { text: "44%", format: "numeric", attributes: { "data-sort-value": "44" } },
+                      { text: "49%", format: "numeric", attributes: { "data-sort-value": "49" } }
+                    ],
+                    [
+                      { text: "Cedar Ridge School" },
+                      { text: "Academy" },
+                      { text: "188", format: "numeric", attributes: { "data-sort-value": "188" } },
+                      { text: "53.7", format: "numeric", attributes: { "data-sort-value": "53.7" } },
+                      { text: "51%", format: "numeric", attributes: { "data-sort-value": "51" } },
+                      { text: "57%", format: "numeric", attributes: { "data-sort-value": "57" } }
+                    ],
+                    [
+                      { text: "Northgate College" },
+                      { text: "College" },
+                      { text: "245", format: "numeric", attributes: { "data-sort-value": "245" } },
+                      { text: "57.4", format: "numeric", attributes: { "data-sort-value": "57.4" } },
+                      { text: "54%", format: "numeric", attributes: { "data-sort-value": "54" } },
+                      { text: "61%", format: "numeric", attributes: { "data-sort-value": "61" } }
+                    ],
+                    [
+                      { text: "Ashfield School" },
+                      { text: "Maintained school" },
+                      { text: "150", format: "numeric", attributes: { "data-sort-value": "150" } },
+                      { text: "48.9", format: "numeric", attributes: { "data-sort-value": "48.9" } },
+                      { text: "43%", format: "numeric", attributes: { "data-sort-value": "43" } },
+                      { text: "47%", format: "numeric", attributes: { "data-sort-value": "47" } }
+                    ],
+                    [
+                      { text: "Redwood Academy" },
+                      { text: "Academy" },
+                      { text: "215", format: "numeric", attributes: { "data-sort-value": "215" } },
+                      { text: "61.1", format: "numeric", attributes: { "data-sort-value": "61.1" } },
+                      { text: "60%", format: "numeric", attributes: { "data-sort-value": "60" } },
+                      { text: "68%", format: "numeric", attributes: { "data-sort-value": "68" } }
+                    ],
+                    [
+                      { text: "Harbour View School" },
+                      { text: "Maintained school" },
+                      { text: "168", format: "numeric", attributes: { "data-sort-value": "168" } },
+                      { text: "52.0", format: "numeric", attributes: { "data-sort-value": "52.0" } },
+                      { text: "47%", format: "numeric", attributes: { "data-sort-value": "47" } },
+                      { text: "52%", format: "numeric", attributes: { "data-sort-value": "52" } }
+                    ],
+                    [
+                      { text: "Stonemill Academy" },
+                      { text: "Academy" },
+                      { text: "194", format: "numeric", attributes: { "data-sort-value": "194" } },
+                      { text: "55.8", format: "numeric", attributes: { "data-sort-value": "55.8" } },
+                      { text: "52%", format: "numeric", attributes: { "data-sort-value": "52" } },
+                      { text: "58%", format: "numeric", attributes: { "data-sort-value": "58" } }
+                    ],
+                    [
+                      { text: "Elmwood High School" },
+                      { text: "Maintained school" },
+                      { text: "158", format: "numeric", attributes: { "data-sort-value": "158" } },
+                      { text: "50.6", format: "numeric", attributes: { "data-sort-value": "50.6" } },
+                      { text: "45%", format: "numeric", attributes: { "data-sort-value": "45" } },
+                      { text: "50%", format: "numeric", attributes: { "data-sort-value": "50" } }
+                    ],
+                    [
+                      { text: "Southgate College" },
+                      { text: "College" },
+                      { text: "230", format: "numeric", attributes: { "data-sort-value": "230" } },
+                      { text: "56.2", format: "numeric", attributes: { "data-sort-value": "56.2" } },
+                      { text: "53%", format: "numeric", attributes: { "data-sort-value": "53" } },
+                      { text: "60%", format: "numeric", attributes: { "data-sort-value": "60" } }
+                    ],
+                    [
+                      { text: "Willow Park School" },
+                      { text: "Academy" },
+                      { text: "182", format: "numeric", attributes: { "data-sort-value": "182" } },
+                      { text: "54.9", format: "numeric", attributes: { "data-sort-value": "54.9" } },
+                      { text: "51%", format: "numeric", attributes: { "data-sort-value": "51" } },
+                      { text: "57%", format: "numeric", attributes: { "data-sort-value": "57" } }
+                    ],
+                    [
+                      { text: "Highmoor School" },
+                      { text: "Maintained school" },
+                      { text: "145", format: "numeric", attributes: { "data-sort-value": "145" } },
+                      { text: "46.7", format: "numeric", attributes: { "data-sort-value": "46.7" } },
+                      { text: "40%", format: "numeric", attributes: { "data-sort-value": "40" } },
+                      { text: "45%", format: "numeric", attributes: { "data-sort-value": "45" } }
+                    ]
                   ]
-                ]
-              }) }}
+                }) }}
 
             </div>
 
@@ -553,6 +579,10 @@ href: "javascript:window.history.back()"
                 <dt class="govuk-summary-list__key">Grade 5 or above in English and maths GCSEs</dt>
                 <dd class="govuk-summary-list__value">48%</dd>
               </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Staying in education or entering employment or apprenticeships</dt>
+                <dd class="govuk-summary-list__value">43%</dd>
+              </div>
             </dl>
 
             <h3 class="govuk-heading-m govuk-!-margin-top-9">Riverside College</h3>
@@ -573,6 +603,10 @@ href: "javascript:window.history.back()"
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Grade 5 or above in English and maths GCSEs</dt>
                 <dd class="govuk-summary-list__value">55%</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Staying in education or entering employment or apprenticeships</dt>
+                <dd class="govuk-summary-list__value">62%</dd>
               </div>
             </dl>
 
@@ -595,6 +629,10 @@ href: "javascript:window.history.back()"
                 <dt class="govuk-summary-list__key">Grade 5 or above in English and maths GCSEs</dt>
                 <dd class="govuk-summary-list__value">46%</dd>
               </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Staying in education or entering employment or apprenticeships</dt>
+                <dd class="govuk-summary-list__value">51%</dd>
+              </div>
             </dl>
 
             <h3 class="govuk-heading-m govuk-!-margin-top-9">Greenfield Academy</h3>
@@ -615,6 +653,10 @@ href: "javascript:window.history.back()"
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Grade 5 or above in English and maths GCSEs</dt>
                 <dd class="govuk-summary-list__value">53%</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Staying in education or entering employment or apprenticeships</dt>
+                <dd class="govuk-summary-list__value">59%</dd>
               </div>
             </dl>
 
@@ -637,6 +679,10 @@ href: "javascript:window.history.back()"
                 <dt class="govuk-summary-list__key">Grade 5 or above in English and maths GCSEs</dt>
                 <dd class="govuk-summary-list__value">50%</dd>
               </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Staying in education or entering employment or apprenticeships</dt>
+                <dd class="govuk-summary-list__value">56%</dd>
+              </div>
             </dl>
 
             <h3 class="govuk-heading-m govuk-!-margin-top-9">Hillcrest School</h3>
@@ -657,6 +703,10 @@ href: "javascript:window.history.back()"
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Grade 5 or above in English and maths GCSEs</dt>
                 <dd class="govuk-summary-list__value">41%</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Staying in education or entering employment or apprenticeships</dt>
+                <dd class="govuk-summary-list__value">46%</dd>
               </div>
             </dl>
 
@@ -679,6 +729,10 @@ href: "javascript:window.history.back()"
                 <dt class="govuk-summary-list__key">Grade 5 or above in English and maths GCSEs</dt>
                 <dd class="govuk-summary-list__value">57%</dd>
               </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Staying in education or entering employment or apprenticeships</dt>
+                <dd class="govuk-summary-list__value">64%</dd>
+              </div>
             </dl>
 
             <h3 class="govuk-heading-m govuk-!-margin-top-9">Lakeside College</h3>
@@ -699,6 +753,10 @@ href: "javascript:window.history.back()"
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Grade 5 or above in English and maths GCSEs</dt>
                 <dd class="govuk-summary-list__value">52%</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Staying in education or entering employment or apprenticeships</dt>
+                <dd class="govuk-summary-list__value">60%</dd>
               </div>
             </dl>
 
@@ -721,6 +779,10 @@ href: "javascript:window.history.back()"
                 <dt class="govuk-summary-list__key">Grade 5 or above in English and maths GCSEs</dt>
                 <dd class="govuk-summary-list__value">49%</dd>
               </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Staying in education or entering employment or apprenticeships</dt>
+                <dd class="govuk-summary-list__value">54%</dd>
+              </div>
             </dl>
 
             <h3 class="govuk-heading-m govuk-!-margin-top-9">Parkview Academy</h3>
@@ -741,6 +803,10 @@ href: "javascript:window.history.back()"
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Grade 5 or above in English and maths GCSEs</dt>
                 <dd class="govuk-summary-list__value">58%</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Staying in education or entering employment or apprenticeships</dt>
+                <dd class="govuk-summary-list__value">66%</dd>
               </div>
             </dl>
 
