@@ -601,29 +601,6 @@ href: "javascript:window.history.back()"
                     Attainment 8 means x.
             </details>
 
-            {{ govukSelect({
-                id: "performance-measure",
-                name: "performanceMeasure",
-                classes: "govuk-!-margin-top-0",
-                label: {
-                  text: "Sort by",
-                  classes: "govuk-label--m"
-                },
-                items: [
-                  { value: "school-a", text: "School name - A-Z" },
-                  { value: "school-z", text: "School name - Z-A" },
-                  { value: "type-a", text: "Type of school - A-Z" },
-                  { value: "type-z", text: "Type of school - Z-A" },
-                  { value: "pupil-no-high", text: "Number of pupils at the end of key stage 4 - high to low" },
-                  { value: "pupil-no-low", text: "Number of pupils at the end of key stage 4 - low to high" },
-                  { value: "attainment-high", text: "Attainment 8 score - high to low" },
-                  { value: "attainment-low", text: "Attainment 8 score - low to high" },
-                  { value: "GCSEs-high", text: "Grade 5 or above in English and maths GCSEs - high to low" },
-                  { value: "GCSEs-low", text: "Grade 5 or above in English and maths GCSEs - low to high" }
-                ]
-              }) }}
-
-            {%- from "govuk/components/table/macro.njk" import govukTable -%}
 
 <div class="moj-scrollable-pane" role="region" aria-label="Historic rainfall in June" tabindex="0">
   {{ govukTable({
