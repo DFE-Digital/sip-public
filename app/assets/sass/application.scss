@@ -3,6 +3,20 @@
 // https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
 //
 
+/* Make first column sticky */
+.moj-scrollable-pane table th:first-child,
+.moj-scrollable-pane table td:first-child {
+  position: sticky;
+  left: 0;
+  background-color: #ffffff; /* prevents overlap issues */
+  z-index: 2;
+}
+
+/* Keep header above cells */
+.moj-scrollable-pane table th:first-child {
+  z-index: 3;
+}
+
 @import 'node_modules/dfe-frontend/packages/dfefrontend';
 
 /* Default: mobile first */
