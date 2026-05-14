@@ -19,7 +19,7 @@ href: "javascript:window.history.back()"
         <div class="school-results school-results--desktop">
 
             <h1 class="govuk-heading-l">
-                Compare secondary schools and colleges in England
+                Compare all secondary schools and colleges in England
             </h1>
 
         </div>
@@ -33,14 +33,14 @@ href: "javascript:window.history.back()"
         </div>
 
         <p class="govuk-body">
-            Compare schools by performance measures such as overall performance or English and Maths GCSEs, and explore by pupil characteristic such as sex.
+            Compare schools by different performance measures and pupil characteristics, and filter the results to refine your search.
         </p>
 
-        <p class="govuk-body">
-            <a href="#" class="govuk-link">Learn about the different performance measures</a>.
-        </p>
+<!--        <p class="govuk-body">-->
+<!--            <a href="#" class="govuk-link">Learn about the different performance measures</a>.-->
+<!--        </p>-->
 
-        <div class="govuk-grid-row govuk-!-margin-top-8">
+        <div class="govuk-grid-row govuk-!-margin-top-6">
 
             <div class="govuk-grid-column-one-half">
 
@@ -326,18 +326,28 @@ href: "javascript:window.history.back()"
             </div>
         </details>
 
-
-
         <div class="school-results school-results--desktop">
 
-            <div class="govuk-!-margin-top-8">
+            <h2 class="govuk-heading-m">Comparing schools by overall performance for all pupils</h2>
+
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Understanding this data
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                Attainment 8 means x.
+            </details>
+
+            <div class="govuk-!-margin-top-0">
 
             {{ govukTable({
               attributes: {
                 "data-module": "moj-sortable-table"
               },
               caption: "Comparing schools by overall performance for all pupils",
-              captionClasses: "govuk-heading-m govuk-!-margin-bottom-4",
+              captionClasses: "govuk-visually-hidden",
               head: [
                 {
                   text: "School name",

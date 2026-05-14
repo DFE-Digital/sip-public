@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Secondary schools and colleges – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">
+      Compare all schools and colleges in England
+    </h1>
+
+    {% from 'node_modules/dfe-frontend/packages/components/card/macro.njk' import card %}
+
+    {{ card({
+      cards: [
+        {
+          "imageCard": false,
+          "imagePath": "/images/sample-image.jpg",
+          "altText": "Sample Image",
+          "headingLevel": "3",
+          "linkCard": true,
+          "link": "/concepts/secondary-league-table-v-2",
+          "openInNewTab": false,
+          "heading": "Secondary schools",
+          "description": "Compare all secondary schools in England",
+          "meta": ""
+        },
+        {
+          "imageCard": false,
+          "imagePath": "/images/sample-image.jpg",
+          "altText": "Sample Image",
+          "headingLevel": "3",
+          "linkCard": true,
+          "link": "#",
+          "openInNewTab": false,
+          "heading": "Primary schools",
+          "description": "Compare all primary schools in England",
+          "meta": ""
+        },
+        {
+          "imageCard": false,
+          "imagePath": "/images/sample-image.jpg",
+          "altText": "Sample Image",
+          "headingLevel": "3",
+          "linkCard": true,
+          "link": "#",
+          "openInNewTab": false,
+          "heading": "16 to 18 education providers",
+          "description": "Compare all 16 to 18 education providers in England",
+          "meta": ""
+        }
+      ]
+    }) }}
+
+      <div class="govuk-inset-text">
+          <a href="#" class="govuk-link">Compare schools another way</a>, for example by searching for a school, postcode or local authority
+      </div>
+
+  </div>
+</div>
+
+{% endblock %}
