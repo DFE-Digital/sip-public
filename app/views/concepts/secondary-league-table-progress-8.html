@@ -1,0 +1,608 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Secondary schools and colleges – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">
+        Compare all secondary schools and colleges in England
+      </h1>
+
+      <p class="govuk-body">
+        Compare schools by different performance measures, and explore the data by pupil characteristic.
+      </p>
+
+      <div class="govuk-grid-row govuk-!-margin-top-6">
+
+        <div class="govuk-grid-column-one-half">
+
+          {{ govukSelect({
+            id: "performance-measure",
+            name: "performanceMeasure",
+            classes: "govuk-!-margin-top-0",
+            label: {
+              text: "Performance measure",
+              classes: "govuk-label--s"
+            },
+            items: [
+              { value: "overall", text: "Overall performance" },
+              { value: "english-maths", text: "English and maths GCSEs" },
+              { value: "qualification", text: "At least one qualification" },
+              { value: "destinations", text: "Pupil destinations after Key Stage 4" },
+              { value: "science-entries", text: "Entering for biology, chemistry and physics" },
+              { value: "attainment-8", text: "Attainment 8 score" },
+              { value: "attainment-8-subject", text: "Attainment 8 score by subject"},
+              { value: "mfl-entries", text: "Entering for more than 1 foreign language" },
+              { value: "exam-entries-all", text: "Exam entries all qualifications" },
+              { value: "exam-entries-gcse", text: "Exam entries GCSEs" },
+              { value: "progress-8", text: "Progress 8 scores for 2023 and 2024", selected: true  }
+            ]
+          }) }}
+
+        </div>
+
+        <div class="govuk-grid-column-one-half">
+
+          {{ govukSelect({
+            id: "pupil-characteristic",
+            name: "pupilCharacteristic",
+            classes: "govuk-!-margin-top-0",
+            label: {
+              text: "Pupil characteristic",
+              classes: "govuk-label--s"
+            },
+            items: [
+              { value: "all", text: "All pupils" },
+              { value: "girls", text: "Girls" },
+              { value: "boys", text: "Boys" },
+              { value: "disadvantaged", text: "Disadvantaged pupils" },
+              { value: "eal", text: "English as a foreign language" },
+              { value: "non-mobile", text: "Non-mobile pupils" }
+            ]
+          }) }}
+
+        </div>
+
+      </div>
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Filter the results
+          </span>
+        </summary>
+
+        <div class="govuk-details__text">
+
+          <div class="moj-filter" data-module="moj-filter">
+
+            <div class="moj-filter__header">
+              <div class="moj-filter__header-title">
+                <h2 class="govuk-heading-m">Filter</h2>
+              </div>
+
+              <div class="moj-filter__header-action"></div>
+            </div>
+
+            <div class="moj-filter__content">
+
+              <!-- Selected filters -->
+              <div class="moj-filter__selected">
+
+                <div class="moj-filter__selected-heading">
+
+                  <div class="moj-filter__heading-title">
+                    <h2 class="govuk-heading-m">Selected filters</h2>
+                  </div>
+
+                  <div class="moj-filter__heading-action">
+                    <p>
+                      <a class="govuk-link govuk-link--no-visited-state" href="#">
+                        Clear filters
+                      </a>
+                    </p>
+                  </div>
+
+                </div>
+
+                <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+                  Type of school
+                </h3>
+
+                <ul class="moj-filter-tags">
+                  <li>
+                    <a class="moj-filter__tag" href="#">
+                      <span class="govuk-visually-hidden">Remove this filter</span>
+                      Academy
+                    </a>
+                  </li>
+                </ul>
+
+              </div>
+
+              <div class="moj-filter__options">
+
+                <h2 class="govuk-heading-m">Filter by</h2>
+
+                <!-- Type of school -->
+                <div class="govuk-form-group">
+
+                  <fieldset class="govuk-fieldset">
+
+                    <legend class="govuk-fieldset__legend govukuk-fieldset__legend--m">
+                      Type of school
+                    </legend>
+
+                    <div class="govuk-checkboxes govuk-checkboxes--small">
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="type-academy" type="checkbox">
+
+                        <label class="govuk-label govuk-checkboxes__label" for="type-academy">
+                          Academy
+                        </label>
+                      </div>
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="type-maintained" type="checkbox">
+
+                        <label class="govuk-label govuk-checkboxes__label" for="type-maintained">
+                          Maintained school
+                        </label>
+                      </div>
+
+                      <div class="govuk-checkboxes__item">
+                        <input
+                          class="govuk-checkboxes__input"
+                          id="type-independent"
+                          type="checkbox"
+                        >
+
+                        <label class="govuk-label govuk-checkboxes__label" for="type-independent">
+                          Independent school
+                        </label>
+                      </div>
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="type-special" type="checkbox">
+
+                        <label class="govuk-label govuk-checkboxes__label" for="type-special">
+                          Special school
+                        </label>
+                      </div>
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="type-college" type="checkbox">
+
+                        <label class="govuk-label govuk-checkboxes__label" for="type-college">
+                          College
+                        </label>
+                      </div>
+
+                    </div>
+
+                  </fieldset>
+
+                </div>
+
+                <!-- Religious character -->
+                <div class="govuk-form-group">
+
+                  <fieldset class="govuk-fieldset">
+
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                      Religious character
+                    </legend>
+
+                    <div class="govuk-checkboxes govuk-checkboxes--small">
+
+                      <div class="govuk-checkboxes__item">
+                        <input
+                          class="govuk-checkboxes__input"
+                          id="religion-anglican"
+                          type="checkbox"
+                        >
+
+                        <label class="govuk-label govuk-checkboxes__label" for="religion-anglican">
+                          Anglican
+                        </label>
+                      </div>
+
+                      <div class="govuk-checkboxes__item">
+                        <input
+                          class="govuk-checkboxes__input"
+                          id="religion-catholic"
+                          type="checkbox"
+                        >
+
+                        <label class="govuk-label govuk-checkboxes__label" for="religion-catholic">
+                          Catholic
+                        </label>
+                      </div>
+
+                      <div class="govuk-checkboxes__item">
+                        <input
+                          class="govuk-checkboxes__input"
+                          id="religion-christian"
+                          type="checkbox"
+                        >
+
+                        <label class="govuk-label govuk-checkboxes__label" for="religion-christian">
+                          Christian
+                        </label>
+                      </div>
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="religion-coe" type="checkbox">
+
+                        <label class="govuk-label govuk-checkboxes__label" for="religion-coe">
+                          Church of England
+                        </label>
+                      </div>
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="religion-hindu" type="checkbox">
+
+                        <label class="govuk-label govuk-checkboxes__label" for="religion-hindu">
+                          Hindu
+                        </label>
+                      </div>
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="religion-islam" type="checkbox">
+
+                        <label class="govuk-label govuk-checkboxes__label" for="religion-islam">
+                          Islam
+                        </label>
+                      </div>
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="religion-jewish" type="checkbox">
+
+                        <label class="govuk-label govuk-checkboxes__label" for="religion-jewish">
+                          Jewish
+                        </label>
+                      </div>
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="religion-none" type="checkbox">
+
+                        <label class="govuk-label govuk-checkboxes__label" for="religion-none">
+                          No religious character
+                        </label>
+                      </div>
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="religion-other" type="checkbox">
+
+                        <label class="govuk-label govuk-checkboxes__label" for="religion-other">
+                          Other
+                        </label>
+                      </div>
+
+                    </div>
+
+                  </fieldset>
+
+                </div>
+
+                <!-- Data available -->
+                <div class="govuk-form-group">
+
+                  <fieldset class="govuk-fieldset">
+
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                      Data available
+                    </legend>
+
+                    <div class="govuk-checkboxes govuk-checkboxes--small">
+
+                      <div class="govuk-checkboxes__item">
+                        <input
+                          class="govuk-checkboxes__input"
+                          id="exclude-no-data"
+                          type="checkbox"
+                        >
+
+                        <label class="govuk-label govuk-checkboxes__label" for="exclude-no-data">
+                          Exclude schools or colleges with no data
+                        </label>
+                      </div>
+
+                    </div>
+
+                  </fieldset>
+
+                </div>
+
+                <!-- Single sex or mixed school -->
+                <div class="govuk-form-group">
+
+                  <fieldset class="govuk-fieldset">
+
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                      Single sex or mixed school
+                    </legend>
+
+                    <div class="govuk-checkboxes govuk-checkboxes--small">
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="school-boys" type="checkbox">
+
+                        <label class="govuk-label govuk-checkboxes__label" for="school-boys">
+                          Boys
+                        </label>
+                      </div>
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="school-girls" type="checkbox">
+
+                        <label class="govuk-label govuk-checkboxes__label" for="school-girls">
+                          Girls
+                        </label>
+                      </div>
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="school-mixed" type="checkbox">
+
+                        <label class="govuk-label govuk-checkboxes__label" for="school-mixed">
+                          Mixed
+                        </label>
+                      </div>
+
+                    </div>
+
+                  </fieldset>
+
+                </div>
+
+                <button
+                  type="submit"
+                  class="govuk-button govuk-!-margin-top-6"
+                  data-module="govuk-button"
+                >
+                  Apply filters
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </details>
+
+      <h2 class="govuk-heading-m">
+        Comparing schools by Progress 8 scores for 2023 and 2024 for all pupils
+      </h2>
+
+      <details class="govuk-details">
+
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Understanding this data
+          </span>
+        </summary>
+
+        <div class="govuk-details__text">
+          A Progress 8 score between x and x is considered above average. A score between x and x is considered below average.
+        </div>
+
+      </details>
+
+      <div
+        class="moj-scrollable-pane"
+        role="region"
+        aria-label="Historic rainfall in June"
+        tabindex="0"
+      >
+
+        {{ govukTable({
+          attributes: {
+            "data-module": "moj-sortable-table"
+          },
+          caption: "Comparing schools by overall performance for all pupils",
+          captionClasses: "govuk-visually-hidden",
+          head: [
+            {
+              text: "School name",
+              attributes: { "aria-sort": "ascending" }
+            },
+            {
+              text: "Type of school",
+              attributes: { "aria-sort": "none" }
+            },
+            {
+              text: "Number of pupils included in Progress 8 measure",
+              format: "numeric",
+              attributes: { "aria-sort": "none" }
+            },
+            {
+              text: "Progress 8 score",
+              format: "numeric",
+              attributes: { "aria-sort": "none" }
+            }
+          ],
+          rows: [
+            [
+              { html: '<a href="#" class="govuk-link">Springfield High School</a>' },
+              { text: "Academy" },
+              { text: "180", format: "numeric", attributes: { "data-sort-value": "180" } },
+              { text: "0.42", format: "numeric", attributes: { "data-sort-value": "0.42" } }
+            ],
+            [
+              { html: '<a href="#" class="govuk-link">Riverside College</a>' },
+              { text: "College" },
+              { text: "220", format: "numeric", attributes: { "data-sort-value": "220" } },
+              { text: "0.88", format: "numeric", attributes: { "data-sort-value": "0.88" } }
+            ],
+            [
+              { html: '<a href="#" class="govuk-link">Oakwood Secondary School</a>' },
+              { text: "Maintained school" },
+              { text: "165", format: "numeric", attributes: { "data-sort-value": "165" } },
+              { text: "-0.12", format: "numeric", attributes: { "data-sort-value": "-0.12" } }
+            ],
+            [
+              { html: '<a href="#" class="govuk-link">Greenfield Academy</a>' },
+              { text: "Academy" },
+              { text: "198", format: "numeric", attributes: { "data-sort-value": "198" } },
+              { text: "0.67", format: "numeric", attributes: { "data-sort-value": "0.67" } }
+            ],
+            [
+              { html: '<a href="#" class="govuk-link">Westview High School</a>' },
+              { text: "Academy" },
+              { text: "210", format: "numeric", attributes: { "data-sort-value": "210" } },
+              { text: "0.31", format: "numeric", attributes: { "data-sort-value": "0.31" } }
+            ],
+            [
+              { html: '<a href="#" class="govuk-link">Hillcrest School</a>' },
+              { text: "Maintained school" },
+              { text: "142", format: "numeric", attributes: { "data-sort-value": "142" } },
+              { text: "-0.48", format: "numeric", attributes: { "data-sort-value": "-0.48" } }
+            ],
+            [
+              { html: '<a href="#" class="govuk-link">Brookside Academy</a>' },
+              { text: "Academy" },
+              { text: "190", format: "numeric", attributes: { "data-sort-value": "190" } },
+              { text: "1.04", format: "numeric", attributes: { "data-sort-value": "1.04" } }
+            ],
+            [
+              { html: '<a href="#" class="govuk-link">Lakeside College</a>' },
+              { text: "College" },
+              { text: "235", format: "numeric", attributes: { "data-sort-value": "235" } },
+              { text: "0.52", format: "numeric", attributes: { "data-sort-value": "0.52" } }
+            ],
+            [
+              { html: '<a href="#" class="govuk-link">Kingsway School</a>' },
+              { text: "Maintained school" },
+              { text: "175", format: "numeric", attributes: { "data-sort-value": "175" } },
+              { text: "0.08", format: "numeric", attributes: { "data-sort-value": "0.08" } }
+            ],
+            [
+              { html: '<a href="#" class="govuk-link">Parkview Academy</a>' },
+              { text: "Academy" },
+              { text: "202", format: "numeric", attributes: { "data-sort-value": "202" } },
+              { text: "1.22", format: "numeric", attributes: { "data-sort-value": "1.22" } }
+            ],
+            [
+              { html: '<a href="#" class="govuk-link">Meadowbrook High</a>' },
+              { text: "Maintained school" },
+              { text: "160", format: "numeric", attributes: { "data-sort-value": "160" } },
+              { text: "-0.26", format: "numeric", attributes: { "data-sort-value": "-0.26" } }
+            ],
+            [
+              { html: '<a href="#" class="govuk-link">Cedar Ridge School</a>' },
+              { text: "Academy" },
+              { text: "188", format: "numeric", attributes: { "data-sort-value": "188" } },
+              { text: "0.39", format: "numeric", attributes: { "data-sort-value": "0.39" } }
+            ],
+            [
+              { html: '<a href="#" class="govuk-link">Northgate College</a>' },
+              { text: "College" },
+              { text: "245", format: "numeric", attributes: { "data-sort-value": "245" } },
+              { text: "0.73", format: "numeric", attributes: { "data-sort-value": "0.73" } }
+            ],
+            [
+              { html: '<a href="#" class="govuk-link">Ashfield School</a>' },
+              { text: "Maintained school" },
+              { text: "150", format: "numeric", attributes: { "data-sort-value": "150" } },
+              { text: "-0.37", format: "numeric", attributes: { "data-sort-value": "-0.37" } }
+            ],
+            [
+              { html: '<a href="#" class="govuk-link">Redwood Academy</a>' },
+              { text: "Academy" },
+              { text: "215", format: "numeric", attributes: { "data-sort-value": "215" } },
+              { text: "1.41", format: "numeric", attributes: { "data-sort-value": "1.41" } }
+            ],
+            [
+              { html: '<a href="#" class="govuk-link">Harbour View School</a>' },
+              { text: "Maintained school" },
+              { text: "168", format: "numeric", attributes: { "data-sort-value": "168" } },
+              { text: "0.02", format: "numeric", attributes: { "data-sort-value": "0.02" } }
+            ],
+            [
+              { html: '<a href="#" class="govuk-link">Stonemill Academy</a>' },
+              { text: "Academy" },
+              { text: "194", format: "numeric", attributes: { "data-sort-value": "194" } },
+              { text: "0.61", format: "numeric", attributes: { "data-sort-value": "0.61" } }
+            ],
+            [
+              { html: '<a href="#" class="govuk-link">Elmwood High School</a>' },
+              { text: "Maintained school" },
+              { text: "158", format: "numeric", attributes: { "data-sort-value": "158" } },
+              { text: "-0.18", format: "numeric", attributes: { "data-sort-value": "-0.18" } }
+            ],
+            [
+              { html: '<a href="#" class="govuk-link">Southgate College</a>' },
+              { text: "College" },
+              { text: "230", format: "numeric", attributes: { "data-sort-value": "230" } },
+              { text: "0.56", format: "numeric", attributes: { "data-sort-value": "0.56" } }
+            ],
+            [
+              { html: '<a href="#" class="govuk-link">Willow Park School</a>' },
+              { text: "Academy" },
+              { text: "182", format: "numeric", attributes: { "data-sort-value": "182" } },
+              { text: "0.44", format: "numeric", attributes: { "data-sort-value": "0.44" } }
+            ],
+            [
+              { html: '<a href="#" class="govuk-link">Highmoor School</a>' },
+              { text: "Maintained school" },
+              { text: "145", format: "numeric", attributes: { "data-sort-value": "145" } },
+              { text: "-0.61", format: "numeric", attributes: { "data-sort-value": "-0.61" } }
+            ]
+          ]
+        }) }}
+
+      </div>
+
+              {{ mojPagination({
+          items: [{
+            text: "1",
+            href: "#"
+          }, {
+            text: "2",
+            href: "#",
+            selected: true
+          }, {
+            text: "3",
+            href: "#"
+          }, {
+            type: "dots"
+          }, {
+            text: "7",
+            href: "#"
+          }],
+          results: {
+            count: 157,
+            from: 26,
+            to: 50,
+            text: "results"
+          },
+          previous: {
+            text: "Previous",
+            href: "#"
+          },
+          next: {
+            text: "Next",
+            href: "#"
+          }
+        }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
