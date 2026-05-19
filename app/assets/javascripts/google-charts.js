@@ -196,7 +196,7 @@ function drawDestinationsBreakdown() {
       "England average",
       { role: "annotation" },
     ],
-    ["Staying in education", 0.89, "89%", 0.86, "86%", 0.84, "84%"],
+    ["Stayed in education", 0.89, "89%", 0.86, "86%", 0.84, "84%"],
     [
       "Entering employment and apprenticeships",
       0.06,

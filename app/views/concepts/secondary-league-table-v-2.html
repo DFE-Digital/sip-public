@@ -19,7 +19,7 @@ href: "javascript:window.history.back()"
         <div class="school-results school-results--desktop">
 
             <h1 class="govuk-heading-l">
-                Compare all secondary schools and colleges in England
+                Compare secondary schools in England
             </h1>
 
         </div>
@@ -27,13 +27,13 @@ href: "javascript:window.history.back()"
         <div class="school-results school-results--mobile">
 
             <h1 class="govuk-heading-xl">
-                Compare secondary schools and colleges in England
+                Compare secondary schools in England
             </h1>
 
         </div>
 
         <p class="govuk-body">
-            Compare schools by different performance measures, and explore the data by pupil characteristic.
+            Compare schools by performance and explore results for different groups of pupils.
 
 <!--        <p class="govuk-body">-->
 <!--            <a href="#" class="govuk-link">Learn about the different performance measures</a>.-->
@@ -53,15 +53,15 @@ href: "javascript:window.history.back()"
                 },
                 items: [
                   { value: "overall", text: "Overall performance" },
-                  { value: "english-maths", text: "English and maths GCSEs" },
-                  { value: "qualification", text: "At least one qualification" },
-                  { value: "destinations", text: "Pupil destinations after Key Stage 4" },
-                  { value: "science-entries", text: "Entering for biology, chemistry and physics" },
-                  { value: "attainment-8", text: "Attainment 8 score" },
-                  { value: "attainment-8-subject", text: "Attainment 8 score by subject group" },
-                  { value: "mfl-entries", text: "Entering for more than 1 foreign language" },
+                  { value: "english-maths", text: "GCSE results for English and maths" },
+                  { value: "exam-entries-gcse", text: "GCSE exam entries" },
+                  { value: "qualification", text: "Achieved Achieved at least 1 qualification" },
+                  { value: "destinations", text: "Pupil destinations after year 11" },
+                  { value: "attainment-8", text: "Average score across 8 subjects (Attainment 8)" },
+                  { value: "attainment-8-subject", text: "Average score across 8 subjects (Attainment 8) by subject" },
+                  { value: "science-entries", text: "Exam entries for biology, chemistry and physics" },
+                  { value: "mfl-entries", text: "Exam entries for foreign languages" },
                   { value: "exam-entries-all", text: "Exam entries all qualifications" },
-                  { value: "exam-entries-gcse", text: "Exam entries GCSEs" },
                   { value: "progress-8", text: "Progress 8 scores for 2023 and 2024" }
                 ]
               }) }}
@@ -75,15 +75,15 @@ href: "javascript:window.history.back()"
                 name: "pupilCharacteristic",
                 classes: "govuk-!-margin-top-0",
                 label: {
-                  text: "Pupil characteristic",
+                  text: "Pupil group",
                   classes: "govuk-label--m"
                 },
                 items: [
                   { value: "all", text: "All pupils" },
-                  { value: "girls", text: "Girls" },
-                  { value: "boys", text: "Boys" },
+                  { value: "girls", text: "Girls schools" },
+                  { value: "boys", text: "Boys schools" },
                   { value: "disadvantaged", text: "Disadvantaged pupils" },
-                  { value: "eal", text: "English as a foreign language" },
+                  { value: "eal", text: "English as additional language (EAL) pupils" },
                   { value: "non-mobile", text: "Non-mobile pupils" }
                 ]
               }) }}
@@ -96,7 +96,7 @@ href: "javascript:window.history.back()"
         <details class="govuk-details">
             <summary class="govuk-details__summary">
                 <span class="govuk-details__summary-text">
-                    Filter the results
+                    Filter results
                 </span>
             </summary>
             <div class="govuk-details__text">
@@ -141,8 +141,7 @@ href: "javascript:window.history.back()"
 
                             <h2 class="govuk-heading-m">Filter by</h2>
 
-                            <!-- Type of school -->
-                            <div class="govuk-form-group">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">                            <div class="govuk-form-group">
                                 <fieldset class="govuk-fieldset">
                                     <legend class="govuk-fieldset__legend govukuk-fieldset__legend--m">
                                         Type of school
@@ -283,32 +282,32 @@ href: "javascript:window.history.back()"
                                 </fieldset>
                             </div>
 
-                            <!-- Single sex or mixed school -->
+                            <!-- School type by sex -->
                             <div class="govuk-form-group">
                                 <fieldset class="govuk-fieldset">
                                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                                        Single sex or mixed school
+                                        School type by sex
                                     </legend>
 
                                     <div class="govuk-checkboxes govuk-checkboxes--small">
                                         <div class="govuk-checkboxes__item">
                                             <input class="govuk-checkboxes__input" id="school-boys" type="checkbox">
                                             <label class="govuk-label govuk-checkboxes__label" for="school-boys">
-                                                Boys
+                                                Boys schools
                                             </label>
                                         </div>
 
                                         <div class="govuk-checkboxes__item">
                                             <input class="govuk-checkboxes__input" id="school-girls" type="checkbox">
                                             <label class="govuk-label govuk-checkboxes__label" for="school-girls">
-                                                Girls
+                                                Girls schools
                                             </label>
                                         </div>
 
                                         <div class="govuk-checkboxes__item">
                                             <input class="govuk-checkboxes__input" id="school-mixed" type="checkbox">
                                             <label class="govuk-label govuk-checkboxes__label" for="school-mixed">
-                                                Mixed
+                                                Mixed schools
                                             </label>
                                         </div>
                                     </div>
@@ -332,7 +331,7 @@ href: "javascript:window.history.back()"
             <details class="govuk-details">
               <summary class="govuk-details__summary">
                 <span class="govuk-details__summary-text">
-                  Understanding this data
+                  What this data means
                 </span>
               </summary>
               <div class="govuk-details__text">
@@ -357,12 +356,12 @@ href: "javascript:window.history.back()"
                   attributes: { "aria-sort": "none" }
                 },
                 {
-                  text: "Number of pupils at end of key stage 4",
+                  text: "Number of pupils at end of year 11",
                   format: "numeric",
                   attributes: { "aria-sort": "none" }
                 },
                 {
-                  text: "Attainment 8 score",
+                  text: "Average score across 8 subjects (Attainment 8)",
                   format: "numeric",
                   attributes: { "aria-sort": "none" }
                 },
@@ -372,7 +371,7 @@ href: "javascript:window.history.back()"
                   attributes: { "aria-sort": "none" }
                 },
                 {
-                  text: "Staying in education or entering employment or apprenticeships",
+                  text: "Stayed in education or entering employment or apprenticeships",
                   format: "numeric",
                   attributes: { "aria-sort": "none" }
                 }
@@ -616,8 +615,8 @@ href: "javascript:window.history.back()"
                   { value: "type-z", text: "Type of school - Z-A" },
                   { value: "pupil-no-high", text: "Number of pupils at the end of key stage 4 - high to low" },
                   { value: "pupil-no-low", text: "Number of pupils at the end of key stage 4 - low to high" },
-                  { value: "attainment-high", text: "Attainment 8 score - high to low" },
-                  { value: "attainment-low", text: "Attainment 8 score - low to high" },
+                  { value: "attainment-high", text: "Average score across 8 subjects (Attainment 8) - high to low" },
+                  { value: "attainment-low", text: "Average score across 8 subjects (Attainment 8) - low to high" },
                   { value: "GCSEs-high", text: "Grade 5 or above in English and maths GCSEs - high to low" },
                   { value: "GCSEs-low", text: "Grade 5 or above in English and maths GCSEs - low to high" }
                 ]
@@ -631,11 +630,11 @@ href: "javascript:window.history.back()"
                 <dd class="govuk-summary-list__value">Academy</dd>
               </div>
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Number of pupils at end of key stage 4</dt>
+                <dt class="govuk-summary-list__key">Number of pupils at end of year 11</dt>
                 <dd class="govuk-summary-list__value">180</dd>
               </div>
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Attainment 8 score</dt>
+                <dt class="govuk-summary-list__key">Average score across 8 subjects (Attainment 8)</dt>
                 <dd class="govuk-summary-list__value">52.3</dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -643,7 +642,7 @@ href: "javascript:window.history.back()"
                 <dd class="govuk-summary-list__value">48%</dd>
               </div>
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Staying in education or entering employment or apprenticeships</dt>
+                <dt class="govuk-summary-list__key">Stayed in education or entering employment or apprenticeships</dt>
                 <dd class="govuk-summary-list__value">43%</dd>
               </div>
             </dl>
@@ -656,11 +655,11 @@ href: "javascript:window.history.back()"
                 <dd class="govuk-summary-list__value">College</dd>
               </div>
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Number of pupils at end of key stage 4</dt>
+                <dt class="govuk-summary-list__key">Number of pupils at end of year 11</dt>
                 <dd class="govuk-summary-list__value">220</dd>
               </div>
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Attainment 8 score</dt>
+                <dt class="govuk-summary-list__key">Average score across 8 subjects (Attainment 8)</dt>
                 <dd class="govuk-summary-list__value">58.7</dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -668,7 +667,7 @@ href: "javascript:window.history.back()"
                 <dd class="govuk-summary-list__value">55%</dd>
               </div>
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Staying in education or entering employment or apprenticeships</dt>
+                <dt class="govuk-summary-list__key">Stayed in education or entering employment or apprenticeships</dt>
                 <dd class="govuk-summary-list__value">62%</dd>
               </div>
             </dl>
@@ -681,11 +680,11 @@ href: "javascript:window.history.back()"
                 <dd class="govuk-summary-list__value">Maintained school</dd>
               </div>
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Number of pupils at end of key stage 4</dt>
+                <dt class="govuk-summary-list__key">Number of pupils at end of year 11</dt>
                 <dd class="govuk-summary-list__value">165</dd>
               </div>
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Attainment 8 score</dt>
+                <dt class="govuk-summary-list__key">Average score across 8 subjects (Attainment 8)</dt>
                 <dd class="govuk-summary-list__value">50.1</dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -693,7 +692,7 @@ href: "javascript:window.history.back()"
                 <dd class="govuk-summary-list__value">46%</dd>
               </div>
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Staying in education or entering employment or apprenticeships</dt>
+                <dt class="govuk-summary-list__key">Stayed in education or entering employment or apprenticeships</dt>
                 <dd class="govuk-summary-list__value">51%</dd>
               </div>
             </dl>
@@ -706,11 +705,11 @@ href: "javascript:window.history.back()"
                 <dd class="govuk-summary-list__value">Academy</dd>
               </div>
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Number of pupils at end of key stage 4</dt>
+                <dt class="govuk-summary-list__key">Number of pupils at end of year 11</dt>
                 <dd class="govuk-summary-list__value">198</dd>
               </div>
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Attainment 8 score</dt>
+                <dt class="govuk-summary-list__key">Average score across 8 subjects (Attainment 8)</dt>
                 <dd class="govuk-summary-list__value">56.9</dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -718,7 +717,7 @@ href: "javascript:window.history.back()"
                 <dd class="govuk-summary-list__value">53%</dd>
               </div>
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Staying in education or entering employment or apprenticeships</dt>
+                <dt class="govuk-summary-list__key">Stayed in education or entering employment or apprenticeships</dt>
                 <dd class="govuk-summary-list__value">59%</dd>
               </div>
             </dl>
@@ -731,11 +730,11 @@ href: "javascript:window.history.back()"
                 <dd class="govuk-summary-list__value">Academy</dd>
               </div>
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Number of pupils at end of key stage 4</dt>
+                <dt class="govuk-summary-list__key">Number of pupils at end of year 11</dt>
                 <dd class="govuk-summary-list__value">210</dd>
               </div>
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Attainment 8 score</dt>
+                <dt class="govuk-summary-list__key">Average score across 8 subjects (Attainment 8)</dt>
                 <dd class="govuk-summary-list__value">54.4</dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -743,7 +742,7 @@ href: "javascript:window.history.back()"
                 <dd class="govuk-summary-list__value">50%</dd>
               </div>
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Staying in education or entering employment or apprenticeships</dt>
+                <dt class="govuk-summary-list__key">Stayed in education or entering employment or apprenticeships</dt>
                 <dd class="govuk-summary-list__value">56%</dd>
               </div>
             </dl>
@@ -756,11 +755,11 @@ href: "javascript:window.history.back()"
                 <dd class="govuk-summary-list__value">Maintained school</dd>
               </div>
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Number of pupils at end of key stage 4</dt>
+                <dt class="govuk-summary-list__key">Number of pupils at end of year 11</dt>
                 <dd class="govuk-summary-list__value">142</dd>
               </div>
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Attainment 8 score</dt>
+                <dt class="govuk-summary-list__key">Average score across 8 subjects (Attainment 8)</dt>
                 <dd class="govuk-summary-list__value">47.8</dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -768,7 +767,7 @@ href: "javascript:window.history.back()"
                 <dd class="govuk-summary-list__value">41%</dd>
               </div>
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Staying in education or entering employment or apprenticeships</dt>
+                <dt class="govuk-summary-list__key">Stayed in education or entering employment or apprenticeships</dt>
                 <dd class="govuk-summary-list__value">46%</dd>
               </div>
             </dl>
@@ -781,11 +780,11 @@ href: "javascript:window.history.back()"
                 <dd class="govuk-summary-list__value">Academy</dd>
               </div>
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Number of pupils at end of key stage 4</dt>
+                <dt class="govuk-summary-list__key">Number of pupils at end of year 11</dt>
                 <dd class="govuk-summary-list__value">190</dd>
               </div>
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Attainment 8 score</dt>
+                <dt class="govuk-summary-list__key">Average score across 8 subjects (Attainment 8)</dt>
                 <dd class="govuk-summary-list__value">59.2</dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -793,7 +792,7 @@ href: "javascript:window.history.back()"
                 <dd class="govuk-summary-list__value">57%</dd>
               </div>
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Staying in education or entering employment or apprenticeships</dt>
+                <dt class="govuk-summary-list__key">Stayed in education or entering employment or apprenticeships</dt>
                 <dd class="govuk-summary-list__value">64%</dd>
               </div>
             </dl>
@@ -806,11 +805,11 @@ href: "javascript:window.history.back()"
                 <dd class="govuk-summary-list__value">College</dd>
               </div>
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Number of pupils at end of key stage 4</dt>
+                <dt class="govuk-summary-list__key">Number of pupils at end of year 11</dt>
                 <dd class="govuk-summary-list__value">235</dd>
               </div>
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Attainment 8 score</dt>
+                <dt class="govuk-summary-list__key">Average score across 8 subjects (Attainment 8)</dt>
                 <dd class="govuk-summary-list__value">55.6</dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -818,7 +817,7 @@ href: "javascript:window.history.back()"
                 <dd class="govuk-summary-list__value">52%</dd>
               </div>
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Staying in education or entering employment or apprenticeships</dt>
+                <dt class="govuk-summary-list__key">Stayed in education or entering employment or apprenticeships</dt>
                 <dd class="govuk-summary-list__value">60%</dd>
               </div>
             </dl>
@@ -831,11 +830,11 @@ href: "javascript:window.history.back()"
                 <dd class="govuk-summary-list__value">Maintained school</dd>
               </div>
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Number of pupils at end of key stage 4</dt>
+                <dt class="govuk-summary-list__key">Number of pupils at end of year 11</dt>
                 <dd class="govuk-summary-list__value">175</dd>
               </div>
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Attainment 8 score</dt>
+                <dt class="govuk-summary-list__key">Average score across 8 subjects (Attainment 8)</dt>
                 <dd class="govuk-summary-list__value">51.9</dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -843,7 +842,7 @@ href: "javascript:window.history.back()"
                 <dd class="govuk-summary-list__value">49%</dd>
               </div>
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Staying in education or entering employment or apprenticeships</dt>
+                <dt class="govuk-summary-list__key">Stayed in education or entering employment or apprenticeships</dt>
                 <dd class="govuk-summary-list__value">54%</dd>
               </div>
             </dl>
@@ -856,11 +855,11 @@ href: "javascript:window.history.back()"
                 <dd class="govuk-summary-list__value">Academy</dd>
               </div>
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Number of pupils at end of key stage 4</dt>
+                <dt class="govuk-summary-list__key">Number of pupils at end of year 11</dt>
                 <dd class="govuk-summary-list__value">202</dd>
               </div>
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Attainment 8 score</dt>
+                <dt class="govuk-summary-list__key">Average score across 8 subjects (Attainment 8)</dt>
                 <dd class="govuk-summary-list__value">60.3</dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -868,7 +867,7 @@ href: "javascript:window.history.back()"
                 <dd class="govuk-summary-list__value">58%</dd>
               </div>
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Staying in education or entering employment or apprenticeships</dt>
+                <dt class="govuk-summary-list__key">Stayed in education or entering employment or apprenticeships</dt>
                 <dd class="govuk-summary-list__value">66%</dd>
               </div>
             </dl>

@@ -17,8 +17,11 @@ Secondary schools and colleges – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-grid-column-full">
 
     <h1 class="govuk-heading-l govuk-!-margin-bottom-7">
-      Compare all schools and colleges in England
+      Compare schools and colleges in England
     </h1>
+    <p class="govuk-body govuk-!-margin-bottom-7">
+      Select the type of education provider you'd like to compare.
+    </p>
 
     {% from 'node_modules/dfe-frontend/packages/components/card/macro.njk' import card %}
 
@@ -33,7 +36,6 @@ Secondary schools and colleges – {{ serviceName }} – GOV.UK Prototype Kit
           "link": "#",
           "openInNewTab": false,
           "heading": "Primary schools",
-          "description": "Compare all primary schools in England",
           "meta": ""
         },
         {
@@ -45,7 +47,6 @@ Secondary schools and colleges – {{ serviceName }} – GOV.UK Prototype Kit
           "link": "/concepts/secondary-league-table-v-2-scrollable-mobile",
           "openInNewTab": false,
           "heading": "Secondary schools",
-          "description": "Compare all secondary schools in England",
           "meta": ""
         },
         {
@@ -57,14 +58,13 @@ Secondary schools and colleges – {{ serviceName }} – GOV.UK Prototype Kit
           "link": "#",
           "openInNewTab": false,
           "heading": "16 to 18 education providers",
-          "description": "Compare all 16 to 18 education providers in England",
           "meta": ""
         }
       ]
     }) }}
 
       <div class="govuk-inset-text">
-          <a href="#" class="govuk-link">Compare schools another way</a>, for example by searching for a school, postcode or local authority
+          <a href="#" class="govuk-link">Search for a school or college</a> and compare it with others.
       </div>
 
   </div>
