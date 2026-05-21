@@ -20,7 +20,7 @@
         Compare secondary schools and colleges in England
       </h1>
 
-      <p class="govuk-body">
+      <p class="govuk-body govuk-!-margin-bottom-7">
         Compare schools by different performance measures, and explore the data by pupil characteristic.
       </p>
 
@@ -34,10 +34,13 @@
             classes: "govuk-!-margin-top-0",
             label: {
               text: "Performance measure",
-              classes: "govuk-label--s"
+              classes: "govuk-label--m"
+            },
+            hint: {
+              text: "Choose how to compare schools"
             },
             items: [
-              { value: "overall", text: "Overall performance" },
+              { value: "overall", text: "Overall performance (2025)" },
               { value: "english-maths", text: "GCSE results for English and Maths" },
               { value: "science-entries", text: "Exam entries for biology, chemistry and physics" },
               { value: "qualification", text: "Achieved at least one qualification" },
@@ -60,8 +63,11 @@
             name: "pupilCharacteristic",
             classes: "govuk-!-margin-top-0",
             label: {
-              text: "Pupil characteristic",
-              classes: "govuk-label--s"
+              text: "Pupil group",
+              classes: "govuk-label--m"
+            },
+            hint: {
+              text: "View data for a specific group within each school"
             },
             items: [
               { value: "all", text: "All pupils" },
@@ -411,15 +417,15 @@
 
       </details>
 
-      <h2 class="govuk-heading-m">
-        Comparing schools by overall performance for all pupils
+      <h2 class="govuk-heading-m govuk-!-margin-top-7">
+        Overall performance (2025) - all pupils
       </h2>
 
       <details class="govuk-details">
 
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
-            Understanding this data
+            What this data means
           </span>
         </summary>
 
@@ -440,7 +446,7 @@
           attributes: {
             "data-module": "moj-sortable-table"
           },
-          caption: "Comparing schools by overall performance for all pupils",
+          caption: "Overall performance (2025) - all pupils",
           captionClasses: "govuk-visually-hidden",
           head: [
             {
@@ -596,10 +602,10 @@
             [
               { html: '<a href="#" class="govuk-link">Harbour View School</a>' },
               { text: "Maintained school" },
-              { text: "168", format: "numeric", attributes: { "data-sort-value": "168" } },
-              { text: "52.0", format: "numeric", attributes: { "data-sort-value": "52.0" } },
-              { text: "47%", format: "numeric", attributes: { "data-sort-value": "47" } },
-              { text: "70%", format: "numeric", attributes: { "data-sort-value": "70" } }
+              { text: "No data to show", format: "numeric", attributes: { "data-sort-value": "168" } },
+              { text: "No data to show", format: "numeric", attributes: { "data-sort-value": "52.0" } },
+              { text: "No data to show", format: "numeric", attributes: { "data-sort-value": "47" } },
+              { text: "No data to show", format: "numeric", attributes: { "data-sort-value": "70" } }
             ],
             [
               { html: '<a href="#" class="govuk-link">Stonemill Academy</a>' },
