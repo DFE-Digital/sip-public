@@ -17,7 +17,7 @@
     <div class="govuk-grid-column-full">
 
       <h1 class="govuk-heading-l">
-        Compare all secondary schools and colleges in England
+        Compare secondary schools and colleges in England
       </h1>
 
       <p class="govuk-body">
@@ -134,14 +134,39 @@
 
               <div class="moj-filter__options">
 
-                <h2 class="govuk-heading-m">Filter by</h2>
+                <!-- Type of school -->
+                <div class="govuk-form-group">
 
+                  <fieldset class="govuk-fieldset govuk-!-width-one-half">
+
+                    {{ xGovukAutocomplete({
+                      id: "local-authority",
+                      name: "local-authority",
+                      allowEmpty: true,
+                      label: {
+                        classes: "govuk-label--m",
+                        isPageHeading: true,
+                        text: "Local authority"
+                      },
+                      hint: {
+                        text: "Start typing to search for a local authority"
+                      },
+                      items: [
+                        { text: "Rotherham Metropolitan Borough Council", value: "rotherham" },
+                        { text: "Leeds City Council", value: "Leeds" },
+                        { text: "Nottingham City Council", value: "Nottingham" }
+                      ]
+                    }) }}
+
+                  </fieldset>
+
+                </div>
                 <!-- Type of school -->
                 <div class="govuk-form-group">
 
                   <fieldset class="govuk-fieldset">
 
-                    <legend class="govuk-fieldset__legend govukuk-fieldset__legend--m">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                       Type of school
                     </legend>
 
