@@ -198,7 +198,7 @@ function drawDestinationsBreakdown() {
     ],
     ["Stayed in education", 0.89, "89%", 0.86, "86%", 0.84, "84%"],
     [
-      "Entering employment and apprenticeships",
+      "Entering employment and  apprenticeship",
       0.06,
       "6%",
       0.06,
