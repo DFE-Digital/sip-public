@@ -30,7 +30,7 @@ English and maths results {% endblock %}
         </li>
         <li class="moj-sub-navigation__item">
           <a class="moj-sub-navigation__link" aria-current="page" href="english-maths-results">
-            English and maths results
+            English and maths
           </a>
         </li>
         <li class="moj-sub-navigation__item">
@@ -45,7 +45,7 @@ English and maths results {% endblock %}
     </nav>
 
     <h2 class="govuk-heading-l">
-      English and maths results for the previous academic year
+      English and maths
     </h2>
 
     <p class="govuk-body">
@@ -84,22 +84,48 @@ English and maths results {% endblock %}
       </div>
     </details>
 
-    <div class="sp-filter">
-      <label class="govuk-label" for="sort">
-        Choose the grade you want to see results for
-      </label>
-      <select class="govuk-select" id="sort" name="sort">
-        <option value="g5" selected>Grade 5 and above</option>
-        <option value="g4">Grade 4 and above</option>
-      </select>
+    <h2 class="govuk-heading-m">
+      English and maths results
+    </h2>
 
-      <button type="submit" class="govuk-button" data-module="govuk-button">
-        Show results
-      </button>
+    <div class="govuk-grid-row govuk-!-margin-bottom-4">
+
+      <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort-year">
+            Select a grade
+          </label>
+
+          <select class="govuk-select" id="sort-year" name="sort-year">
+            <option value="current" selected>Grade 5 and above</option>
+            <option value="last">2023 to 2024</option>
+            <option value="last-last">2022 to 2023</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort-characteristic">
+            Select a pupil characteristic
+          </label>
+
+          <select class="govuk-select" id="sort-characteristic" name="sort-characteristic">
+            <option selected>All pupils</option>
+            <option selected>Disadvantaged pupils</option>
+            <option>Pupils with English as an additional language</option>
+            <option>Girls</option>
+            <option>Boys</option>
+            <option>Non mobile pupils</option>
+          </select>
+        </div>
+      </div>
+
     </div>
+
     <div class="sp-card-graph">
       <h3 class="govuk-heading-m">
-        Grade 5 and above in English and maths GCSEs
+        Grade 5 and above - all pupils
       </h3>
       <p body="govuk-body">
         Grade 5 is comparable to the top of the old grade C.
@@ -122,83 +148,83 @@ English and maths results {% endblock %}
       </button>
     </div>
 
-    <div class="sp-card-graph">
-      <h3 class="govuk-heading-m">
-        Results by pupil types for Grade 5 and above in English and maths GCSEs
-      </h3>
-      <p body="govuk-body">
-        Grade 5 is comparable to the top of the old grade C.
-      </p>
+<!--    <div class="sp-card-graph">-->
+<!--      <h3 class="govuk-heading-m">-->
+<!--        Results by pupil types for Grade 5 and above in English and maths GCSEs-->
+<!--      </h3>-->
+<!--      <p body="govuk-body">-->
+<!--        Grade 5 is comparable to the top of the old grade C.-->
+<!--      </p>-->
 
-      <div id="english-maths-pupil-type" class="cluster-chart"></div>
-      <button
-        type="submit"
-        class="govuk-button govuk-button--secondary"
-        data-module="govuk-button"
-      >
-        Show as a table
-      </button>
-    </div>
-    <nav
-      class="govuk-pagination govuk-pagination--block"
-      aria-label="Pagination"
-    >
-      <div class="govuk-pagination__prev">
-        <a
-          class="govuk-link govuk-pagination__link"
-          href="attainment-progress"
-          rel="prev"
-        >
-          <svg
-            class="govuk-pagination__icon govuk-pagination__icon--prev"
-            xmlns="http://www.w3.org/2000/svg"
-            height="13"
-            width="15"
-            aria-hidden="true"
-            focusable="false"
-            viewBox="0 0 15 13"
-          >
-            <path
-              d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"
-            ></path>
-          </svg>
-          <span class="govuk-pagination__link-title">
-            Previous<span class="govuk-visually-hidden"> page</span>
-          </span>
-          <span class="govuk-visually-hidden">:</span>
-          <span class="govuk-pagination__link-label"
-            >Academic performance: Attainment and progress</span
-          >
-        </a>
-      </div>
-      <div class="govuk-pagination__next">
-        <a
-          class="govuk-link govuk-pagination__link"
-          href="subjects-entered"
-          rel="next"
-        >
-          <svg
-            class="govuk-pagination__icon govuk-pagination__icon--next"
-            xmlns="http://www.w3.org/2000/svg"
-            height="13"
-            width="15"
-            aria-hidden="true"
-            focusable="false"
-            viewBox="0 0 15 13"
-          >
-            <path
-              d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"
-            ></path>
-          </svg>
-          <span class="govuk-pagination__link-title">
-            Next<span class="govuk-visually-hidden"> page</span>
-          </span>
-          <span class="govuk-visually-hidden">:</span>
-          <span class="govuk-pagination__link-label"
-            >Academic performance: Subjects entered</span
-          >
-        </a>
-      </div>
+<!--      <div id="english-maths-pupil-type" class="cluster-chart"></div>-->
+<!--      <button-->
+<!--        type="submit"-->
+<!--        class="govuk-button govuk-button&#45;&#45;secondary"-->
+<!--        data-module="govuk-button"-->
+<!--      >-->
+<!--        Show as a table-->
+<!--      </button>-->
+<!--    </div>-->
+<!--    <nav-->
+<!--      class="govuk-pagination govuk-pagination&#45;&#45;block"-->
+<!--      aria-label="Pagination"-->
+<!--    >-->
+<!--      <div class="govuk-pagination__prev">-->
+<!--        <a-->
+<!--          class="govuk-link govuk-pagination__link"-->
+<!--          href="attainment-progress"-->
+<!--          rel="prev"-->
+<!--        >-->
+<!--          <svg-->
+<!--            class="govuk-pagination__icon govuk-pagination__icon&#45;&#45;prev"-->
+<!--            xmlns="http://www.w3.org/2000/svg"-->
+<!--            height="13"-->
+<!--            width="15"-->
+<!--            aria-hidden="true"-->
+<!--            focusable="false"-->
+<!--            viewBox="0 0 15 13"-->
+<!--          >-->
+<!--            <path-->
+<!--              d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"-->
+<!--            ></path>-->
+<!--          </svg>-->
+<!--          <span class="govuk-pagination__link-title">-->
+<!--            Previous<span class="govuk-visually-hidden"> page</span>-->
+<!--          </span>-->
+<!--          <span class="govuk-visually-hidden">:</span>-->
+<!--          <span class="govuk-pagination__link-label"-->
+<!--            >Academic performance: Attainment and progress</span-->
+<!--          >-->
+<!--        </a>-->
+<!--      </div>-->
+<!--      <div class="govuk-pagination__next">-->
+<!--        <a-->
+<!--          class="govuk-link govuk-pagination__link"-->
+<!--          href="subjects-entered"-->
+<!--          rel="next"-->
+<!--        >-->
+<!--          <svg-->
+<!--            class="govuk-pagination__icon govuk-pagination__icon&#45;&#45;next"-->
+<!--            xmlns="http://www.w3.org/2000/svg"-->
+<!--            height="13"-->
+<!--            width="15"-->
+<!--            aria-hidden="true"-->
+<!--            focusable="false"-->
+<!--            viewBox="0 0 15 13"-->
+<!--          >-->
+<!--            <path-->
+<!--              d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"-->
+<!--            ></path>-->
+<!--          </svg>-->
+<!--          <span class="govuk-pagination__link-title">-->
+<!--            Next<span class="govuk-visually-hidden"> page</span>-->
+<!--          </span>-->
+<!--          <span class="govuk-visually-hidden">:</span>-->
+<!--          <span class="govuk-pagination__link-label"-->
+<!--            >Academic performance: Subjects entered</span-->
+<!--          >-->
+<!--        </a>-->
+<!--      </div>-->
     </nav>
   </div>
 </div>
