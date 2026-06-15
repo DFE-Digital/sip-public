@@ -20,7 +20,12 @@ English and maths results {% endblock %}
       <ul class="moj-sub-navigation__list">
         <li class="moj-sub-navigation__item">
           <a class="moj-sub-navigation__link" href="attainment-progress">
-            Attainment and progress
+            Progress
+          </a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="attainment">
+            Attainment
           </a>
         </li>
         <li class="moj-sub-navigation__item">
@@ -200,13 +205,9 @@ English and maths results {% endblock %}
 
 {% endblock %} {% block pageScripts %}
 
-<!-- Load your local chart code (file in app/assets/javascripts) -->
-<script src="/public/javascripts/google-charts.js"></script>
 <script src="https://www.gstatic.com/charts/loader.js"></script>
-<!-- Initialise the chart -->
-<script>
-  google.charts.load("current", { packages: ["corechart"] });
-  google.charts.setOnLoadCallback(window.drawGoogleChart);
-</script>
+<script src="/public/javascripts/google-charts.js"></script>
+
+
 
 {% endblock %}
