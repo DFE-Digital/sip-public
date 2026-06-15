@@ -1,0 +1,183 @@
+{% extends "layouts/main.html" %} {% block pageTitle %} Academic performance:
+Attainment and progress {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    {% include "includes/side-nav.html" %}
+  </div>
+
+  <div class="govuk-grid-column-three-quarters">
+    <span class="govuk-caption-xl">Oak Nest Secondary School</span>
+    <h1 class="govuk-heading-xl">Academic performance</h1>
+    <p class="govuk-body">
+      Looking at school performance data is one way to see how well a school is
+      doing. You should look at a range of information about a school before
+      deciding if it’s the right fit for your child.
+    </p>
+
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="attainment-progress">
+            Progress
+          </a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" aria-current="page" href="attainment-progress">
+            Attainment
+          </a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="english-maths-results">
+            English and maths results
+          </a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="subjects-entered">
+            Subjects entered
+          </a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="other-performance-measures">Additional measures</a>
+        </li>
+      </ul>
+    </nav>
+
+    <h2 class="govuk-heading-l">Pupil attainment</h2>
+
+    <p class="govuk-body">
+      See how well pupils do in their GCSEs. Attainment 8 is based on their average results across their best 8 subjects.
+    </p>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Learn more about Attainment 8
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body">
+          The 8 subjects that are used in Attainment 8 are split into 3 groups:
+        </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>English and maths, which are both double-weighted</li>
+          <li>
+            EBacc subjects, these are a group of GCSE subjects that help
+            students gain a broad set of knowledge and skills. These subjects
+            include sciences, geography, history, and languages
+          </li>
+          <li>
+            open group which includes any other approved GCSEs or vocational
+            qualifications
+          </li>
+        </ul>
+        <p class="govuk-body">
+          Each GCSE grade is given a point score (for example grade 9 = 9
+          points, grade 8 = 8 points, and so on). The scores from the best 8
+          subjects (with English and Maths counting twice) are added together to
+          give the Average score across 8 subjects (Attainment 8).
+        </p>
+      </div>
+    </details>
+
+    <h3 class="govuk-heading-m">Average attainment 8 score</h3>
+
+    <div class="govuk-grid-row govuk-!-margin-bottom-4">
+
+      <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort-year">
+            Select an academic year
+          </label>
+
+          <select class="govuk-select" id="sort-year" name="sort-year">
+            <option value="current" selected>2024 to 2025</option>
+            <option value="last">2023 to 2024</option>
+            <option value="last-last">2022 to 2023</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort-characteristic">
+            Select a pupil characteristic
+          </label>
+
+          <select class="govuk-select" id="sort-characteristic" name="sort-characteristic">
+            <option selected>All pupils</option>
+            <option selected>Disadvantaged pupils</option>
+            <option>Pupils with English as an additional language</option>
+            <option>Girls</option>
+            <option>Boys</option>
+            <option>Non mobile pupils</option>
+          </select>
+        </div>
+      </div>
+
+    </div>
+
+    {{ govukTable({
+    caption: "Attainment 8 score for all pupils - 2024 to 2025",
+    firstCellIsHeader: true,
+    head: [
+    {
+    text: "Compare"
+    },
+    {
+    text: "Attainment 8 score"
+    }
+    ],
+    rows: [
+    [
+    {
+    text: "Dinnington Academy"
+    },
+    {
+    text: "45"
+    }
+    ],
+    [
+    {
+    text: "Local authority average"
+    },
+    {
+    text: "50"
+    }
+    ],
+    [
+    {
+    text: "National average"
+    },
+    {
+    text: "40"
+    }
+    ]
+    ]
+    }) }}
+
+    <h3 class="govuk-heading-m">
+      What this means
+    </h3>
+
+    <p class="govuk-body">
+      An Average score across 8 subjects (Attainment 8) of 45 means the average pupil achieved GCSE grades
+      of around 4 to 5 across their subjects. This is a standard to strong pass.
+    </p>
+
+    <p class="govuk-body">
+      This score is 5 points lower than the local authority average.
+      This means pupils at this school perform below other schools locally.
+    </p>
+
+    <p class="govuk-body">
+      The score is 5 points higher than the national average.
+      This means pupils perform better than the national average.
+    </p>
+
+  </div>
+</div>
+
+{% endblock %}
