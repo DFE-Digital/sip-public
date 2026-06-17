@@ -44,10 +44,14 @@ Attainment and progress {% endblock %}
       </ul>
     </nav>
 
-    <h2 class="govuk-heading-l">Pupil attainment</h2>
+    <h2 class="govuk-heading-l">Attainment</h2>
 
     <p class="govuk-body">
-      See how well pupils do in their GCSEs. Attainment 8 is based on their average results across their best 8 subjects.
+      See how well pupils perform in their GCSEs compared with local authority and national averages by comparing ‘Attainment 8’ scores.
+    </p>
+
+    <p class="govuk-body">
+      Attainment 8 is an average of pupils’ results across different subject groupings.
     </p>
 
     <details class="govuk-details">
@@ -84,78 +88,89 @@ Attainment and progress {% endblock %}
 
     <h3 class="govuk-heading-m">Average attainment 8 score</h3>
 
-    <div class="govuk-grid-row govuk-!-margin-bottom-4">
+      <form method="get">
 
-      <div class="govuk-grid-column-one-half">
         <div class="govuk-form-group">
-          <label class="govuk-label" for="sort-year">
-            Select an academic year
+          <label class="govuk-label" for="subject">
+            Select a subject grouping
           </label>
-
-          <select class="govuk-select" id="sort-year" name="sort-year">
-            <option value="current" selected>2024 to 2025</option>
-            <option value="last">2023 to 2024</option>
-            <option value="last-last">2022 to 2023</option>
+          <select class="govuk-select" id="subject" name="subject">
+            <option value="english">8 best subjects</option>
+            <option value="english">English</option>
+            <option value="maths">Maths</option>
+            <option value="english">All subjects</option>
+            <option value="english">Academic subjects</option>
+            <option value="english">Vocational subjects</option>
           </select>
         </div>
-      </div>
 
-      <div class="govuk-grid-column-one-half">
         <div class="govuk-form-group">
-          <label class="govuk-label" for="sort-characteristic">
+          <label class="govuk-label" for="characteristic">
             Select a pupil characteristic
           </label>
-
-          <select class="govuk-select" id="sort-characteristic" name="sort-characteristic">
-            <option selected>All pupils</option>
-            <option selected>Disadvantaged pupils</option>
-            <option>Pupils with English as an additional language</option>
-            <option>Girls</option>
-            <option>Boys</option>
-            <option>Non mobile pupils</option>
+          <select class="govuk-select" id="characteristic" name="characteristic">
+            <option value="all">All pupils</option>
+            <option value="disadvantaged">Disadvantaged pupils</option>
+            <option value="girls">Girls</option>
+            <option value="boys">Boys</option>
           </select>
         </div>
-      </div>
 
-    </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="year">
+            Select an academic year
+          </label>
+          <select class="govuk-select" id="year" name="year">
+            <option value="2025">2024 to 2025</option>
+            <option value="2024">2023 to 2024</option>
+            <option value="2023">2022 to 2023</option>
+          </select>
+        </div>
+
+        <button class="govuk-button" type="submit">
+          Compare scores
+        </button>
+
+      </form>
+
 
     {{ govukTable({
-    caption: "Attainment 8 score for all pupils - 2024 to 2025",
-    firstCellIsHeader: true,
-    head: [
-    {
-    text: "Compare"
-    },
-    {
-    text: "Attainment 8 score"
-    }
-    ],
-    rows: [
-    [
-    {
-    text: "Dinnington Academy"
-    },
-    {
-    text: "45"
-    }
-    ],
-    [
-    {
-    text: "Local authority average"
-    },
-    {
-    text: "50"
-    }
-    ],
-    [
-    {
-    text: "National average"
-    },
-    {
-    text: "40"
-    }
-    ]
-    ]
+      caption: "Attainment 8 score for all subjects and all pupils - 2024 to 2025",
+      firstCellIsHeader: true,
+      head: [
+        {
+          text: "Compare"
+        },
+        {
+          text: "Attainment 8 score"
+        }
+      ],
+      rows: [
+        [
+          {
+            html: "Oak Nest Secondary School"
+          },
+          {
+            text: "45"
+          }
+        ],
+        [
+          {
+            text: "Local authority average"
+          },
+          {
+            text: "50"
+          }
+        ],
+        [
+          {
+            text: "National average"
+          },
+          {
+            text: "40"
+          }
+        ]
+      ]
     }) }}
 
     <h3 class="govuk-heading-m">
