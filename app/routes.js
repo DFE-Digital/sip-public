@@ -22,8 +22,10 @@ router.post('/workplace', function(request, response) {
 router.get('/prototype-v-1/academic-performance/attainment-v-3', function (req, res) {
 
     const subject = req.query.subject || '8-best'
+    const characteristic = req.query.characteristic || 'all'
 
     res.render('/prototype-v-1/academic-performance/attainment-v-3', {
-        subject
+        subject,
+        characteristic
     })
 })

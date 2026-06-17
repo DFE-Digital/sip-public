@@ -105,16 +105,18 @@ Attainment and progress {% endblock %}
             </select>
           </div>
 
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="year">
-              Select an academic year
-            </label>
-            <select class="govuk-select" id="year" name="year">
-              <option value="2025">2024 to 2025</option>
-              <option value="2024">2023 to 2024</option>
-              <option value="2023">2022 to 2023</option>
-            </select>
-          </div>
+            {% if subject == "8-best" and (characteristic == "all" or characteristic == "disadvantaged") %}
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="year">
+                  Select an academic year
+                </label>
+                <select class="govuk-select" id="year" name="year">
+                  <option value="2025">2024 to 2025</option>
+                  <option value="2024">2023 to 2024</option>
+                  <option value="2023">2022 to 2023</option>
+                </select>
+              </div>
+            {% endif %}
 
           {% if subject == "8-best" %}
             <div id="secondary-filter" class="govuk-!-margin-top-4">
@@ -207,22 +209,31 @@ Attainment and progress {% endblock %}
 </div>
 
 <script>
-    const subjectSelect = document.getElementById('subject')
-    const filter = document.getElementById('secondary-filter')
+  const subjectSelect = document.getElementById('subject')
+  const characteristicSelect = document.getElementById('characteristic')
+  const yearSelectGroup = document.getElementById('year')?.closest('.govuk-form-group')
 
-    function toggleFilter() {
-        if (subjectSelect.value === '8-best') {
-            filter.style.display = 'block'
-        } else {
-            filter.style.display = 'none'
-        }
+  function toggleControls() {
+    const subjectIs8Best = subjectSelect.value === '8-best'
+    const characteristicValue = characteristicSelect?.value
+
+    const showYear =
+      subjectIs8Best &&
+      (characteristicValue === 'all' || characteristicValue === 'disadvantaged')
+
+    if (yearSelectGroup) {
+      yearSelectGroup.style.display = showYear ? 'block' : 'none'
     }
+  }
 
-    // Run on page load
-    toggleFilter()
+  // Run on load
+  toggleControls()
 
-    // Run whenever selection changes
-    subjectSelect.addEventListener('change', toggleFilter)
+  subjectSelect.addEventListener('change', toggleControls)
+
+  if (characteristicSelect) {
+    characteristicSelect.addEventListener('change', toggleControls)
+  }
 </script>
 
 {% endblock %}
