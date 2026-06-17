@@ -86,64 +86,60 @@ Attainment and progress {% endblock %}
             </div>
         </details>
 
-        <h3 class="govuk-heading-m">Average attainment 8 score</h3>
+        <h3 class="govuk-heading-m govuk-!-margin-top-9">Compare Attainment 8 scores</h3>
 
 
         <form method="get" class="govuk-!-margin-bottom-2">
 
-            <div class="govuk-form-group">
-                <label class="govuk-label" for="subject">
-                    Select a subject grouping
-                </label>
-                <select class="govuk-select" id="subject" name="subject">
-                    <option value="8-best">8 best subjects</option>
-                    <option value="english">English</option>
-                    <option value="maths">Maths</option>
-                    <option value="all">All subjects</option>
-                    <option value="academic">Academic subjects</option>
-                    <option value="vocational">Vocational subjects</option>
-                </select>
-            </div>
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="subject">
+      Select a subject grouping
+    </label>
+    <select class="govuk-select" id="subject" name="subject">
+      <option value="8-best">8 best subjects</option>
+      <option value="english">English</option>
+      <option value="maths">Maths</option>
+      <option value="all">All subjects</option>
+      <option value="academic">Academic subjects</option>
+      <option value="vocational">Vocational subjects</option>
+    </select>
+  </div>
 
-            <div class="govuk-form-group">
-                <label class="govuk-label" for="year">
-                    Select an academic year
-                </label>
-                <select class="govuk-select" id="year" name="year">
-                    <option value="2025">2024 to 2025</option>
-                    <option value="2024">2023 to 2024</option>
-                    <option value="2023">2022 to 2023</option>
-                </select>
-            </div>
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="year">
+      Select an academic year
+    </label>
+    <select class="govuk-select" id="year" name="year">
+      <option value="2025">2024 to 2025</option>
+      <option value="2024">2023 to 2024</option>
+      <option value="2023">2022 to 2023</option>
+    </select>
+  </div>
 
-            <button class="govuk-button" type="submit">
-                Compare scores
-            </button>
+  {% if subject == "8-best" %}
+    <div id="secondary-filter" class="govuk-!-margin-top-4">
 
-        </form>
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="characteristic">
+          Narrow down further by pupil characteristic
+        </label>
+        <select class="govuk-select" id="characteristic" name="characteristic">
+          <option value="all">All pupils</option>
+          <option value="disadvantaged">Disadvantaged pupils</option>
+          <option value="girls">Girls</option>
+          <option value="boys">Boys</option>
+        </select>
+      </div>
 
-        <!-- Secondary filter -->
-        <div class="govuk-!-margin-bottom-2">
+    </div>
+  {% endif %}
 
-            <div class="govuk-form-group">
-                <label class="govuk-label" for="characteristic">
-                    Narrow down further by pupil characteristic
-                </label>
-                <select class="govuk-select" id="characteristic" name="characteristic">
-                    <option value="all">All pupils</option>
-                    <option value="disadvantaged">Disadvantaged pupils</option>
-                    <option value="girls">Girls</option>
-                    <option value="boys">Boys</option>
-                </select>
-            </div>
+  <button class="govuk-button" type="submit">
+    Update results
+  </button>
 
-            <div class="govuk-form-group">
-                <button type="submit" class="govuk-button govuk-button--secondary">
-                    Narrow down scores
-                </button>
-            </div>
+</form>
 
-        </div>
 
 
         <h4 class="govuk-heading-s govuk-!-margin-bottom-2">Attainment 8 scores for disadvantaged pupils based on their 8 best subjects, 2024 to 2025</h4>
@@ -209,5 +205,24 @@ Attainment and progress {% endblock %}
 
     </div>
 </div>
+
+<script>
+    const subjectSelect = document.getElementById('subject')
+    const filter = document.getElementById('secondary-filter')
+
+    function toggleFilter() {
+        if (subjectSelect.value === '8-best') {
+            filter.style.display = 'block'
+        } else {
+            filter.style.display = 'none'
+        }
+    }
+
+    // Run on page load
+    toggleFilter()
+
+    // Run whenever selection changes
+    subjectSelect.addEventListener('change', toggleFilter)
+</script>
 
 {% endblock %}
