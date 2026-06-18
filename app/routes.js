@@ -19,6 +19,18 @@ router.post('/workplace', function(request, response) {
     }
 })
 
+router.get('/pupil-characteristic', function(request, response) {
+
+    var pupilCharacteristic = request.query.characteristic
+
+    if (pupilCharacteristic === "disadvantaged"){
+        response.redirect("/prototype-v-1/academic-performance/attainment/attainment-versions/attainment-disadvantaged-pupils.html")
+    } else {
+        response.redirect("/")
+    }
+
+})
+
 router.get('/prototype-v-1/academic-performance/attainment-v-3', function (req, res) {
 
     const subject = req.query.subject || '8-best'

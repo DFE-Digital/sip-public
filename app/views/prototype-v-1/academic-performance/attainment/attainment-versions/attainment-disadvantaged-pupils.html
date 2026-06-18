@@ -44,7 +44,7 @@ Attainment and progress {% endblock %}
             </ul>
         </nav>
 
-        <h2 class="govuk-heading-l">Attainment</h2>
+        <h2 class="govuk-heading-l">Attainment test</h2>
 
         <p class="govuk-body">
             See how well pupils perform compared with local authority and national averages by comparing ‘Attainment 8’ scores.
@@ -94,7 +94,7 @@ Attainment and progress {% endblock %}
             </p>
         </div>
 
-        <form method="get" action="/pupil-characteristic" class="govuk-!-margin-bottom-2">
+        <form method="get" class="govuk-!-margin-bottom-2">
 
             <div class="govuk-form-group">
                 <label class="govuk-label" for="characteristic">
@@ -102,7 +102,7 @@ Attainment and progress {% endblock %}
                 </label>
                 <select class="govuk-select" id="characteristic" name="characteristic">
                     <option value="all">All pupils</option>
-                    <option value="disadvantaged">Disadvantaged pupils</option>
+                    <option value="disadvantaged" selected>Disadvantaged pupils</option>
                     <option value="prior-attainment">Prior attainment</option>
                     <option value="eal">English as an additional language</option>
                     <option value="girls">Girls</option>
