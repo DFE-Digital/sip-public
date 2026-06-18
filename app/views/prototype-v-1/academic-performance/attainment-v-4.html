@@ -24,7 +24,7 @@ Attainment and progress {% endblock %}
                     </a>
                 </li>
                 <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" aria-current="page" href="attainment-progress">
+                    <a class="moj-sub-navigation__link" aria-current="page" href="attainment-v-4">
                         Attainment
                     </a>
                 </li>
@@ -98,8 +98,11 @@ Attainment and progress {% endblock %}
                 <select class="govuk-select" id="characteristic" name="characteristic">
                     <option value="all">All pupils</option>
                     <option value="disadvantaged">Disadvantaged pupils</option>
+                    <option value="prior-attainment">Prior attainment</option>
+                    <option value="eal">English as an additional language</option>
                     <option value="girls">Girls</option>
                     <option value="boys">Boys</option>
+                    <option value="non-mobile">Non-mobile pupils</option>
                 </select>
             </div>
 
@@ -211,9 +214,10 @@ Attainment and progress {% endblock %}
         <select class="govuk-select" id="subject" name="subject">
           <option value="english">English</option>
           <option value="maths">Maths</option>
-          <option value="all">All subjects</option>
-          <option value="academic">Academic subjects</option>
-          <option value="vocational">Vocational subjects</option>
+          <option value="ebacc">Ebacc slots</option>
+          <option value="any-qual">Open slots: any qualification</option>
+          <option value="academic-qual">Open slots: academic qualifications only</option>
+          <option value="vocational-qual">Open slots: vocational qualifications only</option>
         </select>
       </div>
 
