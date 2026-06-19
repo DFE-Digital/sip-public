@@ -1,0 +1,87 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Attainment 8</h1>
+
+    <p class="govuk-body">
+      Attainment 8 is a score based on a pupil’s results in 8 GCSE-level subjects.
+    </p>
+
+    <h2 class="govuk-heading-m">Subjects included</h2>
+
+      <p class="govuk-body">
+        Attainment 8 is made up of different subject areas.
+        These help make sure pupils study a broad and balanced range of subjects.
+      </p>
+
+      <p class="govuk-body">
+        They include:
+      </p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        English
+      </li>
+      <li>
+        Maths
+      </li>
+      <li>
+        EBacc subjects – up to 3 subjects from a group that includes sciences, computer science, geography, history and languages
+      </li>
+      <li>
+        Other approved subjects – up to 3 subjects from a wider range of GCSEs or vocational qualifications, including arts and technical subjects
+      </li>
+    </ul>
+
+
+      <p class="govuk-body">
+        Together, these make up 8 subjects in total.
+      </p>
+
+
+      <h2 class="govuk-heading-m">How this works in practice</h2>
+
+    <p class="govuk-body">
+      Pupils do not have to take specific subjects for Attainment 8. Instead, their 8 best results
+      are used, as long as they fit into the groups above.
+    </p>
+
+    <p class="govuk-body">
+      This approach encourages schools to offer a broad curriculum, while recognising pupils’
+      strengths across different subjects.
+    </p>
+
+      <h2 class="govuk-heading-m">How the score is calculated</h2>
+
+
+      <p class="govuk-body">
+        Each GCSE grade is given a point score. The points from a pupil’s 8 best subjects are added together to give their Attainment 8 score.
+      </p>
+
+      <p class="govuk-body">
+        English and maths are double weighted, so they each count twice in the total score.
+      </p>
+
+      <p class="govuk-body">
+        For example, a grade 7 in English is worth 7 points. Because English is double weighted, it contributes 14 points to the total score.
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

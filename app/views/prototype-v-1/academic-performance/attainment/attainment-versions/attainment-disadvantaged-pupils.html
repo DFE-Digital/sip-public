@@ -51,40 +51,15 @@ Attainment and progress {% endblock %}
         </p>
 
         <p class="govuk-body">
-            Attainment 8 is used to assess pupils average achievement across 8 of their best GCSE-level subjects.
+            Attainment 8 is a score based on a pupil’s results in 8 GCSE-level subjects.
         </p>
 
-        <details class="govuk-details">
-            <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          Learn more about Attainment 8
-        </span>
-            </summary>
-            <div class="govuk-details__text">
-                <p class="govuk-body">
-                    The 8 subjects that are used in Attainment 8 are split into 3 groups:
-                </p>
+        <div class="govuk-inset-text">
+            <p class="govuk-body">
+                Learn more about <a href="/standalone-pages/attainment-8" class="govuk-link">Attainment 8</a>.
+            </p>
+        </div>
 
-                <ul class="govuk-list govuk-list--bullet">
-                    <li>English and maths, which are both double-weighted</li>
-                    <li>
-                        EBacc subjects, these are a group of GCSE subjects that help
-                        students gain a broad set of knowledge and skills. These subjects
-                        include sciences, geography, history, and languages
-                    </li>
-                    <li>
-                        open group which includes any other approved GCSEs or vocational
-                        qualifications
-                    </li>
-                </ul>
-                <p class="govuk-body">
-                    Each GCSE grade is given a point score (for example grade 9 = 9
-                    points, grade 8 = 8 points, and so on). The scores from the best 8
-                    subjects (with English and Maths counting twice) are added together to
-                    give the Average score across 8 subjects (Attainment 8).
-                </p>
-            </div>
-        </details>
 
         <h3 class="govuk-heading-m govuk-!-margin-top-9">Compare this school’s Attainment 8 score with local authority and national averages</h3>
 
@@ -257,7 +232,7 @@ Attainment and progress {% endblock %}
 
         <div class="govuk-inset-text">
             <p class="govuk-body">
-                Learn about <a href="#" class="govuk-link">subject areas</a>.
+                Learn about <a href="/standalone-pages/attainment-8" class="govuk-link">subject areas</a>.
             </p>
         </div>
 
@@ -270,10 +245,10 @@ Attainment and progress {% endblock %}
         <select class="govuk-select" id="subject" name="subject">
           <option value="english">English</option>
           <option value="maths">Maths</option>
-          <option value="ebacc">Ebacc slots</option>
-          <option value="any-qual">Open slots: any qualification</option>
-          <option value="academic-qual">Open slots: academic qualifications only</option>
-          <option value="vocational-qual">Open slots: vocational qualifications only</option>
+          <option value="ebacc">Ebacc subjects</option>
+          <option value="any-qual">Other approved subjects: any qualification</option>
+          <option value="academic-qual">Other approved subjects: academic qualifications only</option>
+          <option value="vocational-qual">Other approved subjects: vocational qualifications only</option>
         </select>
       </div>
 
