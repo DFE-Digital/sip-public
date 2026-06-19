@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Pupil characteristics
+      </h1>
+
+      <h2 class="govuk-heading-m">Disadvantaged pupils</h2>
+      <p class="govuk-body">
+        Pupils are identified as disadvantaged if any of the following apply:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>they were eligible for free school meals at any time during the last 6 years</li>
+        <li>they have been in the care of the local council for a day or more</li>
+        <li>they have been adopted from care</li>
+      </ul>
+
+    <h2 class="govuk-heading-m">Pupils with English as an additional language</h2>
+    <p class="govuk-body">
+      Pupils who hear or use a language other than English at home.
+    </p>
+
+    <p class="govuk-body">
+      This does not show how well a child speaks English and does not mean they are new to the UK.
+    </p>
+
+    <h2 class="govuk-heading-m">Non-mobile pupils</h2>
+    <p class="govuk-body">
+      Non-mobile pupils are pupils who stayed at the same school for their final 2 years of secondary school, years 10 and 11.
+    </p>
+
+<h2 class="govuk-heading-m">Prior attainment</h2>
+<p class="govuk-body">
+Prior attainment shows the level pupils reached at the end of the previous key stage. Understanding pupils’ starting point helps to understand how much they have progressed.
+</p>
+
+<h3 class="govuk-heading-s">Low prior attainers</h3>
+<p class="govuk-body">
+Pupils who had lower levels of attainment at the end of the
+previous key stage.
+</p>
+
+<h3 class="govuk-heading-s">Middle prior attainers</h3>
+<p class="govuk-body">
+Pupils who achieved around the expected level at the end
+of the previous key stage.
+</p>
+
+<h3 class="govuk-heading-s">High prior attainers</h3>
+<p class="govuk-body">
+Pupils who had high levels of attainment at the end of the
+previous key stage.
+</p>
+
+    </div>
+  </div>
+
+{% endblock %}
