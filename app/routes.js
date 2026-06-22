@@ -19,15 +19,13 @@ router.post('/workplace', function(request, response) {
     }
 })
 
-router.get('/pupil-characteristic', function(request, response) {
+router.get('/pupil-characteristic', function (req, res) {
 
-    var pupilCharacteristic = request.query.characteristic
+    const pupilCharacteristic = req.query.characteristic || "all"
 
-    if (pupilCharacteristic === "disadvantaged"){
-        response.redirect("/prototype-v-1/academic-performance/attainment/attainment-versions/attainment-disadvantaged-pupils.html")
-    } else {
-        response.redirect("/")
-    }
+    res.render('prototype-v-1/academic-performance/attainment/attainment-versions/attainment', {
+        characteristic: pupilCharacteristic
+    })
 
 })
 

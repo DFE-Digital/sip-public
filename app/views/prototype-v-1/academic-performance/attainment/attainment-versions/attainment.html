@@ -2,6 +2,26 @@
 Attainment and progress {% endblock %}
 {% block content %}
 
+{% set characteristic = characteristic or "all" %}
+
+{% if characteristic == "all" %}
+  {% set groupLabel = "all pupils" %}
+{% elif characteristic == "disadvantaged" %}
+  {% set groupLabel = "disadvantaged pupils" %}
+{% elif characteristic == "prior-attainment" %}
+  {% set groupLabel = "pupils by prior attainment" %}
+{% elif characteristic == "eal" %}
+  {% set groupLabel = "pupils with English as an additional language" %}
+{% elif characteristic == "girls" %}
+  {% set groupLabel = "girls" %}
+{% elif characteristic == "boys" %}
+  {% set groupLabel = "boys" %}
+{% elif characteristic == "non-mobile" %}
+  {% set groupLabel = "non-mobile pupils" %}
+{% else %}
+  {% set groupLabel = "all pupils" %}
+{% endif %}
+
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-quarter">
         {% include "includes/side-nav.html" %}
@@ -24,7 +44,7 @@ Attainment and progress {% endblock %}
                     </a>
                 </li>
                 <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" aria-current="page" href="attainment-v-4">
+                    <a class="moj-sub-navigation__link" aria-current="page" href="attainment">
                         Attainment
                     </a>
                 </li>
@@ -69,14 +89,15 @@ Attainment and progress {% endblock %}
                     Narrow down by pupil characteristic
                 </label>
                 <select class="govuk-select" id="characteristic" name="characteristic">
-                    <option value="all">All pupils</option>
-                    <option value="disadvantaged">Disadvantaged pupils</option>
-                    <option value="prior-attainment">Prior attainment</option>
-                    <option value="eal">English as an additional language</option>
-                    <option value="girls">Girls</option>
-                    <option value="boys">Boys</option>
-                    <option value="non-mobile">Non-mobile pupils</option>
+                    <option value="all" {{ "selected" if characteristic == "all" }}>All pupils</option>
+                    <option value="disadvantaged" {{ "selected" if characteristic == "disadvantaged" }}>Disadvantaged pupils</option>
+                    <option value="prior-attainment" {{ "selected" if characteristic == "prior-attainment" }}>Prior attainment</option>
+                    <option value="eal" {{ "selected" if characteristic == "eal" }}>English as an additional language</option>
+                    <option value="girls" {{ "selected" if characteristic == "girls" }}>Girls</option>
+                    <option value="boys" {{ "selected" if characteristic == "boys" }}>Boys</option>
+                    <option value="non-mobile" {{ "selected" if characteristic == "non-mobile" }}>Non-mobile pupils</option>
                 </select>
+
             </div>
 
 
@@ -87,10 +108,12 @@ Attainment and progress {% endblock %}
         </form>
 
 
-        <h4 class="govuk-heading-s govuk-!-margin-bottom-2">Attainment 8 scores for all pupils in the 2024 to 2025 academic year</h4>
+        <h4 class="govuk-heading-s govuk-!-margin-bottom-2">
+            Attainment 8 scores for {{ groupLabel }} in the 2024 to 2025 academic year
+        </h4>
 
         {{ govukTable({
-        caption: "Attainment 8 score - 8 best subjects - disadvantaged pupils - 2024 to 2025",
+        caption: "Attainment 8 scores for " + groupLabel,
         captionClasses: "govuk-visually-hidden",
         firstCellIsHeader: true,
         head: [
@@ -132,46 +155,99 @@ Attainment and progress {% endblock %}
             This means pupils perform better than the national average.
         </p>
 
-        <details class="govuk-details">
-            <summary class="govuk-details__summary">
+        {% if characteristic == "all" or characteristic == "disadvantaged" %}
+
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
                 <span class="govuk-details__summary-text">
                   Compare with previous years
                 </span>
+              </summary>
+              <div class="govuk-details__text">
+                  <h4 class="govuk-heading-s govuk-!-margin-bottom-2">
+                      Attainment 8 scores for {{ groupLabel }} in the academic years ending in 2025, 2024 and 2023
+                  </h4>
+                {{ govukTable({
+                  caption: "Attainment 8 scores for " + groupLabel + " in the academic years ending in 2025, 2024 and 2023",
+                  captionClasses: "govuk-visually-hidden",
+                  firstCellIsHeader: true,
+                  head: [
+                    { text: "Compare" },
+                    { text: "Attainment 8 score (2025)" },
+                    { text: "Attainment 8 score (2024)" },
+                    { text: "Attainment 8 score (2023)" }
+                  ],
+                  rows: [
+                    [
+                      { html: "Oak Nest Secondary School" },
+                      { text: "45" },
+                      { text: "47" },
+                      { text: "46" }
+                    ],
+                    [
+                      { text: "Local authority average" },
+                      { text: "50" },
+                      { text: "52" },
+                      { text: "51" }
+                    ],
+                    [
+                      { text: "National average" },
+                      { text: "40" },
+                      { text: "42" },
+                      { text: "41" }
+                    ]
+                  ]
+                }) }}
+              </div>
+            </details>
+
+            {% endif %}
+
+        {% if characteristic == "disadvantaged" %}
+
+        <details class="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Compare with non disadvantaged pupils
+                </span>
             </summary>
             <div class="govuk-details__text">
+                <h4 class="govuk-heading-s">
+          Attainment 8 scores for disadvantaged pupils in the 2024 to 2025 academic year, compared to non-disadvantaged pupils
+        </h4>
+
         {{ govukTable({
-        caption: "Attainment 8 score - 8 best subjects - disadvantaged pupils - 2024 to 2025",
-        captionClasses: "govuk-visually-hidden",
-        firstCellIsHeader: true,
-        head: [
-        { text: "Compare" },
-        { text: "Attainment 8 score (2025)" },
-        { text: "Attainment 8 score (2024)" },
-        { text: "Attainment 8 score (2023)" }
-        ],
-        rows: [
-        [
-        { html: "Oak Nest Secondary School" },
-        { text: "45" },
-        { text: "47" },
-        { text: "46" }
-        ],
-        [
-        { text: "Local authority average" },
-        { text: "50" },
-        { text: "52" },
-        { text: "51" }
-        ],
-        [
-        { text: "National average" },
-        { text: "40" },
-        { text: "42" },
-        { text: "41" }
-        ]
-        ]
+          caption: "Attainment 8 scores for disadvantaged pupils in the 2024 to 2025 academic year, compared to non-disadvantaged pupils",
+          captionClasses: "govuk-visually-hidden",
+          firstCellIsHeader: true,
+          head: [
+            { text: "Compare" },
+            { text: "Attainment 8 score for disadvantaged pupils" },
+            { text: "Attainment 8 score for non disadvantaged pupils" }
+          ],
+          rows: [
+            [
+              { text: "Oak Nest Secondary School" },
+              { text: "45" },
+              { text: "52" }
+            ],
+            [
+              { text: "Local authority average" },
+              { text: "50" },
+              { text: "55" }
+            ],
+            [
+              { text: "National average" },
+              { text: "40" },
+              { text: "48" }
+            ]
+          ]
         }) }}
             </div>
         </details>
+
+        {% endif %}
+
 
 
         <h3 class="govuk-heading-m govuk-!-margin-top-9">Break down this school’s Attainment 8 scores by subject areas</h3>
