@@ -21,10 +21,24 @@ router.post('/workplace', function(request, response) {
 
 router.get('/pupil-characteristic', function (req, res) {
 
-    const pupilCharacteristic = req.query.characteristic || "all"
+    const characteristic = req.query.characteristic || "all"
+    const subject = req.query.subject || "english"
 
     res.render('prototype-v-1/academic-performance/attainment/attainment-versions/attainment', {
-        characteristic: pupilCharacteristic
+        characteristic,
+        subject
+    })
+
+})
+
+router.get('/subject-breakdown', function (req, res) {
+
+    const subject = req.query.subject || "english"
+    const characteristic = req.query.characteristic || "all"
+
+    res.render('prototype-v-1/academic-performance/attainment/attainment-versions/attainment', {
+        subject,
+        characteristic
     })
 
 })
