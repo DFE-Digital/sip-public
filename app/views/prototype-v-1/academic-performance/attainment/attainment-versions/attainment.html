@@ -8,8 +8,8 @@ Attainment and progress {% endblock %}
   {% set groupLabel = "all pupils" %}
 {% elif characteristic == "disadvantaged" %}
   {% set groupLabel = "disadvantaged pupils" %}
-<!--{% elif characteristic == "prior-attainment" %}-->
-<!--  {% set groupLabel = "pupils by prior attainment" %}-->
+{# {% elif characteristic == "prior-attainment" %}
+{% set groupLabel = "pupils by prior attainment" %} #}
 {% elif characteristic == "eal" %}
   {% set groupLabel = "pupils with English as an additional language" %}
 {% elif characteristic == "girls" %}
@@ -91,7 +91,7 @@ Attainment and progress {% endblock %}
                 <select class="govuk-select" id="characteristic" name="characteristic">
                     <option value="all" {{ "selected" if characteristic == "all" }}>All pupils</option>
                     <option value="disadvantaged" {{ "selected" if characteristic == "disadvantaged" }}>Disadvantaged pupils</option>
-<!--                    <option value="prior-attainment" {{ "selected" if characteristic == "prior-attainment" }}>Prior attainment</option>-->
+                    {# <option value="prior-attainment" {{ "selected" if characteristic == "prior-attainment" }}>Prior attainment</option> #}
                     <option value="eal" {{ "selected" if characteristic == "eal" }}>English as an additional language</option>
                     <option value="girls" {{ "selected" if characteristic == "girls" }}>Girls</option>
                     <option value="boys" {{ "selected" if characteristic == "boys" }}>Boys</option>
