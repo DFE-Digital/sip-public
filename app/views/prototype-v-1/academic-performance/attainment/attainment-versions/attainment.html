@@ -22,6 +22,29 @@ Attainment and progress {% endblock %}
   {% set groupLabel = "all pupils" %}
 {% endif %}
 
+{% if characteristic == "all" %}
+  {% set pupilPhrase = "pupils" %}
+  {% set pupilPhraseAtSchool = "pupils at this school" %}
+{% elif characteristic == "disadvantaged" %}
+  {% set pupilPhrase = "disadvantaged pupils" %}
+  {% set pupilPhraseAtSchool = "disadvantaged pupils at this school" %}
+{% elif characteristic == "eal" %}
+  {% set pupilPhrase = "pupils with English as an additional language" %}
+  {% set pupilPhraseAtSchool = "pupils with English as an additional language at this school" %}
+{% elif characteristic == "girls" %}
+  {% set pupilPhrase = "girls" %}
+  {% set pupilPhraseAtSchool = "girls at this school" %}
+{% elif characteristic == "boys" %}
+  {% set pupilPhrase = "boys" %}
+  {% set pupilPhraseAtSchool = "boys at this school" %}
+{% elif characteristic == "non-mobile" %}
+  {% set pupilPhrase = "non-mobile pupils" %}
+  {% set pupilPhraseAtSchool = "non-mobile pupils at this school" %}
+{% else %}
+  {% set pupilPhrase = "pupils" %}
+  {% set pupilPhraseAtSchool = "pupils at this school" %}
+{% endif %}
+
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-quarter">
         {% include "includes/side-nav.html" %}
@@ -141,18 +164,18 @@ Attainment and progress {% endblock %}
         </h4>
 
         <p class="govuk-body">
-            A score of 45 means the average pupil achieved GCSE grades
+            A score of 45 means that on average {{ pupilPhrase }} achieved GCSE grades
             of around 4 to 5 across their subjects. This is a standard to strong pass.
         </p>
 
         <p class="govuk-body">
             This score is 5 points lower than the local authority average.
-            This means pupils at this school perform below other schools locally.
+            This means that {{ pupilPhraseAtSchool }} perform below {{ pupilPhrase }} at other schools locally.
         </p>
 
         <p class="govuk-body">
             The score is 5 points higher than the national average.
-            This means pupils perform better than the national average.
+            This means {{ pupilPhraseAtSchool }} perform better than {{ pupilPhrase }} nationally.
         </p>
 
         {% if characteristic == "all" or characteristic == "disadvantaged" %}
