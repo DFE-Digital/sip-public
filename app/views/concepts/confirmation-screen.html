@@ -1,0 +1,47 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Remove schools from your compare list
+      </h1>
+
+      <form class="form" action="/path/of/next/page" method="post">
+
+        <p>
+          This will remove the following schools from your list:
+        </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Dinnington High School</li>
+          <li>Oriel High School</li>
+          <li>Wales High School</li>
+        </ul>
+
+        <div class="govuk-button-group">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Remove schools from list
+          </button>
+          <a class="govuk-link" href="#">Cancel</a>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
