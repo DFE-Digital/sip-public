@@ -6,11 +6,29 @@
 
 {% block content %}
 
-{% if grade == "grade-4" %}
-  {% set gradeLabel = "grade 4 and above" %}
+{% set allPupilsGradeLabel =
+  "grade 4 and above" if allPupilsGrade == "grade-4"
+  else "grade 5 and above" %}
+
+{% set characteristicGradeLabel =
+  "grade 4 and above" if characteristicGrade == "grade-4"
+  else "grade 5 and above" %}
+
+
+{% if characteristic == "disadvantaged" %}
+  {% set groupLabel = "disadvantaged pupils" %}
+{% elif characteristic == "eal" %}
+  {% set groupLabel = "pupils with English as an additional language" %}
+{% elif characteristic == "girls" %}
+  {% set groupLabel = "girls" %}
+{% elif characteristic == "boys" %}
+  {% set groupLabel = "boys" %}
+{% elif characteristic == "non-mobile" %}
+  {% set groupLabel = "non-mobile pupils" %}
 {% else %}
-  {% set gradeLabel = "grade 5 and above" %}
+  {% set groupLabel = "pupils" %}
 {% endif %}
+
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-quarter">
@@ -67,23 +85,23 @@
 
     <form method="get" action="/english-maths-all-pupils" class="govuk-!-margin-bottom-6">
 
+      <input type="hidden" name="characteristic" value="{{ characteristic }}">
+      <input type="hidden" name="characteristicGrade" value="{{ characteristicGrade }}">
+
       <div class="govuk-form-group">
 
         <label class="govuk-label" for="grade">
           Select a grade
         </label>
 
-        <select class="govuk-select" id="grade" name="grade">
-
-          <option value="grade-5" {{ "selected" if grade == "grade-5" }}>
-            Grade 5 and above
-          </option>
-
-          <option value="grade-4" {{ "selected" if grade == "grade-4" }}>
-            Grade 4 and above
-          </option>
-
-        </select>
+<select class="govuk-select" id="allPupilsGrade" name="allPupilsGrade">
+  <option value="grade-5" {{ "selected" if allPupilsGrade == "grade-5" }}>
+    Grade 5 and above
+  </option>
+  <option value="grade-4" {{ "selected" if allPupilsGrade == "grade-4" }}>
+    Grade 4 and above
+  </option>
+</select>
 
       </div>
 
@@ -97,7 +115,7 @@
          style="border:1px solid #b1b4b6;">
 
    <h2 class="govuk-heading-s govuk-!-margin-top-3">
-     Percentage of all pupils achieving {{ gradeLabel }} in the 2024 to 2025 academic year
+     Percentage of all pupils achieving {{ allPupilsGradeLabel }} in the 2024 to 2025 academic year
     </h2>
 
       <div id="english-maths" class="chart govuk-!-margin-top-2 govuk-!-margin-bottom-4"></div>
@@ -129,37 +147,56 @@
 
     <form method="get" action="/english-maths-pupil-characteristic" class="govuk-!-margin-bottom-6">
 
+      <input type="hidden" name="allPupilsGrade" value="{{ allPupilsGrade }}">
+
       <div class="govuk-form-group">
-        <label class="govuk-label" for="sort-year">
+
+        <label class="govuk-label" for="grade">
           Select a grade
         </label>
-        <select class="govuk-select" id="sort-year" name="grade">
-          <option value="5plus" selected>Grade 5 and above</option>
-          <option value="4plus">Grade 4 and above</option>
-        </select>
+
+          <select class="govuk-select" id="characteristicGrade" name="characteristicGrade">
+            <option value="grade-5" {{ "selected" if characteristicGrade == "grade-5" }}>
+              Grade 5 and above
+            </option>
+            <option value="grade-4" {{ "selected" if characteristicGrade == "grade-4" }}>
+              Grade 4 and above
+            </option>
+          </select>
+
       </div>
 
       <div class="govuk-form-group">
-        <label class="govuk-label" for="sort-characteristic">
+        <label class="govuk-label" for="characteristic">
           Select a pupil characteristic
         </label>
-        <select class="govuk-select" id="sort-characteristic" name="characteristic">
-          <option value="disadvantaged" selected>Disadvantaged pupils</option>
-          <option value="eal">English as an additional language</option>
-          <option value="girls">Girls</option>
-          <option value="boys">Boys</option>
-          <option value="non-mobile">Non-mobile pupils</option>
+        <select class="govuk-select" id="characteristic" name="characteristic">
+          <option value="disadvantaged" {{ "selected" if characteristic == "disadvantaged" }}>
+            Disadvantaged pupils
+          </option>
+          <option value="eal" {{ "selected" if characteristic == "eal" }}>
+            English as an additional language
+          </option>
+          <option value="girls" {{ "selected" if characteristic == "girls" }}>
+            Girls
+          </option>
+          <option value="boys" {{ "selected" if characteristic == "boys" }}>
+            Boys
+          </option>
+          <option value="non-mobile" {{ "selected" if characteristic == "non-mobile" }}>
+            Non-mobile pupils
+          </option>
         </select>
       </div>
 
       <button class="govuk-button" type="submit">
-        Update results
+        Update table
       </button>
 
     </form>
 
     <h4 class="govuk-heading-s">
-      Percentage of disadvantaged pupils achieving grade 5 and above in the 2024 to 2025 academic year
+      Percentage of {{groupLabel}} achieving {{ characteristicGradeLabel }} in the 2024 to 2025 academic year
     </h4>
 
 {{ govukTable({

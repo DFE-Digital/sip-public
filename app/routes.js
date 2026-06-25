@@ -21,10 +21,28 @@ router.post('/workplace', function(request, response) {
 
 router.get('/english-maths-all-pupils', function (req, res) {
 
-  const grade = req.query.grade || "grade-5"
+  const allPupilsGrade = req.query.allPupilsGrade || "grade-5"
+  const characteristicGrade = req.query.characteristicGrade || "grade-5"
+  const characteristic = req.query.characteristic || "disadvantaged"
 
   res.render('prototype-v-1/academic-performance/english-maths-results', {
-    grade: grade
+    allPupilsGrade,
+    characteristicGrade,
+    characteristic
+  })
+
+})
+
+router.get('/english-maths-pupil-characteristic', function (req, res) {
+
+  const allPupilsGrade = req.query.allPupilsGrade || "grade-5"
+  const characteristicGrade = req.query.characteristicGrade || "grade-5"
+  const characteristic = req.query.characteristic || "disadvantaged"
+
+  res.render('prototype-v-1/academic-performance/english-maths-results', {
+    allPupilsGrade,
+    characteristicGrade,
+    characteristic
   })
 
 })
