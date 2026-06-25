@@ -19,6 +19,16 @@ router.post('/workplace', function(request, response) {
     }
 })
 
+router.get('/english-maths-all-pupils', function (req, res) {
+
+  const grade = req.query.grade || "grade-5"
+
+  res.render('prototype-v-1/academic-performance/english-maths-results', {
+    grade: grade
+  })
+
+})
+
 router.get('/pupil-characteristic', function (req, res) {
 
     const characteristic = req.query.characteristic || "all"
