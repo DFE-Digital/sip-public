@@ -223,6 +223,56 @@
   ]
 }) }}
 
+    {% if characteristic == "disadvantaged" %}
+
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Compare with non-disadvantaged pupils
+    </span>
+  </summary>
+
+  <div class="govuk-details__text">
+
+    <h4 class="govuk-heading-s">
+      Percentage of {{ groupLabel }} achieving {{ characteristicGradeLabel }} in the 2024 to 2025 academic year, compared to non-disadvantaged pupils
+    </h4>
+
+    {{ govukTable({
+      caption: "Percentage of " + groupLabel + " achieving " + characteristicGradeLabel + " in the 2024 to 2025 academic year, compared to non-disadvantaged pupils",
+      captionClasses: "govuk-visually-hidden",
+      firstCellIsHeader: true,
+
+      head: [
+        { text: "Compare" },
+        { text: "Percentage achieving " + characteristicGradeLabel + " (disadvantaged pupils)" },
+        { text: "Percentage achieving " + characteristicGradeLabel + " (non-disadvantaged pupils)" }
+      ],
+
+      rows: [
+        [
+          { text: "Oak Nest Secondary School" },
+          { text: "45%" },
+          { text: "52%" }
+        ],
+        [
+          { text: "Local authority average" },
+          { text: "50%" },
+          { text: "55%" }
+        ],
+        [
+          { text: "National average" },
+          { text: "40%" },
+          { text: "48%" }
+        ]
+      ]
+    }) }}
+
+  </div>
+</details>
+
+        {% endif %}
+
 
   </div>
 </div>
