@@ -102,7 +102,7 @@ Attainment and progress {% endblock %}
                 </li>
                 <li class="moj-sub-navigation__item">
                     <a class="moj-sub-navigation__link" href="/prototype-v-1/academic-performance/english-maths-results">
-                        English and maths
+                        English and maths results
                     </a>
                 </li>
                 <li class="moj-sub-navigation__item">
@@ -119,14 +119,14 @@ Attainment and progress {% endblock %}
         <h2 class="govuk-heading-l">Attainment</h2>
 
         <p class="govuk-body">
-            See how well pupils perform compared with local authority and national averages by comparing ‘Attainment 8’ scores.
+            See how well pupils perform compared with local authority and national averages by comparing Attainment 8 scores.
         </p>
 
         <p class="govuk-body">
-            <a href="/standalone-pages/attainment-8" class="govuk-link">Attainment 8</a> is a score based on a pupil’s results in 8 GCSE-level subjects.
+            <a href="/standalone-pages/attainment-8" class="govuk-link">Attainment 8</a> is used to assess a pupil’s average achievement across 8 of their best GCSE-level subjects.
         </p>
 
-        <h3 class="govuk-heading-m govuk-!-margin-top-9">Compare this school’s Attainment 8 score with local authority and national averages</h3>
+        <h3 class="govuk-heading-m govuk-!-margin-top-9">Compare this school’s Attainment 8 score with local council and national averages</h3>
 
         <div class="govuk-inset-text">
             <p class="govuk-body">
@@ -195,19 +195,22 @@ Attainment and progress {% endblock %}
         </h4>
 
         <p class="govuk-body">
-          A score of 45 means that on average {{ firstMention }} achieved GCSE grades
-          of around 4 to 5 across their subjects. This is a standard to strong pass.
+            The Attainment 8 score for this school is 45.
         </p>
 
         <p class="govuk-body">
-          This score is 5 points lower than the local authority average.
-          This means that {{ shortMentionAtSchool }} perform below {{ shortMention }} at other schools locally.
+          This means that {{ firstMention }} generally scored the equivalent of between grades 4 and 5 in their 8 best GCSE-level subjects.
         </p>
 
         <p class="govuk-body">
-          The score is 5 points higher than the national average.
-          This means {{ shortMentionAtSchool }} perform better than {{ shortMention }} nationally.
+          The score is 5 points lower than the local council average of 50.
+          This means that {{ shortMentionAtSchool }} perform below {{ shortMention }} at other schools in the area.
         </p>
+
+        <p class="govuk-body">
+            It’s 5 points higher than the national average of 40, meaning that {{ shortMentionAtSchool }} are performing above the national average{% if characteristic != "all" %} for {{ shortMention }}{% endif %}.
+        </p>
+
 
         {% if characteristic == "all" or characteristic == "disadvantaged" %}
 
