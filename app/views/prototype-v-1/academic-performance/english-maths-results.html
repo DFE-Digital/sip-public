@@ -6,6 +6,10 @@
 
 {% block content %}
 
+{% set characteristic = characteristic or "disadvantaged" %}
+{% set characteristicGrade = characteristicGrade or "grade-5" %}
+{% set allPupilsGrade = allPupilsGrade or "grade-5" %}
+
 {% set allPupilsGradeLabel =
   "grade 4 and above" if allPupilsGrade == "grade-4"
   else "grade 5 and above" %}
