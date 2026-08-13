@@ -6,19 +6,29 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
 {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 {% block stylesheets %}
+
   {{ super() }}
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" 
+rel="stylesheet" 
+  type="text/css"
+/>
 
 {% endblock %}
 {% block header %}
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" 
+rel="stylesheet" 
+  type="text/css"
+/>
 
     {{ govukHeader() }}
     {{ govukServiceNavigation({
         serviceName: serviceName
     })}}
 
-<link
-  href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined"
-  rel="stylesheet"
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" 
+rel="stylesheet" 
   type="text/css"
 />
 
@@ -27,6 +37,12 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 
 {% block scripts %}
   {{ super() }}
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" 
+rel="stylesheet" 
+  type="text/css"
+/>
+
   {# Provide a nested block that your pages can override #}
   {% block pageScripts %}{% endblock %}
 {% endblock %}

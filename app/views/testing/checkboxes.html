@@ -1,0 +1,80 @@
+{% extends "layouts/main.html" %} {% block pageTitle %} About your schools:
+School information {% endblock %} {% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">Who do you want to compare?</h1>
+        </legend>
+        <form
+          class="form"
+          action="compare"
+          method="post"
+        >
+          <div class="form-group">
+            <div id="school-hint" class="govuk-hint">Select all that apply</div>
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  id="school-1"
+                  name="school"
+                  type="checkbox"
+                  value="{{ data['school-name']}}"
+                  {{ checked('school','school-1') }}
+                />
+                <label class="govuk-label govuk-checkboxes__label" for="school-1">
+                  {{ data['school-name']}}
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  id="school-2"
+                  name="school"
+                  type="checkbox"
+                  value="{{ data['school-name-2']}}"
+                  {{ checked('school','school-2') }}
+                  />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="school-2"
+                >
+                  {{ data['school-name-2']}}
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  id="school-3"
+                  name="school"
+                  type="checkbox"
+                  value="{{ data['school-name-3']}}"
+                  {{ checked('school','school-3') }}
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="school-3"
+                >
+                  {{ data['school-name-3']}}
+                </label>
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              class="govuk-button"
+              data-module="govuk-button"
+            >
+              go 2 compare
+            </button>
+          </div>
+        </form>
+      </fieldset>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

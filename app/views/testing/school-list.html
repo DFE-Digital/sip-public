@@ -1,0 +1,55 @@
+{% extends "layouts/main.html" %} {% block pageTitle %} About your schools:
+School information {% endblock %} {% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <span class="govuk-caption-xl">Comparing your schools</span>
+    <h1 class="govuk-heading-xl">About your schools</h1>
+
+    <div class="govuk-summary-card__content">
+      <h3 class="govuk-heading-m">{{ data['school-name'] }}</h3>
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">School Profile</th>
+            <td class="govuk-table__cell">
+              <a href="#" class="govuk-link govuk-link--no-visited-state"
+                >View Bracken Cove Academy's School Profile</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 class="govuk-heading-m">
+        {{ data['school-name-2']}}
+      </h3>
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">School Profile</th>
+            <td class="govuk-table__cell">
+              <a href="#" class="govuk-link govuk-link--no-visited-state"
+                >View Oak Nest Secondary School's School Profile</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 class="govuk-heading-m">{{ data['school-name-3']}}</h3>
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">School Profile</th>
+            <td class="govuk-table__cell">
+              <a href="#" class="govuk-link govuk-link--no-visited-state"
+                >View Thomas Lane Secondary School's School Profile</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <a href="checkboxes">Choose schools to compare :)</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

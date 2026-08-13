@@ -1,0 +1,27 @@
+{% extends "layouts/main.html" %} {% block pageTitle %} About the school {%
+endblock %} {% block content %}
+<link rel="stylesheet" href="assets/css/accessible-autocomplete.min.css" />
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Name</dt>
+        <dd class="govuk-summary-list__value">Oak Nest Secondary School</dd>
+    
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Place selected</dt>
+        <dd class="govuk-summary-list__value">{{ data['local-authority']}}</dd>
+    
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Address</dt>
+        <dd class="govuk-summary-list__value">
+          72 Guild Street<br />{{ data['local-authority']}}
+        </dd>
+       
+    </dl>
+  </div>
+</div>
+
+{% endblock %} {% block pageScripts %} {% endblock %}

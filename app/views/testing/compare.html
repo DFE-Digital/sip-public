@@ -1,0 +1,95 @@
+{% extends "layouts/main.html" %} {% block pageTitle %} About your schools:
+School information {% endblock %} {% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    <nav class="moj-side-navigation" aria-label="Side navigation">
+      <ul class="moj-side-navigation__list">
+        <li class="moj-side-navigation__item moj-side-navigation__item--active">
+          <a
+            href="/comparison/profile/about-your-schools/your-chosen-schools"
+            aria-current="location"
+            >About your schools</a
+          >
+        </li>
+        <li class="moj-side-navigation__item">
+          <a href="/comparison/profile/policies-pupil-support/pastoral-care"
+            >Policies and pupil support</a
+          >
+        </li>
+        <li class="moj-side-navigation__item">
+          <a href="">Pupil experience in schools</a>
+        </li>
+        <li class="moj-side-navigation__item">
+          <a href="">Outcomes and performance</a>
+        </li>
+        <li class="moj-side-navigation__item">
+          <a href="">Next steps and admissions</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="govuk-grid-column-three-quarters">
+    <span class="govuk-caption-xl">Comparing your schools</span>
+    <h1 class="govuk-heading-xl">About your schools</h1>
+
+    <ul>
+      {% for school in data['school'] %}
+      <li>{{ school }}</li>
+      {% endfor %}
+    </ul>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">School</th>
+          <th scope="col" class="govuk-table__header">Address</th>
+          <th scope="col" class="govuk-table__header">Local council</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Bracken Cove Academy</th>
+          <td class="govuk-table__cell">
+            Scenic Crescent, Sheffield, South Yorkshire, S3 5US
+          </td>
+          <td class="govuk-table__cell">
+            Sheffield<br />
+            <a href="#" class="govuk-link govuk-link--no-visited-state"
+              >View Sheffield City Council's website</a
+            >
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            Oak Nest Secondary School
+          </th>
+          <td class="govuk-table__cell">
+            Sapling Street, Sheffield, South Yorkshire, S1 2AB
+          </td>
+          <td class="govuk-table__cell">
+            Sheffield<br />
+            <a href="#" class="govuk-link govuk-link--no-visited-state"
+              >View Sheffield City Council's website</a
+            >
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            Thomas Lane Secondary School
+          </th>
+          <td class="govuk-table__cell">
+            Manor Lane, Sheffield, South Yorkshire, S1 2GS
+          </td>
+          <td class="govuk-table__cell">
+            Sheffield<br />
+            <a href="#" class="govuk-link govuk-link--no-visited-state"
+              >View Sheffield City Council's website</a
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
