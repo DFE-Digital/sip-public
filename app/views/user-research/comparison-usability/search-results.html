@@ -1,12 +1,14 @@
-{% extends "layouts/main.html" %} {% block pageTitle %} About the school {%
+{% extends "layouts/ur.html" %} 
+{% block pageTitle %} Search results {%
 endblock %} {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
     <form class="form" action="search-results" method="post">
       <h1 class="govuk-heading-xl">
-        116 results within 3 miles of {{ data['search-postcode']}}
+        8 results within 3 miles of {{ data['search-postcode']}}
       </h1>
       <div class="govuk-body">
+        
         <h2 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--s" for="event-name">
             School name
@@ -16,13 +18,8 @@ endblock %} {% block content %}
         <div id="search-name-hint" class="govuk-hint">
           For example, St Joseph's secondary school
         </div>
-        <input
-          class="govuk-input"
-          id="search-name"
-          name="search-name"
-          type="text"
-          aria-describedby="search-name-hint"
-        />
+        <input class="govuk-input" id="search-name" name="search-name" type="text"
+          aria-describedby="search-name-hint" />
       </div>
 
       <div class="govuk-body">
@@ -34,32 +31,21 @@ endblock %} {% block content %}
         <div id="search-postcode-hint" class="govuk-hint">
           For example, LS28 8EU
         </div>
-        <input
-          class="govuk-input"
-          id="search-postcode"
-          name="search-postcode"
-          type="text"
-          aria-describedby="search-postcode-hint"
-          value="{{ data['search-postcode']}}"
-        />
+        <input class="govuk-input" id="search-postcode" name="search-postcode" type="text"
+          aria-describedby="search-postcode-hint" value="{{ data['search-postcode']}}" />
       </div>
       <button type="submit" class="govuk-button" data-module="govuk-button">
         Search
       </button>
     </form>
+    <p class="govuk-body">Sorted by distance</p>
     {% if ( data['school-1-name']|length) %}
     <p class="govuk-body">
-      <a
-        href="school-profiles/oak-nest/about-the-school-success"
-        class="govuk-link"
-        >Oak Nest Secondary School</a
-      >
+      <a href="school-profiles/oak-nest/about-the-school-success" class="govuk-link">Oak Nest Secondary School</a>
     </p>
     {% else %}
     <p class="govuk-body">
-      <a href="school-profiles/oak-nest/about-the-school" class="govuk-link"
-        >Oak Nest Secondary School</a
-      >
+      <a href="school-profiles/oak-nest/about-the-school" class="govuk-link">Oak Nest Secondary School</a>
     </p>
     {% endif %}
 
@@ -73,17 +59,11 @@ endblock %} {% block content %}
     </dl>
     {% if ( data['school-2-name']|length) %}
     <p class="govuk-body">
-      <a
-        href="school-profiles/thomas-lane/about-the-school-success"
-        class="govuk-link"
-        >Thomas Lane Secondary School</a
-      >
+      <a href="school-profiles/thomas-lane/about-the-school-success" class="govuk-link">Thomas Lane Secondary School</a>
     </p>
     {% else %}
     <p class="govuk-body">
-      <a href="school-profiles/thomas-lane/about-the-school" class="govuk-link"
-        >Thomas Lane Secondary School</a
-      >
+      <a href="school-profiles/thomas-lane/about-the-school" class="govuk-link">Thomas Lane Secondary School</a>
     </p>
     {% endif %}
 
@@ -98,17 +78,11 @@ endblock %} {% block content %}
 
     {% if ( data['school-3-name']|length) %}
     <p class="govuk-body">
-      <a
-        href="school-profiles/langley-hill/about-the-school-success"
-        class="govuk-link"
-        >Langley Secondary School</a
-      >
+      <a href="school-profiles/langley-hill/about-the-school-success" class="govuk-link">Langley Secondary School</a>
     </p>
     {% else %}
     <p class="govuk-body">
-      <a href="school-profiles/langley-hill/about-the-school" class="govuk-link"
-        >Langley Secondary School</a
-      >
+      <a href="school-profiles/langley-hill/about-the-school" class="govuk-link">Langley Secondary School</a>
     </p>
     {% endif %}
 
