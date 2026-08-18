@@ -1,0 +1,26 @@
+{% extends "layouts/ur.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<form action="javascript:history.back()">
+
+<h1 class="govuk-heading-l">
+  Not in prototype.
+</h1>
+
+<p>
+  Don't worry, you haven't done anything wrong.
+</p>
+
+<p>
+  Click the button below to return to the previous page.
+</p>
+
+{{ govukButton({
+  text: "Return to previous page"
+}) }}
+</form>
+{% endblock %}
