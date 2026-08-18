@@ -1,5 +1,5 @@
 {
-  "serviceName": "Explore school profiles",
+  "serviceName": "Find and compare school and college profiles",
   "useServiceNavigation": true,
   "plugins": {
     "govuk-frontend": {

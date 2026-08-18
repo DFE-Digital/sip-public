@@ -1,13 +1,22 @@
-{% extends "layouts/main.html" %}
-
-{% set pageName="Home" %}
-
-{% block content %}
+{% extends "layouts/main.html" %} {% set pageName="Home" %} {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-xl"
+      >Find and compare school and college profiles</span
+    >
+    <h1 class="govuk-heading-xl">Prototype</h1>
 
-    <h1 class="govuk-heading-l">Explore school profiles prototype</h1>
+    <h2 class="govuk-heading-m">Comparison testing</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        Start of journey –
+        <a class="govuk-link" href="user-research/comparison-usability/search">
+          Search for a school
+        </a>
+      </li>
+    </ul>
 
     <h2 class="govuk-heading-m">School profile prototypes</h2>
 
@@ -35,12 +44,18 @@
         </a>
       </li>
       <li>
-        <a class="govuk-link" href="/concepts/compare-secondary-schools-and-colleges">
+        <a
+          class="govuk-link"
+          href="/concepts/compare-secondary-schools-and-colleges"
+        >
           Navigation version
         </a>
       </li>
       <li>
-        <a class="govuk-link" href="/concepts/secondary-league-table-v-2-scrollable-mobile">
+        <a
+          class="govuk-link"
+          href="/concepts/secondary-league-table-v-2-scrollable-mobile"
+        >
           Scrollable mobile panel
         </a>
       </li>
@@ -63,19 +78,24 @@
         Edge cases:
         <ul class="govuk-list govuk-list--bullet">
           <li>
-            <a class="govuk-link" href="/concepts/secondary-league-table-attainment-8-by-subject">
+            <a
+              class="govuk-link"
+              href="/concepts/secondary-league-table-attainment-8-by-subject"
+            >
               Attainment 8 by subject
             </a>
           </li>
           <li>
-            <a class="govuk-link" href="/concepts/secondary-league-table-progress-8">
+            <a
+              class="govuk-link"
+              href="/concepts/secondary-league-table-progress-8"
+            >
               Progress 8
             </a>
           </li>
         </ul>
       </li>
     </ul>
-
   </div>
 </div>
 

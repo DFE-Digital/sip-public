@@ -7,7 +7,7 @@ endblock %} {% block content %}
       <ul class="moj-side-navigation__list">
         <li class="moj-side-navigation__item moj-side-navigation__item--active">
           <a href="about-the-school" aria-current="location"
-            >About the school</a
+            >About the school or college</a
           >
         </li>
         <li class="moj-side-navigation__item">
@@ -34,38 +34,24 @@ endblock %} {% block content %}
   </div>
 
   <div class="govuk-grid-column-three-quarters">
-    <div
-      class="govuk-notification-banner govuk-notification-banner--success"
-      role="alert"
-      aria-labelledby="govuk-notification-banner-title"
-      data-module="govuk-notification-banner"
+    <form
+      class="form"
+      action="about-the-school?school-1-name&school-1-address"
+      method="post"
     >
-      <div class="govuk-notification-banner__header">
-        <h2
-          class="govuk-notification-banner__title"
-          id="govuk-notification-banner-title"
-        >
-          Success
-        </h2>
-      </div>
-      <div class="govuk-notification-banner__content">
-        <h3 class="govuk-notification-banner__heading">Yahoo</h3>
-        <p class="govuk-body">
-          Go to
-          <a class="govuk-notification-banner__link" href="school-list"
-            >My schools list</a
-          >
-          .
-        </p>
-      </div>
-    </div>
-    <span class="govuk-caption-xl" id="school-name-1">Oak Nest Secondary School</span>
-    <h1 class="govuk-heading-xl">About the school</h1>
-    <form class="form" action="about-school-1-success" method="post">
+      <span class="govuk-caption-xl">Oak Nest Secondary School</span>
+      <h1 class="govuk-heading-xl">About the school</h1>
       <div class="form-group">
         <button type="submit" class="govuk-button" data-module="govuk-button">
-          SAVE THE SCHOOL!!!
+          Unsave
         </button>
+        <p class="govuk-body">
+          <a
+            href="/user-research/comparison-usability/my-schools-list"
+            class="govuk-link"
+            >Go to your My schools list</a
+          >
+        </p>
       </div>
     </form>
     <dl class="govuk-summary-list">
@@ -100,7 +86,7 @@ endblock %} {% block content %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Address</dt>
         <dd class="govuk-summary-list__value">
-          Sapling Street, Sheffield, South Yorkshire, S1 2AB
+          Baltic Campus, Quarryfield Road
         </dd>
       </div>
       <div class="govuk-summary-list__row">

@@ -17,8 +17,6 @@
   z-index: 3;
 }
 
-@import 'node_modules/dfe-frontend/packages/dfefrontend';
-
 /* Default: mobile first */
 .school-results--desktop {
   display: none;
@@ -60,8 +58,7 @@
 }
 
 /* Remove default GOV.UK arrow (open) */
-.compare-schools-filter
-.govuk-details[open] > .govuk-details__summary::before {
+.compare-schools-filter .govuk-details[open] > .govuk-details__summary::before {
   display: none;
 }
 
@@ -87,9 +84,9 @@
 
 /* Rotate chevron when open */
 .compare-schools-filter
-.govuk-details[open]
-> .govuk-details__summary
-.govuk-details__summary-text::after {
+  .govuk-details[open]
+  > .govuk-details__summary
+  .govuk-details__summary-text::after {
   transform: translateY(-40%) rotate(-135deg);
 }
 
@@ -99,7 +96,6 @@
   padding-left: 0;
   margin-left: 0;
 }
-
 
 .moj-filter__tag {
   position: relative;
