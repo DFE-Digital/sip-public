@@ -201,6 +201,54 @@
   width: max-content;
 }
 
+//comparison prompts/question headings and icons
+.comparison-prompts {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+.comparison-prompts h3 {
+  margin-bottom: 0px;
+}
+// icon styling
+.comparison-prompts .comparison-prompts__icon {
+  color: govuk-colour("dark-blue");
+  font-size: 2rem;
+}
+
+//subjects entered
+.subjectsentered-chart {
+  height: 180px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.subjectsentered-chart-one {
+  height: 80px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.comparison-chart {
+  height: 300px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.govuk-grid-column-three-quarters .govuk-grid-column-one-half,
+.govuk-grid-column-three-quarters .govuk-grid-column-full {
+  padding: 0px;
+}
+
+.comparison-cluster-chart {
+  height: 500px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+#key {
+  width: 20%;
+}
+
 // mobile styling
 @media (max-width: 40.0525em) {
   // MoJ side nav to stack instead of wrap

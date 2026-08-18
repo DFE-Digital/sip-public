@@ -1,0 +1,1029 @@
+{% extends "layouts/main.html" %} {% block pageTitle %} Academic performance:
+Progress and attainment {% endblock %} {% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    <nav class="moj-side-navigation" aria-label="Side navigation">
+      <ul class="moj-side-navigation__list">
+        <li class="moj-side-navigation__item">
+          <a href="/comparison/profile/about-your-schools/school-overview"
+            >About your schools</a
+          >
+        </li>
+        <li class="moj-side-navigation__item">
+          <a href="/comparison/profile/supporting-pupils/supporting-all-pupils"
+            >Policies and pupil support</a
+          >
+        </li>
+        <li class="moj-side-navigation__item">
+          <a href="/comparison/profile/attendance">Attendance</a>
+        </li>
+        <li class="moj-side-navigation__item">
+          <a href="/comparison/profile/curriculum">Curriculum</a>
+        </li>
+
+        <li
+          class="moj-side-navigation__item moj-side-navigation__item--active"
+          aria-current="location"
+        >
+          <a href="/comparison/profile/academic-performance/progress-attainment"
+            >Academic performance</a
+          >
+        </li>
+        <li class="moj-side-navigation__item">
+          <a href="/comparison/profile/after-year-11"
+            >Destinations after year 11</a
+          >
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="/comparison/profile/next-steps">Next steps</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="govuk-grid-column-three-quarters">
+    <span class="govuk-caption-xl">Comparing your schools</span>
+    <h1 class="govuk-heading-xl">Academic performance</h1>
+
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a
+            class="moj-sub-navigation__link"
+            aria-current="page"
+            href="progress-attainment"
+            >Progress and attainment</a
+          >
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="english-math-results"
+            >English and maths results</a
+          >
+        </li>
+      </ul>
+    </nav>
+    {% if (data['yearprogressattainment'] == "current") %}
+    <form class="form" action="#" method="post">
+      <div class="sp-filter">
+        <label class="govuk-label" for="sort">
+          Choose the academic year you want to see results for
+        </label>
+        <select
+          class="govuk-select"
+          id="yearprogressattainment"
+          name="yearprogressattainment"
+        >
+          <option value="current" selected>2024 to 2025</option>
+          <option value="last">2023 to 2024</option>
+          <option value="lastlast">2022 to 2023</option>
+        </select>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Show results
+        </button>
+      </div>
+    </form>
+    <p class="govuk-body">
+      Information in this section is for the 2024 to 2025 academic year.
+    </p>
+
+    <h2 class="govuk-heading-l">Progress 8</h2>
+    <p class="govuk-body">
+      <strong class="govuk-tag govuk-tag--grey" style="max-width: 100%">
+        2024 to 2025 academic year
+      </strong>
+    </p>
+    <p class="govuk-body">
+      Progress 8 is a performance measure used to show how much progress pupils
+      make from the end of primary school (KS2) to the end of secondary school
+      (KS4) across their best performing 8 subjects.
+    </p>
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text"
+          >Find out more about Progress 8 scores and confidence intervals
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body">
+          Progress 8 shows how much progress a pupil made compared to other
+          pupils with similar starting points at the end of primary school.
+        </p>
+        <p class="govuk-body">
+          The score shows progress compared to the national average:
+        </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            a score of 0 means students made average progress compared to others
+            with similar starting points
+          </li>
+          <li>
+            a positive score of more than 0 means pupils made more progress than
+            average
+          </li>
+          <li>
+            a negative score of less than 0 means students made less progress
+            than average
+          </li>
+        </ul>
+
+        <p class="govuk-body">
+          Progress 8 scores are influenced by both the school and their pupils.
+          It is difficult to determine how much of the progress score is due to
+          the school and how much is due to the pupils themselves. Confidence
+          intervals reflect this uncertainty.
+        </p>
+
+        <p class="govuk-body">
+          If the confidence intervals for two schools overlap, it means we
+          cannot be sure that one school’s Progress 8 score is better than the
+          other.
+        </p>
+        <p class="govuk-body">
+          The greater the number of pupils, the smaller the range of the
+          confidence interval. Smaller schools have larger confidence intervals
+          because fewer pupils are included, so the score is more affected by
+          the performance of individual pupils.  
+        </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            A school is above average if its Progress 8 score is above 0 and the
+            entire confidence interval is above 0
+          </li>
+          <li>
+            A school is below average if its Progress 8 score is below 0 and the
+            entire confidence interval is below 0.
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <div class="sp-card">
+      <div class="sp-card__icon material-symbols-outlined">data_info_alert</div>
+      <div class="sp-card__content">
+        <p class="govuk-body">
+          There are no Progress 8 scores for the academic years 2024 to 2025 and
+          2025 to 2026, as there is no KS2 assessment data available to
+          calculate the baseline. This is due to COVID-19 disruption.
+        </p>
+      </div>
+    </div>
+
+    <div class="comparison-prompts">
+      <div class="comparison-prompts__icon material-symbols-outlined">quiz</div>
+      <h3 class="govuk-heading-m">
+        What you could ask schools about pupil progress
+      </h3>
+    </div>
+    <p class="govuk-body">
+      When researching, contacting or visiting a school, you may want to ask:
+    </p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        what are the differences in progress between different groups of pupils,
+        for example disadvantaged pupils or pupils with SEND?
+      </li>
+      <li>what support is available to each year group?</li>
+      <li>how does the school monitor pupil progress?</li>
+      <li>how does the school report pupil progress to parents and carers?</li>
+    </ul>
+
+    <hr
+      class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"
+    />
+    <h2 class="govuk-heading-l">Attainment 8</h2>
+    <p class="govuk-body">
+      <strong class="govuk-tag govuk-tag--grey" style="max-width: 100%">
+        2024 to 2025 academic year
+      </strong>
+    </p>
+    <p class="govuk-body">
+      Attainment 8 is used to assess a pupil’s average achievement across their
+      8 best GCSE-level subjects.
+    </p>
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Find out more about Attainment 8
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body">
+          The 8 subjects that are used in Attainment 8 are split into 3 groups:
+        </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>English and maths, which are both double-weighted</li>
+          <li>
+            EBacc subjects, these are a group of GCSE subjects that help
+            students gain a broad set of knowledge and skills. These subjects
+            include sciences, geography, history, and languages
+          </li>
+          <li>
+            open group which includes any other approved GCSEs or vocational
+            qualifications
+          </li>
+        </ul>
+        <p class="govuk-body">
+          Each GCSE grade is given a point score (for example grade 9 = 9
+          points, grade 8 = 8 points, and so on). The scores from the best 8
+          subjects (with English and Maths counting twice) are added together to
+          give the Attainment 8 score.
+        </p>
+      </div>
+    </details>
+
+    <div class="sp-card">
+      <div class="sp-card__content">
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header" style="width: 30%">
+                School
+              </th>
+              <th scope="col" class="govuk-table__header" style="width: 20%">
+                Score
+              </th>
+              <th scope="col" class="govuk-table__header" style="width: 50%">
+                Meaning
+              </th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                Bracken Cove Academy
+              </th>
+              <td class="govuk-table__cell">50.1</td>
+              <td class="govuk-table__cell">
+                Pupils generally scored the equivalent of just above grade 5 in
+                their 8 best GCSE-level subjects.
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                Oak Nest Secondary School
+              </th>
+              <td class="govuk-table__cell">48.3</td>
+              <td class="govuk-table__cell">
+                Pupils generally scored the equivalent of between grade 4 and 5
+                in their 8 best GCSE-level subjects.
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                Thomas Lane Secondary School
+              </th>
+              <td class="govuk-table__cell">52.3</td>
+              <td class="govuk-table__cell">
+                Pupils generally scored the equivalent of between grade 5 and 6
+                in their 8 best GCSE-level subjects.
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Sheffield average</th>
+              <td class="govuk-table__cell">43.2</td>
+              <td class="govuk-table__cell">
+                Pupils generally scored the equivalent of between grade 4 and 5
+                in their 8 best GCSE-level subjects.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="comparison-prompts">
+      <div class="comparison-prompts__icon material-symbols-outlined">quiz</div>
+      <h3 class="govuk-heading-m">
+        What you could ask schools about attainment
+      </h3>
+    </div>
+    <p class="govuk-body">
+      When researching, contacting or visiting a school, you may want to ask:
+    </p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        what are the differences in attainment between different groups of
+        pupils, for example disadvantaged pupils or pupils with SEND?
+      </li>
+      <li>how does the school support pupils with lower attainment?</li>
+    </ul>
+
+    {% endif %} {% if (data['yearprogressattainment'] == "last") %}
+    <form class="form" action="#" method="post">
+      <div class="sp-filter">
+        <label class="govuk-label" for="sort">
+          Choose the academic year you want to see results for
+        </label>
+        <select
+          class="govuk-select"
+          id="yearprogressattainment"
+          name="yearprogressattainment"
+        >
+          <option value="current">2024 to 2025</option>
+          <option value="last" selected>2023 to 2024</option>
+          <option value="lastlast">2022 to 2023</option>
+        </select>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Show results
+        </button>
+      </div>
+    </form>
+    <p class="govuk-body">
+      Information in this section is for the 2023 to 2024 academic year.
+    </p>
+
+    <h2 class="govuk-heading-l">Progress 8</h2>
+    <p class="govuk-body">
+      <strong class="govuk-tag govuk-tag--grey" style="max-width: 100%">
+        2023 to 2024 academic year
+      </strong>
+    </p>
+    <p class="govuk-body">
+      Progress 8 is a performance measure used to show how much progress pupils
+      make from the end of primary school (KS2) to the end of secondary school
+      (KS4) across their best performing 8 subjects.
+    </p>
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text"
+          >Find out more about Progress 8 scores and confidence intervals
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body">
+          Progress 8 shows how much progress a pupil made compared to other
+          pupils with similar starting points at the end of primary school.
+        </p>
+        <p class="govuk-body">
+          The score shows progress compared to the national average:
+        </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            a score of 0 means students made average progress compared to others
+            with similar starting points
+          </li>
+          <li>
+            a positive score of more than 0 means pupils made more progress than
+            average
+          </li>
+          <li>
+            a negative score of less than 0 means students made less progress
+            than average
+          </li>
+        </ul>
+
+        <p class="govuk-body">
+          Progress 8 scores are influenced by both the school and their pupils.
+          It is difficult to determine how much of the progress score is due to
+          the school and how much is due to the pupils themselves. Confidence
+          intervals reflect this uncertainty.
+        </p>
+
+        <p class="govuk-body">
+          If the confidence intervals for two schools overlap, it means we
+          cannot be sure that one school’s Progress 8 score is better than the
+          other.
+        </p>
+        <p class="govuk-body">
+          The greater the number of pupils, the smaller the range of the
+          confidence interval. Smaller schools have larger confidence intervals
+          because fewer pupils are included, so the score is more affected by
+          the performance of individual pupils.  
+        </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            A school is above average if its Progress 8 score is above 0 and the
+            entire confidence interval is above 0
+          </li>
+          <li>
+            A school is below average if its Progress 8 score is below 0 and the
+            entire confidence interval is below 0.
+          </li>
+        </ul>
+      </div>
+    </details>
+    <div class="sp-card">
+      <div class="sp-card__content">
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header" style="width: 30%">
+                School
+              </th>
+              <th scope="col" class="govuk-table__header" style="width: 20%">
+                Score and confidence interval
+              </th>
+              <th scope="col" class="govuk-table__header" style="width: 50%">
+                Banding and meaning
+              </th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                Bracken Cove Academy
+              </th>
+              <td class="govuk-table__cell">
+                0.82
+                <div class="govuk-hint">0.58 to 1.07</div>
+              </td>
+              <td class="govuk-table__cell">
+                <strong
+                  class="govuk-tag govuk-tag--green"
+                  style="margin-bottom: 1px"
+                >
+                  Well above average </strong
+                ><br />
+                Pupils generally made around a grade more progress than
+                expected.
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                Oak Nest Secondary School
+              </th>
+              <td class="govuk-table__cell">
+                0.28
+                <div class="govuk-hint">-0.02 to 0.59</div>
+              </td>
+              <td class="govuk-table__cell">
+                <strong
+                  class="govuk-tag govuk-tag--yellow"
+                  style="margin-bottom: 1px"
+                >
+                  Average </strong
+                ><br />
+                Pupils generally made around the same progress than expected.
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                Thomas Lane Secondary School
+              </th>
+              <td class="govuk-table__cell">
+                0.28
+                <div class="govuk-hint">0.04 to 0.69</div>
+              </td>
+              <td class="govuk-table__cell">
+                <strong
+                  class="govuk-tag govuk-tag--green"
+                  style="margin-bottom: 1px"
+                >
+                  Above average </strong
+                ><br />
+                Pupils generally made around half a grade more progress than
+                expected.
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Sheffield average</th>
+              <td class="govuk-table__cell">-0.04</td>
+              <td class="govuk-table__cell">
+                <strong
+                  class="govuk-tag govuk-tag--yellow"
+                  style="margin-bottom: 1px"
+                >
+                  Average </strong
+                ><br />
+                Pupils generally made around the same progress than expected.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="comparison-prompts">
+      <div class="comparison-prompts__icon material-symbols-outlined">quiz</div>
+      <h3 class="govuk-heading-m">
+        What you could ask schools about pupil progress
+      </h3>
+    </div>
+    <p class="govuk-body">
+      When researching, contacting or visiting a school, you may want to ask:
+    </p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        what are the differences in progress between different groups of pupils,
+        for example disadvantaged pupils or pupils with SEND?
+      </li>
+      <li>what support is available to each year group?</li>
+      <li>how does the school monitor pupil progress?</li>
+      <li>how does the school report pupil progress to parents and carers?</li>
+    </ul>
+
+    <hr
+      class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"
+    />
+    <h2 class="govuk-heading-l">Attainment 8</h2>
+    <p class="govuk-body">
+      <strong class="govuk-tag govuk-tag--grey" style="max-width: 100%">
+        2023 to 2024 academic year
+      </strong>
+    </p>
+    <p class="govuk-body">
+      Attainment 8 is used to assess a pupil’s average achievement across their
+      8 best GCSE-level subjects.
+    </p>
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Find out more about Attainment 8
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body">
+          The 8 subjects that are used in Attainment 8 are split into 3 groups:
+        </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>English and maths, which are both double-weighted</li>
+          <li>
+            EBacc subjects, these are a group of GCSE subjects that help
+            students gain a broad set of knowledge and skills. These subjects
+            include sciences, geography, history, and languages
+          </li>
+          <li>
+            open group which includes any other approved GCSEs or vocational
+            qualifications
+          </li>
+        </ul>
+        <p class="govuk-body">
+          Each GCSE grade is given a point score (for example grade 9 = 9
+          points, grade 8 = 8 points, and so on). The scores from the best 8
+          subjects (with English and Maths counting twice) are added together to
+          give the Attainment 8 score.
+        </p>
+      </div>
+    </details>
+
+    <div class="sp-card">
+      <div class="sp-card__content">
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header" style="width: 30%">
+                School
+              </th>
+              <th scope="col" class="govuk-table__header" style="width: 20%">
+                Score
+              </th>
+              <th scope="col" class="govuk-table__header" style="width: 50%">
+                Meaning
+              </th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                Bracken Cove Academy
+              </th>
+              <td class="govuk-table__cell">45.0</td>
+              <td class="govuk-table__cell">
+                Pupils generally scored the equivalent of between grade 4 and 5
+                in their 8 best GCSE-level subjects.
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                Oak Nest Secondary School
+              </th>
+              <td class="govuk-table__cell">41.9</td>
+              <td class="govuk-table__cell">
+                Pupils generally scored the equivalent of just above grade 4 in
+                their 8 best GCSE-level subjects.
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                Thomas Lane Secondary School
+              </th>
+              <td class="govuk-table__cell">51.1</td>
+              <td class="govuk-table__cell">
+                Pupils generally scored the equivalent of just above grade 5 in
+                their 8 best GCSE-level subjects.
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Sheffield average</th>
+              <td class="govuk-table__cell">46.2</td>
+              <td class="govuk-table__cell">
+                Pupils generally scored the equivalent of between grade 4 and 5
+                in their 8 best GCSE-level subjects.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="comparison-prompts">
+      <div class="comparison-prompts__icon material-symbols-outlined">quiz</div>
+      <h3 class="govuk-heading-m">
+        What you could ask schools about attainment
+      </h3>
+    </div>
+    <p class="govuk-body">
+      When researching, contacting or visiting a school, you may want to ask:
+    </p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        what are the differences in attainment between different groups of
+        pupils, for example disadvantaged pupils or pupils with SEND?
+      </li>
+      <li>how does the school support pupils with lower attainment?</li>
+    </ul>
+
+    {% endif %} {% if (data['yearprogressattainment'] == "lastlast") %}
+    <form class="form" action="#" method="post">
+      <div class="sp-filter">
+        <label class="govuk-label" for="sort">
+          Choose the academic year you want to see results for
+        </label>
+        <select
+          class="govuk-select"
+          id="yearprogressattainment"
+          name="yearprogressattainment"
+        >
+          <option value="current">2024 to 2025</option>
+          <option value="last">2023 to 2024</option>
+          <option value="lastlast" selected>2022 to 2023</option>
+        </select>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Show results
+        </button>
+      </div>
+    </form>
+    <p class="govuk-body">
+      Information in this section is for the 2022 to 2023 academic year.
+    </p>
+
+    <h2 class="govuk-heading-l">Progress 8</h2>
+    <p class="govuk-body">
+      <strong class="govuk-tag govuk-tag--grey" style="max-width: 100%">
+        2022 to 2023 academic year
+      </strong>
+    </p>
+    <p class="govuk-body">
+      Progress 8 is a performance measure used to show how much progress pupils
+      make from the end of primary school (KS2) to the end of secondary school
+      (KS4) across their best performing 8 subjects.
+    </p>
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text"
+          >Find out more about Progress 8 scores and confidence intervals
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body">
+          Progress 8 shows how much progress a pupil made compared to other
+          pupils with similar starting points at the end of primary school.
+        </p>
+        <p class="govuk-body">
+          The score shows progress compared to the national average:
+        </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            a score of 0 means students made average progress compared to others
+            with similar starting points
+          </li>
+          <li>
+            a positive score of more than 0 means pupils made more progress than
+            average
+          </li>
+          <li>
+            a negative score of less than 0 means students made less progress
+            than average
+          </li>
+        </ul>
+
+        <p class="govuk-body">
+          Progress 8 scores are influenced by both the school and their pupils.
+          It is difficult to determine how much of the progress score is due to
+          the school and how much is due to the pupils themselves. Confidence
+          intervals reflect this uncertainty.
+        </p>
+
+        <p class="govuk-body">
+          If the confidence intervals for two schools overlap, it means we
+          cannot be sure that one school’s Progress 8 score is better than the
+          other.
+        </p>
+        <p class="govuk-body">
+          The greater the number of pupils, the smaller the range of the
+          confidence interval. Smaller schools have larger confidence intervals
+          because fewer pupils are included, so the score is more affected by
+          the performance of individual pupils.  
+        </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            A school is above average if its Progress 8 score is above 0 and the
+            entire confidence interval is above 0
+          </li>
+          <li>
+            A school is below average if its Progress 8 score is below 0 and the
+            entire confidence interval is below 0.
+          </li>
+        </ul>
+      </div>
+    </details>
+    <div class="sp-card">
+      <div class="sp-card__content">
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header" style="width: 30%">
+                School
+              </th>
+              <th scope="col" class="govuk-table__header" style="width: 20%">
+                Score and confidence interval
+              </th>
+              <th scope="col" class="govuk-table__header" style="width: 50%">
+                Banding and meaning
+              </th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                Bracken Cove Academy
+              </th>
+              <td class="govuk-table__cell">
+                0.28
+                <div class="govuk-hint">-0.13 to 0.59</div>
+              </td>
+              <td class="govuk-table__cell">
+                <strong
+                  class="govuk-tag govuk-tag--green"
+                  style="margin-bottom: 1px"
+                >
+                  Average </strong
+                ><br />
+                Pupils generally made around the same progress than expected.
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                Oak Nest Secondary School
+              </th>
+              <td class="govuk-table__cell">
+                -0.32
+                <div class="govuk-hint">-0.47 to 0.17</div>
+              </td>
+              <td class="govuk-table__cell">
+                <strong
+                  class="govuk-tag govuk-tag--orange"
+                  style="margin-bottom: 1px"
+                >
+                  Below average </strong
+                ><br />
+                Pupils generally made around half a grade less progress than
+                expected.
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                Thomas Lane Secondary School
+              </th>
+              <td class="govuk-table__cell">
+                0.79
+                <div class="govuk-hint">0.61 to 0.97</div>
+              </td>
+              <td class="govuk-table__cell">
+                <strong
+                  class="govuk-tag govuk-tag--green"
+                  style="margin-bottom: 1px"
+                >
+                  Well above average </strong
+                ><br />
+                Pupils generally made around a grade more progress than
+                expected.
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Sheffield average</th>
+              <td class="govuk-table__cell">-0.04</td>
+              <td class="govuk-table__cell">
+                <strong
+                  class="govuk-tag govuk-tag--yellow"
+                  style="margin-bottom: 1px"
+                >
+                  Average </strong
+                ><br />
+                Pupils generally made around the same progress than expected.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="comparison-prompts">
+      <div class="comparison-prompts__icon material-symbols-outlined">quiz</div>
+      <h3 class="govuk-heading-m">
+        What you could ask schools about pupil progress
+      </h3>
+    </div>
+    <p class="govuk-body">
+      When researching, contacting or visiting a school, you may want to ask:
+    </p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        what are the differences in progress between different groups of pupils,
+        for example disadvantaged pupils or pupils with SEND?
+      </li>
+      <li>what support is available to each year group?</li>
+      <li>how does the school monitor pupil progress?</li>
+      <li>how does the school report pupil progress to parents and carers?</li>
+    </ul>
+
+    <hr
+      class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"
+    />
+    <h2 class="govuk-heading-l">Attainment 8</h2>
+    <p class="govuk-body">
+      <strong class="govuk-tag govuk-tag--grey" style="max-width: 100%">
+        2022 to 2023 academic year
+      </strong>
+    </p>
+    <p class="govuk-body">
+      Attainment 8 is used to assess a pupil’s average achievement across their
+      8 best GCSE-level subjects.
+    </p>
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Find out more about Attainment 8
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body">
+          The 8 subjects that are used in Attainment 8 are split into 3 groups:
+        </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>English and maths, which are both double-weighted</li>
+          <li>
+            EBacc subjects, these are a group of GCSE subjects that help
+            students gain a broad set of knowledge and skills. These subjects
+            include sciences, geography, history, and languages
+          </li>
+          <li>
+            open group which includes any other approved GCSEs or vocational
+            qualifications
+          </li>
+        </ul>
+        <p class="govuk-body">
+          Each GCSE grade is given a point score (for example grade 9 = 9
+          points, grade 8 = 8 points, and so on). The scores from the best 8
+          subjects (with English and Maths counting twice) are added together to
+          give the Attainment 8 score.
+        </p>
+      </div>
+    </details>
+
+    <div class="sp-card">
+      <div class="sp-card__content">
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header" style="width: 30%">
+                School
+              </th>
+              <th scope="col" class="govuk-table__header" style="width: 20%">
+                Score
+              </th>
+              <th scope="col" class="govuk-table__header" style="width: 50%">
+                Meaning
+              </th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                Bracken Cove Academy
+              </th>
+              <td class="govuk-table__cell">44.1</td>
+              <td class="govuk-table__cell">
+                Pupils generally scored the equivalent of between grade 4 and 5
+                in their 8 best GCSE-level subjects.
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                Oak Nest Secondary School
+              </th>
+              <td class="govuk-table__cell">47.2</td>
+              <td class="govuk-table__cell">
+                Pupils generally scored the equivalent of between grade 4 and 5
+                in their 8 best GCSE-level subjects.
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                Thomas Lane Secondary School
+              </th>
+              <td class="govuk-table__cell">45.0</td>
+              <td class="govuk-table__cell">
+                Pupils generally scored the equivalent of between grade 4 and 5
+                in their 8 best GCSE-level subjects.
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Sheffield average</th>
+              <td class="govuk-table__cell">41.2</td>
+              <td class="govuk-table__cell">
+                Pupils generally scored the equivalent of just above grade 4 in
+                their 8 best GCSE-level subjects.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="comparison-prompts">
+      <div class="comparison-prompts__icon material-symbols-outlined">quiz</div>
+      <h3 class="govuk-heading-m">
+        What you could ask schools about attainment
+      </h3>
+    </div>
+    <p class="govuk-body">
+      When researching, contacting or visiting a school, you may want to ask:
+    </p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        what are the differences in attainment between different groups of
+        pupils, for example disadvantaged pupils or pupils with SEND?
+      </li>
+      <li>how does the school support pupils with lower attainment?</li>
+    </ul>
+
+    {% endif %}
+    <nav
+      class="govuk-pagination govuk-pagination--block"
+      aria-label="Pagination"
+    >
+      <div class="govuk-pagination__prev">
+        <a
+          class="govuk-link govuk-pagination__link"
+          href="/comparison/profile/curriculum"
+          rel="prev"
+        >
+          <svg
+            class="govuk-pagination__icon govuk-pagination__icon--prev"
+            xmlns="http://www.w3.org/2000/svg"
+            height="13"
+            width="15"
+            aria-hidden="true"
+            focusable="false"
+            viewBox="0 0 15 13"
+          >
+            <path
+              d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"
+            ></path>
+          </svg>
+          <span class="govuk-pagination__link-title">
+            Previous<span class="govuk-visually-hidden"> page</span>
+          </span>
+          <span class="govuk-visually-hidden">:</span>
+          <span class="govuk-pagination__link-label">Curriculum</span>
+        </a>
+      </div>
+      <div class="govuk-pagination__next">
+        <a
+          class="govuk-link govuk-pagination__link"
+          href="english-math-results"
+          rel="next"
+        >
+          <svg
+            class="govuk-pagination__icon govuk-pagination__icon--next"
+            xmlns="http://www.w3.org/2000/svg"
+            height="13"
+            width="15"
+            aria-hidden="true"
+            focusable="false"
+            viewBox="0 0 15 13"
+          >
+            <path
+              d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"
+            ></path>
+          </svg>
+          <span class="govuk-pagination__link-title">
+            Next<span class="govuk-visually-hidden"> page</span>
+          </span>
+          <span class="govuk-visually-hidden">:</span>
+          <span class="govuk-pagination__link-label"
+            >Academic performance: English and maths results</span
+          >
+        </a>
+      </div>
+    </nav>
+  </div>
+</div>
+
+{% endblock %}

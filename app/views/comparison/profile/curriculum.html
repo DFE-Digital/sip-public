@@ -1,0 +1,589 @@
+{% extends "layouts/main.html" %} {% block pageTitle %} Curriculum {% endblock
+%} {% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    <nav class="moj-side-navigation" aria-label="Side navigation">
+      <ul class="moj-side-navigation__list">
+        <li class="moj-side-navigation__item">
+          <a href="/comparison/profile/about-your-schools/school-overview"
+            >About your schools</a
+          >
+        </li>
+        <li class="moj-side-navigation__item">
+          <a href="/comparison/profile/supporting-pupils/supporting-all-pupils"
+            >Policies and pupil support</a
+          >
+        </li>
+        <li class="moj-side-navigation__item">
+          <a href="/comparison/profile/attendance">Attendance</a>
+        </li>
+        <li
+          class="moj-side-navigation__item moj-side-navigation__item--active"
+          aria-current="location"
+        >
+          <a href="/comparison/profile/curriculum">Curriculum</a>
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="/comparison/profile/academic-performance/progress-attainment"
+            >Academic performance</a
+          >
+        </li>
+        <li class="moj-side-navigation__item">
+          <a href="/comparison/profile/after-year-11"
+            >Destinations after year 11</a
+          >
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="/comparison/profile/next-steps">Next steps</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="govuk-grid-column-three-quarters">
+    <span class="govuk-caption-xl">Comparing your schools</span>
+
+    <h1 class="govuk-heading-xl">Curriculum</h1>
+    <p class="govuk-body">
+      A school’s curriculum sets out the subjects, knowledge, skills and
+      experiences it provides to pupils, aiming to give them a broad and
+      balanced education.
+    </p>
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text"
+          >Learn more about curriculums at key stage 3 and 4</span
+        >
+      </summary>
+      <div class="govuk-details__text">
+        <h2 class="govuk-heading-m">Key stage 3 (KS3)</h2>
+        <p class="govuk-body">
+          KS3 is for pupils usually aged 11 to 14. In KS3 pupils study the core
+          subjects of English, maths and science, and the national curriculum’s
+          foundation subjects. Schools can also include other subjects or topics
+          in their curriculum.
+        </p>
+
+        <h2 class="govuk-heading-m">Key stage 4 (KS4)</h2>
+        <p class="govuk-body">
+          Key stage 4 (KS4) qualifications in England are usually taken by
+          pupils aged 14 to 16. Pupils usually take a combination of:
+        </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            compulsory core subject GCSEs such as English, maths and science
+          </li>
+          <li>
+            additional subject GCSEs such as art, languages, history and
+            geography
+          </li>
+          <li>vocational subject qualifications such as BTECs</li>
+        </ul>
+        <p class="govuk-body">
+          While most pupils must take core subject GCSEs, other subjects depend
+          on pupil preference and the school’s curriculum.
+        </p>
+      </div>
+    </details>
+    <h2 class="govuk-heading-l">
+      Key stage 4 qualifications pupils are entered in
+    </h2>
+    <p class="govuk-body">
+      <strong class="govuk-tag govuk-tag--grey" style="max-width: 100%">
+        2024 to 2025 academic year
+      </strong>
+    </p>
+    <p class="govuk-body">
+      This page gives a snapshot of some of the subjects available at each
+      school and pupils’ performance in those subjects.
+    </p>
+    <h3 class="govuk-heading-m">
+      Percentage of pupils entered in foreign language GCSEs
+    </h3>
+    <p class="govuk-body">
+      A school might enter a pupil to take a GCSE but not offer that subject as
+      part of their curriculum. For example when a pupil is entered for a
+      language they already speak fluently.
+    </p>
+    <div id="languages-graphs">
+      <div class="govuk-grid-column-one-half" style="padding-right: 7.5px">
+        <div class="sp-card-graph">
+          <h4 class="govuk-heading-s">Bracken Cove Academy</h4>
+
+          <div id="top-languages-1" class="subjectsentered-chart"></div>
+        </div>
+      </div>
+      <div class="govuk-grid-column-one-half" style="padding-left: 7.5px">
+        <div class="sp-card-graph">
+          <h4 class="govuk-heading-s">Oak Nest Secondary School</h4>
+
+          <div id="top-languages-2" class="subjectsentered-chart-one"></div>
+        </div>
+      </div>
+      <div class="govuk-grid-column-full"></div>
+      <div class="govuk-grid-column-one-half" style="padding-right: 7.5px">
+        <div class="sp-card-graph">
+          <h4 class="govuk-heading-s">Thomas Lane Secondary School</h4>
+
+          <div id="top-languages-3" class="subjectsentered-chart"></div>
+        </div>
+      </div>
+
+      <button
+        onclick="javascript:showLanguages(2)"
+        type="submit"
+        class="govuk-button govuk-button--secondary"
+        data-module="govuk-button"
+      >
+        View the languages subjects data as tables
+      </button>
+    </div>
+
+    <div id="languages-tables" style="display: none">
+      <div class="govuk-grid-column-one-half" style="padding-right: 7.5px">
+        <div class="sp-card-graph">
+          <h4 class="govuk-heading-s">Bracken Cove Academy</h4>
+
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header" style="width: 50%">
+                  Subject
+                </th>
+                <th scope="col" class="govuk-table__header" style="width: 50%">
+                  Percentage of pupils
+                </th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">French</th>
+                <td class="govuk-table__cell">77%</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Spanish</th>
+                <td class="govuk-table__cell">42%</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">German</th>
+                <td class="govuk-table__cell">9%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="govuk-grid-column-one-half" style="padding-left: 7.5px">
+        <div class="sp-card-graph">
+          <h4 class="govuk-heading-s">Oak Nest Secondary School</h4>
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header" style="width: 50%">
+                  Subject
+                </th>
+                <th scope="col" class="govuk-table__header" style="width: 50%">
+                  Percentage of pupils
+                </th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">French</th>
+                <td class="govuk-table__cell">77%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="govuk-grid-column-full"></div>
+      <div class="govuk-grid-column-one-half" style="padding-right: 7.5px">
+        <div class="sp-card-graph">
+          <h4 class="govuk-heading-s">Thomas Lane Secondary School</h4>
+
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header" style="width: 50%">
+                  Subject
+                </th>
+                <th scope="col" class="govuk-table__header" style="width: 50%">
+                  Percentage of pupils
+                </th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Modern Greek</th>
+                <td class="govuk-table__cell">5%</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Polish</th>
+                <td class="govuk-table__cell">2%</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Spanish</th>
+                <td class="govuk-table__cell">55%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <button
+        onclick="javascript:showLanguages(1)"
+        type="submit"
+        class="govuk-button govuk-button--secondary"
+        data-module="govuk-button"
+      >
+        View the languages subjects data as charts
+      </button>
+    </div>
+
+    <div class="govuk-grid-column-full">
+      <h3 class="govuk-heading-m">
+        Most popular vocational subjects by number of pupils entered in the
+        qualification
+      </h3>
+      <p class="govuk-body">
+        Vocational subjects are designed to give pupils the skills and
+        experience needed to work in diverse employment areas.
+      </p>
+    </div>
+
+    <div id="vocational-graphs">
+      <div class="govuk-grid-column-one-half" style="padding-right: 7.5px">
+        <div class="sp-card-graph">
+          <h4 class="govuk-heading-s">Bracken Cove Academy</h4>
+
+          <div
+            id="top-vocational-1"
+            class="subjectsentered-vocational-chart"
+          ></div>
+        </div>
+      </div>
+      <div class="govuk-grid-column-one-half" style="padding-left: 7.5px">
+        <div class="sp-card-graph">
+          <h4 class="govuk-heading-s">Oak Nest Secondary School</h4>
+
+          <div
+            id="top-vocational-2"
+            class="subjectsentered-vocational-chart"
+          ></div>
+        </div>
+      </div>
+      <div class="govuk-grid-column-full"></div>
+      <div class="govuk-grid-column-one-half" style="padding-right: 7.5px">
+        <div class="sp-card-graph">
+          <h4 class="govuk-heading-s">Thomas Lane Secondary School</h4>
+
+          <div
+            id="top-vocational-3"
+            class="subjectsentered-vocational-chart"
+          ></div>
+        </div>
+      </div>
+      <div class="govuk-grid-column-full">
+        <button
+          onclick="javascript:showVocational(2)"
+          type="submit"
+          class="govuk-button govuk-button--secondary"
+          data-module="govuk-button"
+        >
+          View the top vocational subjects data as tables
+        </button>
+      </div>
+    </div>
+
+    <div id="vocational-tables" style="display: none">
+      <div class="govuk-grid-column-one-half" style="padding-right: 7.5px">
+        <div class="sp-card-graph">
+          <h4 class="govuk-heading-s">Bracken Cove Academy</h4>
+
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header" style="width: 50%">
+                  Subject
+                </th>
+                <th scope="col" class="govuk-table__header" style="width: 50%">
+                  Percentage of pupils
+                </th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
+                  Computer science
+                </th>
+                <td class="govuk-table__cell">82%</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Engineering</th>
+                <td class="govuk-table__cell">61%</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Music</th>
+                <td class="govuk-table__cell">55%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="govuk-grid-column-one-half" style="padding-left: 7.5px">
+        <div class="sp-card-graph">
+          <h4 class="govuk-heading-s">Oak Nest Secondary School</h4>
+
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header" style="width: 50%">
+                  Subject
+                </th>
+                <th scope="col" class="govuk-table__header" style="width: 50%">
+                  Percentage of pupils
+                </th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">ICT</th>
+                <td class="govuk-table__cell">75%</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Music</th>
+                <td class="govuk-table__cell">50%</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
+                  Physical education
+                </th>
+                <td class="govuk-table__cell">45%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="govuk-grid-column-full"></div>
+      <div class="govuk-grid-column-one-half" style="padding-right: 7.5px">
+        <div class="sp-card-graph">
+          <h4 class="govuk-heading-s">Thomas Lane Secondary School</h4>
+
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header" style="width: 50%">
+                  Subject
+                </th>
+                <th scope="col" class="govuk-table__header" style="width: 50%">
+                  Percentage of pupils
+                </th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
+                  Business studies
+                </th>
+                <td class="govuk-table__cell">63%</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Media studies</th>
+                <td class="govuk-table__cell">61%</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">ICT</th>
+                <td class="govuk-table__cell">60%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="govuk-grid-column-full">
+        <button
+          onclick="javascript:showVocational(1)"
+          type="submit"
+          class="govuk-button govuk-button--secondary"
+          data-module="govuk-button"
+        >
+          View the top vocational subjects data as charts
+        </button>
+      </div>
+    </div>
+
+    <div class="govuk-grid-column-full">
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text"
+            >Find out more about this data</span
+          >
+        </summary>
+        <div class="govuk-details__text">
+          <h5 class="govuk-heading-m">
+            Total number of pupils available to take qualifications
+          </h5>
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header" style="width: 25%">
+                  School
+                </th>
+                <th
+                  scope="col"
+                  class="govuk-table__header"
+                  style="width: 37.5%"
+                >
+                  Number of pupils
+                </th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
+                  Bracken Cove Academy
+                </th>
+                <td class="govuk-table__cell">153</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
+                  Oak Nest Secondary School
+                </th>
+
+                <td class="govuk-table__cell">175</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
+                  Thomas Lane Secondary School
+                </th>
+
+                <td class="govuk-table__cell">302</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+      <div class="comparison-prompts">
+        <div class="comparison-prompts__icon material-symbols-outlined">
+          quiz
+        </div>
+        <h3 class="govuk-heading-m">
+          What you could ask schools about the subjects they offer
+        </h3>
+      </div>
+      <p class="govuk-body">
+        When researching, contacting or visiting a school, you may want to ask:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          what is the balance of compulsory and optional GCSEs that pupils can
+          take?
+        </li>
+        <li>which qualifications could my child take?</li>
+        <li>
+          what is the maximum and minimum qualifications a pupil can take at the
+          school?
+        </li>
+        <li>what are the most popular subjects?</li>
+        <li>
+          how do you decide the right number of GCSEs for each pupil to enter?
+        </li>
+        <li>are there limited spaces for pupils on optional subjects?</li>
+      </ul>
+      <nav
+        class="govuk-pagination govuk-pagination--block"
+        aria-label="Pagination"
+      >
+        <div class="govuk-pagination__prev">
+          <a
+            class="govuk-link govuk-pagination__link"
+            href="/comparison/profile/attendance"
+            rel="prev"
+          >
+            <svg
+              class="govuk-pagination__icon govuk-pagination__icon--prev"
+              xmlns="http://www.w3.org/2000/svg"
+              height="13"
+              width="15"
+              aria-hidden="true"
+              focusable="false"
+              viewBox="0 0 15 13"
+            >
+              <path
+                d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"
+              ></path>
+            </svg>
+            <span class="govuk-pagination__link-title">
+              Previous<span class="govuk-visually-hidden"> page</span>
+            </span>
+            <span class="govuk-visually-hidden">:</span>
+            <span class="govuk-pagination__link-label">Attendance</span>
+          </a>
+        </div>
+
+        <div class="govuk-pagination__next">
+          <a
+            class="govuk-link govuk-pagination__link"
+            href="/comparison/profile/academic-performance/progress-attainment"
+            rel="next"
+          >
+            <svg
+              class="govuk-pagination__icon govuk-pagination__icon--next"
+              xmlns="http://www.w3.org/2000/svg"
+              height="13"
+              width="15"
+              aria-hidden="true"
+              focusable="false"
+              viewBox="0 0 15 13"
+            >
+              <path
+                d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"
+              ></path>
+            </svg>
+            <span class="govuk-pagination__link-title">
+              Next<span class="govuk-visually-hidden"> page</span>
+            </span>
+            <span class="govuk-visually-hidden">:</span>
+            <span class="govuk-pagination__link-label"
+              >Academic performance: Progress and attainment</span
+            >
+          </a>
+        </div>
+      </nav>
+    </div>
+
+    {% endblock %} {% block pageScripts %}
+
+    <!-- Load your local chart code (file in app/assets/javascripts) -->
+    <script src="/public/javascripts/google-charts.js"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <!-- Initialise the chart -->
+    <script>
+      google.charts.load("current", { packages: ["corechart"] });
+      google.charts.setOnLoadCallback(window.drawGoogleChart);
+
+      function showLanguages(languages) {
+        document.getElementById("languages-graphs").style.display = "none";
+        document.getElementById("languages-tables").style.display = "none";
+        if (languages == "1") {
+          document.getElementById("languages-graphs").style.display = "block";
+        } else if (languages == "2") {
+          document.getElementById("languages-tables").style.display = "block";
+        }
+      }
+
+      function showVocational(vocational) {
+        document.getElementById("vocational-graphs").style.display = "none";
+        document.getElementById("vocational-tables").style.display = "none";
+        if (vocational == "1") {
+          document.getElementById("vocational-graphs").style.display = "block";
+        } else if (vocational == "2") {
+          document.getElementById("vocational-tables").style.display = "block";
+        }
+      }
+    </script>
+    {% endblock %}
+  </div>
+</div>
