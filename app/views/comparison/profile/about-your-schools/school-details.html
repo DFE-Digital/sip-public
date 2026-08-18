@@ -1,26 +1,43 @@
 {% extends "layouts/main.html" %} {% block pageTitle %} About your schools:
-School information {% endblock %} {% block content %}
+School details {% endblock %} {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-quarter">
     <nav class="moj-side-navigation" aria-label="Side navigation">
       <ul class="moj-side-navigation__list">
-        <li class="moj-side-navigation__item moj-side-navigation__item--active">
-          <a href="/comparison/profile/about-your-schools/your-chosen-schools" aria-current="location"
+        <li
+          class="moj-side-navigation__item moj-side-navigation__item--active"
+          aria-current="location"
+        >
+          <a href="/comparison/profile/about-your-schools/school-overview"
             >About your schools</a
           >
         </li>
         <li class="moj-side-navigation__item">
-          <a href="/comparison/profile/policies-pupil-support/pastoral-care">Policies and pupil support</a>
+          <a href="/comparison/profile/supporting-pupils/supporting-all-pupils"
+            >Policies and pupil support</a
+          >
         </li>
         <li class="moj-side-navigation__item">
-          <a href="">Pupil experience in schools</a>
+          <a href="/comparison/profile/attendance">Attendance</a>
         </li>
         <li class="moj-side-navigation__item">
-          <a href="">Outcomes and performance</a>
+          <a href="/comparison/profile/curriculum">Curriculum</a>
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="/comparison/profile/academic-performance/progress-attainment"
+            >Academic performance</a
+          >
         </li>
         <li class="moj-side-navigation__item">
-          <a href="">Next steps and admissions</a>
+          <a href="/comparison/profile/after-year-11"
+            >Destinations after year 11</a
+          >
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="/comparison/profile/next-steps">Next steps</a>
         </li>
       </ul>
     </nav>
@@ -33,84 +50,20 @@ School information {% endblock %} {% block content %}
     <nav class="moj-sub-navigation" aria-label="Sub navigation">
       <ul class="moj-sub-navigation__list">
         <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link" href="your-chosen-schools"
-            >Your chosen schools</a
+          <a class="moj-sub-navigation__link" href="school-overview"
+            >School overview</a
           >
         </li>
         <li class="moj-sub-navigation__item">
           <a
             class="moj-sub-navigation__link"
             aria-current="page"
-            href="school-information"
-            >School information</a
+            href="school-details"
+            >School details</a
           >
         </li>
       </ul>
     </nav>
-
-    <table class="govuk-table">
-      <caption class="govuk-table__caption govuk-table__caption--m">
-        Location
-      </caption>
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">School</th>
-          <th scope="col" class="govuk-table__header">Address</th>
-          <th scope="col" class="govuk-table__header">Local council</th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Bracken Cove Academy</th>
-          <td class="govuk-table__cell">
-            Scenic Crescent, Sheffield, South Yorkshire, S3 5US
-          </td>
-          <td class="govuk-table__cell">
-            Sheffield<br />
-            <a href="#" class="govuk-link govuk-link--no-visited-state"
-              >View Sheffield City Council's website</a
-            >
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">
-            Oak Nest Secondary School
-          </th>
-          <td class="govuk-table__cell">
-            Sapling Street, Sheffield, South Yorkshire, S1 2AB
-          </td>
-          <td class="govuk-table__cell">
-            Sheffield<br />
-            <a href="#" class="govuk-link govuk-link--no-visited-state"
-              >View Sheffield City Council's website</a
-            >
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">
-            Thomas Lane Secondary School
-          </th>
-          <td class="govuk-table__cell">
-            Manor Lane, Sheffield, South Yorkshire, S1 2GS
-          </td>
-          <td class="govuk-table__cell">
-            Sheffield<br />
-            <a href="#" class="govuk-link govuk-link--no-visited-state"
-              >View Sheffield City Council's website</a
-            >
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-    <details class="govuk-details">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          View this information on a map
-        </span>
-      </summary>
-      <div class="govuk-details__text">Map :)</div>
-    </details>
 
     <h2 class="govuk-heading-l">School features</h2>
     <table class="govuk-table">
@@ -119,17 +72,25 @@ School information {% endblock %} {% block content %}
       </caption>
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">School</th>
-          <th scope="col" class="govuk-table__header">Number of pupils</th>
-          <th scope="col" class="govuk-table__header">Age range</th>
-          <th scope="col" class="govuk-table__header">Pupil sex</th>
+          <th scope="col" class="govuk-table__header" style="width: 25%">
+            School
+          </th>
+          <th scope="col" class="govuk-table__header" style="width: 25%">
+            Number of pupils
+          </th>
+          <th scope="col" class="govuk-table__header" style="width: 25%">
+            Age range
+          </th>
+          <th scope="col" class="govuk-table__header" style="width: 25%">
+            Pupil sex
+          </th>
         </tr>
       </thead>
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Bracken Cove Academy</th>
           <td class="govuk-table__cell">765</td>
-          <td class="govuk-table__cell">11 to 18</td>
+          <td class="govuk-table__cell">11 to 16</td>
           <td class="govuk-table__cell">Mixed</td>
         </tr>
         <tr class="govuk-table__row">
@@ -145,11 +106,92 @@ School information {% endblock %} {% block content %}
             Thomas Lane Secondary School
           </th>
           <td class="govuk-table__cell">2,100</td>
-          <td class="govuk-table__cell">11 to 16</td>
+          <td class="govuk-table__cell">11 to 18</td>
           <td class="govuk-table__cell">Mixed</td>
         </tr>
       </tbody>
     </table>
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--l">
+        Location
+      </caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header" style="width: 25%">
+            School
+          </th>
+          <th scope="col" class="govuk-table__header" style="width: 37.5%">
+            Address
+          </th>
+          <th scope="col" class="govuk-table__header" style="width: 37.5%">
+            Local council
+          </th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Bracken Cove Academy</th>
+          <td class="govuk-table__cell">
+            Scenic Crescent, Sheffield, South Yorkshire, S3 5US
+          </td>
+          <td class="govuk-table__cell">Sheffield</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            Oak Nest Secondary School
+          </th>
+          <td class="govuk-table__cell">
+            Sapling Street, Sheffield, South Yorkshire, S1 2AB
+          </td>
+          <td class="govuk-table__cell">Sheffield</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            Thomas Lane Secondary School
+          </th>
+          <td class="govuk-table__cell">
+            Manor Lane, Sheffield, South Yorkshire, S1 2GS
+          </td>
+          <td class="govuk-table__cell">Sheffield</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          View this information on a map
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <img id="map" src="/public/images/comparison/map-icons.png" alt="" />
+        <div class="map-key">
+          <img
+            class="map-marker"
+            src="/public/images/comparison/markers/square.png"
+            alt=""
+          />
+          <span class="govuk-body">Bracken Cove Academy</span>
+        </div>
+        <div class="map-key">
+          <img
+            class="map-marker"
+            src="/public/images/comparison/markers/circle.png"
+            alt=""
+          />
+          <span class="govuk-body">Oak Nest Secondary School</span>
+        </div>
+        <div class="map-key">
+          <img
+            class="map-marker"
+            src="/public/images/comparison/markers/triangle.png"
+            alt=""
+          />
+          <span class="govuk-body">Thomas Lane Secondary School</span>
+        </div>
+      </div>
+    </details>
+
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
         <h3 class="govuk-summary-card__title">Further information</h3>
@@ -160,18 +202,20 @@ School information {% endblock %} {% block content %}
         <table class="govuk-table">
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">School Profile</th>
+              <th scope="row" class="govuk-table__header" style="width: 25%">
+                School Profile
+              </th>
               <td class="govuk-table__cell">
-                <a href="#" class="govuk-link govuk-link--no-visited-state"
+                <a href="#" class="disabled-link govuk-link govuk-link--no-visited-state"
                   >View Bracken Cove Academy's School Profile</a
                 >
               </td>
             </tr>
 
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Academy Trust</th>
+              <th scope="row" class="govuk-table__header">Ofsted report</th>
               <td class="govuk-table__cell">
-                <a href="#" class="govuk-link govuk-link--no-visited-state"
+                <a href="#" class="disabled-link govuk-link govuk-link--no-visited-state"
                   >View the latest Ofsted report</a
                 >
                 <br />
@@ -181,7 +225,7 @@ School information {% endblock %} {% block content %}
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Website</th>
               <td class="govuk-table__cell">
-                <a href="#" class="govuk-link govuk-link--no-visited-state"
+                <a href="/school-websites/bracken-cove" class="govuk-link govuk-link--no-visited-state"
                   >View Bracken Cove Academy's website</a
                 >
               </td>
@@ -192,18 +236,20 @@ School information {% endblock %} {% block content %}
         <table class="govuk-table">
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">School Profile</th>
+              <th scope="row" class="govuk-table__header" style="width: 25%">
+                School Profile
+              </th>
               <td class="govuk-table__cell">
-                <a href="#" class="govuk-link govuk-link--no-visited-state"
+                <a href="#" class="disabled-link govuk-link govuk-link--no-visited-state"
                   >View Oak Nest Secondary School's School Profile</a
                 >
               </td>
             </tr>
 
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Academy Trust</th>
+              <th scope="row" class="govuk-table__header">Ofsted report</th>
               <td class="govuk-table__cell">
-                <a href="#" class="govuk-link govuk-link--no-visited-state"
+                <a href="#" class="disabled-link govuk-link govuk-link--no-visited-state"
                   >View the latest Ofsted report</a
                 >
                 <br />
@@ -213,7 +259,7 @@ School information {% endblock %} {% block content %}
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Website</th>
               <td class="govuk-table__cell">
-                <a href="#" class="govuk-link govuk-link--no-visited-state"
+                <a href="/school-websites/oak-nest" class="govuk-link govuk-link--no-visited-state"
                   >View Oak Nest Secondary School's website</a
                 >
               </td>
@@ -224,18 +270,20 @@ School information {% endblock %} {% block content %}
         <table class="govuk-table">
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">School Profile</th>
+              <th scope="row" class="govuk-table__header" style="width: 25%">
+                School Profile
+              </th>
               <td class="govuk-table__cell">
-                <a href="#" class="govuk-link govuk-link--no-visited-state"
+                <a href="#" class="disabled-link govuk-link govuk-link--no-visited-state"
                   >View Thomas Lane Secondary School's School Profile</a
                 >
               </td>
             </tr>
 
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Academy Trust</th>
+              <th scope="row" class="govuk-table__header">Ofsted report</th>
               <td class="govuk-table__cell">
-                <a href="#" class="govuk-link govuk-link--no-visited-state"
+                <a href="#" class="disabled-link govuk-link govuk-link--no-visited-state"
                   >View the latest Ofsted report</a
                 >
                 <br />
@@ -245,7 +293,7 @@ School information {% endblock %} {% block content %}
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Website</th>
               <td class="govuk-table__cell">
-                <a href="#" class="govuk-link govuk-link--no-visited-state"
+                <a href="/school-websites/thomas-lane" class="govuk-link govuk-link--no-visited-state"
                   >View Thomas Lane Secondary School's website</a
                 >
               </td>
@@ -261,7 +309,7 @@ School information {% endblock %} {% block content %}
       <div class="govuk-pagination__prev">
         <a
           class="govuk-link govuk-pagination__link"
-          href="your-chosen-schools"
+          href="school-overview"
           rel="prev"
         >
           <svg
@@ -282,12 +330,16 @@ School information {% endblock %} {% block content %}
           </span>
           <span class="govuk-visually-hidden">:</span>
           <span class="govuk-pagination__link-label"
-            >About your schools: Your chosen schools</span
+            >About your schools: School overview</span
           >
         </a>
       </div>
       <div class="govuk-pagination__next">
-        <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+        <a
+          class="govuk-link govuk-pagination__link"
+          href="/comparison/profile/supporting-pupils/supporting-all-pupils"
+          rel="next"
+        >
           <svg
             class="govuk-pagination__icon govuk-pagination__icon--next"
             xmlns="http://www.w3.org/2000/svg"
@@ -306,7 +358,7 @@ School information {% endblock %} {% block content %}
           </span>
           <span class="govuk-visually-hidden">:</span>
           <span class="govuk-pagination__link-label"
-            >Driver CPC part 1 test: theory</span
+            >Policies and pupil support: Supporting all pupils</span
           >
         </a>
       </div>

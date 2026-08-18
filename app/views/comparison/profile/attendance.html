@@ -1,0 +1,296 @@
+{% extends "layouts/main.html" %} {% block pageTitle %} Attendance {% endblock
+%} {% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    <nav class="moj-side-navigation" aria-label="Side navigation">
+      <ul class="moj-side-navigation__list">
+        <li class="moj-side-navigation__item">
+          <a href="/comparison/profile/about-your-schools/school-overview"
+            >About your schools</a
+          >
+        </li>
+        <li class="moj-side-navigation__item">
+          <a href="/comparison/profile/supporting-pupils/supporting-all-pupils"
+            >Policies and pupil support</a
+          >
+        </li>
+        <li
+          class="moj-side-navigation__item moj-side-navigation__item--active"
+          aria-current="location"
+        >
+          <a href="/comparison/profile/attendance">Attendance</a>
+        </li>
+        <li class="moj-side-navigation__item">
+          <a href="/comparison/profile/curriculum">Curriculum</a>
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="/comparison/profile/academic-performance/progress-attainment"
+            >Academic performance</a
+          >
+        </li>
+        <li class="moj-side-navigation__item">
+          <a href="/comparison/profile/after-year-11"
+            >Destinations after year 11</a
+          >
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="/comparison/profile/next-steps">Next steps</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="govuk-grid-column-three-quarters">
+    <span class="govuk-caption-xl">Comparing your schools</span>
+    <h1 class="govuk-heading-xl">Attendance</h1>
+    <p class="govuk-body">
+      <strong class="govuk-tag govuk-tag--grey" style="max-width: 100%">
+        2024 to 2025 academic year
+      </strong>
+    </p>
+    <p class="govuk-body">
+      Schools must record pupil attendance twice a day: once in the morning and
+      once in the afternoon. A session is a morning or afternoon period in a
+      school.
+    </p>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text"
+          >How the attendance rate is calculated</span
+        >
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body">
+          Attendance rate is worked out by adding together the sessions that all
+          pupils have attended. This number is then divided by the number of
+          possible sessions that all pupils could have attended. The result is
+          multiplied by 100 to get a percentage.
+        </p>
+      </div>
+    </details>
+
+    <div class="sp-card">
+      <div class="sp-card__content">
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header" style="width: 30%">
+                School
+              </th>
+              <th scope="col" class="govuk-table__header" style="width: 20%">
+                Attendance
+              </th>
+              <th scope="col" class="govuk-table__header" style="width: 50%">
+                Meaning
+              </th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                Bracken Cove Academy
+              </th>
+              <td class="govuk-table__cell">94.1%</td>
+              <td class="govuk-table__cell">
+                The number of sessions that all pupils attended compared to all
+                possible sessions means that this school has a 94.1% attendance
+                rate.
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                Oak Nest Secondary School
+              </th>
+              <td class="govuk-table__cell">97.5%</td>
+              <td class="govuk-table__cell">
+                The number of sessions that all pupils attended compared to all
+                possible sessions means that this school has a 97.5% attendance
+                rate.
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                Thomas Lane Secondary School
+              </th>
+              <td class="govuk-table__cell">98.8%</td>
+              <td class="govuk-table__cell">
+                The number of sessions that all pupils attended compared to all
+                possible sessions means that this school has a 98.8% attendance
+                rate.
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Sheffield average</th>
+              <td class="govuk-table__cell">95.7%</td>
+              <td class="govuk-table__cell">
+                The number of sessions that all pupils attended compared to all
+                possible sessions means that secondary schools in Sheffield have
+                a 95.7% attendance rate.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <hr
+      class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"
+    />
+    <h2 class="govuk-heading-l">Persistent absence</h2>
+    <p class="govuk-body">
+      <strong class="govuk-tag govuk-tag--grey" style="max-width: 100%">
+        2024 to 2025 academic year
+      </strong>
+    </p>
+    <p class="govuk-body">
+      If a pupil misses 10% or more of their possible sessions in a year, they
+      are identified as being persistently absent.
+    </p>
+    <p class="govuk-body">
+      On average there are 380 sessions a year in school, so a pupil who misses
+      38 or more sessions is considered persistently absent.
+    </p>
+    <div class="sp-card">
+      <div class="sp-card__content">
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header" style="width: 30%">
+                School
+              </th>
+              <th scope="col" class="govuk-table__header" style="width: 20%">
+                Persistent absence
+              </th>
+              <th scope="col" class="govuk-table__header" style="width: 50%">
+                Meaning
+              </th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                Bracken Cove Academy
+              </th>
+              <td class="govuk-table__cell">18.7%</td>
+              <td class="govuk-table__cell">
+                Out of 765 pupils, 143 were persistently absent. This means that
+                18.2% were persistently absent.
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                Oak Nest Secondary School
+              </th>
+              <td class="govuk-table__cell">18.2%</td>
+              <td class="govuk-table__cell">
+                Out of 1,230 pupils, 223 were persistently absent. This means
+                that 18.2% were persistently absent.
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                Thomas Lane Secondary School
+              </th>
+              <td class="govuk-table__cell">16.9%</td>
+              <td class="govuk-table__cell">
+                Out of 2,100 pupils, 355 were persistently absent. This means
+                that 18.2% were persistently absent.
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Sheffield average</th>
+              <td class="govuk-table__cell">19.5%</td>
+              <td class="govuk-table__cell">
+                Out of the total number of pupils in secondary schools in
+                Sheffield, 19.5% were persistently absent.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="comparison-prompts">
+      <div class="comparison-prompts__icon material-symbols-outlined">quiz</div>
+      <h3 class="govuk-heading-m">
+        What you could ask schools about attendance
+      </h3>
+    </div>
+    <p class="govuk-body">
+      When researching, contacting or visiting a school, you may want to ask:
+    </p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>what does the school do to encourage regular attendance?</li>
+      <li>how does the school work with families to support attendance?</li>
+      <li>
+        how does the school support pupils with medical needs that may lead to
+        absence?
+      </li>
+    </ul>
+    <nav
+      class="govuk-pagination govuk-pagination--block"
+      aria-label="Pagination"
+    >
+      <div class="govuk-pagination__prev">
+        <a
+          class="govuk-link govuk-pagination__link"
+          href="/comparison/profile/supporting-pupils/other-policies"
+          rel="prev"
+        >
+          <svg
+            class="govuk-pagination__icon govuk-pagination__icon--prev"
+            xmlns="http://www.w3.org/2000/svg"
+            height="13"
+            width="15"
+            aria-hidden="true"
+            focusable="false"
+            viewBox="0 0 15 13"
+          >
+            <path
+              d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"
+            ></path>
+          </svg>
+          <span class="govuk-pagination__link-title">
+            Previous<span class="govuk-visually-hidden"> page</span>
+          </span>
+          <span class="govuk-visually-hidden">:</span>
+          <span class="govuk-pagination__link-label"
+            >Policies and pupil support: Other policies</span
+          >
+        </a>
+      </div>
+      <div class="govuk-pagination__next">
+        <a
+          class="govuk-link govuk-pagination__link"
+          href="/comparison/profile/curriculum"
+          rel="next"
+        >
+          <svg
+            class="govuk-pagination__icon govuk-pagination__icon--next"
+            xmlns="http://www.w3.org/2000/svg"
+            height="13"
+            width="15"
+            aria-hidden="true"
+            focusable="false"
+            viewBox="0 0 15 13"
+          >
+            <path
+              d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"
+            ></path>
+          </svg>
+          <span class="govuk-pagination__link-title">
+            Next<span class="govuk-visually-hidden"> page</span>
+          </span>
+          <span class="govuk-visually-hidden">:</span>
+          <span class="govuk-pagination__link-label">Curriculum</span>
+        </a>
+      </div>
+    </nav>
+  </div>
+</div>
+
+{% endblock %}

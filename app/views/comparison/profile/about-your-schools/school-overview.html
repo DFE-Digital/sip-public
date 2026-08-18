@@ -1,30 +1,43 @@
-{% extends "layouts/main.html" %} {% block pageTitle %} About your schools: Your
-chosen schools {% endblock %} {% block content %}
+{% extends "layouts/main.html" %} {% block pageTitle %} About your schools:
+School overview {% endblock %} {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-quarter">
     <nav class="moj-side-navigation" aria-label="Side navigation">
       <ul class="moj-side-navigation__list">
-        <li class="moj-side-navigation__item moj-side-navigation__item--active">
-          <a
-            href="/comparison/profile/about-your-schools/your-chosen-schools"
-            aria-current="location"
+        <li
+          class="moj-side-navigation__item moj-side-navigation__item--active"
+          aria-current="location"
+        >
+          <a href="/comparison/profile/about-your-schools/school-overview"
             >About your schools</a
           >
         </li>
         <li class="moj-side-navigation__item">
-          <a href="/comparison/profile/policies-pupil-support/pastoral-care"
+          <a href="/comparison/profile/supporting-pupils/supporting-all-pupils"
             >Policies and pupil support</a
           >
         </li>
         <li class="moj-side-navigation__item">
-          <a href="">Pupil experience in schools</a>
+          <a href="/comparison/profile/attendance">Attendance</a>
         </li>
         <li class="moj-side-navigation__item">
-          <a href="">Outcomes and performance</a>
+          <a href="/comparison/profile/curriculum">Curriculum</a>
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="/comparison/profile/academic-performance/progress-attainment"
+            >Academic performance</a
+          >
         </li>
         <li class="moj-side-navigation__item">
-          <a href="">Next steps and admissions</a>
+          <a href="/comparison/profile/after-year-11"
+            >Destinations after year 11</a
+          >
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="/comparison/profile/next-steps">Next steps</a>
         </li>
       </ul>
     </nav>
@@ -40,28 +53,33 @@ chosen schools {% endblock %} {% block content %}
           <a
             class="moj-sub-navigation__link"
             aria-current="page"
-            href="your-chosen-schools"
-            >Your chosen schools</a
+            href="school-overview"
+            >School overview</a
           >
         </li>
         <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link" href="school-information"
-            >School information</a
+          <a class="moj-sub-navigation__link" href="school-details"
+            >School details</a
           >
         </li>
       </ul>
     </nav>
 
-    <h2 class="govuk-heading-l">Your chosen schools</h2>
     <p class="govuk-body">
-      You have selected 3 schools to compare. You can
-      <a href="#" class="govuk-link govuk-link--no-visited-state"
-        >select more schools to compare here</a
+      You have selected 3 schools to compare. You can select more schools
+      through the
+      <a href="#" class="disabled-link govuk-link govuk-link--no-visited-state"
+        >search feature</a
       >.
     </p>
     <div class="govuk-summary-card">
-      <div class="govuk-summary-card__title-wrapper">
+      <div class="govuk-summary-card__title-wrapper summary-card__with-link">
         <h3 class="govuk-summary-card__title">Bracken Cove Academy</h3>
+        <a
+          href="#"
+          class="disabled-link govuk-body govuk-link govuk-link--no-visited-state"
+          >Remove from your list</a
+        >
       </div>
       <div class="govuk-summary-card__content">
         <table class="govuk-table">
@@ -98,11 +116,15 @@ chosen schools {% endblock %} {% block content %}
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Actions</th>
               <td class="govuk-table__cell">
-                <a href="#" class="govuk-link govuk-link--no-visited-state"
-                  >Remove from your schools list</a
+                <a
+                  href="#"
+                  class="disabled-link govuk-link govuk-link--no-visited-state"
+                  >Remove from your list</a
                 >
                 or
-                <a href="#" class="govuk-link govuk-link--no-visited-state"
+                <a
+                  href="#"
+                  class="disabled-link govuk-link govuk-link--no-visited-state"
                   >view School Profile</a
                 >
               </td>
@@ -113,8 +135,13 @@ chosen schools {% endblock %} {% block content %}
     </div>
 
     <div class="govuk-summary-card">
-      <div class="govuk-summary-card__title-wrapper">
+      <div class="govuk-summary-card__title-wrapper summary-card__with-link">
         <h3 class="govuk-summary-card__title">Oak Nest Secondary School</h3>
+        <a
+          href="#"
+          class="disabled-link govuk-body govuk-link govuk-link--no-visited-state"
+          >Remove from your list</a
+        >
       </div>
       <div class="govuk-summary-card__content">
         <table class="govuk-table">
@@ -151,11 +178,15 @@ chosen schools {% endblock %} {% block content %}
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Actions</th>
               <td class="govuk-table__cell">
-                <a href="#" class="govuk-link govuk-link--no-visited-state"
-                  >Remove from your schools list</a
+                <a
+                  href="#"
+                  class="disabled-link govuk-link govuk-link--no-visited-state"
+                  >Remove from your list</a
                 >
                 or
-                <a href="#" class="govuk-link govuk-link--no-visited-state"
+                <a
+                  href="#"
+                  class="disabled-link govuk-link govuk-link--no-visited-state"
                   >view School Profile</a
                 >
               </td>
@@ -166,8 +197,13 @@ chosen schools {% endblock %} {% block content %}
     </div>
 
     <div class="govuk-summary-card">
-      <div class="govuk-summary-card__title-wrapper">
+      <div class="govuk-summary-card__title-wrapper summary-card__with-link">
         <h3 class="govuk-summary-card__title">Thomas Lane Secondary School</h3>
+        <a
+          href="#"
+          class="disabled-link govuk-body govuk-link govuk-link--no-visited-state"
+          >Remove from your list</a
+        >
       </div>
       <div class="govuk-summary-card__content">
         <table class="govuk-table">
@@ -198,11 +234,15 @@ chosen schools {% endblock %} {% block content %}
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Actions</th>
               <td class="govuk-table__cell">
-                <a href="#" class="govuk-link govuk-link--no-visited-state"
-                  >Remove from your schools list</a
+                <a
+                  href="#"
+                  class="disabled-link govuk-link govuk-link--no-visited-state"
+                  >Remove from your list</a
                 >
                 or
-                <a href="#" class="govuk-link govuk-link--no-visited-state"
+                <a
+                  href="#"
+                  class="disabled-link govuk-link govuk-link--no-visited-state"
                   >view School Profile</a
                 >
               </td>
@@ -219,7 +259,7 @@ chosen schools {% endblock %} {% block content %}
       <div class="govuk-pagination__next">
         <a
           class="govuk-link govuk-pagination__link"
-          href="school-information"
+          href="school-details"
           rel="next"
         >
           <svg
@@ -240,7 +280,7 @@ chosen schools {% endblock %} {% block content %}
           </span>
           <span class="govuk-visually-hidden">:</span>
           <span class="govuk-pagination__link-label"
-            >About your schools: School information</span
+            >About your schools: School details</span
           >
         </a>
       </div>
