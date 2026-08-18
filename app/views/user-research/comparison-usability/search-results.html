@@ -5,7 +5,7 @@ endblock %} {% block content %}
   <div class="govuk-grid-column-three-quarters">
     <form class="form" action="search-results" method="post">
       <h1 class="govuk-heading-xl">
-        8 results within 3 miles of {{ data['search-postcode']}}
+        5 results within 3 miles of {{ data['search-postcode']}}
       </h1>
       <div class="govuk-body">
         
@@ -53,7 +53,7 @@ endblock %} {% block content %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Address</dt>
         <dd class="govuk-summary-list__value">
-          Baltic Campus, Quarryfield Road
+          Baltic Campus, Quarryfield Road, Sheffield, S11 8ZG
         </dd>
       </div>
     </dl>
@@ -71,7 +71,7 @@ endblock %} {% block content %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Address</dt>
         <dd class="govuk-summary-list__value">
-          St. James' Street, Kingley Park
+          St. James' Street, Kingley Park, Sheffield, S10 2QT
         </dd>
       </div>
     </dl>
@@ -89,7 +89,41 @@ endblock %} {% block content %}
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Address</dt>
-        <dd class="govuk-summary-list__value">Prince Road, Thistle Hill</dd>
+        <dd class="govuk-summary-list__value">Prince Road, Thistle Hill, Sheffield, S11 7PQ</dd>
+      </div>
+    </dl>
+
+    {% if ( data['school-3-name']|length) %}
+    <p class="govuk-body">
+      <a href="not-in-prototype" class="govuk-link">Westbourne Primary School</a>
+    </p>
+    {% else %}
+    <p class="govuk-body">
+      <a href="not-in-prototype" class="govuk-link">Westbourne Primary School</a>
+    </p>
+    {% endif %}
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Address</dt>
+        <dd class="govuk-summary-list__value">60 Westbourne Road, Sheffield, S10 2QT</dd>
+      </div>
+    </dl>
+
+        {% if ( data['school-3-name']|length) %}
+    <p class="govuk-body">
+      <a href="not-in-prototype" class="govuk-link">Kenwood Primary School</a>
+    </p>
+    {% else %}
+    <p class="govuk-body">
+      <a href="not-in-prototype" class="govuk-link">Kenwood Primary School</a>
+    </p>
+    {% endif %}
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Address</dt>
+        <dd class="govuk-summary-list__value">9 Moncrieffe Road, Nether Edge, Sheffield, S7 1HQ</dd>
       </div>
     </dl>
   </div>
