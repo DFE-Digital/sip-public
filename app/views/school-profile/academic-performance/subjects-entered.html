@@ -1,10 +1,34 @@
 {% extends "layouts/main.html" %} {% block pageTitle %} Academic performance:
-Subjects entered {% endblock %}
-{% block content %}
+Subjects entered {% endblock %} {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-quarter">
-    {% include "includes/compare-side-nav.html" %}
+    <nav class="moj-side-navigation" aria-label="Side navigation">
+      <ul class="moj-side-navigation__list">
+        <li class="moj-side-navigation__item">
+          <a href="/school-profile/about-the-school" aria-current="location"
+            >About the school or college</a
+          >
+        </li>
+        <li class="moj-side-navigation__item">
+          <a href="/school-profile/admissions">Admissions</a>
+        </li>
+        <li class="moj-side-navigation__item">
+          <a href="/school-profile/curriculum-extra-curricular"
+            >Curriculum and extra-curricular activities</a
+          >
+        </li>
+        <li class="moj-side-navigation__item">
+          <a href="/school-profile/attendance">Attendance</a>
+        </li>
+        <li class="moj-side-navigation__item moj-side-navigation__item--active">
+          <a href="attainment-progress">Academic performance</a>
+        </li>
+        <li class="moj-side-navigation__item">
+          <a href="/school-profile/destinations">Destinations</a>
+        </li>
+      </ul>
+    </nav>
   </div>
 
   <div class="govuk-grid-column-three-quarters">

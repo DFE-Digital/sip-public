@@ -1,10 +1,36 @@
 {% extends "layouts/main.html" %} {% block pageTitle %} Academic performance:
-Attainment and progress {% endblock %}
-{% block content %}
+Attainment and progress {% endblock %} {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-quarter">
-    {% include "includes/compare-side-nav.html" %}
+    <nav class="moj-side-navigation" aria-label="Side navigation">
+      <ul class="moj-side-navigation__list">
+        <li class="moj-side-navigation__item">
+          <a href="/school-profile/about-the-school" aria-current="location"
+            >About the school or college</a
+          >
+        </li>
+        <li class="moj-side-navigation__item">
+          <a href="/school-profile/admissions">Admissions</a>
+        </li>
+        <li class="moj-side-navigation__item">
+          <a href="/school-profile/curriculum-extra-curricular"
+            >Curriculum and extra-curricular activities</a
+          >
+        </li>
+        <li class="moj-side-navigation__item">
+          <a href="/school-profile/attendance">Attendance</a>
+        </li>
+        <li class="moj-side-navigation__item  moj-side-navigation__item--active">
+          <a href="attainment-progress"
+            >Academic performance</a
+          >
+        </li>
+        <li class="moj-side-navigation__item">
+          <a href="/school-profile/destinations">Destinations</a>
+        </li>
+      </ul>
+    </nav>
   </div>
 
   <div class="govuk-grid-column-three-quarters">
@@ -62,7 +88,8 @@ Attainment and progress {% endblock %}
       Attainment 8 measures a pupil’s average achievement across their best
       performing 8 subjects. The maximum score a pupil can have is 90.
       Individual pupil scores are not made public. These scores are used to work
-      out the overall Average score across 8 subjects (Attainment 8) for the school.
+      out the overall Average score across 8 subjects (Attainment 8) for the
+      school.
     </p>
     <details class="govuk-details">
       <summary class="govuk-details__summary">
@@ -98,7 +125,10 @@ Attainment and progress {% endblock %}
     <div class="sp-card">
       <div class="sp-card__icon material-symbols-outlined">assignment</div>
       <div class="sp-card__content">
-        <p class="govuk-body">The Average score across 8 subjects (Attainment 8) for this school is 45</p>
+        <p class="govuk-body">
+          The Average score across 8 subjects (Attainment 8) for this school is
+          45
+        </p>
         <p class="govuk-body">
           In England out of the 6.7% of pupils that were absent, 22.3% were
           persistently absent. This is a greater absent rate and persistent
