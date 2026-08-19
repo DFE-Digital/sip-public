@@ -1,0 +1,295 @@
+{% extends "layouts/ur.html" %}
+
+{% block pageTitle %}
+  Academic performance: English and maths results
+{% endblock %}
+
+{% block content %}
+
+{% set characteristic = characteristic or "disadvantaged" %}
+{% set characteristicGrade = characteristicGrade or "grade-5" %}
+{% set allPupilsGrade = allPupilsGrade or "grade-5" %}
+
+{% set allPupilsGradeLabel =
+  "grade 4 and above" if allPupilsGrade == "grade-4"
+  else "grade 5 and above" %}
+
+{% set characteristicGradeLabel =
+  "grade 4 and above" if characteristicGrade == "grade-4"
+  else "grade 5 and above" %}
+
+
+{% if characteristic == "disadvantaged" %}
+  {% set groupLabel = "disadvantaged pupils" %}
+{% elif characteristic == "eal" %}
+  {% set groupLabel = "pupils with English as an additional language" %}
+{% elif characteristic == "girls" %}
+  {% set groupLabel = "girls" %}
+{% elif characteristic == "boys" %}
+  {% set groupLabel = "boys" %}
+{% elif characteristic == "non-mobile" %}
+  {% set groupLabel = "non-mobile pupils" %}
+{% else %}
+  {% set groupLabel = "pupils" %}
+{% endif %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    {% set activeNav = "academic-performance" %}
+    {% include "includes/langley-hill-side-nav.html" %}
+  </div>
+
+  <div class="govuk-grid-column-three-quarters">
+
+    <span class="govuk-caption-xl">Langley Secondary School</span>
+    <h1 class="govuk-heading-xl">Academic performance</h1>
+
+    <p class="govuk-body">
+      Looking at school performance data is one way to see how well a school is doing.
+      You should look at a range of information about a school before deciding if it’s
+      the right fit for your child.
+    </p>
+
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="attainment-progress">Progress</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="/user-research/comparison-usability/school-profiles/langley-hill/academic-performance/attainment/attainment-versions/attainment">Attainment</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" aria-current="page" href="english-maths-results">English and maths results</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="subjects-entered">Subjects entered</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="other-performance-measures">Additional measures</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="/user-research/comparison-usability/school-profiles/langley-hill/academic-performance/pupil-numbers">Pupils in this cohort</a>
+        </li>
+      </ul>
+    </nav>
+
+    <h2 class="govuk-heading-l">English and maths results</h2>
+
+    <p class="govuk-body">
+      See how well pupils do in their English and Maths GCSEs compared with local council and national averages.
+    </p>
+
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">
+      Compare the results of all pupils with local council and national averages
+    </h3>
+
+    <div class="govuk-inset-text">
+      <p class="govuk-body">
+        Grade 5 is comparable to the top of the old grade C.
+        Grade 4 is comparable to the bottom of the old grade C.
+        Learn about the <a href="https://www.gov.uk/government/publications/gcse-9-to-1-grade-scale-explained/gcse-9-to-1-grade-scale-explained" class="govuk-link">GCSE grade scale</a>.
+      </p>
+    </div>
+
+    <form method="get" action="/english-maths-all-pupils" class="govuk-!-margin-bottom-6">
+
+      <input type="hidden" name="characteristic" value="{{ characteristic }}">
+      <input type="hidden" name="characteristicGrade" value="{{ characteristicGrade }}">
+
+      <div class="govuk-form-group">
+
+        <label class="govuk-label" for="grade">
+          Select a grade
+        </label>
+
+<select class="govuk-select" id="allPupilsGrade" name="allPupilsGrade">
+  <option value="grade-5" {{ "selected" if allPupilsGrade == "grade-5" }}>
+    Grade 5 and above
+  </option>
+  <option value="grade-4" {{ "selected" if allPupilsGrade == "grade-4" }}>
+    Grade 4 and above
+  </option>
+</select>
+
+      </div>
+
+      <button class="govuk-button" type="submit">
+        Update results
+      </button>
+
+    </form>
+
+    <div class="govuk-!-padding-5 govuk-!-margin-bottom-7"
+         style="border:1px solid #b1b4b6;">
+
+   <h2 class="govuk-heading-s govuk-!-margin-top-3">
+     Percentage of all pupils achieving {{ allPupilsGradeLabel }} in the 2024 to 2025 academic year
+    </h2>
+
+      <div id="english-maths" class="chart govuk-!-margin-top-2 govuk-!-margin-bottom-4"></div>
+
+      <button class="govuk-button govuk-button--secondary" type="button">
+        Show as a table
+      </button>
+
+        <button class="govuk-button govuk-button--secondary" type="button">
+          Show data over time
+        </button>
+
+
+    </div>
+
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-9">
+      Narrow down English and maths results by pupil characteristic
+    </h2>
+
+    <div class="govuk-inset-text">
+      <p class="govuk-body">
+        Learn about
+        <a href="/standalone-pages/pupil-characteristics" class="govuk-link">
+          pupil characteristics
+        </a>
+      </p>
+    </div>
+
+    <form method="get" action="/english-maths-pupil-characteristic" class="govuk-!-margin-bottom-6">
+
+      <input type="hidden" name="allPupilsGrade" value="{{ allPupilsGrade }}">
+
+      <div class="govuk-form-group">
+
+        <label class="govuk-label" for="grade">
+          Select a grade
+        </label>
+
+          <select class="govuk-select" id="characteristicGrade" name="characteristicGrade">
+            <option value="grade-5" {{ "selected" if characteristicGrade == "grade-5" }}>
+              Grade 5 and above
+            </option>
+            <option value="grade-4" {{ "selected" if characteristicGrade == "grade-4" }}>
+              Grade 4 and above
+            </option>
+          </select>
+
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="characteristic">
+          Select a pupil characteristic
+        </label>
+        <select class="govuk-select" id="characteristic" name="characteristic">
+          <option value="disadvantaged" {{ "selected" if characteristic == "disadvantaged" }}>
+            Disadvantaged pupils
+          </option>
+          <option value="eal" {{ "selected" if characteristic == "eal" }}>
+            English as an additional language
+          </option>
+          <option value="girls" {{ "selected" if characteristic == "girls" }}>
+            Girls
+          </option>
+          <option value="boys" {{ "selected" if characteristic == "boys" }}>
+            Boys
+          </option>
+          <option value="non-mobile" {{ "selected" if characteristic == "non-mobile" }}>
+            Non-mobile pupils
+          </option>
+        </select>
+      </div>
+
+      <button class="govuk-button" type="submit">
+        Update results
+      </button>
+
+    </form>
+
+    <h4 class="govuk-heading-s">
+      Percentage of {{groupLabel}} achieving {{ characteristicGradeLabel }} in the 2024 to 2025 academic year
+    </h4>
+
+{{ govukTable({
+  caption: "Percentage of all pupils achieving grade 5 and above in the 2024 to 2025 academic year",
+  captionClasses: "govuk-visually-hidden",
+  firstCellIsHeader: true,
+  head: [
+    { text: "Compare" },
+    { text: "Percentage achieving grade 5 or above" }
+  ],
+  rows: [
+    [
+      { text: "Langley Secondary School" },
+      { text: "63%" }
+    ],
+    [
+      { text: "Local council average" },
+      { text: "50%" }
+    ],
+    [
+      { text: "National average" },
+      { text: "54%" }
+    ]
+  ]
+}) }}
+
+    {% if characteristic == "disadvantaged" %}
+
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Compare with non-disadvantaged pupils
+    </span>
+  </summary>
+
+  <div class="govuk-details__text">
+
+    <h4 class="govuk-heading-s">
+      Percentage of {{ groupLabel }} achieving {{ characteristicGradeLabel }} in the 2024 to 2025 academic year, compared to non-disadvantaged pupils
+    </h4>
+
+    {{ govukTable({
+      caption: "Percentage of " + groupLabel + " achieving " + characteristicGradeLabel + " in the 2024 to 2025 academic year, compared to non-disadvantaged pupils",
+      captionClasses: "govuk-visually-hidden",
+      firstCellIsHeader: true,
+
+      head: [
+        { text: "Compare" },
+        { text: "Percentage achieving " + characteristicGradeLabel + " (disadvantaged pupils)" },
+        { text: "Percentage achieving " + characteristicGradeLabel + " (non-disadvantaged pupils)" }
+      ],
+
+      rows: [
+        [
+          { text: "Langley Secondary School" },
+          { text: "45%" },
+          { text: "52%" }
+        ],
+        [
+          { text: "Local council average" },
+          { text: "50%" },
+          { text: "55%" }
+        ],
+        [
+          { text: "National average" },
+          { text: "40%" },
+          { text: "48%" }
+        ]
+      ]
+    }) }}
+
+  </div>
+</details>
+
+        {% endif %}
+
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="/public/javascripts/google-charts.js"></script>
+{% endblock %}
