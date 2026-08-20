@@ -86,14 +86,76 @@ var optionsCluster = {
   },
 };
 
+var optionsClusterEnglishMaths = {
+  fontSize: 19,
+
+  colors: [
+    "#A285D1", // School
+    "#12436D", // Sheffield average
+    "#28A197", // England average
+  ],
+
+  height: 450,
+  width: "100%",
+
+  bar: {
+    groupWidth: "70%",
+  },
+
+  chartArea: {
+    height: "100%",
+    bottom: "15%",
+    right: "10%",
+    top: "20%",
+  },
+
+  legend: {
+    position: "top",
+    alignment: "left",
+    maxLines: 4,
+
+    textStyle: {
+      color: "#0B0C0C",
+      fontSize: 19,
+    },
+  },
+
+  hAxis: {
+    format: "percent",
+    minValue: 0,
+
+    textStyle: {
+      color: "#0B0C0C",
+    },
+  },
+
+  vAxis: {
+    textStyle: {
+      color: "#0B0C0C",
+    },
+  },
+
+  enableInteractivity: false,
+
+  annotations: {
+    highContrast: false,
+
+    textStyle: {
+      color: "#ffffff",
+      fontSize: 19,
+      auraColor: "none",
+    },
+  },
+};
+
 function drawEnglishMaths() {
   // Create the data table.
 
   var englishMaths = google.visualization.arrayToDataTable([
     ["Area", "Percentage", { role: "style" }, { role: "annotation" }],
-    ["School", 0.63, "#f39431", "63%"],
-    ["Sheffield average", 0.5, "#27a0cc", "50%"],
-    ["England average", 0.54, "#003c57", "54%"],
+    ["School", 0.63, "#A285D1", "63%"],
+    ["Sheffield average", 0.5, "#12436D", "50%"],
+    ["England average", 0.54, "#28A197", "54%"],
   ]);
 
   var englishMathsChart = new google.visualization.BarChart(
@@ -104,23 +166,25 @@ function drawEnglishMaths() {
     englishMathsChart,
     "ready",
     function () {
-      // Get the chart container and its SVG contents
       var container = englishMathsChart.getContainer();
 
-      // Limit search to the chart's SVG for reliability
       var texts = container.querySelectorAll("svg text");
 
       for (var i = 0; i < texts.length; i++) {
         var t = texts[i];
-        if (t.textContent.trim() === "54%") {
-          // Force annotation text to white
+
+        if (t.textContent.trim() === "50%") {
           t.setAttribute("fill", "#ffffff");
           break;
         }
       }
     },
   );
-  englishMathsChart.draw(englishMaths, optionsBarChart);
+
+  englishMathsChart.draw(
+  englishMaths,
+  optionsBarChartEnglishMaths,
+);
 }
 
 function drawEnglishMathsPupilType() {
@@ -138,63 +202,160 @@ function drawEnglishMathsPupilType() {
     ["Boys", 0.58, "58%", 0.47, "47%", 0.5, "50%"],
   ]);
 
-  var englishMathsPupilTypeChart = new google.visualization.BarChart(
-    document.getElementById("english-maths-pupil-type"),
-  );
+  var englishMathsPupilTypeChart =
+    new google.visualization.BarChart(
+      document.getElementById("english-maths-pupil-type"),
+    );
+
   google.visualization.events.addListener(
     englishMathsPupilTypeChart,
     "ready",
     function () {
-      // Get the chart container and its SVG contents
-      var container = englishMathsPupilTypeChart.getContainer();
+      var container =
+        englishMathsPupilTypeChart.getContainer();
 
-      // Limit search to the chart's SVG for reliability
-      var texts = container.querySelectorAll("svg text");
+      var texts =
+        container.querySelectorAll("svg text");
 
       for (var i = 0; i < texts.length; i++) {
         var t = texts[i];
-        if (t.textContent.trim() === "55%" || t.textContent.trim() === "50%") {
-          // Force annotation text to white
+
+        var annotationValues = [
+          "66%",
+          "52%",
+          "55%",
+          "58%",
+          "47%",
+          "50%",
+        ];
+
+        if (
+          annotationValues.indexOf(
+            t.textContent.trim(),
+          ) !== -1
+        ) {
           t.setAttribute("fill", "#ffffff");
         }
       }
     },
   );
-  englishMathsPupilTypeChart.draw(englishMathsPupilType, optionsCluster);
+
+  englishMathsPupilTypeChart.draw(
+    englishMathsPupilType,
+    optionsClusterEnglishMaths,
+  );
 }
+
+var optionsBarChartEnglishMaths = {
+  fontSize: 19,
+
+  height: 250,
+
+  bar: {
+    groupWidth: "70%",
+  },
+
+  chartArea: {
+    width: "100%",
+    height: "100%",
+    left: "25%",
+    bottom: "15%",
+    right: "10%",
+  },
+
+  legend: {
+    position: "none",
+  },
+
+  hAxis: {
+    format: "percent",
+    minValue: 0,
+
+    textStyle: {
+      color: "#0B0C0C",
+    },
+  },
+
+  vAxis: {
+    textStyle: {
+      color: "#0B0C0C",
+    },
+  },
+
+  enableInteractivity: false,
+
+  annotations: {
+    highContrast: false,
+
+    textStyle: {
+      color: "#ffffff",
+      fontSize: 19,
+      auraColor: "none",
+    },
+  },
+};
 
 function drawDestinations() {
   var destinations = google.visualization.arrayToDataTable([
-    ["Area", "Percentage", { role: "style" }, { role: "annotation" }],
-    ["School", 0.95, "#f39431", "95%"],
-    ["Sheffield average", 0.92, "#27a0cc", "92%"],
-    ["England average", 0.87, "#003c57", "87%"],
+     ["Area", "Percentage", { role: "style" }, { role: "annotation" }],
+    ["School", 0.95, "#A285D1", "95%"],
+    ["Sheffield average", 0.92, "#12436D", "92%"],
+    ["England average", 0.87, "#28A197", "87%"],
   ]);
 
   var destinationsChart = new google.visualization.BarChart(
     document.getElementById("destinations"),
   );
-  google.visualization.events.addListener(
-    destinationsChart,
-    "ready",
-    function () {
-      // Get the chart container and its SVG contents
-      var container = destinationsChart.getContainer();
 
-      // Limit search to the chart's SVG for reliability
-      var texts = container.querySelectorAll("svg text");
+  var optionsDestinations = {
+    fontSize: 19,
+    height: 250,
 
-      for (var i = 0; i < texts.length; i++) {
-        var t = texts[i];
-        if (t.textContent.trim() === "87%") {
-          // Force annotation text to white
-          t.setAttribute("fill", "#ffffff");
-          break;
-        }
-      }
+    bar: {
+      groupWidth: "70%",
     },
-  );
-  destinationsChart.draw(destinations, optionsBarChart);
+
+    chartArea: {
+      width: "100%",
+      height: "100%",
+      left: "25%",
+      bottom: "15%",
+      right: "10%",
+    },
+
+    legend: {
+      position: "none",
+    },
+
+    hAxis: {
+      format: "percent",
+      minValue: 0,
+
+      textStyle: {
+        color: "#0B0C0C",
+      },
+    },
+
+    vAxis: {
+      textStyle: {
+        color: "#0B0C0C",
+      },
+    },
+
+    enableInteractivity: false,
+
+    annotations: {
+      highContrast: false,
+
+      textStyle: {
+        color: "#0B0C0C",
+        fontSize: 19,
+        auraColor: "none",
+      },
+    },
+  };
+
+  destinationsChart.draw(destinations, optionsDestinations);
 }
 
 function drawDestinationsBreakdown() {
@@ -208,7 +369,9 @@ function drawDestinationsBreakdown() {
       "England average",
       { role: "annotation" },
     ],
+
     ["Staying in education", 0.89, "89%", 0.86, "86%", 0.84, "84%"],
+
     [
       "Entering employment and apprenticeships",
       0.06,
@@ -223,26 +386,73 @@ function drawDestinationsBreakdown() {
   var destinationsBreakdownChart = new google.visualization.BarChart(
     document.getElementById("destinations-breakdown"),
   );
-  google.visualization.events.addListener(
-    destinationsBreakdownChart,
-    "ready",
-    function () {
-      // Get the chart container and its SVG contents
-      var container = destinationsBreakdownChart.getContainer();
 
-      // Limit search to the chart's SVG for reliability
-      var texts = container.querySelectorAll("svg text");
+  var optionsDestinationsBreakdown = {
+    fontSize: 19,
 
-      for (var i = 0; i < texts.length; i++) {
-        var t = texts[i];
-        if (t.textContent.trim() === "13%" || t.textContent.trim() === "84%") {
-          // Force annotation text to white
-          t.setAttribute("fill", "#ffffff");
-        }
-      }
+    colors: [
+      "#A285D1",
+      "#12436D",
+      "#28A197",
+    ],
+
+    height: 450,
+    width: "100%",
+
+    bar: {
+      groupWidth: "70%",
     },
+
+    chartArea: {
+      height: "100%",
+      bottom: "15%",
+      right: "10%",
+      top: "20%",
+    },
+
+    legend: {
+      position: "top",
+      alignment: "left",
+      maxLines: 4,
+
+      textStyle: {
+        color: "#0B0C0C",
+        fontSize: 19,
+      },
+    },
+
+    hAxis: {
+      format: "percent",
+      minValue: 0,
+
+      textStyle: {
+        color: "#0B0C0C",
+      },
+    },
+
+    vAxis: {
+      textStyle: {
+        color: "#0B0C0C",
+      },
+    },
+
+    enableInteractivity: false,
+
+    annotations: {
+      highContrast: false,
+
+      textStyle: {
+        color: "#0B0C0C",
+        fontSize: 19,
+        auraColor: "none",
+      },
+    },
+  };
+
+  destinationsBreakdownChart.draw(
+    destinationsBreakdown,
+    optionsDestinationsBreakdown,
   );
-  destinationsBreakdownChart.draw(destinationsBreakdown, optionsCluster);
 }
 
 var optionsBarChartComparison = {
@@ -530,6 +740,118 @@ var optionsClusterComparison = {
     highContrast: false,
     textStyle: {
       color: "black",
+      auraColor: "none",
+    },
+  },
+};
+
+var optionsBarChartDestinations = {
+  fontSize: 19,
+
+  height: 250,
+
+  bar: {
+    groupWidth: "70%",
+  },
+
+  chartArea: {
+    width: "100%",
+    height: "100%",
+    left: "25%",
+    bottom: "15%",
+    right: "10%",
+  },
+
+  legend: {
+    position: "none",
+  },
+
+  hAxis: {
+    format: "percent",
+    minValue: 0,
+
+    textStyle: {
+      color: "#0B0C0C",
+    },
+  },
+
+  vAxis: {
+    textStyle: {
+      color: "#0B0C0C",
+    },
+  },
+
+  enableInteractivity: false,
+
+  annotations: {
+    highContrast: false,
+
+    textStyle: {
+      color: "#ffffff",
+      fontSize: 19,
+      auraColor: "none",
+    },
+  },
+};
+
+
+var optionsClusterDestinations = {
+  fontSize: 19,
+
+  colors: [
+    "#A285D1", // School
+    "#12436D", // Sheffield average
+    "#28A197", // England average
+  ],
+
+  height: 450,
+  width: "100%",
+
+  bar: {
+    groupWidth: "70%",
+  },
+
+  chartArea: {
+    height: "100%",
+    bottom: "15%",
+    right: "10%",
+    top: "20%",
+  },
+
+  legend: {
+    position: "top",
+    alignment: "left",
+    maxLines: 4,
+
+    textStyle: {
+      color: "#0B0C0C",
+      fontSize: 19,
+    },
+  },
+
+  hAxis: {
+    format: "percent",
+    minValue: 0,
+
+    textStyle: {
+      color: "#0B0C0C",
+    },
+  },
+
+  vAxis: {
+    textStyle: {
+      color: "#0B0C0C",
+    },
+  },
+
+  enableInteractivity: false,
+
+  annotations: {
+    highContrast: false,
+
+    textStyle: {
+      color: "#ffffff",
+      fontSize: 19,
       auraColor: "none",
     },
   },
