@@ -24,54 +24,224 @@ endblock %}
       <h3 class="govuk-heading-m">
         Stayed in education, employment and  apprenticeship
       </h3>
-      <p body="govuk-body">
-        This shows the percentage of pupils who either stayed in education, went
-        into an apprenticeship or entered employment for at least 6 months after
-        finishing key stage 4 (KS4). Pupils usually finish KS4 after year 11,
-        when they are 16.
-      </p>
 
-      <div id="destinations" class="chart"></div>
-      <button
-        type="submit"
-        class="govuk-button govuk-button--secondary"
-        data-module="govuk-button"
-      >
-        Show as a table
-      </button>
-      <button
-        type="submit"
-        class="govuk-button govuk-button--secondary"
-        data-module="govuk-button"
-      >
-        Show data over time
-      </button>
-    </div>
-    <div class="sp-card-graph">
-      <h3 class="govuk-heading-m">
-        Breakdown by destination for Stayed in education, employment and
-         apprenticeship
-      </h3>
-      <p body="govuk-body">
-        This shows the breakdown of percentage of pupils who either stayed in
-        education, went into an apprenticeship or entered employment for at
-        least 6 months after finishing key stage 4 (KS4). Pupils usually finish
-        KS4 after year 11, when they are 16.
-      </p>
-      <p body="govuk-body">
-        Education includes school sixth forms, sixth-form colleges, further
-        education colleges and other education settings.
-      </p>
 
-      <div id="destinations-breakdown" class="destinations-cluster"></div>
-      <button
-        type="submit"
-        class="govuk-button govuk-button--secondary"
-        data-module="govuk-button"
-      >
-        Show as a table
-      </button>
-    </div>
+       <p class="govuk-body">
+    This shows the percentage of pupils who either stayed in education,
+    went into an apprenticeship or entered employment for at least
+    6 months after finishing key stage 4 (KS4). Pupils usually finish
+    KS4 after year 11, when they are 16.
+  </p>
+
+  <div class="sp-card-actions">
+    <button
+      type="button"
+      class="govuk-button govuk-button--secondary"
+    >
+      Show as a table
+    </button>
+
+    <button
+      type="button"
+      class="govuk-button govuk-button--secondary"
+    >
+      Show data over time
+    </button>
+  </div>
+
+  <div class="sp-info">
+    Number of students enrolled to study mainly academic qualifications: 300
+  </div>
+
+  <div id="destinations" class="chart chart--destinations"></div>
+
+  
+</div>
+<section class="govuk-!-margin-top-7">
+  <h2 class="govuk-heading-l">
+    Education destinations for 2022 and 2023 academic year
+  </h2>
+
+  <p class="govuk-body">
+    Education includes school sixth forms, sixth-form colleges, further education
+    colleges and other education settings.
+  </p>
+
+  <!-- Education destinations summary -->
+  <table class="govuk-table">
+    <caption class="govuk-table__caption govuk-table__caption--m govuk-visually-hidden">
+      Education destinations for 2022 and 2023 academic year
+    </caption>
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header"> </th>
+        <th scope="col" class="govuk-table__header">School</th>
+        <th scope="col" class="govuk-table__header">Sheffield average</th>
+        <th scope="col" class="govuk-table__header">England average</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">
+          Total number of pupils staying in education
+        </th>
+        <td class="govuk-table__cell">91%</td>
+        <td class="govuk-table__cell">85%</td>
+        <td class="govuk-table__cell">86%</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Breakdown of pupils staying in education -->
+  <h3 class="govuk-heading-m govuk-!-margin-top-6">
+    Breakdown of pupils staying in education
+  </h3>
+
+  <table class="govuk-table">
+    <caption class="govuk-table__caption govuk-table__caption--m govuk-visually-hidden">
+      Breakdown of pupils staying in education
+    </caption>
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header"> </th>
+        <th scope="col" class="govuk-table__header">School</th>
+        <th scope="col" class="govuk-table__header">Sheffield average</th>
+        <th scope="col" class="govuk-table__header">England average</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">
+          Pupils who studied at a further education provider
+        </th>
+        <td class="govuk-table__cell">91%</td>
+        <td class="govuk-table__cell">85%</td>
+        <td class="govuk-table__cell">86%</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">
+          Pupils who studied in sixth form
+        </th>
+        <td class="govuk-table__cell">91%</td>
+        <td class="govuk-table__cell">85%</td>
+        <td class="govuk-table__cell">86%</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">
+          Pupils who studied in sixth form colleges
+        </th>
+        <td class="govuk-table__cell">91%</td>
+        <td class="govuk-table__cell">85%</td>
+        <td class="govuk-table__cell">86%</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">
+          Pupils who studied in other education destinations
+        </th>
+        <td class="govuk-table__cell">91%</td>
+        <td class="govuk-table__cell">85%</td>
+        <td class="govuk-table__cell">86%</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Breakdown of pupils in apprenticeships or employment -->
+  <h3 class="govuk-heading-m govuk-!-margin-top-6">
+    Breakdown of pupils in apprenticeships or employment
+  </h3>
+
+  <p class="govuk-body">
+    The breakdown of percentage of pupils who either went into an apprenticeship
+    or started employment for at least 6 months after finishing KS4.
+    Pupils are grouped into these categories.
+  </p>
+
+  <table class="govuk-table">
+    <caption class="govuk-table__caption govuk-table__caption--m govuk-visually-hidden">
+      Breakdown of pupils in apprenticeships or employment
+    </caption>
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header"> </th>
+        <th scope="col" class="govuk-table__header">School</th>
+        <th scope="col" class="govuk-table__header">Sheffield average</th>
+        <th scope="col" class="govuk-table__header">England average</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">
+          Pupils staying in employment for at least 2 terms
+        </th>
+        <td class="govuk-table__cell">91%</td>
+        <td class="govuk-table__cell">85%</td>
+        <td class="govuk-table__cell">86%</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">
+          Pupils staying in apprenticeships for at least 6 months
+        </th>
+        <td class="govuk-table__cell">91%</td>
+        <td class="govuk-table__cell">85%</td>
+        <td class="govuk-table__cell">86%</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">
+          Pupils not staying in education or employment for at least 2 terms
+        </th>
+        <td class="govuk-table__cell">91%</td>
+        <td class="govuk-table__cell">85%</td>
+        <td class="govuk-table__cell">86%</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">
+          Destination unknown
+        </th>
+        <td class="govuk-table__cell">91%</td>
+        <td class="govuk-table__cell">85%</td>
+        <td class="govuk-table__cell">86%</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Breakdown of pupils not staying in education or employment -->
+  <h3 class="govuk-heading-m govuk-!-margin-top-6">
+    Breakdown of pupils not staying in education or employment
+  </h3>
+
+  <table class="govuk-table">
+    <caption class="govuk-table__caption govuk-table__caption--m govuk-visually-hidden">
+      Breakdown of pupils not staying in education or employment
+    </caption>
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header"> </th>
+        <th scope="col" class="govuk-table__header">School</th>
+        <th scope="col" class="govuk-table__header">Sheffield average</th>
+        <th scope="col" class="govuk-table__header">England average</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">
+          Pupils not staying in education or employment for at least 2 terms
+        </th>
+        <td class="govuk-table__cell">91%</td>
+        <td class="govuk-table__cell">85%</td>
+        <td class="govuk-table__cell">86%</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">
+          Destination unknown
+        </th>
+        <td class="govuk-table__cell">91%</td>
+        <td class="govuk-table__cell">85%</td>
+        <td class="govuk-table__cell">86%</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
     <nav
       class="govuk-pagination govuk-pagination--block"
       aria-label="Pagination"
