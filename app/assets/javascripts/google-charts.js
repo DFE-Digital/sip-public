@@ -5,6 +5,8 @@ google.charts.load("current", { packages: ["corechart"] });
 
 // Set a callback to run when the Google Visualization API is loaded.
 google.charts.setOnLoadCallback(drawEnglishMaths);
+google.charts.setOnLoadCallback(drawLangleyEnglishMaths);
+google.charts.setOnLoadCallback(drawThomasLaneEnglishMaths);
 google.charts.setOnLoadCallback(drawEnglishMathsPupilType);
 google.charts.setOnLoadCallback(drawDestinations);
 google.charts.setOnLoadCallback(drawDestinationsBreakdown);
@@ -20,6 +22,7 @@ google.charts.setOnLoadCallback(drawDestinationsComparison);
 google.charts.setOnLoadCallback(drawEnglishMathsComparisonOverTimeG5);
 google.charts.setOnLoadCallback(drawEnglishMathsComparisonOverTimeG4);
 google.charts.setOnLoadCallback(drawDestinationsComparisonOvertime);
+
 
 // Callback that creates and populates a data table,
 // instantiates the pie chart, passes in the data and
@@ -72,6 +75,7 @@ var optionsCluster = {
   hAxis: {
     format: "percent",
     minValue: 0,
+      maxValue: 1,
   },
   vAxis: {
     textStyle: {},
@@ -123,7 +127,7 @@ var optionsClusterEnglishMaths = {
   hAxis: {
     format: "percent",
     minValue: 0,
-
+      maxValue: 1,
     textStyle: {
       color: "#0B0C0C",
     },
@@ -149,42 +153,81 @@ var optionsClusterEnglishMaths = {
 };
 
 function drawEnglishMaths() {
-  // Create the data table.
 
   var englishMaths = google.visualization.arrayToDataTable([
     ["Area", "Percentage", { role: "style" }, { role: "annotation" }],
     ["School", 0.63, "#A285D1", "63%"],
+    ["Sheffield average", 0.50, "#12436D", "50%"],
+    ["England average", 0.54, "#28A197", "54%"],
+  ]);
+
+  var englishMathsChart = new google.visualization.BarChart(
+    document.getElementById("english-maths")
+  );
+
+  englishMathsChart.draw(
+    englishMaths,
+    optionsBarChartEnglishMaths
+  );
+}
+
+
+function drawEnglishMathsChart(elementId, schoolName, schoolValue) {
+  var englishMaths = google.visualization.arrayToDataTable([
+    ["Area", "Percentage", { role: "style" }, { role: "annotation" }],
+    [schoolName, schoolValue, "#A285D1", (schoolValue * 100) + "%"],
     ["Sheffield average", 0.5, "#12436D", "50%"],
     ["England average", 0.54, "#28A197", "54%"],
   ]);
 
   var englishMathsChart = new google.visualization.BarChart(
-    document.getElementById("english-maths"),
-  );
-
-  google.visualization.events.addListener(
-    englishMathsChart,
-    "ready",
-    function () {
-      var container = englishMathsChart.getContainer();
-
-      var texts = container.querySelectorAll("svg text");
-
-      for (var i = 0; i < texts.length; i++) {
-        var t = texts[i];
-
-        if (t.textContent.trim() === "50%") {
-          t.setAttribute("fill", "#ffffff");
-          break;
-        }
-      }
-    },
+    document.getElementById(elementId),
   );
 
   englishMathsChart.draw(
-  englishMaths,
-  optionsBarChartEnglishMaths,
-);
+    englishMaths,
+    optionsBarChartEnglishMaths,
+  );
+}
+
+
+function drawLangleyEnglishMaths() {
+
+  var englishMaths = google.visualization.arrayToDataTable([
+    ["Area", "Percentage", { role: "style" }, { role: "annotation" }],
+    ["School", 0.65, "#A285D1", "65%"],
+    ["Sheffield average", 0.51, "#12436D", "51%"],
+    ["England average", 0.53, "#28A197", "53%"],
+  ]);
+
+  var englishMathsChart = new google.visualization.BarChart(
+    document.getElementById("english-maths-langley")
+  );
+
+  englishMathsChart.draw(
+    englishMaths,
+    optionsBarChartEnglishMaths
+  );
+}
+
+
+function drawThomasLaneEnglishMaths() {
+
+  var englishMaths = google.visualization.arrayToDataTable([
+    ["Area", "Percentage", { role: "style" }, { role: "annotation" }],
+    ["School", 0.57, "#A285D1", "57%"],
+    ["Sheffield average", 0.50, "#12436D", "50%"],
+    ["England average", 0.54, "#28A197", "54%"],
+  ]);
+
+  var englishMathsChart = new google.visualization.BarChart(
+    document.getElementById("english-maths-thomas-lane")
+  );
+
+  englishMathsChart.draw(
+    englishMaths,
+    optionsBarChartEnglishMaths
+  );
 }
 
 function drawEnglishMathsPupilType() {
@@ -270,7 +313,7 @@ var optionsBarChartEnglishMaths = {
   hAxis: {
     format: "percent",
     minValue: 0,
-
+    maxValue: 1,
     textStyle: {
       color: "#0B0C0C",
     },
@@ -330,6 +373,7 @@ function drawDestinations() {
     hAxis: {
       format: "percent",
       minValue: 0,
+      
 
       textStyle: {
         color: "#0B0C0C",
@@ -497,6 +541,7 @@ var optionsBarChartComparisonOne = {
   hAxis: {
     format: "percent",
     minValue: 0,
+      maxValue: 1,
   },
   enableInteractivity: false,
   annotations: {

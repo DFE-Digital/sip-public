@@ -1,0 +1,210 @@
+{% extends "layouts/ur.html" %} {% block pageTitle %} About the school {%
+endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+        {% set activeNav = "academic-performance" %}
+        {% include "includes/thomas-lane-side-nav.html" %}
+    </div>
+
+    <div class="govuk-grid-column-three-quarters">
+        <span class="govuk-caption-xl">Thomas Lane Secondary School</span>
+        <h1 class="govuk-heading-xl">Academic performance</h1>
+        <p class="govuk-body">
+            Looking at school performance data is one way to see how well a school is
+            doing. You should look at a range of information about a school before
+            deciding if it’s the right fit for your child.
+        </p>
+
+        <nav class="moj-sub-navigation" aria-label="Sub navigation">
+            <ul class="moj-sub-navigation__list">
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="/user-research/comparison-usability/school-profiles/thomas-lane/academic-performance/attainment-progress">
+                        Progress
+                    </a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="/user-research/comparison-usability/school-profiles/thomas-lane/academic-performance/attainment/attainment-versions/attainment">
+                        Attainment
+                    </a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="/user-research/comparison-usability/school-profiles/thomas-lane/academic-performance/english-maths-results">
+                        English and maths results
+                    </a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="/user-research/comparison-usability/school-profiles/thomas-lane/academic-performance/subjects-entered">
+                        Subjects entered
+                    </a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="/user-research/comparison-usability/school-profiles/thomas-lane/academic-performance/other-performance-measures">Additional measures</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" aria-current="page"  href="/user-research/comparison-usability/school-profiles/thomas-lane/academic-performance/pupil-numbers">Pupils in this cohort</a>
+                </li>
+            </ul>
+        </nav>
+
+        <h2 class="govuk-heading-l">Pupils in this cohort</h2>
+
+        <p class="govuk-body">
+            See the number of pupils included in the secondary performance data at the end of key stage 4 (year 11) in the 2024 to 2025 academic year.
+        </p>
+
+        <h3 class="govuk-heading-m govuk-!-margin-top-9">
+            View pupil numbers by characteristic
+        </h3>
+
+        <div class="govuk-inset-text">
+            <p class="govuk-body">
+                Learn about the different
+                <a
+                        href="/standalone-pages/pupil-characteristics"
+                        class="govuk-link"
+                >
+                    pupil characteristics
+                </a>
+            </p>
+        </div>
+
+        <h4 class="govuk-heading-s ">
+            Pupil numbers by characteristic in this cohort
+        </h4>
+
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">
+                    Pupil characteristic
+                </th>
+                <th
+                        scope="col"
+                        class="govuk-table__header govuk-table__header--numeric"
+                >
+                    Number of pupils
+                </th>
+            </tr>
+            </thead>
+
+            <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">All pupils</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">1,200</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
+                    Disadvantaged pupils
+                </th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">360</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
+                    Pupils with English as an additional language (EAL)
+                </th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">216</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Girls</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">588</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Boys</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">612</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Non-mobile pupils</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">1,080</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h3 class="govuk-heading-m govuk-!-margin-top-9">
+            Compare disadvantaged pupils with local council and national figures
+        </h3>
+
+        <div class="govuk-inset-text">
+            <p class="govuk-body">
+                Learn about
+                <a
+                        href="/standalone-pages/pupil-characteristics"
+                        class="govuk-link"
+                >
+                    disadvantaged pupils
+                </a>
+            </p>
+        </div>
+
+        <h4 class="govuk-heading-s">
+            Percentage of pupils who were disadvantaged and non-disadvantaged compared with local council and national figures in this cohort
+        </h4>
+
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Area</th>
+                <th scope="col" class="govuk-table__header govuk-table__header--numeric">
+                    Disadvantaged pupils
+                </th>
+                <th scope="col" class="govuk-table__header govuk-table__header--numeric">
+                    Non-disadvantaged pupils
+                </th>
+            </tr>
+            </thead>
+
+            <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
+                    This school
+                </th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">
+                    30%
+                    <div class="govuk-hint">8 pupils</div>
+                </td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">
+                    70%
+                    <div class="govuk-hint">19 pupils</div>
+                </td>
+            </tr>
+
+            <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
+                    Local council
+                </th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">
+                    27%
+                    <div class="govuk-hint">472 pupils</div>
+                </td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">
+                    73%
+                    <div class="govuk-hint">1,274 pupils</div>
+                </td>
+            </tr>
+
+            <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
+                    National
+                </th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">
+                    24%
+                    <div class="govuk-hint">141,922 pupils</div>
+                </td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">
+                    76%
+                    <div class="govuk-hint">449,420 pupils</div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+{% endblock %}
