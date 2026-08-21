@@ -164,3 +164,76 @@ router.get('/user-research/comparison-usability/compare-schools', function (req,
   })
 
 })
+
+
+router.get('/user-research/comparison-usability/compare-schools', function (req, res) {
+
+  const selectedIds = req.session.data['selected-schools'] || []
+
+  const selectedSchools = []
+
+  selectedIds.forEach(function (schoolId) {
+
+    if (schoolId === 'school-1') {
+      selectedSchools.push({
+        name: req.session.data['school-1-name'],
+        address: req.session.data['school-1-address'],
+        profileUrl: '/user-research/comparison-usability/school-profiles/oak-nest/about-the-school'
+      })
+    }
+
+    if (schoolId === 'school-2') {
+      selectedSchools.push({
+        name: req.session.data['school-2-name'],
+        address: req.session.data['school-2-address'],
+        profileUrl: '/user-research/comparison-usability/school-profiles/langley-hill/about-the-school'
+      })
+    }
+
+    if (schoolId === 'school-3') {
+      selectedSchools.push({
+        name: req.session.data['school-3-name'],
+        address: req.session.data['school-3-address'],
+        profileUrl: '/user-research/comparison-usability/school-profiles/thomas-lane/about-the-school'
+      })
+    }
+
+  })
+
+  res.render('user-research/comparison-usability/compare-schools', {
+    selectedSchools: selectedSchools
+  })
+
+})
+
+
+router.post('/remove-school', function (req, res) {
+
+  let schoolsToRemove = req.body['SelectedEstablishmentUrns']
+
+  if (!Array.isArray(schoolsToRemove)) {
+    schoolsToRemove = schoolsToRemove ? [schoolsToRemove] : []
+  }
+
+  schoolsToRemove.forEach(function (schoolId) {
+
+    if (schoolId === 'school-1') {
+      delete req.session.data['school-1-name']
+      delete req.session.data['school-1-address']
+    }
+
+    if (schoolId === 'school-2') {
+      delete req.session.data['school-2-name']
+      delete req.session.data['school-2-address']
+    }
+
+    if (schoolId === 'school-3') {
+      delete req.session.data['school-3-name']
+      delete req.session.data['school-3-address']
+    }
+
+  })
+
+  res.redirect('/user-research/comparison-usability/my-schools-list')
+
+})
