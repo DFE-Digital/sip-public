@@ -32,28 +32,14 @@ endblock %} {% block content %}
       </ul>
     </nav>
   </div>
+  <form action="/add-school" method="post">
 
   <div class="govuk-grid-column-three-quarters">
-    <form
-      class="form"
-      action="about-the-school-success=Oak Nest Secondary School?school-3-name&school-3-address=Prince Road, Thistle Hill"
-      method="post"
-    >
+   
       <span class="govuk-caption-xl">Oak Nest Secondary School</span>
       <h1 class="govuk-heading-xl">About the school</h1>
-      <div class="form-group">
-        <button type="submit" class="govuk-button" data-module="govuk-button">
-          Save
-        </button>
-        <p class="govuk-body">
-          <a
-            href="/user-research/comparison-usability/my-schools-list"
-            class="govuk-link"
-            >Go to your My schools list</a
-          >
-        </p>
-      </div>
-    </form>
+      
+
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Name</dt>
@@ -70,7 +56,7 @@ endblock %} {% block content %}
         <dt class="govuk-summary-list__key">Website</dt>
         <dd class="govuk-summary-list__value">
           <a href="#" class="govuk-link govuk-link--no-visited-state"
-            >https://www.langley-secondary.sch.uk</a
+            >https://www.oak-nest-secondary.sch.uk</a
           >
         </dd>
       </div>
@@ -80,12 +66,65 @@ endblock %} {% block content %}
       </div>
     </dl>
 
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      Save this school for later
+    </h2>
+  </div>
+
+  <div class="govuk-summary-card__content">
+    <p class="govuk-body">
+      Save a school to find it again later and compare it with other saved schools.
+    </p>
+
+    <form action="/add-school" method="post">
+
+      <input
+        type="hidden"
+        name="school-id"
+        value="school-1"
+      >
+
+      {% if data['school-1-name'] %}
+
+        <button
+          type="submit"
+          class="govuk-button--inverse-outline"
+          data-module="govuk-button"
+        >
+          School added to My schools list
+        </button>
+
+      {% else %}
+
+        <button
+          type="submit"
+          class="govuk-button--inverse-outline"
+          data-module="govuk-button"
+        >
+          Add to My schools list
+        </button>
+
+      {% endif %}
+
+    </form>
+
+    <p class="govuk-body">
+      <a href="/user-research/comparison-usability/my-schools-list">
+        Go to My schools list
+      </a>
+    </p>
+
+  </div>
+</div>
+
     <h2 class="govuk-heading-l">Location</h2>
 
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Address</dt>
-        <dd class="govuk-summary-list__value">Prince Road, Thistle Hill</dd>
+        <dd class="govuk-summary-list__value">Baltic Campus, Quarryfield Road, Sheffield, S11 8ZG</dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Local authority</dt>

@@ -1,0 +1,194 @@
+{% extends "layouts/ur.html" %}
+
+{% block pageTitle %}
+  Compare schools
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <!-- SIDEBAR -->
+
+  <div class="govuk-grid-column-one-quarter">
+
+    <nav class="moj-side-navigation" aria-label="Side navigation">
+
+      <ul class="moj-side-navigation__list">
+
+        <li class="moj-side-navigation__item moj-side-navigation__item--active">
+          <a href="#" aria-current="location">
+            Compare schools
+          </a>
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="#">
+            About the schools
+          </a>
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="#">
+            Admissions
+          </a>
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="#">
+            Curriculum and extra-curricular activities
+          </a>
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="#">
+            Attendance
+          </a>
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="#">
+            Academic performance
+          </a>
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="#">
+            Destinations
+          </a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+  </div>
+
+
+  <!-- MAIN CONTENT -->
+
+  <div class="govuk-grid-column-three-quarters">
+
+    <span class="govuk-caption-xl">
+      My schools
+    </span>
+
+    <h1 class="govuk-heading-xl">
+      Compare schools
+    </h1>
+
+    <p class="govuk-body">
+      Compare information about the schools you have selected.
+    </p>
+
+
+    <!-- SCHOOL NAMES -->
+
+    <div class="govuk-grid-row">
+
+      {% for school in selectedSchools %}
+
+        <div class="govuk-grid-column-one-third">
+
+          <h2 class="govuk-heading-m">
+            {{ school.name }}
+          </h2>
+
+          <p class="govuk-body">
+            {{ school.address }}
+          </p>
+
+        </div>
+
+      {% endfor %}
+
+    </div>
+
+
+    <!-- EXAMPLE DATA -->
+
+    <h2 class="govuk-heading-l">
+      School information
+    </h2>
+
+    <table class="govuk-table">
+
+      <thead class="govuk-table__head">
+
+        <tr class="govuk-table__row">
+
+          <th scope="col" class="govuk-table__header">
+            Information
+          </th>
+
+          {% for school in selectedSchools %}
+
+            <th scope="col" class="govuk-table__header">
+              {{ school.name }}
+            </th>
+
+          {% endfor %}
+
+        </tr>
+
+      </thead>
+
+      <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+
+          <th scope="row" class="govuk-table__header">
+            Type of school
+          </th>
+
+          {% for school in selectedSchools %}
+
+            <td class="govuk-table__cell">
+              Academy
+            </td>
+
+          {% endfor %}
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <th scope="row" class="govuk-table__header">
+            Age range
+          </th>
+
+          {% for school in selectedSchools %}
+
+            <td class="govuk-table__cell">
+              11 to 18
+            </td>
+
+          {% endfor %}
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <th scope="row" class="govuk-table__header">
+            Number of pupils
+          </th>
+
+          {% for school in selectedSchools %}
+
+            <td class="govuk-table__cell">
+              1,230
+            </td>
+
+          {% endfor %}
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>
+
+{% endblock %}

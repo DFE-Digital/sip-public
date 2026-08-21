@@ -302,3 +302,58 @@
     margin-bottom: 15px;
   }
 }
+
+.govuk-button--inverse-outline {
+  // Match GOV.UK button
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 700;
+  font-size: 1.1875rem;
+  line-height: 1.31579;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  min-width: 100px;
+  margin-top: 0;
+  margin-bottom: 22px;
+  padding: 10px 15px;
+
+  // White button with blue outline
+  background-color: #ffffff;
+  color: #1d70b8 !important;
+  border: 2px solid #1d70b8;
+
+  // GOV.UK-style button shadow
+  box-shadow: 0 2px 0 #1d70b8;
+
+  // Remove the default GOV.UK button's gradient/appearance
+  text-decoration: none;
+  cursor: pointer;
+
+  &:link,
+  &:visited,
+  &:active {
+    color: #1d70b8 !important;
+  }
+
+  &:hover {
+    background-color: #f3f2f1;
+    color: #003078 !important;
+    border-color: #003078;
+    box-shadow: 0 2px 0 #003078;
+  }
+
+  &:focus {
+    background-color: #ffdd00;
+    color: #0b0c0c !important;
+    border-color: #0b0c0c;
+    box-shadow: 0 2px 0 #0b0c0c;
+    outline: 3px solid transparent;
+    outline-offset: 1px;
+  }
+
+  &:active {
+    top: 2px;
+    box-shadow: none;
+  }
+}
