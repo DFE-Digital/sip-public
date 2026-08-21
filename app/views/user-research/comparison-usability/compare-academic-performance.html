@@ -1,0 +1,257 @@
+{% extends "layouts/ur.html" %}
+
+{% block pageTitle %}
+  Compare schools
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <!-- SIDEBAR -->
+
+  <div class="govuk-grid-column-one-quarter">
+
+    <nav class="moj-side-navigation" aria-label="Side navigation">
+
+      <ul class="moj-side-navigation__list">
+
+        <li class="moj-side-navigation__item">
+          <a href="compare-schools" aria-current="location">
+            About your schools
+          </a>
+        </li>
+
+        <li class="moj-side-navigation__item moj-side-navigation__item--active">
+          <a href="compare-academic-performance">
+            Academic performance
+          </a>
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="after-year-11">
+            Destinations after year 11
+          </a>
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="next-steps">
+           Next steps
+          </a>
+        </li>
+      </ul>
+
+    </nav>
+
+  </div>
+
+<div class="govuk-grid-column-three-quarters">
+    <span class="govuk-caption-xl">Comparing your schools</span>
+    <h1 class="govuk-heading-xl">Academic performance</h1>
+
+    <p>
+      Looking at school performance data is one way to see how well a school is doing.
+You should look at a range of information about a school before deciding if it's the right fit for your child.
+    </p>
+
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a
+            class="moj-sub-navigation__link"
+            aria-current="page"
+            href="progress-attainment"
+            >Progress and attainment</a
+          >
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="english-math-results"
+            >English and maths results</a
+          >
+        </li>
+      </ul>
+    </nav>
+    
+
+    <p class="govuk-body">
+      Information in this section is for the 2024 to 2025 academic year.
+    </p>
+
+    <h2 class="govuk-heading-l">Attainment 8 for the previous academic year</h2>
+    <p class="govuk-body">
+     Information in this section is for the 2024 to 2025 academic year.
+    </p>
+    <p class="govuk-body">
+     Attainment 8 is used to assess a pupil’s average achievement across their 8 best GCSE-level subjects.
+    </p>
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Find out more about Attainment 8
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body">
+          The 8 subjects that are used in Attainment 8 are split into 3 groups:
+        </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>English and maths, which are both double-weighted</li>
+          <li>
+            EBacc subjects, these are a group of GCSE subjects that help
+            students gain a broad set of knowledge and skills. These subjects
+            include sciences, geography, history, and languages
+          </li>
+          <li>
+            open group which includes any other approved GCSEs or vocational
+            qualifications
+          </li>
+        </ul>
+        <p class="govuk-body">
+          Each GCSE grade is given a point score (for example grade 9 = 9
+          points, grade 8 = 8 points, and so on). The scores from the best 8
+          subjects (with English and Maths counting twice) are added together to
+          give the Attainment 8 score.
+        </p>
+      </div>
+    </details>
+
+
+     <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header" style="width: 30%">
+                School
+              </th>
+              <th scope="col" class="govuk-table__header" style="width: 20%">
+                Score
+              </th>
+              <th scope="col" class="govuk-table__header" style="width: 50%">
+                Meaning
+              </th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                Bracken Cove Academy
+              </th>
+              <td class="govuk-table__cell">50.1</td>
+              <td class="govuk-table__cell">
+                Pupils generally scored the equivalent of just above grade 5 in
+                their 8 best GCSE-level subjects.
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                Oak Nest Secondary School
+              </th>
+              <td class="govuk-table__cell">48.3</td>
+              <td class="govuk-table__cell">
+                Pupils generally scored the equivalent of between grade 4 and 5
+                in their 8 best GCSE-level subjects.
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                Thomas Lane Secondary School
+              </th>
+              <td class="govuk-table__cell">52.3</td>
+              <td class="govuk-table__cell">
+                Pupils generally scored the equivalent of between grade 5 and 6
+                in their 8 best GCSE-level subjects.
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Sheffield average</th>
+              <td class="govuk-table__cell">43.2</td>
+              <td class="govuk-table__cell">
+                Pupils generally scored the equivalent of between grade 4 and 5
+                in their 8 best GCSE-level subjects.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+
+            <div class="comparison-prompts">
+      <div class="comparison-prompts__icon material-symbols-outlined">quiz</div>
+      <h3 class="govuk-heading-m">
+        What you could ask schools about attainment
+      </h3>
+    </div>
+    <p class="govuk-body">
+      When researching, contacting or visiting a school, you may want to ask:
+    </p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        what are the differences in attainment between different groups of
+        pupils, for example disadvantaged pupils or pupils with SEND?
+      </li>
+      <li>how does the school support pupils with lower attainment?</li>
+    </ul>
+
+  
+    <nav
+      class="govuk-pagination govuk-pagination--block"
+      aria-label="Pagination"
+    >
+      <div class="govuk-pagination__prev">
+        <a
+          class="govuk-link govuk-pagination__link"
+          href="/comparison/profile/curriculum"
+          rel="prev"
+        >
+          <svg
+            class="govuk-pagination__icon govuk-pagination__icon--prev"
+            xmlns="http://www.w3.org/2000/svg"
+            height="13"
+            width="15"
+            aria-hidden="true"
+            focusable="false"
+            viewBox="0 0 15 13"
+          >
+            <path
+              d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"
+            ></path>
+          </svg>
+          <span class="govuk-pagination__link-title">
+            Previous<span class="govuk-visually-hidden"> page</span>
+          </span>
+          <span class="govuk-visually-hidden">:</span>
+          <span class="govuk-pagination__link-label">About your schools</span>
+        </a>
+      </div>
+      <div class="govuk-pagination__next">
+        <a
+          class="govuk-link govuk-pagination__link"
+          href="english-math-results"
+          rel="next"
+        >
+          <svg
+            class="govuk-pagination__icon govuk-pagination__icon--next"
+            xmlns="http://www.w3.org/2000/svg"
+            height="13"
+            width="15"
+            aria-hidden="true"
+            focusable="false"
+            viewBox="0 0 15 13"
+          >
+            <path
+              d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"
+            ></path>
+          </svg>
+          <span class="govuk-pagination__link-title">
+            Next<span class="govuk-visually-hidden"> page</span>
+          </span>
+          <span class="govuk-visually-hidden">:</span>
+          <span class="govuk-pagination__link-label"
+            >Academic performance: English and maths results</span
+          >
+        </a>
+      </div>
+    </nav>
+  </div>
+</div>
+
+{% endblock %}

@@ -7,8 +7,7 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-
-  <!-- SIDEBAR -->
+    <!-- SIDEBAR -->
 
   <div class="govuk-grid-column-one-quarter">
 
@@ -17,52 +16,33 @@
       <ul class="moj-side-navigation__list">
 
         <li class="moj-side-navigation__item moj-side-navigation__item--active">
-          <a href="#" aria-current="location">
-            Compare schools
+          <a href="compare-schools" aria-current="location">
+            About your schools
           </a>
         </li>
 
         <li class="moj-side-navigation__item">
-          <a href="#">
-            About the schools
-          </a>
-        </li>
-
-        <li class="moj-side-navigation__item">
-          <a href="#">
-            Admissions
-          </a>
-        </li>
-
-        <li class="moj-side-navigation__item">
-          <a href="#">
-            Curriculum and extra-curricular activities
-          </a>
-        </li>
-
-        <li class="moj-side-navigation__item">
-          <a href="#">
-            Attendance
-          </a>
-        </li>
-
-        <li class="moj-side-navigation__item">
-          <a href="#">
+          <a href="compare-academic-performance">
             Academic performance
           </a>
         </li>
 
         <li class="moj-side-navigation__item">
-          <a href="#">
-            Destinations
+          <a href="after-year-11">
+            Destinations after year 11
           </a>
         </li>
 
+        <li class="moj-side-navigation__item">
+          <a href="next-steps">
+           Next steps
+          </a>
+        </li>
       </ul>
 
     </nav>
+    </div>
 
-  </div>
 
 
   <!-- MAIN CONTENT -->
@@ -70,11 +50,11 @@
   <div class="govuk-grid-column-three-quarters">
 
     <span class="govuk-caption-xl">
-      My schools
+      Comparing your schools
     </span>
 
     <h1 class="govuk-heading-xl">
-      Compare schools
+      About your schools
     </h1>
 
     <p class="govuk-body">
@@ -82,110 +62,303 @@
     </p>
 
 
-    <!-- SCHOOL NAMES -->
-
-    <div class="govuk-grid-row">
-
-      {% for school in selectedSchools %}
-
-        <div class="govuk-grid-column-one-third">
-
-          <h2 class="govuk-heading-m">
-            {{ school.name }}
-          </h2>
-
-          <p class="govuk-body">
-            {{ school.address }}
-          </p>
-
-        </div>
-
-      {% endfor %}
-
-    </div>
-
-
-    <!-- EXAMPLE DATA -->
-
-    <h2 class="govuk-heading-l">
-      School information
-    </h2>
+         <!-- SELECTED SCHOOLS -->
 
     <table class="govuk-table">
 
-      <thead class="govuk-table__head">
+      <caption class="govuk-table__caption govuk-table__caption--l">
+        Location
+      </caption>
 
+      <thead class="govuk-table__head">
         <tr class="govuk-table__row">
 
           <th scope="col" class="govuk-table__header">
-            Information
+            School
           </th>
 
-          {% for school in selectedSchools %}
-
-            <th scope="col" class="govuk-table__header">
-              {{ school.name }}
-            </th>
-
-          {% endfor %}
+          <th scope="col" class="govuk-table__header">
+            Address
+          </th>
 
         </tr>
-
       </thead>
 
       <tbody class="govuk-table__body">
 
-        <tr class="govuk-table__row">
+        {% if 'school-1' in data['selected-schools'] %}
 
-          <th scope="row" class="govuk-table__header">
-            Type of school
-          </th>
-
-          {% for school in selectedSchools %}
+          <tr class="govuk-table__row">
 
             <td class="govuk-table__cell">
-              Academy
+              <a
+                href="/user-research/comparison-usability/school-profiles/oak-nest/about-the-school"
+                class="govuk-link"
+              >
+                {{ data['school-1-name'] }}
+              </a>
             </td>
-
-          {% endfor %}
-
-        </tr>
-
-        <tr class="govuk-table__row">
-
-          <th scope="row" class="govuk-table__header">
-            Age range
-          </th>
-
-          {% for school in selectedSchools %}
 
             <td class="govuk-table__cell">
-              11 to 18
+              {{ data['school-1-address'] }}
             </td>
 
-          {% endfor %}
+          </tr>
 
-        </tr>
+        {% endif %}
 
-        <tr class="govuk-table__row">
 
-          <th scope="row" class="govuk-table__header">
-            Number of pupils
-          </th>
+        {% if 'school-2' in data['selected-schools'] %}
 
-          {% for school in selectedSchools %}
+          <tr class="govuk-table__row">
 
             <td class="govuk-table__cell">
-              1,230
+              <a
+                href="/user-research/comparison-usability/school-profiles/langley-hill/about-the-school"
+                class="govuk-link"
+              >
+                {{ data['school-2-name'] }}
+              </a>
             </td>
 
-          {% endfor %}
+            <td class="govuk-table__cell">
+              {{ data['school-2-address'] }}
+            </td>
 
-        </tr>
+          </tr>
+
+        {% endif %}
+
+
+        {% if 'school-3' in data['selected-schools'] %}
+
+          <tr class="govuk-table__row">
+
+            <td class="govuk-table__cell">
+              <a
+                href="/user-research/comparison-usability/school-profiles/thomas-lane/about-the-school"
+                class="govuk-link"
+              >
+                {{ data['school-3-name'] }}
+              </a>
+            </td>
+
+            <td class="govuk-table__cell">
+              {{ data['school-3-address'] }}
+            </td>
+
+          </tr>
+
+        {% endif %}
 
       </tbody>
 
     </table>
+
+    {% if 'school-1' in data['selected-schools']
+  and 'school-2' in data['selected-schools']
+  and 'school-3' in data['selected-schools'] %}
+
+  <img
+    src="/public/images/map-image.png"
+  >
+<div class="govuk-!-padding-bottom-4"></div>
+{% endif %}
+
+
+
+
+<div class="govuk-summary-card">
+
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      Further information
+    </h2>
+  </div>
+
+  <div class="govuk-summary-card__content">
+
+    {% if 'school-1' in data['selected-schools'] %}
+
+      <h3 class="govuk-heading-m">
+        {{ data['school-1-name'] }}
+      </h3>
+
+      <dl class="govuk-summary-list">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            School profile
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <a
+              href="/user-research/comparison-usability/school-profiles/oak-nest/about-the-school"
+              class="govuk-link"
+            >
+              View school Oak Nest Secondary's school profile
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Ofsted report
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <a href="#" class="govuk-link">
+            	View the latest Ofsted report
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            School website
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <a href="#" class="govuk-link">
+              	https://www.oak-nest-secondary.sch.uk
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+    {% endif %}
+
+
+    {% if 'school-2' in data['selected-schools'] %}
+
+      <h3 class="govuk-heading-m govuk-!-margin-top-6">
+        {{ data['school-2-name'] }}
+      </h3>
+
+      <dl class="govuk-summary-list">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            School profile
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <a
+              href="/user-research/comparison-usability/school-profiles/langley-hill/about-the-school"
+              class="govuk-link"
+            >
+              View school Langley Secondary's school profile
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Ofsted report
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <a href="#" class="govuk-link">
+             	View the latest Ofsted report
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            School website
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <a href="#" class="govuk-link">
+            	https://www.langley-secondary.sch.uk
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+    {% endif %}
+
+
+    {% if 'school-3' in data['selected-schools'] %}
+
+      <h3 class="govuk-heading-m govuk-!-margin-top-6">
+        {{ data['school-3-name'] }}
+      </h3>
+
+      <dl class="govuk-summary-list">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            School profile
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <a
+              href="/user-research/comparison-usability/school-profiles/thomas-lane/about-the-school"
+              class="govuk-link"
+            >
+              View Thomas Lane Secondary's school profile
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Ofsted report
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <a href="#" class="govuk-link">
+            	View the latest Ofsted report
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            School website
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <a href="#" class="govuk-link">
+              	https://www.thomas-lane-secondary.sch.uk
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+    {% endif %}
+
+  </div>
+
+</div>
+    
+ <nav
+      class="govuk-pagination govuk-pagination--block"
+      aria-label="Pagination"
+    >
+      <div class="govuk-pagination__next">
+        <a
+          class="govuk-link govuk-pagination__link"
+          href="compare-academic-performance"
+          rel="next"
+        >
+          <svg
+            class="govuk-pagination__icon govuk-pagination__icon--next"
+            xmlns="http://www.w3.org/2000/svg"
+            height="13"
+            width="15"
+            aria-hidden="true"
+            focusable="false"
+            viewBox="0 0 15 13"
+          >
+            <path
+              d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"
+            ></path>
+          </svg>
+          <span class="govuk-pagination__link-title">
+            Next<span class="govuk-visually-hidden"> page</span>
+          </span>
+          <span class="govuk-visually-hidden">:</span>
+          <span class="govuk-pagination__link-label">Academic performance</span>
+        </a>
+      </div>
+    </nav>
 
   </div>
 
