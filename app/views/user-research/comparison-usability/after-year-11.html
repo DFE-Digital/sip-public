@@ -190,375 +190,345 @@
       </p>
 
 
-      <!-- ========================================= -->
-      <!-- CURRENT CHART -->
-      <!-- ========================================= -->
+<!-- ========================================= -->
+<!-- CURRENT CHART -->
+<!-- ========================================= -->
 
-      <div id="current-graph">
+<div id="current-graph">
 
-        <div
-          id="destinations-comparison"
-          class="comparison-chart"
-        ></div>
+  <div class="sp-card-actions">
 
-        <button
-          onclick="showOverTime(2)"
-          type="button"
-          class="govuk-button govuk-button--secondary"
-          data-module="govuk-button"
+    <button
+      onclick="showOverTime(2)"
+      type="button"
+      class="govuk-button govuk-button--secondary"
+      data-module="govuk-button"
+    >
+      Show as a table
+    </button>
+
+    <button
+      onclick="showOverTime(3)"
+      type="button"
+      class="govuk-button govuk-button--secondary"
+      data-module="govuk-button"
+    >
+      Show data over time
+    </button>
+
+  </div>
+
+  <div
+    id="destinations-comparison"
+    class="comparison-chart"
+  ></div>
+
+</div>
+
+
+<!-- ========================================= -->
+<!-- CURRENT TABLE -->
+<!-- ========================================= -->
+
+<div
+  id="current-table"
+  style="display: none"
+>
+
+  <div class="sp-card-actions">
+
+    <button
+      onclick="showOverTime(1)"
+      type="button"
+      class="govuk-button govuk-button--secondary"
+      data-module="govuk-button"
+    >
+      Show as a chart
+    </button>
+
+    <button
+      onclick="showOverTime(3)"
+      type="button"
+      class="govuk-button govuk-button--secondary"
+      data-module="govuk-button"
+    >
+      Show data over time
+    </button>
+
+  </div>
+
+  <table class="govuk-table">
+
+    <thead class="govuk-table__head">
+
+      <tr class="govuk-table__row">
+
+        <th
+          scope="col"
+          class="govuk-table__header"
+          style="width: 50%"
         >
-          Show as a table
-        </button>
+          School
+        </th>
 
-        <button
-          onclick="showOverTime(3)"
-          type="button"
-          class="govuk-button govuk-button--secondary"
-          data-module="govuk-button"
+        <th
+          scope="col"
+          class="govuk-table__header"
+          style="width: 50%"
         >
-          Show data over time
-        </button>
+          Percentage of pupils
+        </th>
 
-      </div>
+      </tr>
 
+    </thead>
 
-      <!-- ========================================= -->
-      <!-- CURRENT TABLE -->
-      <!-- ========================================= -->
+    <tbody class="govuk-table__body">
 
-      <div
-        id="current-table"
-        style="display: none"
-      >
+      <tr class="govuk-table__row">
 
-        <table class="govuk-table">
-
-          <thead class="govuk-table__head">
-
-            <tr class="govuk-table__row">
-
-              <th
-                scope="col"
-                class="govuk-table__header"
-                style="width: 50%"
-              >
-                School
-              </th>
-
-              <th
-                scope="col"
-                class="govuk-table__header"
-                style="width: 50%"
-              >
-                Percentage of pupils
-              </th>
-
-            </tr>
-
-          </thead>
-
-          <tbody class="govuk-table__body">
-
-            <tr class="govuk-table__row">
-
-              <th
-                scope="row"
-                class="govuk-table__header"
-              >
-                Oak Nest Secondary School
-              </th>
-
-              <td class="govuk-table__cell">
-                90%
-              </td>
-
-            </tr>
-
-            <tr class="govuk-table__row">
-
-              <th
-                scope="row"
-                class="govuk-table__header"
-              >
-                Langley Secondary School
-              </th>
-
-              <td class="govuk-table__cell">
-                92%
-              </td>
-
-            </tr>
-
-            <tr class="govuk-table__row">
-
-              <th
-                scope="row"
-                class="govuk-table__header"
-              >
-                Thomas Lane Secondary School
-              </th>
-
-              <td class="govuk-table__cell">
-                94%
-              </td>
-
-            </tr>
-
-            <tr class="govuk-table__row">
-
-              <th
-                scope="row"
-                class="govuk-table__header"
-              >
-                Sheffield average
-              </th>
-
-              <td class="govuk-table__cell">
-                89%
-              </td>
-
-            </tr>
-
-          </tbody>
-
-        </table>
-
-
-        <button
-          onclick="showOverTime(1)"
-          type="button"
-          class="govuk-button govuk-button--secondary"
-          data-module="govuk-button"
+        <th
+          scope="row"
+          class="govuk-table__header"
         >
-          Show as a chart
-        </button>
+          Oak Nest Secondary School
+        </th>
 
-        <button
-          onclick="showOverTime(3)"
-          type="button"
-          class="govuk-button govuk-button--secondary"
-          data-module="govuk-button"
+        <td class="govuk-table__cell">
+          90%
+        </td>
+
+      </tr>
+
+      <tr class="govuk-table__row">
+
+        <th
+          scope="row"
+          class="govuk-table__header"
         >
-          Show data over time
-        </button>
+          Langley Secondary School
+        </th>
 
-      </div>
+        <td class="govuk-table__cell">
+          92%
+        </td>
 
+      </tr>
 
-      <!-- ========================================= -->
-      <!-- OVER TIME CHART -->
-      <!-- ========================================= -->
+      <tr class="govuk-table__row">
 
-      <div
-        id="overtime-graph"
-        style="display: none"
-      >
-
-        <img
-          id="key"
-          src="/public/images/comparison/overtime-key.png"
-          alt=""
-        />
-
-        <div
-          id="destinations-comparison-overtime"
-          class="comparison-cluster-chart"
-        ></div>
-
-
-        <button
-          onclick="showOverTime(4)"
-          type="button"
-          class="govuk-button govuk-button--secondary"
-          data-module="govuk-button"
+        <th
+          scope="row"
+          class="govuk-table__header"
         >
-          Show as a table
-        </button>
+          Thomas Lane Secondary School
+        </th>
 
-        <button
-          onclick="showOverTime(1)"
-          type="button"
-          class="govuk-button govuk-button--secondary"
-          data-module="govuk-button"
+        <td class="govuk-table__cell">
+          94%
+        </td>
+
+      </tr>
+
+      <tr class="govuk-table__row">
+
+        <th
+          scope="row"
+          class="govuk-table__header"
         >
-          Show current data
-        </button>
+          Sheffield average
+        </th>
 
-      </div>
+        <td class="govuk-table__cell">
+          89%
+        </td>
 
+      </tr>
 
-      <!-- ========================================= -->
-      <!-- OVER TIME TABLE -->
-      <!-- ========================================= -->
+    </tbody>
 
-      <div
-        id="overtime-table"
-        style="display: none"
-      >
+  </table>
 
-        <table class="govuk-table">
-
-          <thead class="govuk-table__head">
-
-            <tr class="govuk-table__row">
-
-              <th
-                scope="col"
-                class="govuk-table__header"
-                style="width: 40%"
-              >
-                School
-              </th>
-
-              <th
-                scope="col"
-                class="govuk-table__header"
-                style="width: 20%"
-              >
-                2024 to 2025
-              </th>
-
-              <th
-                scope="col"
-                class="govuk-table__header"
-                style="width: 20%"
-              >
-                2023 to 2024
-              </th>
-
-              <th
-                scope="col"
-                class="govuk-table__header"
-                style="width: 20%"
-              >
-                2022 to 2023
-              </th>
-
-            </tr>
-
-          </thead>
-
-          <tbody class="govuk-table__body">
-
-            <tr class="govuk-table__row">
-
-              <th
-                scope="row"
-                class="govuk-table__header"
-              >
-                Oak Nest Secondary School
-              </th>
-
-              <td class="govuk-table__cell">
-                90%
-              </td>
-
-              <td class="govuk-table__cell">
-                88%
-              </td>
-
-              <td class="govuk-table__cell">
-                85%
-              </td>
-
-            </tr>
-
-            <tr class="govuk-table__row">
-
-              <th
-                scope="row"
-                class="govuk-table__header"
-              >
-                Langley Secondary School
-              </th>
-
-              <td class="govuk-table__cell">
-                92%
-              </td>
-
-              <td class="govuk-table__cell">
-                90%
-              </td>
-
-              <td class="govuk-table__cell">
-                89%
-              </td>
-
-            </tr>
-
-            <tr class="govuk-table__row">
-
-              <th
-                scope="row"
-                class="govuk-table__header"
-              >
-                Thomas Lane Secondary School
-              </th>
-
-              <td class="govuk-table__cell">
-                94%
-              </td>
-
-              <td class="govuk-table__cell">
-                95%
-              </td>
-
-              <td class="govuk-table__cell">
-                94%
-              </td>
-
-            </tr>
-
-            <tr class="govuk-table__row">
-
-              <th
-                scope="row"
-                class="govuk-table__header"
-              >
-                Sheffield average
-              </th>
-
-              <td class="govuk-table__cell">
-                89%
-              </td>
-
-              <td class="govuk-table__cell">
-                88%
-              </td>
-
-              <td class="govuk-table__cell">
-                87%
-              </td>
-
-            </tr>
-
-          </tbody>
-
-        </table>
+</div>
 
 
-        <button
-          onclick="showOverTime(3)"
-          type="button"
-          class="govuk-button govuk-button--secondary"
-          data-module="govuk-button"
+<!-- ========================================= -->
+<!-- OVER TIME CHART -->
+<!-- ========================================= -->
+
+<div
+  id="overtime-graph"
+  style="display: none"
+>
+
+  <div class="sp-card-actions">
+
+    <button
+      onclick="showOverTime(4)"
+      type="button"
+      class="govuk-button govuk-button--secondary"
+      data-module="govuk-button"
+    >
+      Show as a table
+    </button>
+
+    <button
+      onclick="showOverTime(1)"
+      type="button"
+      class="govuk-button govuk-button--secondary"
+      data-module="govuk-button"
+    >
+      Show current data
+    </button>
+
+  </div>
+
+        <p>
+        The legend is presented in the same order as the bars in each cluster.
+      </p>
+
+  <img
+    id="key"
+    src="/public/images/comparison/overtime-key.png"
+    alt=""
+  />
+
+  <div
+    id="destinations-comparison-overtime"
+    class="comparison-cluster-chart"
+  ></div>
+
+</div>
+
+
+<!-- ========================================= -->
+<!-- OVER TIME TABLE -->
+<!-- ========================================= -->
+
+<div
+  id="overtime-table"
+  style="display: none"
+>
+
+  <div class="sp-card-actions">
+
+    <button
+      onclick="showOverTime(3)"
+      type="button"
+      class="govuk-button govuk-button--secondary"
+      data-module="govuk-button"
+    >
+      Show as a chart
+    </button>
+
+    <button
+      onclick="showOverTime(1)"
+      type="button"
+      class="govuk-button govuk-button--secondary"
+      data-module="govuk-button"
+    >
+      Show current data
+    </button>
+
+  </div>
+
+  <table class="govuk-table">
+
+    <thead class="govuk-table__head">
+
+      <tr class="govuk-table__row">
+
+        <th
+          scope="col"
+          class="govuk-table__header"
+          style="width: 40%"
         >
-          Show as a chart
-        </button>
+          School
+        </th>
 
-        <button
-          onclick="showOverTime(1)"
-          type="button"
-          class="govuk-button govuk-button--secondary"
-          data-module="govuk-button"
+        <th
+          scope="col"
+          class="govuk-table__header"
+          style="width: 20%"
         >
-          Show current data
-        </button>
+          2024 to 2025
+        </th>
 
-      </div>
+        <th
+          scope="col"
+          class="govuk-table__header"
+          style="width: 20%"
+        >
+          2023 to 2024
+        </th>
 
-    </div>
+        <th
+          scope="col"
+          class="govuk-table__header"
+          style="width: 20%"
+        >
+          2022 to 2023
+        </th>
 
+      </tr>
+
+    </thead>
+
+    <tbody class="govuk-table__body">
+
+      <tr class="govuk-table__row">
+
+        <th scope="row" class="govuk-table__header">
+          Oak Nest Secondary School
+        </th>
+
+        <td class="govuk-table__cell">90%</td>
+        <td class="govuk-table__cell">88%</td>
+        <td class="govuk-table__cell">85%</td>
+
+      </tr>
+
+      <tr class="govuk-table__row">
+
+        <th scope="row" class="govuk-table__header">
+          Langley Secondary School
+        </th>
+
+        <td class="govuk-table__cell">92%</td>
+        <td class="govuk-table__cell">90%</td>
+        <td class="govuk-table__cell">89%</td>
+
+      </tr>
+
+      <tr class="govuk-table__row">
+
+        <th scope="row" class="govuk-table__header">
+          Thomas Lane Secondary School
+        </th>
+
+        <td class="govuk-table__cell">94%</td>
+        <td class="govuk-table__cell">95%</td>
+        <td class="govuk-table__cell">94%</td>
+
+      </tr>
+
+      <tr class="govuk-table__row">
+
+        <th scope="row" class="govuk-table__header">
+          Sheffield average
+        </th>
+
+        <td class="govuk-table__cell">89%</td>
+        <td class="govuk-table__cell">88%</td>
+        <td class="govuk-table__cell">87%</td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+</div>
 
     <!-- ========================================= -->
     <!-- PROMPTS -->
