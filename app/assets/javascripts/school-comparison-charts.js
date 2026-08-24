@@ -356,3 +356,201 @@ function drawSchoolComparisonOverTimeG4() {
 
   chart.draw(data, options);
 }
+
+// ============================================================
+// DESTINATIONS AFTER YEAR 11
+// ============================================================
+
+function drawDestinationsComparison() {
+
+  var data = google.visualization.arrayToDataTable([
+
+    [
+      "Destination",
+      "Percentage",
+      { role: "style" },
+      { role: "annotation" }
+    ],
+
+["Oak Nest Secondary School", 0.90, "#A285D1", "90%"],
+["Langley Secondary School", 0.92, "#A285D1", "92%"],
+["Thomas Lane Secondary School", 0.94, "#A285D1", "94%"],
+["Sheffield average", 0.89, "#bcbcbd", "89%"]
+
+  ]);
+
+  var options = {
+
+    fontSize: 19,
+
+    height: 300,
+
+    bar: {
+      groupWidth: "70%"
+    },
+
+    chartArea: {
+      width: "100%",
+      height: "100%",
+      left: "30%",
+      bottom: "15%",
+      right: "10%"
+    },
+
+    legend: {
+      position: "none"
+    },
+
+    hAxis: {
+      format: "percent",
+      minValue: 0,
+      maxValue: 1,
+
+      textStyle: {
+        color: "#0B0C0C"
+      }
+    },
+
+    vAxis: {
+      textStyle: {
+        color: "#0B0C0C"
+      }
+    },
+
+    enableInteractivity: false,
+
+    annotations: {
+      highContrast: false,
+
+      textStyle: {
+        color: "#0B0C0C",
+        fontSize: 19,
+        auraColor: "none"
+      }
+    }
+  };
+
+  var chart = new google.visualization.BarChart(
+    document.getElementById("destinations-comparison")
+  );
+
+  chart.draw(data, options);
+}
+
+function drawDestinationsComparisonOvertime() {
+
+  var data = google.visualization.arrayToDataTable([
+
+    [
+      "School",
+      "2024 to 2025",
+      { role: "annotation" },
+      "2023 to 2024",
+      { role: "annotation" },
+      "2022 to 2023",
+      { role: "annotation" }
+    ],
+
+    [
+      "Oak Nest Secondary School",
+      0.90, "90%",
+      0.88, "88%",
+      0.85, "85%"
+    ],
+
+    [
+      "Langley Secondary School",
+      0.92, "92%",
+      0.90, "90%",
+      0.89, "89%"
+    ],
+
+    [
+      "Thomas Lane Secondary School",
+      0.94, "94%",
+      0.95, "95%",
+      0.94, "94%"
+    ],
+
+    [
+      "Sheffield average",
+      0.89, "89%",
+      0.88, "88%",
+      0.87, "87%"
+    ]
+
+  ]);
+
+  var options = {
+
+    fontSize: 19,
+
+    colors: [
+      "#A285D1",
+      "#12436D",
+      "#28A197"
+    ],
+
+    height: 500,
+    width: "100%",
+
+    bar: {
+      groupWidth: "70%"
+    },
+
+    chartArea: {
+      left: "30%",
+      right: "10%",
+      top: "20%",
+      bottom: "10%",
+      width: "60%",
+      height: "70%"
+    },
+
+    legend: {
+      position: "top",
+      alignment: "left",
+      maxLines: 4,
+
+      textStyle: {
+        color: "#0B0C0C",
+        fontSize: 19
+      }
+    },
+
+    hAxis: {
+      format: "percent",
+      minValue: 0,
+      maxValue: 1,
+
+      textStyle: {
+        color: "#0B0C0C"
+      }
+    },
+
+    vAxis: {
+      textStyle: {
+        color: "#0B0C0C",
+        fontSize: 19
+      }
+    },
+
+    enableInteractivity: false,
+
+    annotations: {
+      highContrast: false,
+
+      textStyle: {
+        color: "#0B0C0C",
+        fontSize: 19,
+        auraColor: "none"
+      }
+    }
+  };
+
+  var chart = new google.visualization.BarChart(
+    document.getElementById("destinations-comparison-overtime")
+  );
+
+  chart.draw(data, options);
+}

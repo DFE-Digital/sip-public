@@ -1,8 +1,14 @@
-{% extends "layouts/ur.html" %} {% block pageTitle %} After year 11 {%
-endblock %} {% block content %}
+{% extends "layouts/ur.html" %}
+
+{% block pageTitle %}
+  After year 11
+{% endblock %}
+
+{% block content %}
 
 <div class="govuk-grid-row">
-    <!-- SIDEBAR -->
+
+  <!-- SIDEBAR -->
 
   <div class="govuk-grid-column-one-quarter">
 
@@ -30,54 +36,111 @@ endblock %} {% block content %}
 
         <li class="moj-side-navigation__item">
           <a href="next-steps">
-           Next steps
+            Next steps
           </a>
         </li>
+
       </ul>
 
     </nav>
-    </div>
+
+  </div>
+
+
+  <!-- MAIN CONTENT -->
 
   <div class="govuk-grid-column-three-quarters">
+
     <span class="govuk-caption-xl">Comparing your schools</span>
-    <h1 class="govuk-heading-xl">Destinations after year 11</h1>
 
-    <h2 class="govuk-heading-m">Sixth form offering</h2>
-   
-        <table class="govuk-table">
-          <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header" style="width: 50%">
-                School
-              </th>
-              <th scope="col" class="govuk-table__header" style="width: 50%">
-                Sixth form available
-              </th>
-            </tr>
-          </thead>
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">
-                Oak Nest Secondary School
-              </th>
-              <td class="govuk-table__cell">Yes</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">
-                Langley Secondary School
-              </th>
-              <td class="govuk-table__cell">No</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">
-                Thomas Lane Secondary School
-              </th>
-              <td class="govuk-table__cell">Yes</td>
-            </tr>
-          </tbody>
-        </table>
+    <h1 class="govuk-heading-xl">
+      Destinations after year 11
+    </h1>
 
 
+    <!-- SIXTH FORM -->
+
+    <h2 class="govuk-heading-m">
+      Sixth form offering
+    </h2>
+
+    <table class="govuk-table">
+
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+
+          <th
+            scope="col"
+            class="govuk-table__header"
+            style="width: 50%"
+          >
+            School
+          </th>
+
+          <th
+            scope="col"
+            class="govuk-table__header"
+            style="width: 50%"
+          >
+            Sixth form available
+          </th>
+
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+
+          <th
+            scope="row"
+            class="govuk-table__header"
+          >
+            Oak Nest Secondary School
+          </th>
+
+          <td class="govuk-table__cell">
+            Yes
+          </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <th
+            scope="row"
+            class="govuk-table__header"
+          >
+            Langley Secondary School
+          </th>
+
+          <td class="govuk-table__cell">
+            No
+          </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <th
+            scope="row"
+            class="govuk-table__header"
+          >
+            Thomas Lane Secondary School
+          </th>
+
+          <td class="govuk-table__cell">
+            Yes
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+
+    <!-- DESTINATIONS -->
 
     <h2 class="govuk-heading-l">
       Staying in education, employment and apprenticeships
@@ -88,224 +151,473 @@ endblock %} {% block content %}
       Key stage 4 (KS4). Pupils usually finish KS4 after year 11 when they are
       16. Between the ages of 16 and 18 they must be:
     </p>
+
     <ul class="govuk-list govuk-list--bullet">
-      <li>in full-time education, for example at a college or sixth form</li>
-      <li>starting an apprenticeship</li>
+
+      <li>
+        in full-time education, for example at a college or sixth form
+      </li>
+
+      <li>
+        starting an apprenticeship
+      </li>
+
       <li>
         spending 20 hours or more a week working or volunteering, while in
         part-time education or training
       </li>
+
     </ul>
 
+
+    <!-- CHART CARD -->
+
     <div class="sp-card-graph">
+
       <h3 class="govuk-heading-m">
-        Percentage of pupils staying in education, employment and
-        apprenticeships
+        Percentage of pupils staying in education, employment and apprenticeships
       </h3>
+
       <p class="govuk-body">
-        This shows the percentage of pupils who either stayed in education,went
-        into an apprenticeship or entered employment for at least 6 months after
-        finishing KS4.
+        This shows the percentage of pupils who either stayed in education,
+        went into an apprenticeship or entered employment for at least 6 months
+        after finishing KS4.
       </p>
+
       <p class="govuk-body">
         If a pupil changes what they are doing before reaching 6 months they are
         not recorded in this data.
       </p>
 
+
+      <!-- ========================================= -->
+      <!-- CURRENT CHART -->
+      <!-- ========================================= -->
+
       <div id="current-graph">
-        <div id="destinations-comparison" class="comparison-chart"></div>
+
+        <div
+          id="destinations-comparison"
+          class="comparison-chart"
+        ></div>
+
         <button
-          onclick="javascript:showOverTime(2)"
-          type="submit"
+          onclick="showOverTime(2)"
+          type="button"
           class="govuk-button govuk-button--secondary"
           data-module="govuk-button"
         >
           Show as a table
         </button>
+
         <button
-          onclick="javascript:showOverTime(3)"
-          type="submit"
+          onclick="showOverTime(3)"
+          type="button"
           class="govuk-button govuk-button--secondary"
           data-module="govuk-button"
         >
           Show data over time
         </button>
+
       </div>
 
-      <div id="current-table" style="display: none">
+
+      <!-- ========================================= -->
+      <!-- CURRENT TABLE -->
+      <!-- ========================================= -->
+
+      <div
+        id="current-table"
+        style="display: none"
+      >
+
         <table class="govuk-table">
+
           <thead class="govuk-table__head">
+
             <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header" style="width: 50%">
+
+              <th
+                scope="col"
+                class="govuk-table__header"
+                style="width: 50%"
+              >
                 School
               </th>
-              <th scope="col" class="govuk-table__header" style="width: 50%">
+
+              <th
+                scope="col"
+                class="govuk-table__header"
+                style="width: 50%"
+              >
                 Percentage of pupils
               </th>
+
             </tr>
+
           </thead>
+
           <tbody class="govuk-table__body">
+
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">
-                Bracken Cove Academy
-              </th>
-              <td class="govuk-table__cell">85%</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">
+
+              <th
+                scope="row"
+                class="govuk-table__header"
+              >
                 Oak Nest Secondary School
               </th>
-              <td class="govuk-table__cell">90%</td>
+
+              <td class="govuk-table__cell">
+                90%
+              </td>
+
             </tr>
+
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">
+
+              <th
+                scope="row"
+                class="govuk-table__header"
+              >
+                Langley Secondary School
+              </th>
+
+              <td class="govuk-table__cell">
+                92%
+              </td>
+
+            </tr>
+
+            <tr class="govuk-table__row">
+
+              <th
+                scope="row"
+                class="govuk-table__header"
+              >
                 Thomas Lane Secondary School
               </th>
-              <td class="govuk-table__cell">94%</td>
+
+              <td class="govuk-table__cell">
+                94%
+              </td>
+
             </tr>
+
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Sheffield average</th>
-              <td class="govuk-table__cell">89%</td>
+
+              <th
+                scope="row"
+                class="govuk-table__header"
+              >
+                Sheffield average
+              </th>
+
+              <td class="govuk-table__cell">
+                89%
+              </td>
+
             </tr>
+
           </tbody>
+
         </table>
+
+
         <button
-          onclick="javascript:showOverTime(1)"
-          type="submit"
+          onclick="showOverTime(1)"
+          type="button"
           class="govuk-button govuk-button--secondary"
           data-module="govuk-button"
         >
           Show as a chart
         </button>
+
         <button
-          onclick="javascript:showOverTime(4)"
-          type="submit"
+          onclick="showOverTime(3)"
+          type="button"
           class="govuk-button govuk-button--secondary"
           data-module="govuk-button"
         >
           Show data over time
         </button>
+
       </div>
-      <div id="overtime-graph" style="display: none">
-        <img id="key" src="/public/images/comparison/overtime-key.png" alt="" />
+
+
+      <!-- ========================================= -->
+      <!-- OVER TIME CHART -->
+      <!-- ========================================= -->
+
+      <div
+        id="overtime-graph"
+        style="display: none"
+      >
+
+        <img
+          id="key"
+          src="/public/images/comparison/overtime-key.png"
+          alt=""
+        />
+
         <div
-          hidden
           id="destinations-comparison-overtime"
           class="comparison-cluster-chart"
         ></div>
+
+
         <button
-          onclick="javascript:showOverTime(4)"
-          type="submit"
+          onclick="showOverTime(4)"
+          type="button"
           class="govuk-button govuk-button--secondary"
           data-module="govuk-button"
         >
           Show as a table
         </button>
+
         <button
-          onclick="javascript:showOverTime(1)"
-          type="submit"
+          onclick="showOverTime(1)"
+          type="button"
           class="govuk-button govuk-button--secondary"
           data-module="govuk-button"
         >
           Show current data
         </button>
+
       </div>
 
-      <div id="overtime-table" style="display: none">
+
+      <!-- ========================================= -->
+      <!-- OVER TIME TABLE -->
+      <!-- ========================================= -->
+
+      <div
+        id="overtime-table"
+        style="display: none"
+      >
+
         <table class="govuk-table">
+
           <thead class="govuk-table__head">
+
             <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header" style="width: 40%">
+
+              <th
+                scope="col"
+                class="govuk-table__header"
+                style="width: 40%"
+              >
                 School
               </th>
-              <th scope="col" class="govuk-table__header" style="width: 20%">
+
+              <th
+                scope="col"
+                class="govuk-table__header"
+                style="width: 20%"
+              >
                 2024 to 2025
               </th>
-              <th scope="col" class="govuk-table__header" style="width: 20%">
+
+              <th
+                scope="col"
+                class="govuk-table__header"
+                style="width: 20%"
+              >
                 2023 to 2024
               </th>
-              <th scope="col" class="govuk-table__header" style="width: 20%">
+
+              <th
+                scope="col"
+                class="govuk-table__header"
+                style="width: 20%"
+              >
                 2022 to 2023
               </th>
+
             </tr>
+
           </thead>
+
           <tbody class="govuk-table__body">
+
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">
-                Bracken Cove Academy
-              </th>
-              <td class="govuk-table__cell">85%</td>
-              <td class="govuk-table__cell">86%</td>
-              <td class="govuk-table__cell">80%</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">
+
+              <th
+                scope="row"
+                class="govuk-table__header"
+              >
                 Oak Nest Secondary School
               </th>
-              <td class="govuk-table__cell">90%</td>
-              <td class="govuk-table__cell">88%</td>
-              <td class="govuk-table__cell">85%</td>
+
+              <td class="govuk-table__cell">
+                90%
+              </td>
+
+              <td class="govuk-table__cell">
+                88%
+              </td>
+
+              <td class="govuk-table__cell">
+                85%
+              </td>
+
             </tr>
+
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">
+
+              <th
+                scope="row"
+                class="govuk-table__header"
+              >
+                Langley Secondary School
+              </th>
+
+              <td class="govuk-table__cell">
+                92%
+              </td>
+
+              <td class="govuk-table__cell">
+                90%
+              </td>
+
+              <td class="govuk-table__cell">
+                89%
+              </td>
+
+            </tr>
+
+            <tr class="govuk-table__row">
+
+              <th
+                scope="row"
+                class="govuk-table__header"
+              >
                 Thomas Lane Secondary School
               </th>
-              <td class="govuk-table__cell">94%</td>
-              <td class="govuk-table__cell">95%</td>
-              <td class="govuk-table__cell">94%</td>
+
+              <td class="govuk-table__cell">
+                94%
+              </td>
+
+              <td class="govuk-table__cell">
+                95%
+              </td>
+
+              <td class="govuk-table__cell">
+                94%
+              </td>
+
             </tr>
+
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Sheffield average</th>
-              <td class="govuk-table__cell">89%</td>
-              <td class="govuk-table__cell">88%</td>
-              <td class="govuk-table__cell">87%</td>
+
+              <th
+                scope="row"
+                class="govuk-table__header"
+              >
+                Sheffield average
+              </th>
+
+              <td class="govuk-table__cell">
+                89%
+              </td>
+
+              <td class="govuk-table__cell">
+                88%
+              </td>
+
+              <td class="govuk-table__cell">
+                87%
+              </td>
+
             </tr>
+
           </tbody>
+
         </table>
+
+
         <button
-          onclick="javascript:showOverTime(3)"
-          type="submit"
+          onclick="showOverTime(3)"
+          type="button"
           class="govuk-button govuk-button--secondary"
           data-module="govuk-button"
         >
           Show as a chart
         </button>
+
         <button
-          onclick="javascript:showOverTime(2)"
-          type="submit"
+          onclick="showOverTime(1)"
+          type="button"
           class="govuk-button govuk-button--secondary"
           data-module="govuk-button"
         >
           Show current data
         </button>
+
       </div>
+
     </div>
+
+
+    <!-- ========================================= -->
+    <!-- PROMPTS -->
+    <!-- ========================================= -->
+
     <div class="comparison-prompts">
-      <div class="comparison-prompts__icon material-symbols-outlined">quiz</div>
+
+      <div class="comparison-prompts__icon material-symbols-outlined">
+        quiz
+      </div>
+
       <h3 class="govuk-heading-m">
         What you could ask schools about pupil destinations
       </h3>
+
     </div>
+
     <p class="govuk-body">
       When researching, contacting or visiting a school, you may want to ask:
     </p>
+
     <ul class="govuk-list govuk-list--bullet">
-      <li>how the school supports pupils with their post-16 choices</li>
-      <li>what work experience is available through the school?</li>
-      <li>what career advice or support is available?</li>
-      <li>will subject choice affect future applications?</li>
+
+      <li>
+        how the school supports pupils with their post-16 choices
+      </li>
+
+      <li>
+        what work experience is available through the school?
+      </li>
+
+      <li>
+        what career advice or support is available?
+      </li>
+
+      <li>
+        will subject choice affect future applications?
+      </li>
+
     </ul>
+
+
+    <!-- ========================================= -->
+    <!-- PAGINATION -->
+    <!-- ========================================= -->
 
     <nav
       class="govuk-pagination govuk-pagination--block"
       aria-label="Pagination"
     >
+
       <div class="govuk-pagination__prev">
+
         <a
           class="govuk-link govuk-pagination__link"
           href="/comparison/profile/academic-performance/english-math-results"
           rel="prev"
         >
+
           <svg
             class="govuk-pagination__icon govuk-pagination__icon--prev"
             xmlns="http://www.w3.org/2000/svg"
@@ -319,21 +631,31 @@ endblock %} {% block content %}
               d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"
             ></path>
           </svg>
+
           <span class="govuk-pagination__link-title">
-            Previous<span class="govuk-visually-hidden"> page</span>
+            Previous
+            <span class="govuk-visually-hidden"> page</span>
           </span>
+
           <span class="govuk-visually-hidden">:</span>
-          <span class="govuk-pagination__link-label"
-            >Academic performance: English and maths results</span
-          >
+
+          <span class="govuk-pagination__link-label">
+            Academic performance: English and maths results
+          </span>
+
         </a>
+
       </div>
+
+
       <div class="govuk-pagination__next">
+
         <a
           class="govuk-link govuk-pagination__link"
           href="next-steps"
           rel="next"
         >
+
           <svg
             class="govuk-pagination__icon govuk-pagination__icon--next"
             xmlns="http://www.w3.org/2000/svg"
@@ -347,56 +669,109 @@ endblock %} {% block content %}
               d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"
             ></path>
           </svg>
+
           <span class="govuk-pagination__link-title">
-            Next<span class="govuk-visually-hidden"> page</span>
+            Next
+            <span class="govuk-visually-hidden"> page</span>
           </span>
+
           <span class="govuk-visually-hidden">:</span>
-          <span class="govuk-pagination__link-label">Next steps</span>
+
+          <span class="govuk-pagination__link-label">
+            Next steps
+          </span>
+
         </a>
+
       </div>
+
     </nav>
+
   </div>
+
 </div>
 
-{% endblock %} {% block pageScripts %}
+{% endblock %}
 
-<!-- Load your local chart code (file in app/assets/javascripts) -->
-<script src="/public/javascripts/google-charts.js"></script>
+
+{% block pageScripts %}
+
+<!-- Google Charts library -->
 <script src="https://www.gstatic.com/charts/loader.js"></script>
-<!-- Initialise the chart -->
+
+<!-- Your school comparison chart JavaScript -->
+<script src="/public/javascripts/school-comparison-charts.js"></script>
+
 <script>
-  google.charts.load("current", { packages: ["corechart"] });
-  google.charts.setOnLoadCallback(drawDestinationsComparison);
+
+  // Load Google Charts
+  google.charts.load("current", {
+    packages: ["corechart"]
+  });
+
+
+  // Draw the initial current chart once Google Charts has loaded
+  google.charts.setOnLoadCallback(function () {
+    drawDestinationsComparison();
+  });
+
+
+  // =========================================
+  // SWITCH BETWEEN VIEWS
+  // =========================================
 
   function showOverTime(view) {
-    var bar = document.getElementById("destinations-comparison");
-    var cluster = document.getElementById("destinations-comparison-overtime");
+
     hideAll();
 
-    if (view == "1") {
-      bar.removeAttribute("hidden");
-      cluster.setAttribute("hidden", "hidden");
+    if (view == 1) {
 
       document.getElementById("current-graph").style.display = "block";
+
       drawDestinationsComparison();
-    } else if (view == "2") {
-      document.getElementById("current-table").style.display = "block";
-    } else if (view == "3") {
-      cluster.removeAttribute("hidden");
-      bar.setAttribute("hidden", "hidden");
-      document.getElementById("overtime-graph").style.display = "block";
-      drawDestinationsComparisonOvertime();
-    } else if (view == "4") {
-      document.getElementById("overtime-table").style.display = "block";
+
     }
+
+    else if (view == 2) {
+
+      document.getElementById("current-table").style.display = "block";
+
+    }
+
+    else if (view == 3) {
+
+      document.getElementById("overtime-graph").style.display = "block";
+
+      // Draw after the container becomes visible
+      drawDestinationsComparisonOvertime();
+
+    }
+
+    else if (view == 4) {
+
+      document.getElementById("overtime-table").style.display = "block";
+
+    }
+
   }
 
+
+  // =========================================
+  // HIDE ALL VIEWS
+  // =========================================
+
   function hideAll() {
+
     document.getElementById("current-graph").style.display = "none";
-    document.getElementById("overtime-graph").style.display = "none";
+
     document.getElementById("current-table").style.display = "none";
+
+    document.getElementById("overtime-graph").style.display = "none";
+
     document.getElementById("overtime-table").style.display = "none";
+
   }
+
 </script>
 
 {% endblock %}
