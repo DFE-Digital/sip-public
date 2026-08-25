@@ -8,7 +8,7 @@ var comparisonChartOptions = {
   height: 300,
 
   bar: {
-    groupWidth: "70%"
+    groupWidth: "70%",
   },
 
   chartArea: {
@@ -16,11 +16,11 @@ var comparisonChartOptions = {
     height: "100%",
     left: "30%",
     bottom: "15%",
-    right: "10%"
+    right: "10%",
   },
 
   legend: {
-    position: "none"
+    position: "none",
   },
 
   hAxis: {
@@ -29,14 +29,14 @@ var comparisonChartOptions = {
     maxValue: 1,
 
     textStyle: {
-      color: "#0B0C0C"
-    }
+      color: "#0B0C0C",
+    },
   },
 
   vAxis: {
     textStyle: {
-      color: "#0B0C0C"
-    }
+      color: "#0B0C0C",
+    },
   },
 
   enableInteractivity: false,
@@ -47,20 +47,17 @@ var comparisonChartOptions = {
     textStyle: {
       color: "#0B0C0C",
       fontSize: 19,
-      auraColor: "none"
-    }
-  }
+      auraColor: "none",
+    },
+  },
 };
-
 
 // ============================================================
 // GRADE 5 - CURRENT
 // ============================================================
 
 function drawSchoolComparisonG5() {
-
   var data = google.visualization.arrayToDataTable([
-
     ["School", "Percentage", { role: "style" }, { role: "annotation" }],
 
     ["Oak Nest Secondary School", 0.63, "#A285D1", "63%"],
@@ -69,26 +66,22 @@ function drawSchoolComparisonG5() {
 
     ["Thomas Lane Secondary School", 0.44, "#A285D1", "44%"],
 
-    ["Sheffield average", 0.41, "#bcbcbd", "41%"]
-
+    ["England average", 0.41, "#bcbcbd", "41%"],
   ]);
 
   var chart = new google.visualization.BarChart(
-    document.getElementById("english-maths-comparison-g5")
+    document.getElementById("english-maths-comparison-g5"),
   );
 
   chart.draw(data, comparisonChartOptions);
 }
-
 
 // ============================================================
 // GRADE 5 - OVER TIME
 // ============================================================
 
 function drawSchoolComparisonOverTimeG5() {
-
   var data = google.visualization.arrayToDataTable([
-
     [
       "School",
       "2024 to 2025",
@@ -96,54 +89,28 @@ function drawSchoolComparisonOverTimeG5() {
       "2023 to 2024",
       { role: "annotation" },
       "2022 to 2023",
-      { role: "annotation" }
+      { role: "annotation" },
     ],
 
-    [
-      "Oak Nest Secondary School",
-      0.63, "63%",
-      0.66, "66%",
-      0.67, "67%"
-    ],
+    ["Oak Nest Secondary School", 0.63, "63%", 0.66, "66%", 0.67, "67%"],
 
-    [
-      "Langley Secondary School",
-      0.65, "65%",
-      0.62, "62%",
-      0.63, "63%"
-    ],
+    ["Langley Secondary School", 0.65, "65%", 0.62, "62%", 0.63, "63%"],
 
-    [
-      "Thomas Lane Secondary School",
-      0.44, "44%",
-      0.43, "43%",
-      0.39, "39%"
-    ],
+    ["Thomas Lane Secondary School", 0.44, "44%", 0.43, "43%", 0.39, "39%"],
 
-    [
-      "Sheffield average",
-      0.41, "41%",
-      0.42, "42%",
-      0.40, "40%"
-    ]
-
+    ["England average", 0.41, "41%", 0.42, "42%", 0.4, "40%"],
   ]);
 
   var options = {
-
     fontSize: 19,
 
-    colors: [
-      "#A285D1",
-      "#12436D",
-      "#28A197"
-    ],
+    colors: ["#A285D1", "#12436D", "#28A197"],
 
     height: 500,
     width: "100%",
 
     bar: {
-      groupWidth: "70%"
+      groupWidth: "70%",
     },
 
     chartArea: {
@@ -152,7 +119,7 @@ function drawSchoolComparisonOverTimeG5() {
       top: "20%",
       bottom: "10%",
       width: "60%",
-      height: "70%"
+      height: "70%",
     },
 
     legend: {
@@ -162,8 +129,8 @@ function drawSchoolComparisonOverTimeG5() {
 
       textStyle: {
         color: "#0B0C0C",
-        fontSize: 19
-      }
+        fontSize: 19,
+      },
     },
 
     hAxis: {
@@ -172,15 +139,15 @@ function drawSchoolComparisonOverTimeG5() {
       maxValue: 1,
 
       textStyle: {
-        color: "#0B0C0C"
-      }
+        color: "#0B0C0C",
+      },
     },
 
     vAxis: {
       textStyle: {
         color: "#0B0C0C",
-        fontSize: 19
-      }
+        fontSize: 19,
+      },
     },
 
     enableInteractivity: false,
@@ -191,58 +158,48 @@ function drawSchoolComparisonOverTimeG5() {
       textStyle: {
         color: "#0B0C0C",
         fontSize: 19,
-        auraColor: "none"
-      }
-    }
+        auraColor: "none",
+      },
+    },
   };
 
   var chart = new google.visualization.BarChart(
-    document.getElementById("english-maths-overtime-comparison-g5")
+    document.getElementById("english-maths-overtime-comparison-g5"),
   );
 
   chart.draw(data, options);
 }
-
-
-
-
 
 // ============================================================
 // GRADE 4 - CURRENT
 // ============================================================
 
 function drawSchoolComparisonG4() {
-
   var data = google.visualization.arrayToDataTable([
-
     ["School", "Percentage", { role: "style" }, { role: "annotation" }],
 
     ["Oak Nest Secondary School", 0.65, "#A285D1", "65%"],
 
-    ["Langley Secondary School", 0.70, "#A285D1", "70%"],
+    ["Langley Secondary School", 0.7, "#A285D1", "70%"],
 
-    ["Thomas Lane Secondary School", 0.70, "#A285D1", "70%"],
+    ["Thomas Lane Secondary School", 0.7, "#A285D1", "70%"],
 
-    ["Sheffield average", 0.45, "#bcbcbd", "45%"]
-
+    ["England average", 0.45, "#bcbcbd", "45%"],
   ]);
 
   var chart = new google.visualization.BarChart(
-    document.getElementById("english-maths-comparison-g4")
+    document.getElementById("english-maths-comparison-g4"),
   );
 
   chart.draw(data, comparisonChartOptions);
 }
-
 
 // ============================================================
 // GRADE 4 - OVER TIME
 // ============================================================
 
 function drawSchoolComparisonOverTimeG4() {
-
   var data = google.visualization.arrayToDataTable([
-
     [
       "School",
       "2024 to 2025",
@@ -250,54 +207,28 @@ function drawSchoolComparisonOverTimeG4() {
       "2023 to 2024",
       { role: "annotation" },
       "2022 to 2023",
-      { role: "annotation" }
+      { role: "annotation" },
     ],
 
-    [
-      "Oak Nest Secondary School",
-      0.65, "65%",
-      0.62, "62%",
-      0.63, "63%"
-    ],
+    ["Oak Nest Secondary School", 0.65, "65%", 0.62, "62%", 0.63, "63%"],
 
-    [
-      "Langley Secondary School",
-      0.70, "70%",
-      0.67, "67%",
-      0.68, "68%"
-    ],
+    ["Langley Secondary School", 0.7, "70%", 0.67, "67%", 0.68, "68%"],
 
-    [
-      "Thomas Lane Secondary School",
-      0.70, "70%",
-      0.47, "47%",
-      0.46, "46%"
-    ],
+    ["Thomas Lane Secondary School", 0.7, "70%", 0.47, "47%", 0.46, "46%"],
 
-    [
-      "Sheffield average",
-      0.45, "45%",
-      0.42, "42%",
-      0.41, "41%"
-    ]
-
+    ["England average", 0.45, "45%", 0.42, "42%", 0.41, "41%"],
   ]);
 
   var options = {
-
     fontSize: 19,
 
-    colors: [
-      "#A285D1",
-      "#12436D",
-      "#28A197"
-    ],
+    colors: ["#A285D1", "#12436D", "#28A197"],
 
     height: 500,
     width: "100%",
 
     bar: {
-      groupWidth: "70%"
+      groupWidth: "70%",
     },
 
     chartArea: {
@@ -306,7 +237,7 @@ function drawSchoolComparisonOverTimeG4() {
       top: "20%",
       bottom: "10%",
       width: "60%",
-      height: "70%"
+      height: "70%",
     },
 
     legend: {
@@ -316,8 +247,8 @@ function drawSchoolComparisonOverTimeG4() {
 
       textStyle: {
         color: "#0B0C0C",
-        fontSize: 19
-      }
+        fontSize: 19,
+      },
     },
 
     hAxis: {
@@ -326,15 +257,15 @@ function drawSchoolComparisonOverTimeG4() {
       maxValue: 1,
 
       textStyle: {
-        color: "#0B0C0C"
-      }
+        color: "#0B0C0C",
+      },
     },
 
     vAxis: {
       textStyle: {
         color: "#0B0C0C",
-        fontSize: 19
-      }
+        fontSize: 19,
+      },
     },
 
     enableInteractivity: false,
@@ -345,13 +276,13 @@ function drawSchoolComparisonOverTimeG4() {
       textStyle: {
         color: "#0B0C0C",
         fontSize: 19,
-        auraColor: "none"
-      }
-    }
+        auraColor: "none",
+      },
+    },
   };
 
   var chart = new google.visualization.BarChart(
-    document.getElementById("english-maths-overtime-comparison-g4")
+    document.getElementById("english-maths-overtime-comparison-g4"),
   );
 
   chart.draw(data, options);
@@ -362,31 +293,22 @@ function drawSchoolComparisonOverTimeG4() {
 // ============================================================
 
 function drawDestinationsComparison() {
-
   var data = google.visualization.arrayToDataTable([
+    ["Destination", "Percentage", { role: "style" }, { role: "annotation" }],
 
-    [
-      "Destination",
-      "Percentage",
-      { role: "style" },
-      { role: "annotation" }
-    ],
-
-["Oak Nest Secondary School", 0.90, "#A285D1", "90%"],
-["Langley Secondary School", 0.92, "#A285D1", "92%"],
-["Thomas Lane Secondary School", 0.94, "#A285D1", "94%"],
-["Sheffield average", 0.89, "#bcbcbd", "89%"]
-
+    ["Oak Nest Secondary School", 0.9, "#A285D1", "90%"],
+    ["Langley Secondary School", 0.92, "#A285D1", "92%"],
+    ["Thomas Lane Secondary School", 0.94, "#A285D1", "94%"],
+    ["England average", 0.89, "#bcbcbd", "89%"],
   ]);
 
   var options = {
-
     fontSize: 19,
 
     height: 300,
 
     bar: {
-      groupWidth: "70%"
+      groupWidth: "70%",
     },
 
     chartArea: {
@@ -394,11 +316,11 @@ function drawDestinationsComparison() {
       height: "100%",
       left: "30%",
       bottom: "15%",
-      right: "10%"
+      right: "10%",
     },
 
     legend: {
-      position: "none"
+      position: "none",
     },
 
     hAxis: {
@@ -407,14 +329,14 @@ function drawDestinationsComparison() {
       maxValue: 1,
 
       textStyle: {
-        color: "#0B0C0C"
-      }
+        color: "#0B0C0C",
+      },
     },
 
     vAxis: {
       textStyle: {
-        color: "#0B0C0C"
-      }
+        color: "#0B0C0C",
+      },
     },
 
     enableInteractivity: false,
@@ -425,22 +347,20 @@ function drawDestinationsComparison() {
       textStyle: {
         color: "#0B0C0C",
         fontSize: 19,
-        auraColor: "none"
-      }
-    }
+        auraColor: "none",
+      },
+    },
   };
 
   var chart = new google.visualization.BarChart(
-    document.getElementById("destinations-comparison")
+    document.getElementById("destinations-comparison"),
   );
 
   chart.draw(data, options);
 }
 
 function drawDestinationsComparisonOvertime() {
-
   var data = google.visualization.arrayToDataTable([
-
     [
       "School",
       "2024 to 2025",
@@ -448,54 +368,28 @@ function drawDestinationsComparisonOvertime() {
       "2023 to 2024",
       { role: "annotation" },
       "2022 to 2023",
-      { role: "annotation" }
+      { role: "annotation" },
     ],
 
-    [
-      "Oak Nest Secondary School",
-      0.90, "90%",
-      0.88, "88%",
-      0.85, "85%"
-    ],
+    ["Oak Nest Secondary School", 0.9, "90%", 0.88, "88%", 0.85, "85%"],
 
-    [
-      "Langley Secondary School",
-      0.92, "92%",
-      0.90, "90%",
-      0.89, "89%"
-    ],
+    ["Langley Secondary School", 0.92, "92%", 0.9, "90%", 0.89, "89%"],
 
-    [
-      "Thomas Lane Secondary School",
-      0.94, "94%",
-      0.95, "95%",
-      0.94, "94%"
-    ],
+    ["Thomas Lane Secondary School", 0.94, "94%", 0.95, "95%", 0.94, "94%"],
 
-    [
-      "Sheffield average",
-      0.89, "89%",
-      0.88, "88%",
-      0.87, "87%"
-    ]
-
+    ["England average", 0.89, "89%", 0.88, "88%", 0.87, "87%"],
   ]);
 
   var options = {
-
     fontSize: 19,
 
-    colors: [
-      "#A285D1",
-      "#12436D",
-      "#28A197"
-    ],
+    colors: ["#A285D1", "#12436D", "#28A197"],
 
     height: 500,
     width: "100%",
 
     bar: {
-      groupWidth: "70%"
+      groupWidth: "70%",
     },
 
     chartArea: {
@@ -504,7 +398,7 @@ function drawDestinationsComparisonOvertime() {
       top: "20%",
       bottom: "10%",
       width: "60%",
-      height: "70%"
+      height: "70%",
     },
 
     legend: {
@@ -514,8 +408,8 @@ function drawDestinationsComparisonOvertime() {
 
       textStyle: {
         color: "#0B0C0C",
-        fontSize: 19
-      }
+        fontSize: 19,
+      },
     },
 
     hAxis: {
@@ -524,15 +418,15 @@ function drawDestinationsComparisonOvertime() {
       maxValue: 1,
 
       textStyle: {
-        color: "#0B0C0C"
-      }
+        color: "#0B0C0C",
+      },
     },
 
     vAxis: {
       textStyle: {
         color: "#0B0C0C",
-        fontSize: 19
-      }
+        fontSize: 19,
+      },
     },
 
     enableInteractivity: false,
@@ -543,13 +437,13 @@ function drawDestinationsComparisonOvertime() {
       textStyle: {
         color: "#0B0C0C",
         fontSize: 19,
-        auraColor: "none"
-      }
-    }
+        auraColor: "none",
+      },
+    },
   };
 
   var chart = new google.visualization.BarChart(
-    document.getElementById("destinations-comparison-overtime")
+    document.getElementById("destinations-comparison-overtime"),
   );
 
   chart.draw(data, options);
