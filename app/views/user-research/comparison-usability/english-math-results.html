@@ -186,22 +186,12 @@ English and maths results {% endblock %} {% block content %}
           </button>
         </div>
         <table class="govuk-table">
-          <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header" style="width: 50%">
-                School
-              </th>
-              <th scope="col" class="govuk-table__header" style="width: 50%">
-                Percentage of pupils
-              </th>
-            </tr>
-          </thead>
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">
                 Oak Nest Secondary School
               </th>
-              <td class="govuk-table__cell">63%</td>
+              <td class="govuk-table__cell">54%</td>
             </tr>
 
             <tr class="govuk-table__row">
@@ -252,8 +242,11 @@ English and maths results {% endblock %} {% block content %}
           The legend is presented in the same order as the bars in each cluster.
         </p>
 
-        <img id="key" src="/public/images/comparison/overtime-key.png" alt="" />
-
+        <ul class="govuk-list legend">
+          <li><span class="legend-colour"></span> 2022 to 2023</li>
+          <li><span class="legend-colour"></span> 2023 to 2024</li>
+          <li><span class="legend-colour"></span> 2024 to 2025</li>
+        </ul>
         <div
           id="english-maths-overtime-comparison-g5"
           class="comparison-cluster-chart"
@@ -288,17 +281,15 @@ English and maths results {% endblock %} {% block content %}
               <th scope="col" class="govuk-table__header" style="width: 40%">
                 School
               </th>
-
               <th scope="col" class="govuk-table__header" style="width: 20%">
-                2024 to 2025
+                2022 to 2023
               </th>
-
               <th scope="col" class="govuk-table__header" style="width: 20%">
                 2023 to 2024
               </th>
 
               <th scope="col" class="govuk-table__header" style="width: 20%">
-                2022 to 2023
+                2024 to 2025
               </th>
             </tr>
           </thead>
@@ -309,9 +300,9 @@ English and maths results {% endblock %} {% block content %}
                 Oak Nest Secondary School
               </th>
 
-              <td class="govuk-table__cell">63%</td>
-              <td class="govuk-table__cell">66%</td>
-              <td class="govuk-table__cell">67%</td>
+              <td class="govuk-table__cell">52%</td>
+              <td class="govuk-table__cell">51%</td>
+              <td class="govuk-table__cell">54%</td>
             </tr>
 
             <tr class="govuk-table__row">
@@ -319,9 +310,9 @@ English and maths results {% endblock %} {% block content %}
                 Langley Secondary School
               </th>
 
+              <td class="govuk-table__cell">70%</td>
+              <td class="govuk-table__cell">67%</td>
               <td class="govuk-table__cell">65%</td>
-              <td class="govuk-table__cell">62%</td>
-              <td class="govuk-table__cell">63%</td>
             </tr>
 
             <tr class="govuk-table__row">
@@ -329,9 +320,9 @@ English and maths results {% endblock %} {% block content %}
                 Thomas Lane Secondary School
               </th>
 
+              <td class="govuk-table__cell">37%</td>
+              <td class="govuk-table__cell">40%</td>
               <td class="govuk-table__cell">44%</td>
-              <td class="govuk-table__cell">43%</td>
-              <td class="govuk-table__cell">39%</td>
             </tr>
 
             <tr class="govuk-table__row">
@@ -339,7 +330,7 @@ English and maths results {% endblock %} {% block content %}
 
               <td class="govuk-table__cell">41%</td>
               <td class="govuk-table__cell">42%</td>
-              <td class="govuk-table__cell">40%</td>
+              <td class="govuk-table__cell">41%</td>
             </tr>
           </tbody>
         </table>

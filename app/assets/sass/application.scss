@@ -185,7 +185,7 @@
 
 //cluster bar chart container
 .cluster-chart {
-  height: 450px;
+  height: 400px;
   width: 100%;
   margin-bottom: 20px;
 }
@@ -239,6 +239,33 @@
   height: 300px;
   width: 100%;
   margin-bottom: 20px;
+}
+
+//Legend for data over time charts
+
+.legend li {
+  display: flex;
+  align-items: center; /* vertically centres box and text */
+}
+
+.legend-colour {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 8px;
+}
+
+/* Individual colours */
+.legend li:nth-child(1) .legend-colour {
+  background-color: #a285d1;
+}
+
+.legend li:nth-child(2) .legend-colour {
+  background-color: #12436d;
+}
+
+.legend li:nth-child(3) .legend-colour {
+  background-color: #28a197;
 }
 
 .govuk-grid-column-three-quarters .govuk-grid-column-one-half,

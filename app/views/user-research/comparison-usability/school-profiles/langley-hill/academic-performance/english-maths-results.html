@@ -1,37 +1,5 @@
-{% extends "layouts/ur.html" %}
-
-{% block pageTitle %}
-  Academic performance: English and maths results
-{% endblock %}
-
-{% block content %}
-
-{% set characteristic = characteristic or "disadvantaged" %}
-{% set characteristicGrade = characteristicGrade or "grade-5" %}
-{% set allPupilsGrade = allPupilsGrade or "grade-5" %}
-
-{% set allPupilsGradeLabel =
-  "grade 4 and above" if allPupilsGrade == "grade-4"
-  else "grade 5 and above" %}
-
-{% set characteristicGradeLabel =
-  "grade 4 and above" if characteristicGrade == "grade-4"
-  else "grade 5 and above" %}
-
-
-{% if characteristic == "disadvantaged" %}
-  {% set groupLabel = "disadvantaged pupils" %}
-{% elif characteristic == "eal" %}
-  {% set groupLabel = "pupils with English as an additional language" %}
-{% elif characteristic == "girls" %}
-  {% set groupLabel = "girls" %}
-{% elif characteristic == "boys" %}
-  {% set groupLabel = "boys" %}
-{% elif characteristic == "non-mobile" %}
-  {% set groupLabel = "non-mobile pupils" %}
-{% else %}
-  {% set groupLabel = "pupils" %}
-{% endif %}
+{% extends "layouts/ur.html" %} {% block pageTitle %} Academic performance:
+English and maths results {% endblock %} {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-quarter">
     {% set activeNav = "academic-performance" %} {% include
@@ -112,8 +80,7 @@
       </div>
     </details>
 
-
- <!-- ========================================================= -->
+    <!-- ========================================================= -->
     <!-- GRADE 5 -->
     <!-- ========================================================= -->
 
@@ -200,24 +167,11 @@
           >
             Show data over time
           </button>
-
         </div>
         <table class="govuk-table">
-          <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header" style="width: 50%">
-                
-              </th>
-              <th scope="col" class="govuk-table__header" style="width: 50%">
-                Percentage of pupils
-              </th>
-            </tr>
-          </thead>
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">
-                School
-              </th>
+              <th scope="row" class="govuk-table__header">School</th>
               <td class="govuk-table__cell">65%</td>
             </tr>
 
@@ -226,15 +180,12 @@
                 Local council average
               </th>
 
-              <td class="govuk-table__cell">51%</td>
+              <td class="govuk-table__cell">35%</td>
             </tr>
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">
-                England average
-              </th>
-              <td class="govuk-table__cell">53%</td>
+              <th scope="row" class="govuk-table__header">England average</th>
+              <td class="govuk-table__cell">41%</td>
             </tr>
-
           </tbody>
         </table>
       </div>
@@ -265,13 +216,12 @@
         <p>
           The legend is presented in the same order as the bars in each cluster.
         </p>
-
-        <img id="key" src="/public/images/comparison/overtime-key.png" alt="" />
-
-        <div
-          id="english-maths-langley-overtime"
-          class="comparison-cluster-chart"
-        ></div>
+        <ul class="govuk-list legend">
+          <li><span class="legend-colour"></span> 2022 to 2023</li>
+          <li><span class="legend-colour"></span> 2023 to 2024</li>
+          <li><span class="legend-colour"></span> 2024 to 2025</li>
+        </ul>
+        <div id="english-maths-langley-overtime" class="cluster-chart"></div>
       </div>
 
       <!-- OVER TIME TABLE -->
@@ -302,49 +252,39 @@
               <th scope="col" class="govuk-table__header" style="width: 40%">
                 School
               </th>
-
               <th scope="col" class="govuk-table__header" style="width: 20%">
-                2024 to 2025
+                2022 to 2023
               </th>
-
               <th scope="col" class="govuk-table__header" style="width: 20%">
                 2023 to 2024
               </th>
 
               <th scope="col" class="govuk-table__header" style="width: 20%">
-                2022 to 2023
+                2024 to 2025
               </th>
             </tr>
           </thead>
 
           <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">
-                Oak Nest Secondary School
-              </th>
-
-              <td class="govuk-table__cell">63%</td>
-              <td class="govuk-table__cell">66%</td>
-              <td class="govuk-table__cell">67%</td>
-            </tr>
+            <tr class="govuk-table__row"></tr>
 
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">
                 Langley Secondary School
               </th>
 
+              <td class="govuk-table__cell">70%</td>
+              <td class="govuk-table__cell">67%</td>
               <td class="govuk-table__cell">65%</td>
-              <td class="govuk-table__cell">62%</td>
-              <td class="govuk-table__cell">63%</td>
             </tr>
 
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">
-                Thomas Lane Secondary School
+                Local council average
               </th>
 
-              <td class="govuk-table__cell">44%</td>
-              <td class="govuk-table__cell">43%</td>
+              <td class="govuk-table__cell">39%</td>
+              <td class="govuk-table__cell">40%</td>
               <td class="govuk-table__cell">39%</td>
             </tr>
 
@@ -353,7 +293,7 @@
 
               <td class="govuk-table__cell">41%</td>
               <td class="govuk-table__cell">42%</td>
-              <td class="govuk-table__cell">40%</td>
+              <td class="govuk-table__cell">41%</td>
             </tr>
           </tbody>
         </table>
@@ -361,7 +301,6 @@
     </div>
 
     {% endif %}
-
 
     <div class="sp-card-graph">
       <h3 class="govuk-heading-m">
@@ -371,10 +310,6 @@
         Grade 5 is comparable to the top of the old grade C.
       </p>
 
-      <p>
-        The legend is presented in the same order as the bars in each cluster.
-      </p>
-
       <button
         type="submit"
         class="govuk-button govuk-button--secondary"
@@ -382,8 +317,19 @@
       >
         Show as a table
       </button>
+      <p>
+        The legend is presented in the same order as the bars in each cluster.
+      </p>
+      <ul class="govuk-list legend">
+        <li><span class="legend-colour"></span> School</li>
+        <li><span class="legend-colour"></span> Local council average</li>
+        <li><span class="legend-colour"></span> England average</li>
+      </ul>
 
-      <div id="english-maths-pupil-type" class="cluster-chart"></div>
+      <div
+        id="english-maths-langley-high-pupil-type"
+        class="cluster-chart"
+      ></div>
     </div>
 
     <nav
@@ -452,13 +398,18 @@
 {% endblock %} {% block pageScripts %}
 
 <!-- Load your local chart code (file in app/assets/javascripts) -->
-<script src="/public/javascripts/google-charts.js"></script>
 <script src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="/public/javascripts/school-comparison-charts.js"></script>
 <!-- Initialise the chart -->
 <script>
-  google.charts.load("current", { packages: ["corechart"] });
-  google.charts.setOnLoadCallback(window.drawGoogleChart);
+  google.charts.load("current", {
+    packages: ["corechart"],
+  });
 
+  google.charts.setOnLoadCallback(function () {
+    drawLangleyHillG5();
+    drawLangleyHighPupilType();
+  });
 
   // ============================================================
   // GRADE 5 VIEW SWITCHING
@@ -472,12 +423,12 @@
     hideAllG5();
     if (view == "1") {
       currentGraph.style.display = "block";
-      drawSchoolComparisonG5();
+      drawLangleyHillG5();
     } else if (view == "2") {
       currentTable.style.display = "block";
     } else if (view == "3") {
       overtimeGraph.style.display = "block";
-      drawSchoolComparisonOverTimeG5();
+      drawLangleyHillOverTime();
     } else if (view == "4") {
       overtimeTable.style.display = "block";
     }
@@ -490,6 +441,5 @@
     document.getElementById("overtime-table-g5").style.display = "none";
   }
 </script>
-
 
 {% endblock %}
