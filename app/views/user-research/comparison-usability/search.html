@@ -1,9 +1,8 @@
-{% extends "layouts/ur.html" %} 
-{% block pageTitle %} Find and compare school and college profiles {%
-endblock %} {% block content %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-three-quarters">
-    <h1 class="govuk-heading-l">Find schools to compare</h1>
+{% extends "layouts/ur.html" %} {% block pageTitle %} Find and compare school
+and college profiles {% endblock %} {% block content %}
+<div class="govuk-grid-row search-card">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">Find schools to compare</h1>
     <p class="govuk-body">
       Use this service to find mainstream secondary schools in England
     </p>
@@ -33,10 +32,12 @@ endblock %} {% block content %}
       <div class="govuk-body">
         <h2 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--s" for="event-name">
-            Your postcode or local authority
+            Your postcode
           </label>
         </h2>
-        <div id="search-postcode-hint" class="govuk-hint">For example, LS28 8EU</div>
+        <div id="search-postcode-hint" class="govuk-hint">
+          For example, LS28 8EU
+        </div>
         <input
           class="govuk-input"
           id="search-postcode"
@@ -51,28 +52,31 @@ endblock %} {% block content %}
       <button type="submit" class="govuk-button" data-module="govuk-button">
         Search
       </button>
-   
+    </div>
   </form>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <hr
+      class="govuk-section-break govuk-section-break--l govuk-section-break--visible"
+    />
   </div>
- <div class="govuk-grid-column-full">
-  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-  </div>
- <div class="govuk-grid-column-three-quarters">
-
-
-
-  <h2 class="govuk-heading-m">View your saved schools</h2>
+  <div class="govuk-grid-column-three-quarters">
+    <h2 class="govuk-heading-m">View your saved schools</h2>
     <p class="govuk-body">
       Visit your My schools list to revisit your saved schools and compare them.
-    </p> 
+    </p>
 
     <form action="my-schools-list">
-    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-      Go to your My schools list
-    </button>
+      <button
+        type="submit"
+        class="govuk-button govuk-button--secondary"
+        data-module="govuk-button"
+      >
+        Go to your My schools list
+      </button>
     </form>
   </div>
 </div>
-
 
 {% endblock %} {% block pageScripts %} {% endblock %}

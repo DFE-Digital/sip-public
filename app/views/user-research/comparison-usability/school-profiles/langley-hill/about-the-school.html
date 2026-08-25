@@ -6,45 +6,57 @@ endblock %} {% block content %}
     <nav class="moj-side-navigation" aria-label="Side navigation">
       <ul class="moj-side-navigation__list">
         <li class="moj-side-navigation__item moj-side-navigation__item--active">
-          <a href="/user-research/comparison-usability/school-profiles/langley-hill/about-the-school" aria-current="location"
+          <a
+            href="/user-research/comparison-usabilitFy/school-profiles/langley-hill/about-the-school"
+            aria-current="location"
             >About the school or college</a
           >
         </li>
         <li class="moj-side-navigation__item">
-          <a href="/user-research/comparison-usability/school-profiles/langley-hill/admissions">Admissions</a>
+          <a
+            href="/user-research/comparison-usability/school-profiles/langley-hill/admissions"
+            >Admissions</a
+          >
         </li>
+
         <li class="moj-side-navigation__item">
-          <a href="/user-research/comparison-usability/school-profiles/langley-hill/curriculum-extra-curricular"
+          <a
+            href="/user-research/comparison-usability/school-profiles/langley-hill/curriculum-extra-curricular"
             >Curriculum and extra-curricular activities</a
           >
         </li>
         <li class="moj-side-navigation__item">
-          <a href="/user-research/comparison-usability/school-profiles/langley-hill/attendance">Attendance</a>
+          <a
+            href="/user-research/comparison-usability/school-profiles/langley-hill/attendance"
+            >Attendance</a
+          >
         </li>
         <li class="moj-side-navigation__item">
-          <a href="/user-research/comparison-usability/school-profiles/langley-hill/academic-performance/attainment-progress"
+          <a
+            href="/user-research/comparisFon-usability/school-profiles/langley-hill/academic-performance/attainment-progress"
             >Academic performance</a
           >
         </li>
         <li class="moj-side-navigation__item">
-          <a href="/user-research/comparison-usability/school-profiles/langley-hill/destinations">Destinations</a>
+          <a
+            href="/user-research/comparison-usability/school-profiles/langley-hill/destinations"
+            >Destinations</a
+          >
         </li>
       </ul>
     </nav>
   </div>
 
   <div class="govuk-grid-column-three-quarters">
-    
-      <span class="govuk-caption-xl">Langley Secondary School</span>
-      <h1 class="govuk-heading-xl">About the school</h1>
-    
-  
+    <span class="govuk-caption-xl">Langley Secondary School</span>
+    <h1 class="govuk-heading-xl">About the school</h1>
+
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Name</dt>
         <dd class="govuk-summary-list__value">Langley Secondary School</dd>
       </div>
-      
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Website</dt>
         <dd class="govuk-summary-list__value">
@@ -60,61 +72,54 @@ endblock %} {% block content %}
     </dl>
 
     <div class="govuk-summary-card">
-  <div class="govuk-summary-card__title-wrapper">
-    <h2 class="govuk-summary-card__title">
-      Save this school for later
-    </h2>
-  </div>
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Save this school for later</h2>
+      </div>
 
-  <div class="govuk-summary-card__content">
-    <p class="govuk-body">
-      Save a school to find it again later and compare it with other saved schools.
-    </p>
+      <div class="govuk-summary-card__content">
+        <p class="govuk-body">
+          Save a school to find it again later and compare it with other saved
+          schools.
+        </p>
 
-   <form action="/add-school" method="post">
+        <form action="/add-school" method="post">
+          <input type="hidden" name="school-id" value="school-2" />
 
-  <input
-    type="hidden"
-    name="school-id"
-    value="school-2"
-  >
+          <input
+            type="hidden"
+            name="return-url"
+            value="/user-research/comparison-usability/school-profiles/langley-hill/about-the-school"
+          />
 
-  <input
-    type="hidden"
-    name="return-url"
-    value="/user-research/comparison-usability/school-profiles/langley-hill/about-the-school"
-  >
+          {% if data['school-2-name'] %}
 
-      {% if data['school-2-name'] %}
+          <button
+            type="submit"
+            class="govuk-button--inverse-outline"
+            data-module="govuk-button"
+          >
+            School added to My schools list
+          </button>
 
-        <button
-          type="submit"
-          class="govuk-button--inverse-outline"
-          data-module="govuk-button"
-        >
-          School added to My schools list
-        </button>
+          {% else %}
 
-      {% else %}
+          <button
+            type="submit"
+            class="govuk-button--inverse-outline"
+            data-module="govuk-button"
+          >
+            Add to My schools list
+          </button>
 
-        <button
-          type="submit"
-          class="govuk-button--inverse-outline"
-          data-module="govuk-button"
-        >
-          Add to My schools list
-        </button>
+          {% endif %}
 
-      {% endif %}
-
-       <p class="govuk-body">
-      <a href="/user-research/comparison-usability/my-schools-list">
-        Go to My schools list
-      </a>
-    </p>
-
-    </form>
-    </div>
+          <p class="govuk-body">
+            <a href="/user-research/comparison-usability/my-schools-list">
+              Go to My schools list
+            </a>
+          </p>
+        </form>
+      </div>
     </div>
 
     <h2 class="govuk-heading-l">Location</h2>
@@ -122,7 +127,9 @@ endblock %} {% block content %}
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Address</dt>
-        <dd class="govuk-summary-list__value">Prince Road, Thistle Hill, Sheffield, S11 7PQ</dd>
+        <dd class="govuk-summary-list__value">
+          Prince Road, Thistle Hill, Sheffield, S11 7PQ
+        </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Local authority</dt>
