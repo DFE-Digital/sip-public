@@ -1,21 +1,12 @@
-{% extends "layouts/ur.html" %}
-
-{% block pageTitle %}
-  Compare schools
-{% endblock %}
-
-{% block content %}
+{% extends "layouts/ur.html" %} {% block pageTitle %} Compare schools {%
+endblock %} {% block content %}
 
 <div class="govuk-grid-row">
-
   <!-- SIDEBAR -->
 
   <div class="govuk-grid-column-one-quarter">
-
     <nav class="moj-side-navigation" aria-label="Side navigation">
-
       <ul class="moj-side-navigation__list">
-
         <li class="moj-side-navigation__item">
           <a href="compare-schools" aria-current="location">
             About your schools
@@ -23,35 +14,28 @@
         </li>
 
         <li class="moj-side-navigation__item moj-side-navigation__item--active">
-          <a href="compare-academic-performance">
-            Academic performance
-          </a>
+          <a href="compare-academic-performance"> Academic performance </a>
         </li>
 
         <li class="moj-side-navigation__item">
-          <a href="after-year-11">
-            Destinations after year 11
-          </a>
+          <a href="after-year-11"> Destinations after year 11 </a>
         </li>
 
         <li class="moj-side-navigation__item">
-          <a href="next-steps">
-           Next steps
-          </a>
+          <a href="next-steps"> Next steps </a>
         </li>
       </ul>
-
     </nav>
-
   </div>
 
-<div class="govuk-grid-column-three-quarters">
+  <div class="govuk-grid-column-three-quarters">
     <span class="govuk-caption-xl">Comparing your schools</span>
     <h1 class="govuk-heading-xl">Academic performance</h1>
 
     <p>
-      Looking at school performance data is one way to see how well a school is doing.
-You should look at a range of information about a school before deciding if it's the right fit for your child.
+      Looking at school performance data is one way to see how well a school is
+      doing. You should look at a range of information about a school before
+      deciding if it's the right fit for your child.
     </p>
 
     <nav class="moj-sub-navigation" aria-label="Sub navigation">
@@ -71,7 +55,6 @@ You should look at a range of information about a school before deciding if it's
         </li>
       </ul>
     </nav>
-    
 
     <p class="govuk-body">
       Information in this section is for the 2024 to 2025 academic year.
@@ -79,10 +62,11 @@ You should look at a range of information about a school before deciding if it's
 
     <h2 class="govuk-heading-l">Attainment 8 for the previous academic year</h2>
     <p class="govuk-body">
-     Information in this section is for the 2024 to 2025 academic year.
+      Information in this section is for the 2024 to 2025 academic year.
     </p>
     <p class="govuk-body">
-     Attainment 8 is used to assess a pupil’s average achievement across their 8 best GCSE-level subjects.
+      Attainment 8 is used to assess a pupil’s average achievement across their
+      8 best GCSE-level subjects.
     </p>
     <details class="govuk-details">
       <summary class="govuk-details__summary">
@@ -116,65 +100,63 @@ You should look at a range of information about a school before deciding if it's
       </div>
     </details>
 
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header" style="width: 30%">
+            School
+          </th>
+          <th scope="col" class="govuk-table__header" style="width: 20%">
+            Score
+          </th>
+          <th scope="col" class="govuk-table__header" style="width: 50%">
+            Meaning
+          </th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            Oak Nest Secondary School
+          </th>
+          <td class="govuk-table__cell">48.3</td>
+          <td class="govuk-table__cell">
+            Pupils generally scored the equivalent of between grade 4 and 5 in
+            their 8 best GCSE-level subjects.
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            Langley Secondary School
+          </th>
+          <td class="govuk-table__cell">50.1</td>
+          <td class="govuk-table__cell">
+            Pupils generally scored the equivalent of just above grade 5 in
+            their 8 best GCSE-level subjects.
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            Thomas Lane Secondary School
+          </th>
+          <td class="govuk-table__cell">52.3</td>
+          <td class="govuk-table__cell">
+            Pupils generally scored the equivalent of between grade 5 and 6 in
+            their 8 best GCSE-level subjects.
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">England average</th>
+          <td class="govuk-table__cell">43.2</td>
+          <td class="govuk-table__cell">
+            Pupils generally scored the equivalent of between grade 4 and 5 in
+            their 8 best GCSE-level subjects.
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-     <table class="govuk-table">
-          <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header" style="width: 30%">
-                School
-              </th>
-              <th scope="col" class="govuk-table__header" style="width: 20%">
-                Score
-              </th>
-              <th scope="col" class="govuk-table__header" style="width: 50%">
-                Meaning
-              </th>
-            </tr>
-          </thead>
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">
-                Bracken Cove Academy
-              </th>
-              <td class="govuk-table__cell">50.1</td>
-              <td class="govuk-table__cell">
-                Pupils generally scored the equivalent of just above grade 5 in
-                their 8 best GCSE-level subjects.
-              </td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">
-                Oak Nest Secondary School
-              </th>
-              <td class="govuk-table__cell">48.3</td>
-              <td class="govuk-table__cell">
-                Pupils generally scored the equivalent of between grade 4 and 5
-                in their 8 best GCSE-level subjects.
-              </td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">
-                Thomas Lane Secondary School
-              </th>
-              <td class="govuk-table__cell">52.3</td>
-              <td class="govuk-table__cell">
-                Pupils generally scored the equivalent of between grade 5 and 6
-                in their 8 best GCSE-level subjects.
-              </td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Local council average</th>
-              <td class="govuk-table__cell">43.2</td>
-              <td class="govuk-table__cell">
-                Pupils generally scored the equivalent of between grade 4 and 5
-                in their 8 best GCSE-level subjects.
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-
-            <div class="comparison-prompts">
+    <div class="comparison-prompts">
       <div class="comparison-prompts__icon material-symbols-outlined">quiz</div>
       <h3 class="govuk-heading-m">
         What you could ask schools about attainment
@@ -191,7 +173,6 @@ You should look at a range of information about a school before deciding if it's
       <li>how does the school support pupils with lower attainment?</li>
     </ul>
 
-  
     <nav
       class="govuk-pagination govuk-pagination--block"
       aria-label="Pagination"
