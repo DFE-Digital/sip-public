@@ -32,26 +32,23 @@
 {% else %}
   {% set groupLabel = "pupils" %}
 {% endif %}
-
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-quarter">
-    {% set activeNav = "academic-performance" %}
-    {% include "includes/langley-hill-side-nav.html" %}
+    {% set activeNav = "academic-performance" %} {% include
+    "includes/langley-hill-side-nav.html" %}
   </div>
 
   <div class="govuk-grid-column-three-quarters">
-
     <span class="govuk-caption-xl">Langley Secondary School</span>
     <h1 class="govuk-heading-xl">Academic performance</h1>
 
     <p class="govuk-body">
-      Looking at school performance data is one way to see how well a school is doing.
-      You should look at a range of information about a school before deciding if it’s
-      the right fit for your child.
+      Looking at school performance data is one way to see how well a school is
+      doing. You should look at a range of information about a school before
+      deciding if it’s the right fit for your child.
     </p>
 
-        <nav class="moj-sub-navigation" aria-label="Sub navigation">
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
       <ul class="moj-sub-navigation__list">
         <li class="moj-sub-navigation__item">
           <a class="moj-sub-navigation__link" href="attainment-progress">
@@ -59,7 +56,11 @@
           </a>
         </li>
         <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link" aria-current="page" href="english-maths-results">
+          <a
+            class="moj-sub-navigation__link"
+            aria-current="page"
+            href="english-maths-results"
+          >
             English and maths results
           </a>
         </li>
@@ -111,65 +112,258 @@
       </div>
     </details>
 
-    <div class="sp-filter">
-      <label class="govuk-label" for="sort">
-        Choose the grade you want to see results for
-      </label>
-      <select class="govuk-select" id="sort" name="sort">
-        <option value="g5" selected>Grade 5 and above</option>
-        <option value="g4">Grade 4 and above</option>
-      </select>
 
-      <button type="submit" class="govuk-button" data-module="govuk-button">
-        Show results
-      </button>
+ <!-- ========================================================= -->
+    <!-- GRADE 5 -->
+    <!-- ========================================================= -->
+
+    {% if data['grade'] == "g5" %}
+
+    <form class="form" action="#" method="post">
+      <div class="sp-filter">
+        <label class="govuk-label" for="grade">
+          Choose the grade you want to see results for
+        </label>
+
+        <select class="govuk-select" id="grade" name="grade">
+          <option value="g5" selected>Grade 5 and above</option>
+          <option value="g4">Grade 4 and above</option>
+        </select>
+
+        <button
+          type="submit"
+          class="govuk-button"
+          data-module="govuk-button"
+          onclick="return false;"
+        >
+          Show results
+        </button>
+      </div>
+    </form>
+
+    <div class="sp-card-graph">
+      <h3 class="govuk-heading-m">
+        Percentage of pupils achieving grade 5 and above in English and maths
+        GCSEs
+      </h3>
+      <p class="govuk-body">
+        This chart shows the percentage of pupils who achieved at least a grade
+        5 or above in both English and maths GCSEs.
+      </p>
+      <p class="govuk-body">
+        Grade 5 is comparable to the top of the old grade C.
+      </p>
+
+      <!-- CURRENT CHART -->
+      <div id="current-graph-g5">
+        <div class="sp-card-actions">
+          <button
+            onclick="javascript: showOverTimeG5(2);"
+            type="button"
+            class="govuk-button govuk-button--secondary"
+            data-module="govuk-button"
+          >
+            Show as a table
+          </button>
+
+          <button
+            onclick="javascript: showOverTimeG5(3);"
+            type="button"
+            class="govuk-button govuk-button--secondary"
+            data-module="govuk-button"
+          >
+            Show data over time
+          </button>
+        </div>
+
+        <div id="english-maths-langley" class="chart"></div>
+      </div>
+
+      <!-- CURRENT TABLE -->
+
+      <div id="current-table-g5" style="display: none">
+        <div class="sp-card-actions">
+          <button
+            onclick="javascript: showOverTimeG5(1);"
+            type="button"
+            class="govuk-button govuk-button--secondary"
+            data-module="govuk-button"
+          >
+            Show as a chart
+          </button>
+
+          <button
+            onclick="javascript: showOverTimeG5(4);"
+            type="button"
+            class="govuk-button govuk-button--secondary"
+            data-module="govuk-button"
+          >
+            Show data over time
+          </button>
+
+        </div>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header" style="width: 50%">
+                
+              </th>
+              <th scope="col" class="govuk-table__header" style="width: 50%">
+                Percentage of pupils
+              </th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                School
+              </th>
+              <td class="govuk-table__cell">65%</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                Local council average
+              </th>
+
+              <td class="govuk-table__cell">51%</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                England average
+              </th>
+              <td class="govuk-table__cell">53%</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+      <!-- OVER TIME CHART -->
+
+      <div id="overtime-graph-g5" style="display: none">
+        <div class="sp-card-actions">
+          <button
+            onclick="javascript: showOverTimeG5(4);"
+            type="button"
+            class="govuk-button govuk-button--secondary"
+            data-module="govuk-button"
+          >
+            Show as a table
+          </button>
+
+          <button
+            onclick="javascript: showOverTimeG5(1);"
+            type="button"
+            class="govuk-button govuk-button--secondary"
+            data-module="govuk-button"
+          >
+            Show current data
+          </button>
+        </div>
+
+        <p>
+          The legend is presented in the same order as the bars in each cluster.
+        </p>
+
+        <img id="key" src="/public/images/comparison/overtime-key.png" alt="" />
+
+        <div
+          id="english-maths-langley-overtime"
+          class="comparison-cluster-chart"
+        ></div>
+      </div>
+
+      <!-- OVER TIME TABLE -->
+
+      <div id="overtime-table-g5" style="display: none">
+        <div class="sp-card-actions">
+          <button
+            onclick="javascript: showOverTimeG5(3);"
+            type="button"
+            class="govuk-button govuk-button--secondary"
+            data-module="govuk-button"
+          >
+            Show as a chart
+          </button>
+
+          <button
+            onclick="javascript: showOverTimeG5(2);"
+            type="button"
+            class="govuk-button govuk-button--secondary"
+            data-module="govuk-button"
+          >
+            Show current data
+          </button>
+        </div>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header" style="width: 40%">
+                School
+              </th>
+
+              <th scope="col" class="govuk-table__header" style="width: 20%">
+                2024 to 2025
+              </th>
+
+              <th scope="col" class="govuk-table__header" style="width: 20%">
+                2023 to 2024
+              </th>
+
+              <th scope="col" class="govuk-table__header" style="width: 20%">
+                2022 to 2023
+              </th>
+            </tr>
+          </thead>
+
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                Oak Nest Secondary School
+              </th>
+
+              <td class="govuk-table__cell">63%</td>
+              <td class="govuk-table__cell">66%</td>
+              <td class="govuk-table__cell">67%</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                Langley Secondary School
+              </th>
+
+              <td class="govuk-table__cell">65%</td>
+              <td class="govuk-table__cell">62%</td>
+              <td class="govuk-table__cell">63%</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                Thomas Lane Secondary School
+              </th>
+
+              <td class="govuk-table__cell">44%</td>
+              <td class="govuk-table__cell">43%</td>
+              <td class="govuk-table__cell">39%</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">England average</th>
+
+              <td class="govuk-table__cell">41%</td>
+              <td class="govuk-table__cell">42%</td>
+              <td class="govuk-table__cell">40%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
-   
+    {% endif %}
 
 
-<div class="sp-card-graph">
-
-  <h3 class="govuk-heading-m">
-    Grade 5 and above in English and maths GCSEs
-  </h3>
-
-  <p class="govuk-body">
-    Grade 5 is comparable to the top of the old grade C.
-  </p>
-
-  <div class="sp-card-actions">
-
-    <button
-      type="button"
-      class="govuk-button govuk-button--secondary"
-      id="english-maths-table-button"
-    >
-      Show as a table
-    </button>
-
-    <button
-      type="button"
-      class="govuk-button govuk-button--secondary"
-      id="english-maths-overtime-button"
-    >
-      Show data over time
-    </button>
-
-  </div>
-
-  <div id="english-maths-langley" class="chart"></div>
-
-  <div id="english-maths-langley-table" class="govuk-!-display-none"></div>
-
-  <div
-    id="english-maths-langley-overtime"
-    class="chart govuk-!-display-none"
-  ></div>
-
-</div>
-
-<div class="sp-card-graph">
+    <div class="sp-card-graph">
       <h3 class="govuk-heading-m">
         Results by pupil types for Grade 5 and above in English and maths GCSEs
       </h3>
@@ -181,7 +375,7 @@
         The legend is presented in the same order as the bars in each cluster.
       </p>
 
-            <button
+      <button
         type="submit"
         class="govuk-button govuk-button--secondary"
         data-module="govuk-button"
@@ -264,6 +458,38 @@
 <script>
   google.charts.load("current", { packages: ["corechart"] });
   google.charts.setOnLoadCallback(window.drawGoogleChart);
+
+
+  // ============================================================
+  // GRADE 5 VIEW SWITCHING
+  // ============================================================
+
+  function showOverTimeG5(view) {
+    var currentGraph = document.getElementById("current-graph-g5");
+    var currentTable = document.getElementById("current-table-g5");
+    var overtimeGraph = document.getElementById("overtime-graph-g5");
+    var overtimeTable = document.getElementById("overtime-table-g5");
+    hideAllG5();
+    if (view == "1") {
+      currentGraph.style.display = "block";
+      drawSchoolComparisonG5();
+    } else if (view == "2") {
+      currentTable.style.display = "block";
+    } else if (view == "3") {
+      overtimeGraph.style.display = "block";
+      drawSchoolComparisonOverTimeG5();
+    } else if (view == "4") {
+      overtimeTable.style.display = "block";
+    }
+  }
+
+  function hideAllG5() {
+    document.getElementById("current-graph-g5").style.display = "none";
+    document.getElementById("current-table-g5").style.display = "none";
+    document.getElementById("overtime-graph-g5").style.display = "none";
+    document.getElementById("overtime-table-g5").style.display = "none";
+  }
 </script>
+
 
 {% endblock %}

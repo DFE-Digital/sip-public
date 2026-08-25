@@ -93,11 +93,8 @@ function drawSchoolComparisonOverTimeG5() {
     ],
 
     ["Oak Nest Secondary School", 0.63, "63%", 0.66, "66%", 0.67, "67%"],
-
     ["Langley Secondary School", 0.65, "65%", 0.62, "62%", 0.63, "63%"],
-
     ["Thomas Lane Secondary School", 0.44, "44%", 0.43, "43%", 0.39, "39%"],
-
     ["England average", 0.41, "41%", 0.42, "42%", 0.4, "40%"],
   ]);
 
@@ -116,10 +113,9 @@ function drawSchoolComparisonOverTimeG5() {
     chartArea: {
       left: "30%",
       right: "10%",
-      top: "20%",
+      top: "10%",
       bottom: "10%",
       width: "60%",
-      height: "70%",
     },
 
     legend: {
@@ -395,10 +391,9 @@ function drawDestinationsComparisonOvertime() {
     chartArea: {
       left: "30%",
       right: "10%",
-      top: "20%",
+      top: "10%",
       bottom: "10%",
       width: "60%",
-      height: "70%",
     },
 
     legend: {

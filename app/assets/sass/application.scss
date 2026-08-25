@@ -308,6 +308,17 @@
     margin-bottom: 15px;
   }
 }
+/* styling for buttons to change charts to tables so they are stacked
+changes the margin so the gap between the buttons is smaller then sets the 
+margin larger to align with intended styling */
+.sp-card-actions > * {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.sp-card-actions {
+  margin-bottom: 32px;
+}
 
 .govuk-button--inverse-outline {
   // Match GOV.UK button
