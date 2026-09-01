@@ -1,0 +1,675 @@
+{% extends "layouts/at-a-glance.html" %} {% block header %} {{ govukHeader() }}
+{{ govukServiceNavigation({ serviceName: serviceName, serviceUrl: "/",
+navigation: [ { href: "#", text: "Search" }, { href: "#", text: "My schools
+list" } ] }) }} {% endblock %} {% block pageTitle %} About the school {%
+endblock %} {% block content %}
+<section class="ataglance-hero">
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-xl">Oak Nest Secondary School overview</h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    <nav class="moj-side-navigation" aria-label="Side navigation">
+      <ul class="moj-side-navigation__list">
+        <li class="moj-side-navigation__item moj-side-navigation__item--active">
+          <a
+            href="/user-research/comparison-usability/school-profiles/oak-nest/about-the-school"
+            aria-current="location"
+            >About the school or college</a
+          >
+        </li>
+        <li class="moj-side-navigation__item">
+          <a
+            href="#"
+            >Admissions</a
+          >
+        </li>
+        <li class="moj-side-navigation__item">
+          <a
+            href="#"
+            >Curriculum and extra-curricular activities</a
+          >
+        </li>
+        <li class="moj-side-navigation__item">
+          <a
+            href="#"
+            >Attendance</a
+          >
+        </li>
+        <li class="moj-side-navigation__item">
+          <a
+            href="#"
+            >Secondary academic performance</a
+          >
+        </li>
+        <li class="moj-side-navigation__item">
+          <a
+            href="#"
+            >Destinations</a
+          >
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="govuk-grid-column-three-quarters">
+    <h2 class="govuk-heading-xl">Overview</h2>
+
+    <div class="map-address">
+      <img id="ataglance-map" src="/public/images/map-ataglance.png" />
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Address</dt>
+          <dd class="govuk-summary-list__value">
+            Sapling Street, Sheffield, South Yorkshire, S1 2AB
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="ataglance-card">
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Phase of education</dt>
+          <dd class="govuk-summary-list__value">Secondary</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Age range</dt>
+          <dd class="govuk-summary-list__value">11 to 18</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Number of pupils</dt>
+          <dd class="govuk-summary-list__value">1,230</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Type of SEN provision</dt>
+          <dd class="govuk-summary-list__value">
+            SpLD - Specific Learning Difficulty, SEMH - Social, Emotional and
+            Mental Health
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Telephone</dt>
+          <dd class="govuk-summary-list__value">07700 900457</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Website</dt>
+          <dd class="govuk-summary-list__value">
+            <a href="#" class="govuk-link govuk-link--no-visited-state"
+              >View Oak Nest Secondary School’s website</a
+            >
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Ofsted report</dt>
+          <dd class="govuk-summary-list__value">
+            <a href="#" class="govuk-link govuk-link--no-visited-state"
+              >View the latest Ofsted report</a
+            >
+          </dd>
+        </div>
+      </dl>
+    </div>
+    <div class="govuk-body">
+      <a
+        href="#"
+        class="ataglance-link__link govuk-!-font-weight-bold govuk-link govuk-link--no-visited-state"
+        ><span class="ataglance-link__iconbox">
+          <span class="ataglance-link__icon material-symbols-outlined">
+            arrow_circle_right
+          </span>
+        </span>
+        <span class="ataglance-link__text"
+          >Find out more about the school, including policies on school uniform
+          and SEN</span
+        ></a
+      >
+    </div>
+    <h2 class="govuk-heading-l">Secondary school profile at a glance</h2>
+    <div
+      class="ataglance-accordion govuk-accordion"
+      data-module="govuk-accordion"
+      id="accordion-default"
+    >
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <span
+            id="accordion-iconbox__progress"
+            class="ataglance-accordion-iconbox"
+          >
+            <span
+              class="ataglance-accordion-iconbox__icon material-symbols-outlined"
+            >
+              conversion_path
+            </span>
+          </span>
+          <h3 class="govuk-accordion__section-heading">
+            <span
+              class="govuk-accordion__section-button"
+              id="accordion-progress-heading"
+            >
+              Pupil progress
+            </span>
+          </h3>
+        </div>
+        <div
+          id="accordion-progress-content"
+          class="govuk-accordion__section-content"
+        >
+          <div class="govuk-body">
+            <div class="ataglance-summary-card govuk-summary-card">
+              <div class="govuk-summary-card__title-wrapper">
+                <h4 class="govuk-summary-card__title">
+                  How pupils performed between the end of primary school and the
+                  end of key stage 4 (year 11)
+                </h4>
+              </div>
+              <div class="govuk-summary-card__content">
+                <p class="govuk-body">
+                  Progress scores are not available for the academic years 2024
+                  to 2025 and 2025 to 2026 due to COVID-19 distruption.
+                </p>
+                <p class="govuk-body">
+                  You can view progress in previous years on the school’s full
+                  profile.
+                </p>
+                <div class="govuk-body">
+                  <a
+                    href="#"
+                    class="ataglance-link__link govuk-!-font-weight-bold govuk-link govuk-link--no-visited-state"
+                    ><span class="ataglance-link__iconbox">
+                      <span
+                        class="ataglance-link__icon material-symbols-outlined"
+                      >
+                        arrow_circle_right
+                      </span>
+                    </span>
+                    <span class="ataglance-link__text"
+                      >Find out more about the progress pupils make at this
+                      school for previous years</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <span
+            id="accordion-iconbox__attainment"
+            class="ataglance-accordion-iconbox"
+          >
+            <span
+              class="ataglance-accordion-iconbox__icon material-symbols-outlined"
+            >
+              assignment
+            </span>
+          </span>
+          <h3 class="govuk-accordion__section-heading">
+            <span
+              class="govuk-accordion__section-button"
+              id="accordion-attainment-heading"
+            >
+              Average pupil achievement
+            </span>
+          </h3>
+        </div>
+        <div
+          id="accordion-attainment-content"
+          class="govuk-accordion__section-content"
+        >
+          <div class="govuk-body">
+            <div class="ataglance-summary-card govuk-summary-card">
+              <div class="govuk-summary-card__title-wrapper">
+                <h4 class="govuk-summary-card__title">
+                  Average results across 8 GCSE-level qualifications
+                </h4>
+              </div>
+              <div class="govuk-summary-card__content">
+                <p class="govuk-body">
+                  Attainment 8 is used to assess a pupil’s average achievement
+                  across 8 GCSEs and equivalent subjects.
+                </p>
+                <p class="govuk-body">
+                  The qualifications included in this average result may include
+                  GCSEs and approved technical and vocational qualifications.
+                </p>
+                <p class="govuk-body">
+                  This data is for the 2024 to 2025 academic year.
+                </p>
+                <table class="govuk-table">
+                  <caption class="govuk-table__caption govuk-visually-hidden">
+                    Attainment 8 score for the school
+                  </caption>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__header">
+                        Average result
+                      </th>
+                      <td class="govuk-table__cell">49.9</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="ataglance-card">
+                  <h5 class="ataglance-card__heading govuk-heading-s">
+                    What does this mean?
+                  </h5>
+                  <p class="govuk-body">
+                    This means that pupils generally scored the equivalent of
+                    just below grade 5 in their 8 subjects.
+                  </p>
+                </div>
+                <table class="govuk-table">
+                  <caption class="govuk-table__caption govuk-visually-hidden">
+                    Attainment 8 score for the local council and England
+                  </caption>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__header">
+                        Sheffield average
+                      </th>
+                      <td class="govuk-table__cell">43.4</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__header">
+                        England average
+                      </th>
+                      <td class="govuk-table__cell">45.2</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="govuk-body">
+                  <a
+                    href="#"
+                    class="ataglance-link__link govuk-!-font-weight-bold govuk-link govuk-link--no-visited-state"
+                    ><span class="ataglance-link__iconbox">
+                      <span
+                        class="ataglance-link__icon material-symbols-outlined"
+                      >
+                        arrow_circle_right
+                      </span>
+                    </span>
+                    <span class="ataglance-link__text"
+                      >Find out more about pupil achievement at this
+                      school</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <span id="accordion-iconbox__g5" class="ataglance-accordion-iconbox">
+            <span
+              class="ataglance-accordion-iconbox__icon material-symbols-outlined"
+            >
+              bar_chart_4_bars
+            </span>
+          </span>
+          <h3 class="govuk-accordion__section-heading">
+            <span
+              class="govuk-accordion__section-button"
+              id="accordion-g5-heading"
+            >
+              English and maths GCSE results
+            </span>
+          </h3>
+        </div>
+        <div id="accordion-g5-content" class="govuk-accordion__section-content">
+          <div class="govuk-body">
+            <div class="ataglance-summary-card govuk-summary-card">
+              <div class="govuk-summary-card__title-wrapper">
+                <h4 class="govuk-summary-card__title">
+                  Percentage of pupils achieving grade 5 and above in English
+                  and maths GCSEs
+                </h4>
+              </div>
+              <div class="govuk-summary-card__content">
+                <p class="govuk-body">
+                  Grade 5 is comparable to the top of the old grade C.
+                </p>
+                <p class="govuk-body">
+                  This data is for the 2024 to 2025 academic year.
+                </p>
+
+                <div class="govuk-body">
+                  <a
+                    href="#"
+                    class="ataglance-link__link govuk-!-font-weight-bold govuk-link govuk-link--no-visited-state"
+                    ><span class="ataglance-link__iconbox">
+                      <span
+                        class="ataglance-link__icon material-symbols-outlined"
+                      >
+                        arrow_circle_right
+                      </span>
+                    </span>
+                    <span class="ataglance-link__text"
+                      >Find out more about English and math results at this
+                      school</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <span
+            id="accordion-iconbox__subjects"
+            class="ataglance-accordion-iconbox"
+          >
+            <span
+              class="ataglance-accordion-iconbox__icon material-symbols-outlined"
+            >
+              book_2
+            </span>
+          </span>
+          <h3 class="govuk-accordion__section-heading">
+            <span
+              class="govuk-accordion__section-button"
+              id="accordion-subjects-heading"
+            >
+              Exam subjects overview
+            </span>
+          </h3>
+        </div>
+        <div
+          id="accordion-subjects-content"
+          class="govuk-accordion__section-content"
+        >
+          <div class="govuk-body">
+            <div class="ataglance-summary-card govuk-summary-card">
+              <div class="govuk-summary-card__title-wrapper">
+                <h4 class="govuk-summary-card__title">
+                  Exam subjects overview
+                </h4>
+              </div>
+              <div class="govuk-summary-card__content">
+                <p class="govuk-body">
+                  This data is for the 2024 to 2025 academic year.
+                </p>
+                <div class="ataglance-numericdata">
+                  <div class="numeric-data">
+                    <span
+                      class="numeric-data__item govuk-heading-xl govuk-!-margin-bottom-0"
+                      >31</span
+                    >
+                    <p class="numeric-data__item govuk-body">
+                      Number of GCSE subjects taken
+                    </p>
+                  </div>
+                  <div class="numeric-data">
+                    <span
+                      class="numeric-data__item govuk-heading-xl govuk-!-margin-bottom-0"
+                      >4</span
+                    >
+                    <p class="numeric-data__item govuk-body">
+                      Number of technical award subjects taken
+                    </p>
+                  </div>
+                </div>
+                <hr
+                  class="govuk-section-break govuk-section-break--m govuk-section-break--visible"
+                />
+                <h5 class="govuk-heading-s">
+                  Top 3 technical subjects taken at this school by percentage of
+                  pupils who took the exam at the end of key stage 4 (usually
+                  year 11)
+                </h5>
+                <div class="govuk-body">
+                  <a
+                    href="#"
+                    class="ataglance-link__link govuk-!-font-weight-bold govuk-link govuk-link--no-visited-state"
+                    ><span class="ataglance-link__iconbox">
+                      <span
+                        class="ataglance-link__icon material-symbols-outlined"
+                      >
+                        arrow_circle_right
+                      </span>
+                    </span>
+                    <span class="ataglance-link__text"
+                      >Find out more about the qualifications taken at this
+                      school</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <span
+            id="accordion-iconbox__destinations"
+            class="ataglance-accordion-iconbox"
+          >
+            <span
+              class="ataglance-accordion-iconbox__icon material-symbols-outlined"
+            >
+              arrow_split
+            </span>
+          </span>
+          <h3 class="govuk-accordion__section-heading">
+            <span
+              class="govuk-accordion__section-button"
+              id="accordion-destinations-heading"
+            >
+              What pupils did after year 11
+            </span>
+          </h3>
+        </div>
+        <div
+          id="accordion-destinations-content"
+          class="govuk-accordion__section-content"
+        >
+          <div class="govuk-body">
+            <div class="ataglance-summary-card govuk-summary-card">
+              <div class="govuk-summary-card__title-wrapper">
+                <h4 class="govuk-summary-card__title">
+                  Percentage of pupils who either stayed in education, went into
+                  an apprenticeship or entered employment for at least 6 months
+                  after finishing year 11 (key stage 4)
+                </h4>
+              </div>
+              <div class="govuk-summary-card__content">
+                <p class="govuk-body">
+                  This data is for pupils who finished year 11 in the 2022 to
+                  2023 academic year.
+                </p>
+
+                <div class="govuk-body">
+                  <a
+                    href="#"
+                    class="ataglance-link__link govuk-!-font-weight-bold govuk-link govuk-link--no-visited-state"
+                    ><span class="ataglance-link__iconbox">
+                      <span
+                        class="ataglance-link__icon material-symbols-outlined"
+                      >
+                        arrow_circle_right
+                      </span>
+                    </span>
+                    <span class="ataglance-link__text"
+                      >View breakdowns of pupils in education, apprenticeships
+                      or employment</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <span
+            id="accordion-iconbox__enrichment"
+            class="ataglance-accordion-iconbox"
+          >
+            <span
+              class="ataglance-accordion-iconbox__icon material-symbols-outlined"
+            >
+              sports_tennis
+            </span>
+          </span>
+          <h3 class="govuk-accordion__section-heading">
+            <span
+              class="govuk-accordion__section-button"
+              id="accordion-enrichment-heading"
+            >
+              Extra-curricular activities
+            </span>
+          </h3>
+        </div>
+        <div
+          id="accordion-enrichment-content"
+          class="govuk-accordion__section-content"
+        >
+          <div class="govuk-body">
+            <div class="ataglance-summary-card govuk-summary-card">
+              <div class="govuk-summary-card__title-wrapper">
+                <h4 class="govuk-summary-card__title">
+                  Find out more about upcoming information on extra-curricular
+                  activities
+                </h4>
+              </div>
+              <div class="govuk-summary-card__content">
+                <p class="govuk-body">
+                  Information on extra-curricular opportunities will be
+                  available in the future.
+                </p>
+
+                <div class="govuk-body">
+                  <a
+                    href="#"
+                    class="ataglance-link__link govuk-!-font-weight-bold govuk-link govuk-link--no-visited-state"
+                    ><span class="ataglance-link__iconbox">
+                      <span
+                        class="ataglance-link__icon material-symbols-outlined"
+                      >
+                        arrow_circle_right
+                      </span>
+                    </span>
+                    <span class="ataglance-link__text"
+                      >Find out more about what types of activities pupils can
+                      take part in and where to find this information</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h2 class="govuk-heading-l">Next steps</h2>
+    <div class="ataglance-summary-card govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h3 class="govuk-summary-card__title">
+          Continue exploring this school’s profile
+        </h3>
+      </div>
+      <div class="govuk-summary-card__content">
+        <div class="ataglance-nav govuk-body">
+          <a
+            href="#"
+            class="govuk-!-font-weight-bold govuk-link govuk-link--no-visited-state"
+          >
+            About the school or college</a
+          >
+          <p class="govuk-body">
+            Find out more about the school, including policies on school uniform
+            and SEN.
+          </p>
+        </div>
+
+        <div class="ataglance-nav govuk-body">
+          <a
+            href="#"
+            class="govuk-!-font-weight-bold govuk-link govuk-link--no-visited-state"
+          >
+            Admissions</a
+          >
+          <p class="govuk-body">
+            Find important dates and learn about the school admissions process.
+          </p>
+        </div>
+
+        <div class="ataglance-nav govuk-body">
+          <a
+            href="#"
+            class="govuk-!-font-weight-bold govuk-link govuk-link--no-visited-state"
+          >
+            Curriculum and extra-curricular activities</a
+          >
+          <p class="govuk-body">
+            What pupils learn at this school and the activities they can take
+            part in.
+          </p>
+        </div>
+        <div class="ataglance-nav govuk-body">
+          <a
+            href="#"
+            class="govuk-!-font-weight-bold govuk-link govuk-link--no-visited-state"
+          >
+            Attendance</a
+          >
+          <p class="govuk-body">
+            Find out more about attendance rates at this school.
+          </p>
+        </div>
+        <div class="ataglance-nav govuk-body">
+          <a
+            href="#"
+            class="govuk-!-font-weight-bold govuk-link govuk-link--no-visited-state"
+          >
+            Secondary academic performance</a
+          >
+          <p class="govuk-body">
+            Find out more about this school’s pupil progress, achievement and
+            results.
+          </p>
+        </div>
+        <div class="ataglance-nav govuk-body">
+          <a
+            href="#"
+            class="govuk-!-font-weight-bold govuk-link govuk-link--no-visited-state"
+          >
+            Destinations</a
+          >
+          <p class="govuk-body">
+            Where pupils went after year 11 after leaving this school.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="ataglance-summary-card govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h3 class="govuk-summary-card__title">
+          Save this school to my schools list
+        </h3>
+      </div>
+      <div class="govuk-summary-card__content">
+        <p class="govuk-body">
+          Save a school to your schools list to find it again later, create a
+          shortlist, and compare it with other saved schools.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

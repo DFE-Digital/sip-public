@@ -1,0 +1,286 @@
+// ============================================================
+// AT A GLANCE STYLING - DESKTOP
+// Used in the at a glance page - standalone-pages/at-a-glance
+// ============================================================
+
+/* ### TOP OF PAGE ### */
+/* Designing to align with GOV design system landing page */
+
+// Updating service navigation -> Overriding classes
+
+.govuk-service-navigation {
+  background-color: #1d70b8 !important;
+  border-top: 1px solid #fff !important;
+  border-bottom: 1px solid #fff !important;
+}
+
+.govuk-service-navigation__service-name,
+.govuk-service-navigation__link {
+  color: #fff !important;
+}
+
+.govuk-service-navigation__item--active .govuk-service-navigation__link {
+  font-weight: 700;
+}
+.govuk-service-navigation__link:active,
+.govuk-service-navigation__link:focus {
+  color: #0b0c0c !important;
+}
+
+// Designing hero -> Section that includes H1
+
+// overriding main to remove padding, padding is replaced in ataglance-hero
+.govuk-main-wrapper {
+  padding-top: 0px;
+}
+
+.ataglance-hero {
+  padding-top: 40px;
+  padding-bottom: 50px;
+  margin: 0 -100%; /* old browsers fallback */
+  margin: 0 calc(50% - 50vw);
+  margin-bottom: 40px;
+  background-color: #1d70b8;
+}
+
+.ataglance-hero .govuk-heading-xl {
+  color: #fff;
+  margin-bottom: 0;
+}
+
+/* ### AFTER HERO, BEFORE ACCORDIONS ### */
+/* Adding custom styling */
+
+//map -> using an image so style like map on main profiles
+#ataglance-map {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+// at a glance card
+// this is very similar to the sp-card used in MVP, removed flex directions as there's no icon needed here
+.ataglance-card {
+  box-sizing: border-box;
+  background-color: #f4f8fb;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 30px;
+}
+
+//signposted link with arrow -> grid layout for vertical alignment
+.ataglance-link__link {
+  display: grid;
+  grid-template-columns: 2rem auto;
+  gap: 5px;
+}
+
+.ataglance-link__link > * {
+  align-self: center;
+}
+
+.ataglance-link__icon.material-symbols-outlined {
+  font-size: 2rem;
+  vertical-align: middle;
+}
+
+/* ### ACCORDIONS ### */
+/* Overriding GOV design system accordions to include icons */
+
+//styling width to allow inline and responsive styling, includes replacement border for top of accordion
+.ataglance-accordion .govuk-accordion__section-header {
+  display: grid;
+  grid-template-columns: 7rem auto;
+  align-items: center;
+  border-top: 1px solid;
+  border-top-color: var(--govuk-border-colour, #cecece);
+}
+
+//removing top border from button to replace with the above, allows it to go the full width
+.ataglance-accordion
+  .govuk-accordion__section
+  .govuk-accordion__section-button {
+  border-top: 0 !important;
+  padding-left: 10px !important;
+}
+
+//STYLING ICON BOXES
+.ataglance-accordion-iconbox {
+  cursor: pointer;
+  display: flex;
+  align-self: stretch;
+  justify-content: center;
+  align-items: center;
+  width: 7rem;
+}
+
+.ataglance-accordion-iconbox__icon.material-symbols-outlined {
+  font-size: 4rem;
+}
+
+//updating styling so icon follows hover/click styling
+.ataglance-accordion
+  .govuk-accordion__section-header:hover
+  .govuk-accordion__section-heading {
+  color: #0b0c0c;
+}
+.ataglance-accordion
+  .govuk-accordion__section-header:hover
+  .govuk-accordion-nav__chevron::after {
+  color: #f3f3f3;
+}
+.ataglance-accordion
+  .govuk-accordion__section-header:hover
+  .govuk-accordion-nav__chevron {
+  color: #0b0c0c;
+  background: #0b0c0c;
+}
+.ataglance-accordion .govuk-accordion__section-header:hover {
+  color: #0b0c0c;
+  background: #f3f3f3;
+}
+.ataglance-accordion
+  .govuk-accordion__section-header:hover
+  .govuk-accordion__section-toggle-text {
+  color: #0b0c0c;
+}
+
+//progress 8 icon
+//using govuk green tint-80 and shade-50
+.ataglance-accordion
+  .govuk-accordion__section-header
+  #accordion-iconbox__progress {
+  background-color: #cfe4dc;
+  color: #083d29;
+}
+
+//using tint-50 for hover
+.ataglance-accordion
+  .govuk-accordion__section-header:hover
+  #accordion-iconbox__progress {
+  background-color: #87bca8;
+}
+
+//attainment 8 icon
+//using govuk blue tint-80 and shade-50
+.ataglance-accordion
+  .govuk-accordion__section-header
+  #accordion-iconbox__attainment {
+  background-color: #d2e2f1;
+  color: #0f385c;
+}
+
+//using tint-50 for hover
+.ataglance-accordion
+  .govuk-accordion__section-header:hover
+  #accordion-iconbox__attainment {
+  background-color: #8eb8dc;
+}
+
+//g5 and above icon
+//using govuk yellow tint-80 and shade-50
+.ataglance-accordion .govuk-accordion__section-header #accordion-iconbox__g5 {
+  background-color: #fff8cc;
+  color: #806f00;
+}
+
+//using tint-50 for hover
+.ataglance-accordion
+  .govuk-accordion__section-header:hover
+  #accordion-iconbox__g5 {
+  background-color: #ffee80;
+}
+
+//exam subjects icon
+//using govuk yellow tint-80 and shade-50
+.ataglance-accordion
+  .govuk-accordion__section-header
+  #accordion-iconbox__subjects {
+  background-color: #ddd6ec;
+  color: #2a1950;
+}
+
+//using tint-50 for hover
+.ataglance-accordion
+  .govuk-accordion__section-header:hover
+  #accordion-iconbox__subjects {
+  background-color: #aa98cf;
+}
+
+//destinations icon
+//using govuk pink tint-80 and shade-50
+.ataglance-accordion
+  .govuk-accordion__section-header
+  #accordion-iconbox__destinations {
+  background-color: #fde4d7;
+  color: #7a3c1c;
+}
+
+//using tint-50 for hover
+.ataglance-accordion
+  .govuk-accordion__section-header:hover
+  #accordion-iconbox__destinations {
+  background-color: #fabb9c;
+}
+
+//enrichment icon
+//using govuk teal tint-80 and shade-50
+.ataglance-accordion
+  .govuk-accordion__section-header
+  #accordion-iconbox__enrichment {
+  background-color: #d0e6e7;
+  color: #0b4144;
+}
+
+//using tint-50 for hover
+.ataglance-accordion
+  .govuk-accordion__section-header:hover
+  #accordion-iconbox__enrichment {
+  background-color: #8ac0c3;
+}
+
+/* ### CONTENT IN ACCORDIONS ### */
+/* Overriding summary cards and designing graphs */
+
+//summary card titles
+.ataglance-summary-card .govuk-summary-card__title-wrapper {
+  background-color: #f4f8fb;
+}
+
+//card titles
+.ataglance-card__heading {
+  color: #0f385c;
+}
+
+//numeric data from moj -> making these inline
+.ataglance-numericdata {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 20px;
+}
+
+// ============================================================
+// AT A GLANCE STYLING - MOBILE
+// Used in the at a glance page - standalone-pages/at-a-glance
+// ============================================================
+
+@media (max-width: 40.0525em) {
+  /* ### ACCORDIONS ### */
+  /* Overriding GOV design system accordions to include icons */
+
+  //changing to accommodate smaller width
+  .ataglance-accordion .govuk-accordion__section-header {
+    grid-template-columns: 5rem auto;
+  }
+  //STYLING ICON BOXES
+  .ataglance-accordion-iconbox {
+    width: 5rem;
+  }
+  .ataglance-accordion-iconbox__icon.material-symbols-outlined {
+    font-size: 3rem;
+  }
+}
